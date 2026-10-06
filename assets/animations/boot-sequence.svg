@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-label="Linux 开机引导流程">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="864" height="404" rx="16" fill="url(#bg4)" stroke="#30363d" stroke-width="2"/>
+  <text x="440" y="52" fill="#e6edf3" font-size="20" text-anchor="middle" font-weight="bold">按下电源之后发生了什么 —— Linux 引导全流程</text>
+
+  <!-- 进度轨道 -->
+  <rect x="796" y="86" width="10" height="292" rx="5" fill="#21262d"/>
+  <rect x="796" y="86" width="10" height="0" rx="5" fill="#3fb950">
+    <animate attributeName="height" values="0;0;292;292;0" keyTimes="0;0.08;0.78;0.95;1" dur="7s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 阶段 -->
+  <g font-size="17">
+    <rect x="70" y="86" width="620" height="46" rx="10" fill="#1c2128" stroke="#30363d"/>
+    <circle cx="100" cy="109" r="9" fill="#21262d"/>
+    <circle cx="100" cy="109" r="9" fill="#f0883e">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.06;0.12;0.90;0.96;1" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <text x="126" y="115" fill="#e6edf3">① BIOS / UEFI —— 通电自检，找到启动设备</text>
+    <text x="676" y="115" fill="#8b949e" text-anchor="end">通电</text>
+
+    <rect x="70" y="146" width="620" height="46" rx="10" fill="#1c2128" stroke="#30363d"/>
+    <circle cx="100" cy="169" r="9" fill="#21262d"/>
+    <circle cx="100" cy="169" r="9" fill="#f0883e">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.16;0.22;0.90;0.96;1" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <text x="126" y="175" fill="#e6edf3">② Bootloader（GRUB）—— 选择内核，加载参数</text>
+    <text x="676" y="175" fill="#8b949e" text-anchor="end">vmlinuz</text>
+
+    <rect x="70" y="206" width="620" height="46" rx="10" fill="#1c2128" stroke="#30363d"/>
+    <circle cx="100" cy="229" r="9" fill="#21262d"/>
+    <circle cx="100" cy="229" r="9" fill="#f0883e">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.26;0.32;0.90;0.96;1" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <text x="126" y="235" fill="#e6edf3">③ 内核 kernel —— 挂载根文件系统，初始化驱动</text>
+    <text x="676" y="235" fill="#8b949e" text-anchor="end">PID 1</text>
+
+    <rect x="70" y="266" width="620" height="46" rx="10" fill="#1c2128" stroke="#30363d"/>
+    <circle cx="100" cy="289" r="9" fill="#21262d"/>
+    <circle cx="100" cy="289" r="9" fill="#f0883e">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.36;0.42;0.90;0.96;1" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <text x="126" y="295" fill="#e6edf3">④ systemd —— 按依赖并行拉起系统服务</text>
+    <text x="676" y="295" fill="#8b949e" text-anchor="end">target</text>
+
+    <rect x="70" y="326" width="620" height="46" rx="10" fill="#1c2128" stroke="#3fb950" stroke-width="2"/>
+    <circle cx="100" cy="349" r="9" fill="#21262d"/>
+    <circle cx="100" cy="349" r="9" fill="#3fb950">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.46;0.52;0.90;0.96;1" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <text x="126" y="355" fill="#e6edf3">⑤ 登录提示符 —— 一切就绪，等待你的第一行命令</text>
+    <text x="676" y="355" fill="#3fb950" text-anchor="end">login:</text>
+  </g>
+
+  <text x="440" y="396" fill="#8b949e" font-size="14" text-anchor="middle">journalctl -b 可以回看完整引导日志</text>
+</svg>

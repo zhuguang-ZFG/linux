@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="880" height="420" viewBox="0 0 880 420" role="img" aria-label="进程生命周期状态机">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <path id="proc-cycle" d="M 130 130 L 370 130 L 610 130 L 610 300 L 610 130 L 770 130"/>
+  </defs>
+
+  <rect x="8" y="8" width="864" height="404" rx="16" fill="url(#bg3)" stroke="#30363d" stroke-width="2"/>
+
+  <!-- 状态框 -->
+  <g font-size="18" text-anchor="middle" font-weight="bold">
+    <rect x="70" y="100" width="120" height="60" rx="12" fill="#1c2128" stroke="#8b949e" stroke-width="2"/>
+    <text x="130" y="137" fill="#e6edf3">新建 New</text>
+
+    <rect x="310" y="100" width="120" height="60" rx="12" fill="#1c2128" stroke="#58a6ff" stroke-width="2"/>
+    <text x="370" y="137" fill="#58a6ff">就绪 Ready</text>
+
+    <rect x="550" y="100" width="120" height="60" rx="12" fill="#1c2128" stroke="#3fb950" stroke-width="2"/>
+    <text x="610" y="137" fill="#3fb950">运行 Running</text>
+
+    <rect x="550" y="270" width="120" height="60" rx="12" fill="#1c2128" stroke="#f0883e" stroke-width="2"/>
+    <text x="610" y="307" fill="#f0883e">阻塞 Blocked</text>
+
+    <rect x="710" y="100" width="120" height="60" rx="12" fill="#1c2128" stroke="#8b949e" stroke-width="2"/>
+    <text x="770" y="137" fill="#8b949e">终止 Zombie</text>
+  </g>
+
+  <!-- 箭头 -->
+  <g stroke="#8b949e" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <line x1="190" y1="130" x2="300" y2="130"/>
+    <line x1="430" y1="130" x2="540" y2="130"/>
+    <line x1="670" y1="130" x2="700" y2="130"/>
+    <line x1="610" y1="160" x2="610" y2="260"/>
+    <line x1="635" y1="270" x2="635" y2="170" stroke-dasharray="6 5"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <g font-size="14" fill="#8b949e" text-anchor="middle">
+    <text x="245" y="118">fork()</text>
+    <text x="487" y="112">被调度</text>
+    <text x="487" y="152">时间片用完/被抢占</text>
+    <text x="745" y="118">exit()</text>
+    <text x="700" y="215">等待 I/O 或事件</text>
+    <text x="738" y="222" fill="#f0883e">事件完成，重新排队</text>
+  </g>
+
+  <!-- 巡游的进程令牌 -->
+  <g>
+    <circle r="12" fill="#3fb950" opacity="0.9"/>
+    <circle r="18" fill="#3fb950" opacity="0.25">
+      <animate attributeName="r" values="14;24;14" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.35;0.05;0.35" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="5" font-size="13" text-anchor="middle" fill="#0d1117" font-weight="bold">P</text>
+    <animateMotion dur="8s" repeatCount="indefinite">
+      <mpath href="#proc-cycle" xlink:href="#proc-cycle"/>
+    </animateMotion>
+  </g>
+
+  <text x="440" y="392" fill="#8b949e" font-size="14" text-anchor="middle">ps · top · kill —— 你管理的就是这个不断巡游的生命体</text>
+</svg>

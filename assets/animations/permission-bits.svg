@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-label="chmod 权限位动画">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="864" height="404" rx="16" fill="url(#bg6)" stroke="#30363d" stroke-width="2"/>
+  <text x="440" y="58" fill="#e6edf3" font-size="20" text-anchor="middle" font-weight="bold">读懂 ls -l 的第一列 —— 9 个权限位</text>
+
+  <!-- 文件名行 -->
+  <g font-size="16" font-family="Consolas,monospace">
+    <text x="140" y="110" fill="#8b949e">$ ls -l notes.md</text>
+    <text x="140" y="140" fill="#e6edf3">-<tspan fill="#f0883e">rwx</tspan><tspan fill="#58a6ff">r-x</tspan><tspan fill="#bc8cff">r--</tspan>  1 zu  staff  4096  notes.md</text>
+  </g>
+
+  <!-- 三组九格 -->
+  <g font-size="20" text-anchor="middle" font-family="Consolas,monospace">
+    <!-- owner -->
+    <rect x="170" y="190" width="120" height="56" rx="10" fill="#1c2128" stroke="#f0883e" stroke-width="0">
+      <animate attributeName="stroke-width" values="3;0;0;0;3" keyTimes="0;0.3;0.62;0.95;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="170" y="190" width="120" height="56" rx="10" fill="#f0883e" opacity="0">
+      <animate attributeName="opacity" values="0.18;0;0;0;0.18" keyTimes="0;0.3;0.62;0.95;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="200" y="226" fill="#e6edf3">r</text><text x="230" y="226" fill="#e6edf3">w</text><text x="260" y="226" fill="#e6edf3">x</text>
+
+    <!-- group -->
+    <rect x="320" y="190" width="120" height="56" rx="10" fill="#1c2128" stroke="#58a6ff" stroke-width="0">
+      <animate attributeName="stroke-width" values="0;3;0;0;0" keyTimes="0;0.3;0.62;0.95;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="320" y="190" width="120" height="56" rx="10" fill="#58a6ff" opacity="0">
+      <animate attributeName="opacity" values="0;0.18;0;0;0" keyTimes="0;0.3;0.62;0.95;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="350" y="226" fill="#e6edf3">r</text><text x="380" y="226" fill="#8b949e">-</text><text x="410" y="226" fill="#e6edf3">x</text>
+
+    <!-- other -->
+    <rect x="470" y="190" width="120" height="56" rx="10" fill="#1c2128" stroke="#bc8cff" stroke-width="0">
+      <animate attributeName="stroke-width" values="0;0;3;0;0" keyTimes="0;0.3;0.62;0.95;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="470" y="190" width="120" height="56" rx="10" fill="#bc8cff" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.18;0;0" keyTimes="0;0.3;0.62;0.95;1" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="500" y="226" fill="#e6edf3">r</text><text x="530" y="226" fill="#8b949e">-</text><text x="560" y="226" fill="#8b949e">-</text>
+  </g>
+
+  <g font-size="15" text-anchor="middle">
+    <text x="230" y="272" fill="#f0883e">所有者 u</text>
+    <text x="380" y="272" fill="#58a6ff">所属组 g</text>
+    <text x="530" y="272" fill="#bc8cff">其他人 o</text>
+  </g>
+
+  <!-- 图例 -->
+  <g font-size="16">
+    <text x="170" y="330" fill="#8b949e">r = 读(4)   w = 写(2)   x = 执行(1)</text>
+    <text x="170" y="362" fill="#3fb950" font-family="Consolas,monospace">chmod 754 notes.md  →  rwx r-x r--</text>
+  </g>
+
+  <text x="440" y="396" fill="#8b949e" font-size="14" text-anchor="middle">权限是 Linux 安全的基石：最小授权，才最安全</text>
+</svg>

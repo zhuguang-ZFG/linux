@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-label="树莓派 GPIO 点亮 LED 动画">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <path id="wire-out" d="M 340 150 C 420 150 430 150 500 150"/>
+    <path id="wire-back" d="M 588 186 C 500 250 430 250 340 214"/>
+  </defs>
+
+  <rect x="8" y="8" width="864" height="404" rx="16" fill="url(#bg5)" stroke="#30363d" stroke-width="2"/>
+
+  <!-- 树莓派主板 -->
+  <rect x="80" y="110" width="260" height="190" rx="14" fill="#1a7f37" stroke="#2ea043" stroke-width="3"/>
+  <rect x="100" y="126" width="200" height="18" rx="4" fill="#0d1117"/>
+  <text x="200" y="140" fill="#8b949e" font-size="12" text-anchor="middle">GPIO 排针（40 Pin）</text>
+  <!-- 排针 -->
+  <g fill="#d4a72c">
+    <rect x="104" y="150" width="8" height="26" rx="2"/>
+    <rect x="118" y="150" width="8" height="26" rx="2"/>
+    <rect x="132" y="150" width="8" height="26" rx="2"/>
+    <rect x="146" y="150" width="8" height="26" rx="2"/>
+    <rect x="160" y="150" width="8" height="26" rx="2"/>
+    <rect x="174" y="150" width="8" height="26" rx="2"/>
+    <rect x="188" y="150" width="8" height="26" rx="2"/>
+    <rect x="202" y="150" width="8" height="26" rx="2"/>
+    <rect x="216" y="150" width="8" height="26" rx="2"/>
+    <rect x="230" y="150" width="8" height="26" rx="2"/>
+    <rect x="244" y="150" width="8" height="26" rx="2"/>
+    <rect x="258" y="150" width="8" height="26" rx="2"/>
+  </g>
+  <rect x="120" y="196" width="80" height="52" rx="8" fill="#0d1117" stroke="#30363d"/>
+  <text x="160" y="226" fill="#8b949e" font-size="13" text-anchor="middle">SoC</text>
+  <rect x="216" y="230" width="60" height="14" rx="3" fill="#30363d"/>
+  <rect x="216" y="252" width="60" height="14" rx="3" fill="#30363d"/>
+  <rect x="120" y="262" width="70" height="20" rx="3" fill="#30363d"/>
+  <text x="210" y="286" fill="#e6edf3" font-size="15" text-anchor="middle" font-weight="bold">Raspberry Pi</text>
+
+  <!-- 导线：GPIO17 → 电阻 → LED → GND -->
+  <use href="#wire-out" fill="none" stroke="#f85149" stroke-width="3" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" values="28;0" dur="0.6s" repeatCount="indefinite"/>
+  </use>
+  <use href="#wire-back" fill="none" stroke="#8b949e" stroke-width="3" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" values="0;28" dur="0.6s" repeatCount="indefinite"/>
+  </use>
+
+  <!-- 电阻 -->
+  <g>
+    <rect x="498" y="136" width="70" height="28" rx="6" fill="#1c2128" stroke="#d4a72c" stroke-width="2"/>
+    <line x1="510" y1="140" x2="510" y2="160" stroke="#f85149" stroke-width="4"/>
+    <line x1="524" y1="140" x2="524" y2="160" stroke="#0d1117" stroke-width="4"/>
+    <line x1="538" y1="140" x2="538" y2="160" stroke="#d4a72c" stroke-width="4"/>
+    <line x1="552" y1="140" x2="552" y2="160" stroke="#d4a72c" stroke-width="4"/>
+    <text x="533" y="128" fill="#8b949e" font-size="13" text-anchor="middle">330Ω 电阻</text>
+  </g>
+
+  <!-- LED -->
+  <g>
+    <circle cx="588" cy="152" r="26" fill="#ff5f56" opacity="0.35" filter="url(#glow)">
+      <animate attributeName="opacity" values="0;0.9;0.9;0;0" keyTimes="0;0.12;0.45;0.55;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="588" cy="152" r="16" fill="#ff5f56" stroke="#ffa198" stroke-width="2">
+      <animate attributeName="fill" values="#3d1113;#ff5f56;#ff5f56;#3d1113;#3d1113" keyTimes="0;0.12;0.45;0.55;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="588" y="98" fill="#8b949e" font-size="14" text-anchor="middle">LED（长脚接电阻，短脚接 GND）</text>
+  </g>
+
+  <!-- 代码 -->
+  <g font-size="15">
+    <rect x="680" y="240" width="170" height="130" rx="10" fill="#010409" stroke="#30363d"/>
+    <text x="698" y="266" fill="#8b949e">blink.py</text>
+    <text x="698" y="292" fill="#bc8cff">from gpiozero</text>
+    <text x="698" y="312" fill="#bc8cff">import LED</text>
+    <text x="698" y="338" fill="#79c0ff">led = LED(17)</text>
+    <text x="698" y="360" fill="#7ee787">while True:</text>
+    <text x="698" y="380" fill="#7ee787">    led.toggle()</text>
+  </g>
+
+  <text x="440" y="396" fill="#8b949e" font-size="14" text-anchor="middle">一条导线、一颗 LED —— 你在 Linux 上写下的第一行「硬件代码」</text>
+</svg>

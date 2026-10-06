@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="880" height="420" viewBox="0 0 880 420" role="img" aria-label="数据包从客户端到 Linux 服务器的旅程">
+  <defs>
+    <path id="route-out" d="M 150 235 C 280 150 600 150 730 235"/>
+    <path id="route-back" d="M 730 235 C 600 320 280 320 150 235"/>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="864" height="404" rx="16" fill="url(#bg2)" stroke="#30363d" stroke-width="2"/>
+
+  <!-- 客户端 -->
+  <g>
+    <rect x="60" y="205" width="180" height="60" rx="10" fill="#1c2128" stroke="#58a6ff" stroke-width="2"/>
+    <rect x="95" y="180" width="110" height="40" rx="6" fill="#0d1117" stroke="#58a6ff" stroke-width="2"/>
+    <text x="150" y="243" fill="#58a6ff" font-size="18" text-anchor="middle" font-weight="bold">你的电脑</text>
+    <text x="150" y="292" fill="#8b949e" font-size="14" text-anchor="middle">curl http://server</text>
+  </g>
+
+  <!-- 云 -->
+  <g>
+    <path d="M 400 95 a 26 26 0 0 1 50 -8 a 30 30 0 0 1 56 10 a 22 22 0 0 1 -2 44 h -96 a 24 24 0 0 1 -8 -46 z" fill="#1c2128" stroke="#bc8cff" stroke-width="2"/>
+    <text x="452" y="172" fill="#bc8cff" font-size="16" text-anchor="middle">互联网</text>
+  </g>
+
+  <!-- 服务器 -->
+  <g>
+    <rect x="640" y="190" width="180" height="90" rx="10" fill="#1c2128" stroke="#3fb950" stroke-width="2"/>
+    <rect x="660" y="205" width="140" height="16" rx="4" fill="#0d1117" stroke="#3fb950"/>
+    <rect x="660" y="228" width="140" height="16" rx="4" fill="#0d1117" stroke="#3fb950"/>
+    <rect x="660" y="251" width="140" height="16" rx="4" fill="#0d1117" stroke="#3fb950"/>
+    <circle cx="676" cy="213" r="3" fill="#3fb950"/>
+    <circle cx="676" cy="236" r="3" fill="#3fb950">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="676" cy="259" r="3" fill="#3fb950">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="730" y="304" fill="#3fb950" font-size="18" text-anchor="middle" font-weight="bold">Linux 服务器</text>
+  </g>
+
+  <!-- 路径虚线 -->
+  <use href="#route-out" xlink:href="#route-out" fill="none" stroke="#30363d" stroke-width="2" stroke-dasharray="6 6"/>
+  <use href="#route-back" xlink:href="#route-back" fill="none" stroke="#30363d" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <!-- 请求包 -->
+  <g>
+    <circle r="9" fill="#58a6ff"/>
+    <text x="0" y="-16" fill="#58a6ff" font-size="13" text-anchor="middle">HTTP GET</text>
+    <animateMotion dur="3s" begin="0s" repeatCount="indefinite">
+      <mpath href="#route-out" xlink:href="#route-out"/>
+    </animateMotion>
+  </g>
+  <g>
+    <circle r="9" fill="#58a6ff"/>
+    <text x="0" y="-16" fill="#58a6ff" font-size="13" text-anchor="middle">TCP SYN</text>
+    <animateMotion dur="3s" begin="1s" repeatCount="indefinite">
+      <mpath href="#route-out" xlink:href="#route-out"/>
+    </animateMotion>
+  </g>
+  <g>
+    <circle r="9" fill="#58a6ff"/>
+    <text x="0" y="-16" fill="#58a6ff" font-size="13" text-anchor="middle">SSH</text>
+    <animateMotion dur="3s" begin="2s" repeatCount="indefinite">
+      <mpath href="#route-out" xlink:href="#route-out"/>
+    </animateMotion>
+  </g>
+
+  <!-- 响应包 -->
+  <g>
+    <circle r="9" fill="#3fb950"/>
+    <text x="0" y="-16" fill="#3fb950" font-size="13" text-anchor="middle">200 OK</text>
+    <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite">
+      <mpath href="#route-back" xlink:href="#route-back"/>
+    </animateMotion>
+  </g>
+  <g>
+    <circle r="9" fill="#3fb950"/>
+    <text x="0" y="-16" fill="#3fb950" font-size="13" text-anchor="middle">HTML</text>
+    <animateMotion dur="3s" begin="2.5s" repeatCount="indefinite">
+      <mpath href="#route-back" xlink:href="#route-back"/>
+    </animateMotion>
+  </g>
+
+  <text x="440" y="392" fill="#8b949e" font-size="14" text-anchor="middle">全世界一半以上的服务器都在跑 Linux —— 网络是它的母语</text>
+</svg>

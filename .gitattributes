@@ -1,0 +1,15 @@
+# 统一换行符策略
+* text=auto
+
+# 脚本类必须 LF，否则 Linux 上执行会报错
+*.sh text eol=lf
+*.py text eol=lf
+*.svg text eol=lf
+
+# 二进制文件不做转换
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+*.ico binary

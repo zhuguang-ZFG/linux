@@ -1,0 +1,27 @@
+name: Tutorial checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  content-and-examples:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check links, chapter counts and Bash syntax
+        run: node scripts/check-content.mjs
+      - name: Backup regression tests
+        run: node --test scripts/backup.test.mjs
+      - name: Parse SVG assets
+        shell: pwsh
+        run: ./scripts/check-svg.ps1
+      - name: Validate Python and the HTTP response
+        run: python3 -B scripts/examples.test.py
+      - name: Check shell scripts
+        run: shellcheck scripts/*.sh
+      - name: Build and exercise Docker example
+        run: bash scripts/check-docker.sh
