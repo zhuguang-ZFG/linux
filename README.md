@@ -32,6 +32,7 @@
 | 入口 | 适合什么时候打开 |
 |---|---|
 | 🗺️ [选择学习路线](LEARNING_PATHS.md) | 零基础、服务器、本地 AI、树莓派，各自从哪里开始 |
+| 🧪 [确认实验环境](resources/environment-matrix.md) | 判断当前环境能做哪些实验，避免照搬不同系统的命令 |
 | 🖼️ [实物图鉴](resources/hardware-gallery.md) | 先认识硬件，再读系统命令 |
 | 🎬 [动画实验室](resources/visual-lab.md) | 先预测数据流，再逐步验证 |
 | 🧰 [工具导航](resources/toolbox.md) | 按任务选择工具，知道它能证明什么 |

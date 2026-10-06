@@ -46,12 +46,17 @@ if (( dry_run )); then
     # 新备份将占一个位置，因此旧备份只能再保留 KEEP - 1 份。
     count=0
     if [[ -d "$dst" ]]; then
+        # 进程替换异步执行，必须单独等待它，避免把扫描失败误当空列表。
+        exec {archive_fd}< <(list_archives)
+        scan_pid=$!
         while IFS= read -r -d '' entry; do
             count=$((count + 1))
             if (( count >= KEEP )); then
                 printf '[预演] 将删除：%s\n' "${entry#* }"
             fi
-        done < <(list_archives)
+        done <&"$archive_fd"
+        exec {archive_fd}<&-
+        wait "$scan_pid" || die "无法完整读取备份目录，预演结果无效"
     fi
     exit 0
 fi

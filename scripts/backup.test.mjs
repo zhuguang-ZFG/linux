@@ -27,12 +27,12 @@ function fixture(t) {
   return { root, src, dst };
 }
 
-function run(f, { dry = false, failTar = false } = {}) {
+function run(f, { dry = false, failTar = false, failFind = false } = {}) {
   let args = [posix(script), ...(dry ? ['--dry-run'] : []), posix(f.src), posix(f.dst)];
-  if (failTar) {
+  if (failTar || failFind) {
     const bin = path.join(f.root, 'bin');
     mkdirSync(bin);
-    writeFileSync(path.join(bin, 'tar'), '#!/usr/bin/env bash\nexit 42\n', { mode: 0o755 });
+    writeFileSync(path.join(bin, failFind ? 'find' : 'tar'), '#!/usr/bin/env bash\nexit 42\n', { mode: 0o755 });
     args = ['-c', 'PATH="$1:$PATH"; shift; exec bash "$@"', 'test', posix(bin), ...args];
   }
   const result = spawnSync(bash, args, { cwd: f.root, encoding: 'utf8', timeout: 20000 });
@@ -97,6 +97,15 @@ test('dry-run of a new destination writes nothing', t => {
   const result = run(f, { dry: true });
   assert.equal(result.status, 0, result.stderr);
   assert.deepEqual(snapshot(f.root), before);
+});
+
+test('dry-run reports a failed directory scan instead of a successful empty plan', t => {
+  const f = fixture(t);
+  seed(f.dst, 5);
+  const before = snapshot(f.dst);
+  const result = run(f, { dry: true, failFind: true });
+  assert.notEqual(result.status, 0);
+  assert.deepEqual(snapshot(f.dst), before);
 });
 
 test('dry-run reserves one slot for the sixth archive and actual run retains five', t => {

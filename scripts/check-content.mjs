@@ -2,6 +2,7 @@ import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkChapterNavigation } from './chapter-navigation.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const errors = [];
@@ -42,6 +43,7 @@ const readme = read('README.md');
 const entries = [...readme.matchAll(/\]\((docs\/[^)]+\.md)\)/g)].map(match => match[1]);
 if (new Set(entries).size !== entries.length) fail('README: duplicate chapter entries');
 if (entries.length !== chapters.length) fail(`README: ${entries.length} entries for ${chapters.length} chapters`);
+for (const issue of checkChapterNavigation(entries, read)) fail(issue);
 for (const chapter of chapters) {
   if (!entries.includes(chapter)) fail(`Chapter missing from README: ${chapter}`);
   const body = read(chapter);

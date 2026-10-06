@@ -399,6 +399,6 @@ shellcheck host-alive.sh     # 无输出即通过
 - [The Linux Documentation Project](https://tldp.org)——《Advanced Bash-Scripting Guide》所在地，Bash 进阶的完整免费教材。
 - [ShellCheck 在线版](https://www.shellcheck.net)——把脚本粘进去立刻出体检报告。
 - [Arch Wiki](https://wiki.archlinux.org)——搜索 Bash、cron 词条，大量一线实践细节。
-- 下一站：[项目 1 · LNMP 网站服务器](../04-projects/项目1-LNMP网站服务器.md)——把高级篇的全部功力投入第一个完整项目。
+- 下一章：[AI 辅助学习与运维](07-AI辅助学习与运维.md)——先学习如何核对模型建议，再进入实战项目。
 
 > 📝 学完本章，去完成 [《03-高级篇练习》](../../exercises/03-高级篇练习.md) 中的对应练习，检验学习效果。

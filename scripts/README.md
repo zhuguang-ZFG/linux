@@ -11,16 +11,19 @@
 | [blink.py](pi/blink.py) | [GPIO 章节](../docs/05-raspberry-pi/04-GPIO硬件编程.md) | 真机 LED 闪烁，Ctrl-C 释放资源 |
 | [capture-frame.py](pi/capture-frame.py) | [边缘 AI](../docs/05-raspberry-pi/06-树莓派与边缘AI.md) | USB 摄像头采集图片 |
 | [record-button.py](pi/record-button.py) | [按钮数据记录](../docs/05-raspberry-pi/07-从按钮到数据记录.md) | GPIO27 状态记录，支持明确标记的 `--simulate` 模式 |
+| [recover_deleted.py](labs/recover_deleted.py) | [性能与恢复实验](../docs/03-pro/01-性能观测与调优.md) | Linux 上在全新目录演示打开文件被删除后的恢复 |
 
 ## 质量检查
 
-需要 Node.js 22+ 和 Bash（Windows 可用 Git Bash，通过 `BASH_BIN` 指定其他位置）：
+需要 Node.js 22+、Python 3.10+ 和 Bash（Windows 可用 Git Bash，通过 `BASH_BIN` 指定其他位置）：
 
 ```bash
 node scripts/check-content.mjs
 node --test scripts/backup.test.mjs
+node --test scripts/chapter-navigation.test.mjs
 python3 -B scripts/examples.test.py
 python3 -B scripts/media.test.py
+python3 -B scripts/labs.test.py
 ```
 
 SVG 用 PowerShell 的 XML 解析器检查，Windows 和装有 pwsh 的 Linux 均可：
@@ -37,7 +40,9 @@ Windows PowerShell 用户也可直接运行 `& ./scripts/check-svg.ps1`。Python
 bash scripts/check-docker.sh
 ```
 
-备份回归测试使用独立临时目录，验证路径边界、恢复内容、保留数量、预演、失败清理和锁冲突。内容检查覆盖本地文件链接、章节与素材数量、6 套练习、6 张速查表与 Bash 语法；不声称验证了每个外部网站或每条需要系统权限的教学命令。
+备份回归测试使用独立临时目录，验证路径边界、恢复内容、保留数量、预演扫描失败、失败清理和锁冲突。内容检查覆盖本地文件链接、章节前后导航、章节与素材数量、6 套练习、6 张速查表与 Bash 语法。
+
+`labs.test.py` 在 Linux 上实际运行 `/proc` 恢复和文档中的压缩命令；Windows 上明确跳过，由 Ubuntu CI 覆盖。检查不声称验证了每个外部网站或每条需要系统权限的教学命令。运行实验前可查 [环境对照表](../resources/environment-matrix.md)。
 
 ## 素材维护
 

@@ -17,6 +17,8 @@
 
 ## 每个知识点走五步
 
+动手前用 [实验环境对照表](resources/environment-matrix.md) 确认工具、内核能力和权限，尤其是 systemd、磁盘、Docker 和 GPIO 实验。
+
 ```mermaid
 flowchart LR
     A[先预测现象] --> B[看实物或动画]
