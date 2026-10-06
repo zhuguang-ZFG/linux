@@ -85,6 +85,9 @@ const documents = sources.map(source => {
     next: index >= 0 && index < chapterOrder.length - 1 ? chapterOrder[index + 1] : null,
   };
 });
+const catalog = documents.map(({ html, searchText, ...document }) => ({ ...document, body: `data/docs/${encodeURI(`${document.id}.json`)}` }));
+const searchIndex = documents.filter(document => document.index >= 0)
+  .map(({ id, title, index, searchText }) => ({ id, title, index, searchText }));
 for (const animation of animations) {
   const svg = read(`assets/animations/${animation.file}`);
   const durations = [...svg.matchAll(/dur="([\d.]+)s"/g)].map(match => Number(match[1]));
@@ -93,11 +96,19 @@ for (const animation of animations) {
 // Only remove the verified generated output directory, never source files.
 rmSync(out, { recursive: true, force: true });
 mkdirSync(path.join(out, 'data'), { recursive: true });
+const docsOut = path.resolve(out, 'data/docs');
+for (const document of documents) {
+  const target = path.resolve(docsOut, `${document.id}.json`);
+  if (!target.startsWith(`${docsOut}${path.sep}`)) throw new Error(`Unsafe document output path: ${document.id}`);
+  mkdirSync(path.dirname(target), { recursive: true });
+  writeFileSync(target, JSON.stringify({ id: document.id, html: document.html }));
+}
+writeFileSync(path.join(out, 'data/search.json'), JSON.stringify({ documents: searchIndex }));
 cpSync(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true });
 cpSync(path.join(root, 'web/index.html'), path.join(out, 'index.html'));
 cpSync(path.join(root, 'web/styles.css'), path.join(out, 'styles.css'));
 writeFileSync(path.join(out, '.nojekyll'), '');
-writeFileSync(path.join(out, 'data/course.json'), JSON.stringify({ documents, chapterOrder, stageNames, videos: videos.videos,
+writeFileSync(path.join(out, 'data/course.json'), JSON.stringify({ documents: catalog, chapterOrder, stageNames, videos: videos.videos,
   videoNotice: videos.notice, videosCheckedAt: videos.checkedAt, animations, repo,
   stats: { chapters: chapterOrder.length, videos: videos.videos.length, animations: animations.length } }));
 await build({ entryPoints: [path.join(root, 'web/app.js')], bundle: true, format: 'esm', splitting: true,

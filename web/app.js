@@ -8,6 +8,8 @@ const videoRoute = id => `#video=${encodeURIComponent(id)}`;
 const animationRoute = file => `#animation=${encodeURIComponent(file)}`;
 const minutes = value => value ? (value >= 3600 ? `${Math.floor(value / 3600)}:${String(Math.floor(value % 3600 / 60)).padStart(2, '0')}:${String(value % 60).padStart(2, '0')}` : `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`) : '原站时长';
 let data, docs, videoMap, animationMap, completed = new Set(), routeVersion = 0, cleanup = () => {};
+const bodyCache = new Map();
+let searchIndex = null, searchIndexPromise = null, searchVersion = 0;
 let toastTimer;
 
 function toast(message) {
@@ -75,6 +77,13 @@ function home() {
     </div></section>
     <section><div class="section-heading"><div><h2>看懂，再动手</h2><p>动画可以暂停、单步和重播，观察状态怎样变化。</p></div><a href="#animations">全部 ${data.animations.length} 个动画 →</a></div><div class="media-grid">${featuredAnimations.map(animationCard).join('')}</div></section>
     <section><div class="section-heading"><div><h2>视频课堂</h2><p>中文选段与英文专题互补，每条都有对应学习入口。</p></div><a href="#videos">全部 ${data.videos.length} 条视频 →</a></div><div class="media-grid">${featuredVideos.map(videoCard).join('')}</div></section>
+    <section class="learning-loop"><div class="section-heading"><div><h2>一条可复做的学习闭环</h2><p>从选目标到留证据，每一环都能被验证。</p></div><a href="${readRoute('LEARNING_PATHS.md')}">完整路线与成果清单 →</a></div><div class="loop-grid">
+      <a class="loop-card" href="${readRoute('LEARNING_PATHS.md')}"><span class="loop-step">01 · 选目标</span><h3>我到底想用 Linux 做什么</h3><p>按目标选路线，先做出第一个可验收成果。</p></a>
+      <a class="loop-card" href="${readRoute('resources/environment-matrix.md')}"><span class="loop-step">02 · 对环境</span><h3>确认发行版、权限与内核能力</h3><p>先分清“缺工具”还是“不具备该能力”。</p></a>
+      <a class="loop-card" href="${readRoute('resources/toolbox.md')}"><span class="loop-step">03 · 选工具</span><h3>用问题挑工具，而不是跟热度</h3><p>说明要观察什么、怎么验证、局限在哪。</p></a>
+      <a class="loop-card" href="${readRoute('resources/prompt-lab.md')}"><span class="loop-step">04 · 问 AI</span><h3>让 AI 给出可核对的问题</h3><p>用提示词模板区分事实、假设与实测结果。</p></a>
+      <a class="loop-card" href="${readRoute('exercises/README.md')}"><span class="loop-step">05 · 留证据</span><h3>做练习，把结果写进贡献</h3><p>保留输入、命令、输出与修正，让结论可复做。</p></a>
+    </div></section>
     <section class="practice-banner"><div><h3>把“看过”变成“会做”</h3><p>记录输入、命令与实际结果，让每次学习留下一个可复做的成果。</p></div><a class="button" href="${readRoute('exercises/README.md')}">打开练习册 →</a></section>${footer()}</div>`;
 }
 
@@ -105,16 +114,33 @@ async function renderDiagrams(version) {
   }
 }
 
-function readDocument(id, section) {
+async function loadBody(doc, version) {
+  try {
+    const response = await fetch(`./${doc.body}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    if (typeof payload.html !== 'string') throw new Error('Invalid body payload');
+    bodyCache.set(doc.id, payload.html);
+    return payload.html;
+  } catch {
+    if (version !== routeVersion) return null;
+    main.innerHTML = `<div class="page error-state"><h1>正文暂时无法加载</h1><p>可以刷新重试，或先在 GitHub 上阅读这篇文档。</p><a class="button" href="${data.repo}/blob/main/${encodeURI(doc.id)}" target="_blank" rel="noopener noreferrer">打开源文档 ↗</a></div>`;
+    return null;
+  }
+}
+
+async function readDocument(id, section, version) {
   const doc = docs.get(id);
   if (!doc) { missing(); return; }
   document.title = `${doc.title} · 通往 Linux 之路`;
+  const body = bodyCache.get(id) ?? await loadBody(doc, version);
+  if (body === null || version !== routeVersion) return;
   const relatedVideos = doc.media.videos.map(ref => {
     const video = videoMap.get(typeof ref === 'string' ? ref : ref.id);
     return video ? { ...video, chapterNote: ref.note || '' } : null;
   }).filter(Boolean);
   const relatedAnimations = doc.media.animations.map(file => animationMap.get(file)).filter(Boolean);
-  main.innerHTML = `<div class="reading-layout"><div><div class="breadcrumb"><a href="#home">学习首页</a> / ${doc.stage === null ? '学习资源' : escape(data.stageNames[doc.stage])}</div><div class="reading-paper"><div class="reading-toolbar"><span>${escape(doc.duration)} · 读完请完成自测</span><div>${doc.index >= 0 ? `<button class="button small" data-complete="${escape(doc.id)}" aria-pressed="${completed.has(doc.id)}">${completed.has(doc.id) ? '✓ 已标记学完' : '标记已学完'}</button>` : ''} <a class="button small" href="${data.repo}/blob/main/${encodeURI(doc.id)}" target="_blank" rel="noopener noreferrer">查看源文档 ↗</a></div></div><article class="article">${doc.html}</article>
+  main.innerHTML = `<div class="reading-layout"><div><div class="breadcrumb"><a href="#home">学习首页</a> / ${doc.stage === null ? '学习资源' : escape(data.stageNames[doc.stage])}</div><div class="reading-paper"><div class="reading-toolbar"><span>${escape(doc.duration)} · 读完请完成自测</span><div>${doc.index >= 0 ? `<button class="button small" data-complete="${escape(doc.id)}" aria-pressed="${completed.has(doc.id)}">${completed.has(doc.id) ? '✓ 已标记学完' : '标记已学完'}</button>` : ''} <a class="button small" href="${data.repo}/blob/main/${encodeURI(doc.id)}" target="_blank" rel="noopener noreferrer">查看源文档 ↗</a></div></div><article class="article">${body}</article>
     ${relatedAnimations.length ? `<section class="lesson-media"><h2>动起来看原理</h2><div class="media-grid">${relatedAnimations.map(animationCard).join('')}</div></section>` : ''}
     ${relatedVideos.length ? `<section class="lesson-media"><h2>配套视频</h2><p class="count-note">${escape(relatedVideos[0].chapterNote || '先查看版本提示，观看后回到正文完成实验。')}</p><div class="media-grid">${relatedVideos.map(videoCard).join('')}</div></section>` : ''}
     <nav class="lesson-next" aria-label="相邻章节">${doc.previous ? `<a href="${readRoute(doc.previous)}">← ${escape(docs.get(doc.previous).title)}</a>` : '<span></span>'}${doc.next ? `<a href="${readRoute(doc.next)}">${escape(docs.get(doc.next).title)} →</a>` : ''}</nav></div>${footer()}</div>
@@ -128,6 +154,7 @@ function readDocument(id, section) {
     });
     code.parentElement.append(button);
   }
+  main.querySelectorAll('img').forEach(img => img.addEventListener('error', () => { img.hidden = true; }));
   renderDiagrams(routeVersion);
   if (section) requestAnimationFrame(() => main.querySelector(`#${CSS.escape(section)}`)?.scrollIntoView());
 }
@@ -227,7 +254,7 @@ function render() {
   closeMenu(); results.hidden = true;
   document.title = '通往 Linux 之路 · 边看边练';
   renderSidebar();
-  if (params.has('read')) readDocument(params.get('read'), params.get('section'));
+  if (params.has('read')) readDocument(params.get('read'), params.get('section'), routeVersion);
   else if (params.has('video')) videoPage(params.get('video'));
   else if (params.has('animation')) animationPage(params.get('animation'));
   else if (params.has('videos')) gallery('videos', params);
@@ -252,15 +279,31 @@ document.addEventListener('click', event => {
   const load = event.target.closest('[data-load-video]'); if (load) loadVideo(load.dataset.loadVideo);
   if (!event.target.closest('.search-wrap')) results.hidden = true;
 });
-search.addEventListener('input', () => {
+async function loadSearchIndex() {
+  if (searchIndex) return searchIndex;
+  if (!searchIndexPromise) searchIndexPromise = fetch('./data/search.json').then(response => {
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+  }).then(payload => {
+    searchIndex = new Map(payload.documents.map(entry => [entry.id, entry]));
+    return searchIndex;
+  }).catch(error => { searchIndexPromise = null; throw error; });
+  return searchIndexPromise;
+}
+search.addEventListener('input', async () => {
   const query = search.value.trim().toLowerCase();
+  const version = ++searchVersion;
   if (!query || !data) { results.hidden = true; return; }
+  try { await loadSearchIndex(); } catch { /* Title and media matching stay available without the full-text index. */ }
+  if (version !== searchVersion) return;
+  const chapterText = doc => searchIndex?.get(doc.id)?.searchText || '';
   const hits = [
-    ...data.documents.filter(doc => doc.index >= 0 && (doc.title.toLowerCase().includes(query) || doc.searchText.includes(query))).sort((a, b) => Number(b.title.toLowerCase().includes(query)) - Number(a.title.toLowerCase().includes(query))).slice(0, 5).map(doc => ({ title: doc.title, kind: '章节', href: readRoute(doc.id) })),
+    ...data.documents.filter(doc => doc.index >= 0 && (doc.title.toLowerCase().includes(query) || chapterText(doc).includes(query))).sort((a, b) => Number(b.title.toLowerCase().includes(query)) - Number(a.title.toLowerCase().includes(query))).slice(0, 5).map(doc => ({ title: doc.title, kind: '章节', href: readRoute(doc.id) })),
     ...data.videos.filter(video => `${video.title} ${video.author} ${video.tags.join(' ')}`.toLowerCase().includes(query)).slice(0, 3).map(video => ({ title: video.title, kind: video.platform === 'bilibili' ? 'B站视频' : 'YouTube 视频', href: videoRoute(video.id) })),
     ...data.animations.filter(item => item.title.toLowerCase().includes(query)).slice(0, 2).map(item => ({ title: item.title, kind: '动画', href: animationRoute(item.file) })),
   ];
-  results.innerHTML = hits.length ? hits.map(hit => `<a class="search-result" href="${hit.href}"><small>${hit.kind}</small>${escape(hit.title)}</a>`).join('') : '<div class="search-empty">没有匹配结果，试试“权限”“Docker”或“GPIO”。</div>';
+  const note = searchIndex ? '' : '<div class="search-note">全文索引暂时不可用，当前仅按标题与媒体匹配。</div>';
+  results.innerHTML = `${note}${hits.length ? hits.map(hit => `<a class="search-result" href="${hit.href}"><small>${hit.kind}</small>${escape(hit.title)}</a>`).join('') : '<div class="search-empty">没有匹配结果，试试“权限”“Docker”或“GPIO”。</div>'}`;
   results.hidden = false;
 });
 search.addEventListener('keydown', event => {

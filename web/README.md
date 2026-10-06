@@ -13,11 +13,12 @@ node scripts/sync-media.mjs --check
 pnpm run build
 pnpm run preview
 ```
-
-打开 `http://127.0.0.1:4173/linux/`。生成文件在 `_site/`，不提交到 Git；不要直接用 file:// 打开首页，因为课程 JSON 需要通过 HTTP 加载。
+打开 `http://127.0.0.1:4173/linux/`。需要换端口时设置 `COURSE_PORT=4174 pnpm run preview`，Playwright 也会使用同一个端口。生成文件在 `_site/`，不提交到 Git；不要直接用 file:// 打开首页，因为课程目录、搜索索引和按源路径拆分的章节正文需要通过 HTTP 加载。
 
 ## 阅读与媒体
 
+- 首页先加载轻量课程目录；章节正文按需从 `_site/data/docs/` 读取并按 Markdown 源路径缓存，旧的 `#read=docs%2F...` 深链接保持有效。
+- 搜索章节全文时才加载独立的 `data/search.json`；视频和动画目录随课程目录一起可用。
 - 搜索章节、视频和动画，支持 `/` 聚焦搜索。
 - 章节正文由 Marked 构建，经过 sanitize-html 清理；Mermaid 在阅读时按需加载。
 - 学习标记只保存在当前浏览器 localStorage，不上传到服务器。
@@ -41,7 +42,7 @@ pnpm run build
 pnpm run test:site
 ```
 
-Windows 默认使用已安装的 Chrome；Linux CI 使用 Playwright Chromium。测试覆盖阅读、搜索、手机目录、进度保存、Mermaid、复制代码、官方嵌入参数以及动画控制。测试中的第三方播放器响应为固定测试页面，不把它算成真实视频播放通过。
+默认使用 Playwright Chromium，避免依赖本机安装的 Chrome。端口被占用时，设置 `COURSE_PORT` 后重试；预览服务会报告冲突端口而不是等待超时。测试覆盖阅读、搜索、手机目录、进度保存、Mermaid、复制代码、官方嵌入参数以及动画控制。测试中的第三方播放器响应为固定测试页面，不把它算成真实视频播放通过。
 
 ## 发布
 

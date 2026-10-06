@@ -10,3 +10,6 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.hero-lab{transform:none}}
 
 main:focus{outline:none}
+.loop-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.loop-card{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;color:var(--ink)}.loop-card:hover{border-color:var(--teal);text-decoration:none}.loop-step{font-size:10px;letter-spacing:1.4px;color:var(--teal);font-weight:700}.loop-card h3{margin:0;font-size:15px;line-height:1.4}.loop-card p{margin:0;font-size:13px;color:var(--muted)}
+@media(max-width:1200px){.loop-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.loop-grid{grid-template-columns:1fr}}

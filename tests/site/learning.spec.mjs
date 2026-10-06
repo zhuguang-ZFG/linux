@@ -16,6 +16,28 @@ test('home shows the actual catalog and accessible route entries', async ({ page
   await expect(page.locator('.article h1')).toContainText('为什么人人');
 });
 
+test('home loads no chapter body until a chapter is opened', async ({ page }) => {
+  const bodies = [];
+  page.on('response', response => { if (response.url().includes('/data/docs/')) bodies.push(response.url()); });
+  await page.goto('');
+  await expect(page.locator('.stat-strip')).toContainText('42');
+  expect(bodies).toEqual([]);
+  await page.getByRole('link', { name: '开始第一课' }).click();
+  await expect(page.locator('.article h1')).toContainText('为什么人人');
+  await expect.poll(() => bodies.length).toBeGreaterThan(0);
+  expect(decodeURIComponent(bodies[0])).toContain('docs/00-onboarding/01-');
+});
+
+test('home exposes the goal-to-practice learning loop', async ({ page }) => {
+  await page.goto('');
+  const cards = page.locator('.learning-loop .loop-card');
+  await expect(cards).toHaveCount(5);
+  const hrefs = await cards.evaluateAll(nodes => nodes.map(node => decodeURIComponent(node.getAttribute('href'))));
+  expect(hrefs).toEqual(['#read=LEARNING_PATHS.md', '#read=resources/environment-matrix.md', '#read=resources/toolbox.md', '#read=resources/prompt-lab.md', '#read=exercises/README.md']);
+  await cards.nth(1).click();
+  await expect(page.locator('.article h1')).toContainText('先确认实验环境');
+});
+
 test('search ranks title matches and can enter a chapter', async ({ page }) => {
   await page.goto('');
   await expect(page.locator('.hero')).toBeVisible();
@@ -23,6 +45,19 @@ test('search ranks title matches and can enter a chapter', async ({ page }) => {
   await expect(page.locator('.search-result').first()).toContainText('sed');
   await page.locator('#search').press('Enter');
   await expect(page.locator('.article h1')).toContainText('sed');
+});
+
+test('full-text-only matches still work through the lazily loaded index', async ({ page }) => {
+  await page.goto('');
+  const indexRequests = [];
+  page.on('response', response => { if (response.url().includes('data/search.json')) indexRequests.push(response.url()); });
+  await expect(page.locator('.hero')).toBeVisible();
+  expect(indexRequests).toEqual([]);
+  await page.locator('#search').fill('inode');
+  const first = page.locator('.search-result').first();
+  await expect(first.locator('small')).toHaveText('章节');
+  expect((await first.textContent()).toLowerCase()).not.toContain('inode');
+  await expect.poll(() => indexRequests.length).toBe(1);
 });
 
 test('platform filters show 15 Bilibili parts and 15 YouTube videos', async ({ page }) => {
