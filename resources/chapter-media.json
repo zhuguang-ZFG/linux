@@ -39,7 +39,9 @@
         "note": "基础操作预习；安装步骤与版本以本章为准。"
       }
     ],
-    "animations": []
+    "animations": [
+      "install-choices.svg"
+    ]
   },
   "docs/00-onboarding/05-初见终端与Shell.md": {
     "videos": [
@@ -68,7 +70,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "vim-modes.svg"
+    ]
   },
   "docs/01-basics/03-用户与权限.md": {
     "videos": [
@@ -88,7 +92,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "archive-compress.svg"
+    ]
   },
   "docs/01-basics/05-软件包管理.md": {
     "videos": [
@@ -380,7 +386,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "local-ai-request.svg"
+    ]
   },
   "docs/04-projects/项目5-故障排查20例.md": {
     "videos": [
@@ -446,7 +454,9 @@
   },
   "docs/05-raspberry-pi/06-树莓派与边缘AI.md": {
     "videos": [],
-    "animations": []
+    "animations": [
+      "edge-inference.svg"
+    ]
   },
   "docs/05-raspberry-pi/07-从按钮到数据记录.md": {
     "videos": [

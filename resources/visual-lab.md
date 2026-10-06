@@ -1,6 +1,6 @@
 # 动画实验室：先预测，再播放，最后动手
 
-本库共 26 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 20 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
+本库共 31 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 25 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
 
 动画是原理示意，不是从真实机器采集的运行录像。验收仍要回到命令与实际输出。
 
@@ -40,12 +40,17 @@
 
 **先猜**：模型给出一条命令，是否就能直接放进教程？**动手**：完成 [AI 辅助学习章节](../docs/03-pro/07-AI辅助学习与运维.md) 的手册核对与实测。
 
-## 新增的十四个状态演示
+## 新增的十九个状态演示
 
 以下动画额外展示示意输入、命令或状态快照，配合学习站的单步控制观察变化：
 
 | 动画 | 重点观察 |
 |---|---|
+| [归档与压缩](../assets/animations/archive-compress.svg) | 归档与压缩为何是两步 |
+| [Vim 模式](../assets/animations/vim-modes.svg) | 普通/插入/命令模式与保存退出 |
+| [选安装方式](../assets/animations/install-choices.svg) | 四种安装路线的磁盘边界与风险 |
+| [边缘识别](../assets/animations/edge-inference.svg) | 采集、保存、识别、核对的分工 |
+| [本地模型](../assets/animations/local-ai-request.svg) | 界面/命令行、兼容 API 与本地推理 |
 | [PATH 查找](../assets/animations/path-lookup.svg) | 命令来源、查找顺序与子进程继承 |
 | [grep 匹配](../assets/animations/grep-regex.svg) | 逐行匹配、输出选项与三种退出码 |
 | [Git 分支](../assets/animations/git-branches.svg) | 分支指针、工作区切换和快进合并 |

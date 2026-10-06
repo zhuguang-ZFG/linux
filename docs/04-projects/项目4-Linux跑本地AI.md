@@ -17,6 +17,10 @@
 
 ## 🧠 方案设计
 
+
+![本地模型原理动画](../../assets/animations/local-ai-request.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=local-ai-request.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ### 为什么本地跑大模型？
 
 - **隐私（Privacy）**：笔记、代码、合同发给云端 API 就是把数据交了出去；本地推理（Inference）的数据永远不出网卡；

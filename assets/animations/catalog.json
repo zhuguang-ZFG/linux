@@ -548,5 +548,135 @@
         "description": "未命中是 1，不是错误；读不到文件才是 2"
       }
     ]
+  },
+  {
+    "file": "archive-compress.svg",
+    "title": "归档与压缩",
+    "chapter": "docs/01-basics/04-压缩与归档.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 打包归档",
+        "description": "多个文件合成一个归档；体积几乎不变"
+      },
+      {
+        "title": "02 选择压缩",
+        "description": "算法决定压缩率与速度；得到 .tar.gz"
+      },
+      {
+        "title": "03 查看内容",
+        "description": "先列清单再决定解包；不改动原归档"
+      },
+      {
+        "title": "04 解包落位",
+        "description": "解到指定目录；覆盖前先确认同名文件"
+      }
+    ]
+  },
+  {
+    "file": "vim-modes.svg",
+    "title": "Vim 模式",
+    "chapter": "docs/01-basics/02-查看与编辑文件-Vim.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 普通模式",
+        "description": "打开后默认在普通模式；此时敲字被当指令"
+      },
+      {
+        "title": "02 进入插入",
+        "description": "左下角出现 -- INSERT --；这时才可以输入文字"
+      },
+      {
+        "title": "03 回到普通",
+        "description": "退回普通模式执行指令；保存前先确认内容"
+      },
+      {
+        "title": "04 保存退出",
+        "description": "write + quit 一次完成；放弃修改用 :q!"
+      }
+    ]
+  },
+  {
+    "file": "install-choices.svg",
+    "title": "选安装方式",
+    "chapter": "docs/00-onboarding/04-安装你的第一个Linux.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 先问目标",
+        "description": "WSL2 起步最快；几乎无风险"
+      },
+      {
+        "title": "02 需要桌面",
+        "description": "整机虚拟化可随时删除；性能约打八折"
+      },
+      {
+        "title": "03 云端机器",
+        "description": "适合练远程运维；注意按量计费"
+      },
+      {
+        "title": "04 双系统风险",
+        "description": "动磁盘前必须先备份；新手阶段先不碰"
+      }
+    ]
+  },
+  {
+    "file": "edge-inference.svg",
+    "title": "边缘识别",
+    "chapter": "docs/05-raspberry-pi/06-树莓派与边缘AI.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 采集图像",
+        "description": "USB 摄像头走设备节点；设备编号不一定是 0"
+      },
+      {
+        "title": "02 保存文件",
+        "description": "父目录需已存在；同名文件拒绝覆盖"
+      },
+      {
+        "title": "03 本地识别",
+        "description": "推理在设备本地完成；不套用桌面 GPU 速度"
+      },
+      {
+        "title": "04 核对结果",
+        "description": "记录耗时与识别错误；相机与模型问题分开查"
+      }
+    ]
+  },
+  {
+    "file": "local-ai-request.svg",
+    "title": "本地模型",
+    "chapter": "docs/04-projects/项目4-Linux跑本地AI.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 界面或命令",
+        "description": "两种客户端任选；都请求本地服务"
+      },
+      {
+        "title": "02 调用 API",
+        "description": "OpenAI 兼容接口；Ollama 端口 11434"
+      },
+      {
+        "title": "03 本地推理",
+        "description": "模型在容器内加载推理；显存不足会混合内存"
+      },
+      {
+        "title": "04 返回结果",
+        "description": "数据不出网卡；首次加载慢属正常"
+      }
+    ]
   }
 ]

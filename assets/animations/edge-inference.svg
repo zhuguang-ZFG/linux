@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="640" viewBox="0 0 1080 640" role="img" aria-labelledby="title desc">
+<title id="title">边缘识别：一次本地 OCR 链路</title>
+<desc id="desc">采集、保存、识别、核对是四件事。四步示意，每 12 秒一轮，播放三轮后停止。示意动画：摄像头权限、设备节点与模型参数是不同问题；耗时以本机实测为准。</desc>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+.code{font-family:Consolas,monospace}
+.focus{opacity:0}
+.output{opacity:0}.output.phase-0{opacity:1}
+@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,100%{opacity:1}}.phase-3{animation:step3 12s linear 3}
+@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,100%{transform:translateX(780px)}}
+.token{animation:travel 12s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){.focus,.token,.output{animation:none}.token{display:none}}
+</style>
+<rect width="1080" height="640" rx="22" fill="#0d1117"/>
+<text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
+<text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">边缘识别：一次本地 OCR 链路</text>
+<text x="40" y="120" fill="#9da7b3" font-size="16">采集、保存、识别、核对是四件事</text>
+<path d="M148 320 H928" fill="none" stroke="#303d4d" stroke-width="3"/>
+
+<g>
+<rect x="40" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-0" x="40" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 采集图像</text>
+<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">capture-frame.py</text>
+<text x="56" y="252" fill="#c9d1d9" font-size="14">USB 摄像头走设备节点</text>
+<text x="56" y="276" fill="#9da7b3" font-size="14">设备编号不一定是 0</text>
+<circle cx="148" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="300" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-1" x="300" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="316" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">02 保存文件</text>
+<text class="code" x="316" y="221" fill="#79c0ff" font-size="13">photo.jpg</text>
+<text x="316" y="252" fill="#c9d1d9" font-size="14">父目录需已存在</text>
+<text x="316" y="276" fill="#9da7b3" font-size="14">同名文件拒绝覆盖</text>
+<circle cx="408" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="560" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-2" x="560" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 本地识别</text>
+<text class="code" x="576" y="221" fill="#79c0ff" font-size="13">tesseract 图片 输出</text>
+<text x="576" y="252" fill="#c9d1d9" font-size="14">推理在设备本地完成</text>
+<text x="576" y="276" fill="#9da7b3" font-size="14">不套用桌面 GPU 速度</text>
+<circle cx="668" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="820" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 核对结果</text>
+<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">人工比对原文</text>
+<text x="836" y="252" fill="#c9d1d9" font-size="14">记录耗时与识别错误</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">相机与模型问题分开查</text>
+<circle cx="928" cy="320" r="5" fill="#62758b"/>
+</g>
+<rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>
+<text x="58" y="375" fill="#7c9aab" font-size="12">示意输入与状态 · 非真实采样</text>
+<g class="output phase-0">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">camera → /dev/video*</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">先确认设备节点与占用者</text>
+</g>
+<g class="output phase-1">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">photo.jpg（独占创建）</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">父目录必须已存在</text>
+</g>
+<g class="output phase-2">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">tesseract photo.jpg out</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">本机推理，数据不出设备</text>
+</g>
+<g class="output phase-3">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">对照原文核对识别结果</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">耗时与错误率以实测为准</text>
+</g>
+<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
+<rect x="40" y="496" width="1000" height="106" rx="12" fill="#101f2c"/>
+<text x="58" y="530" fill="#e6edf3" font-size="16">动手：拍一张清晰文字图片跑通识别并记录耗时；没有相机就用准备好的图片走后续步骤。</text>
+<text x="58" y="561" fill="#9da7b3" font-size="14">示意动画：摄像头权限、设备节点与模型参数是不同问题；耗时以本机实测为准。</text>
+<text x="58" y="585" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
+</svg>

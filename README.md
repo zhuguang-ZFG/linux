@@ -4,7 +4,7 @@
 
 **The Road to Linux Mastery —— 一套人人可学、边看边练的中文 Linux 系统教学工程**
 
-[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-42个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-26部-9cf)](resources/visual-lab.md) [![视频](https://img.shields.io/badge/视频选段-30条-red)](resources/videos.md) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
+[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-42个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-31部-9cf)](resources/visual-lab.md) [![视频](https://img.shields.io/badge/视频选段-30条-red)](resources/videos.md) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
 
 **[进入在线学习站 →](https://zhuguang-zfg.github.io/linux/)** · [站内视频课堂](https://zhuguang-zfg.github.io/linux/#videos) · [可控制的动画演示](https://zhuguang-zfg.github.io/linux/#animations)
 
@@ -22,7 +22,7 @@
 这是一套**完整的 Linux 中文教学工程**，遵循「通往 AGI 之路」的知识地图式编排：
 
 - 🗺️ **路线图驱动**：6 个阶段 42 个章节，从「什么是 Linux」到「树莓派边缘 AI」，增加硬件识别、Git 协作、AI 辅助运维与按钮数据记录
-- 🎬 **原理动画**：26 部原创 SVG 动画，新增 Git 分支、重定向、sed/awk、服务重启、信号、内存缓存、inode、DNS、LNMP、消抖与 PATH/grep；学习站支持暂停、单步、拖动和重播
+- 🎬 **原理动画**：31 部原创 SVG 动画，新增 Git 分支、重定向、sed/awk、服务重启、信号、内存缓存、inode、DNS、LNMP、消抖、PATH/grep、归档、Vim 模式、安装选型、边缘 OCR 与本地模型；学习站支持暂停、单步、拖动和重播
 - 📷 **实物图鉴**：18 张 Wikimedia Commons 图片，新增内存、SSD、网线、交换机、摄像头和电阻实拍，附完整[署名清单](assets/images/CREDITS.md)
 - 📺 **视频课堂**：15 个 B站分P选段 + 15 条 YouTube 视频，记录作者、时长和核验状态，学习站使用官方播放器并保留原站入口
 - 🧪 **边学边练**：每章自带「动手实验 + 自测清单」，配套 6 套练习题与答案、6 张速查表
@@ -145,7 +145,7 @@ flowchart LR
 | 📚 [书单与网站](resources/books-and-sites.md) | 5 本书与 10+ 学习网站，包含 TLDP、ArchWiki、explainshell |
 | 📝 [练习题与答案](exercises/) | 六个阶段各一套，选择+实操，答案可折叠 |
 | ⚡ [速查表](cheatsheets/) | 常用命令 / Vim / 三剑客 / systemd / 网络 / 树莓派 |
-| 🎬 [原创动画](resources/visual-lab.md) | 26 部 SVG 动画，学习站提供播放控制、文字步骤和实操入口 |
+| 🎬 [原创动画](resources/visual-lab.md) | 31 部 SVG 动画，学习站提供播放控制、文字步骤和实操入口 |
 | 🖼️ [实物图片](resources/hardware-gallery.md) | 18 张图片 + [授权署名](assets/images/CREDITS.md)，照片与示意分开标注 |
 | 🛠️ [配套源码与检查](scripts/README.md) | 备份、巡检、Docker、GPIO 与内容质量检查 |
 
