@@ -19,6 +19,10 @@
 
 ## 🧠 核心概念
 
+
+![systemd原理动画](../../assets/animations/systemd-restart.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=systemd-restart.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ### 6.1 init 进化史：一分钟
 
 开机后内核启动的第一个进程（PID 1）叫 **init**，它负责把系统的其余部分"带起来"，历代演进大致是：
@@ -261,9 +265,12 @@ journalctl -o verbose --no-pager \
 
 ## 📺 推荐视频
 
-[![Linux-老林《100集入门到精通》](http://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2)
+- [B站 · systemctl 管理服务](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58) — Linux-老林，P58，23分49秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [YouTube · systemd 服务管理](https://www.youtube.com/watch?v=Kzpm-rGAXos) — Learn Linux TV，47分40秒。观看对应主题后，回到本章用实际输入和输出验证。
 
-Linux-老林的系列课对 systemd 服务管理与日志检索有完整的中文实操演示，节奏适合初学者，可与本章的 service 文件编写对照观看。
+[![systemctl 管理服务 视频封面](https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F02-advanced%2F06-systemd%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%97%A5%E5%BF%97.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

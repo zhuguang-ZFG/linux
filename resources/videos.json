@@ -1,0 +1,802 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-06T15:23:02+00:00",
+  "notice": "核验标题、作者、分P和可获取的时长。页面/接口可读取不等于已完整播放；不下载或搬运视频。",
+  "videos": [
+    {
+      "id": "b-ssh",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 14,
+      "cid": 257394729,
+      "title": "SSH 远程登录",
+      "providerTitle": "014_韩顺平Linux_远程登录",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 930,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=14",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "网络",
+        "SSH"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-vim",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 16,
+      "cid": 257393867,
+      "title": "Vim 快速入门",
+      "providerTitle": "016_韩顺平Linux_vi vim快速入门",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 512,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=16",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "Vim",
+        "编辑"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-man",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 27,
+      "cid": 257396222,
+      "title": "帮助指令与手册",
+      "providerTitle": "027_韩顺平Linux_帮助指令",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 526,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=27",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "man",
+        "求助"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-archive",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 37,
+      "cid": 257397444,
+      "title": "压缩与解压",
+      "providerTitle": "037_韩顺平Linux_压缩和解压(1)",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 678,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=37",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "tar",
+        "压缩"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-permissions",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 44,
+      "cid": 259257818,
+      "title": "读懂 rwx 权限",
+      "providerTitle": "044_韩顺平Linux_rwx权限",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 946,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=44",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "权限",
+        "chmod"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-cron",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 53,
+      "cid": 259258752,
+      "title": "crond 时间规则",
+      "providerTitle": "053_韩顺平Linux_crond时间规则",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 305,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=53",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "cron",
+        "自动化"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-disk",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 60,
+      "cid": 259259256,
+      "title": "磁盘使用情况查询",
+      "providerTitle": "060_韩顺平Linux_磁盘情况查询",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 477,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=60",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "磁盘",
+        "df"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-process",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 69,
+      "cid": 261759177,
+      "title": "ps 进程观察",
+      "providerTitle": "069_韩顺平Linux_ps指令详解",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 621,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=69",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "进程",
+        "ps"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-bash",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 91,
+      "cid": 261761096,
+      "title": "Shell 编程入门",
+      "providerTitle": "091_韩顺平Linux_shell编程快速入门",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 701,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=91",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "Bash",
+        "脚本"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-apt",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 112,
+      "cid": 264330139,
+      "title": "APT 原理",
+      "providerTitle": "112_韩顺平Linux_APT原理机制图",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 585,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=112",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "apt",
+        "包管理"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-distros",
+      "platform": "bilibili",
+      "providerId": "BV1ZZ37zdEp2",
+      "page": 9,
+      "cid": 30843798779,
+      "title": "Linux 内核与发行版",
+      "providerTitle": "【Linux零基础-07】Linux内核及发行版",
+      "courseTitle": "【全100集】Linux操作系统从零基础入门到精通必学教程！通俗易懂，2025最新版，学完即可就业！Linux安装丨Linux云计算运维丨Linux学习路线图",
+      "author": "Linux-老林",
+      "duration": 1276,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=9",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg",
+      "tags": [
+        "发行版",
+        "内核"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-env",
+      "platform": "bilibili",
+      "providerId": "BV1ZZ37zdEp2",
+      "page": 15,
+      "cid": 30843863442,
+      "title": "Shell 环境变量",
+      "providerTitle": "【Linux零基础-13】Linux环境变量及登录信息提示",
+      "courseTitle": "【全100集】Linux操作系统从零基础入门到精通必学教程！通俗易懂，2025最新版，学完即可就业！Linux安装丨Linux云计算运维丨Linux学习路线图",
+      "author": "Linux-老林",
+      "duration": 2251,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg",
+      "tags": [
+        "环境变量",
+        "PATH"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-redirection",
+      "platform": "bilibili",
+      "providerId": "BV1ZZ37zdEp2",
+      "page": 30,
+      "cid": 30843930748,
+      "title": "输入输出重定向",
+      "providerTitle": "【Linux零基础-28】Linux输入&输出重定向",
+      "courseTitle": "【全100集】Linux操作系统从零基础入门到精通必学教程！通俗易懂，2025最新版，学完即可就业！Linux安装丨Linux云计算运维丨Linux学习路线图",
+      "author": "Linux-老林",
+      "duration": 1306,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=30",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg",
+      "tags": [
+        "管道",
+        "重定向"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-systemd",
+      "platform": "bilibili",
+      "providerId": "BV1ZZ37zdEp2",
+      "page": 58,
+      "cid": 30844129229,
+      "title": "systemctl 管理服务",
+      "providerTitle": "【Linux零基础-56】systemctl管理服务",
+      "courseTitle": "【全100集】Linux操作系统从零基础入门到精通必学教程！通俗易懂，2025最新版，学完即可就业！Linux安装丨Linux云计算运维丨Linux学习路线图",
+      "author": "Linux-老林",
+      "duration": 1429,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg",
+      "tags": [
+        "systemd",
+        "服务"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-grep",
+      "platform": "bilibili",
+      "providerId": "BV1w4411B7a4",
+      "page": 12,
+      "cid": 809249542,
+      "title": "find 与 grep",
+      "providerTitle": "2_6_find和grep命令",
+      "courseTitle": "【韦东山】韦东山手把手教你嵌入式Linux快速入门到精通 | Linux应用驱动开发基于I.MX6ULL Pro",
+      "author": "韦东山",
+      "duration": 441,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1w4411B7a4/?p=12",
+      "thumbnail": "https://i2.hdslb.com/bfs/archive/b2e859711cde6a85b2720841cf7c5d931b9a2614.jpg",
+      "tags": [
+        "grep",
+        "文件搜索"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1w4411B7a4",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-linux100",
+      "platform": "youtube",
+      "providerId": "rrB13utjYV4",
+      "title": "Linux 的第一印象",
+      "providerTitle": "Linux in 100 Seconds",
+      "author": "Fireship",
+      "duration": 161,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=rrB13utjYV4",
+      "thumbnail": "https://i.ytimg.com/vi/rrB13utjYV4/hqdefault.jpg",
+      "tags": [
+        "启蒙",
+        "概览"
+      ],
+      "kind": "概览介绍",
+      "start": 0,
+      "note": "概览视频不等于完整实操课。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DrrB13utjYV4&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-linux-things",
+      "platform": "youtube",
+      "providerId": "LKCVKw9CzFo",
+      "title": "Linux 知识全景",
+      "providerTitle": "100+ Linux Things you Need to Know",
+      "author": "Fireship",
+      "duration": 742,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=LKCVKw9CzFo",
+      "thumbnail": "https://i.ytimg.com/vi/LKCVKw9CzFo/hqdefault.jpg",
+      "tags": [
+        "概览",
+        "系统"
+      ],
+      "kind": "概览介绍",
+      "start": 0,
+      "note": "概览视频不等于完整实操课。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DLKCVKw9CzFo&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-linux-crash",
+      "platform": "youtube",
+      "providerId": "ROjZy1WbCIA",
+      "title": "Linux 入门课程",
+      "providerTitle": "Linux Operating System - Crash Course for Beginners",
+      "author": "freeCodeCamp.org",
+      "duration": 10075,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=ROjZy1WbCIA",
+      "thumbnail": "https://i.ytimg.com/vi/ROjZy1WbCIA/hqdefault.jpg",
+      "tags": [
+        "Linux",
+        "基础"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DROjZy1WbCIA&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-commands",
+      "platform": "youtube",
+      "providerId": "ZtqBQ68cfJc",
+      "title": "常用 Linux 命令",
+      "providerTitle": "The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners",
+      "author": "freeCodeCamp.org",
+      "duration": 18016,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=ZtqBQ68cfJc",
+      "thumbnail": "https://i.ytimg.com/vi/ZtqBQ68cfJc/hqdefault.jpg",
+      "tags": [
+        "命令行",
+        "基础"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZtqBQ68cfJc&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-linux-full",
+      "platform": "youtube",
+      "providerId": "v392lEyM29A",
+      "title": "Linux 系统课程",
+      "providerTitle": "Learn Linux - The Full Course",
+      "author": "Boot dev",
+      "duration": 9210,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=v392lEyM29A",
+      "thumbnail": "https://i.ytimg.com/vi/v392lEyM29A/hqdefault.jpg",
+      "tags": [
+        "Linux",
+        "系统"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dv392lEyM29A&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-pi-intro",
+      "platform": "youtube",
+      "providerId": "fCPM5072YPA",
+      "title": "树莓派课程介绍",
+      "providerTitle": "Course Introduction - Raspberry Pi Full Course For Beginners",
+      "author": "SSTec Tutorials",
+      "duration": 82,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=fCPM5072YPA",
+      "thumbnail": "https://i.ytimg.com/vi/fCPM5072YPA/hqdefault.jpg",
+      "tags": [
+        "树莓派",
+        "课程介绍"
+      ],
+      "kind": "概览介绍",
+      "start": 0,
+      "note": "概览视频不等于完整实操课。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfCPM5072YPA&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-pi-overview",
+      "platform": "youtube",
+      "providerId": "xiR14tSfc-U",
+      "title": "树莓派工作坊概览",
+      "providerTitle": "Raspberry Pi Workshop - Overview",
+      "author": "Core Electronics",
+      "duration": 38,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=xiR14tSfc-U",
+      "thumbnail": "https://i.ytimg.com/vi/xiR14tSfc-U/hqdefault.jpg",
+      "tags": [
+        "树莓派",
+        "课程介绍"
+      ],
+      "kind": "概览介绍",
+      "start": 0,
+      "note": "概览视频不等于完整实操课。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DxiR14tSfc-U&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-git",
+      "platform": "youtube",
+      "providerId": "RGOj5yH7evk",
+      "title": "Git 与 GitHub 入门",
+      "providerTitle": "Git and GitHub for Beginners - Crash Course",
+      "author": "freeCodeCamp.org",
+      "duration": 4110,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+      "thumbnail": "https://i.ytimg.com/vi/RGOj5yH7evk/hqdefault.jpg",
+      "tags": [
+        "Git",
+        "协作"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRGOj5yH7evk&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-docker",
+      "platform": "youtube",
+      "providerId": "fqMOX6JJhGo",
+      "title": "Docker 容器入门",
+      "providerTitle": "Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers",
+      "author": "freeCodeCamp.org",
+      "duration": 7818,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=fqMOX6JJhGo",
+      "thumbnail": "https://i.ytimg.com/vi/fqMOX6JJhGo/hqdefault.jpg",
+      "tags": [
+        "Docker",
+        "容器"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfqMOX6JJhGo&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-systemd",
+      "platform": "youtube",
+      "providerId": "Kzpm-rGAXos",
+      "title": "systemd 服务管理",
+      "providerTitle": "Systemd Explained: How to Manage Linux Services Easily",
+      "author": "Learn Linux TV",
+      "duration": 2860,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=Kzpm-rGAXos",
+      "thumbnail": "https://i.ytimg.com/vi/Kzpm-rGAXos/hqdefault.jpg",
+      "tags": [
+        "systemd",
+        "服务"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKzpm-rGAXos&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-ansible",
+      "platform": "youtube",
+      "providerId": "goclfp6a2IQ",
+      "title": "Ansible 101：入门",
+      "providerTitle": "Ansible 101 - Episode 1 - Introduction to Ansible",
+      "author": "Jeff Geerling",
+      "duration": 3822,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=goclfp6a2IQ",
+      "thumbnail": "https://i.ytimg.com/vi/goclfp6a2IQ/hqdefault.jpg",
+      "tags": [
+        "Ansible",
+        "自动化"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dgoclfp6a2IQ&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-gpio",
+      "platform": "youtube",
+      "providerId": "iL_oZGHLHvU",
+      "title": "GPIO 与 gpiozero",
+      "providerTitle": "Raspberry Pi GPIO - Getting Started with gpiozero",
+      "author": "DroneBot Workshop",
+      "duration": 2919,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=iL_oZGHLHvU",
+      "thumbnail": "https://i.ytimg.com/vi/iL_oZGHLHvU/hqdefault.jpg",
+      "tags": [
+        "树莓派",
+        "GPIO"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DiL_oZGHLHvU&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-local-ai",
+      "platform": "youtube",
+      "providerId": "RQFfK7xIL28",
+      "title": "Ollama 与 Open WebUI",
+      "providerTitle": "Self-Host a local AI platform! Ollama + Open WebUI",
+      "author": "Christian Lempa",
+      "duration": 2347,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=RQFfK7xIL28",
+      "thumbnail": "https://i.ytimg.com/vi/RQFfK7xIL28/hqdefault.jpg",
+      "tags": [
+        "本地AI",
+        "Docker"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRQFfK7xIL28&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-awk",
+      "platform": "youtube",
+      "providerId": "oPEnvuj9QrI",
+      "title": "awk 文本分析",
+      "providerTitle": "Linux Crash Course - awk",
+      "author": "Learn Linux TV",
+      "duration": 967,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=oPEnvuj9QrI",
+      "thumbnail": "https://i.ytimg.com/vi/oPEnvuj9QrI/hqdefault.jpg",
+      "tags": [
+        "awk",
+        "文本处理"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoPEnvuj9QrI&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-sed",
+      "platform": "youtube",
+      "providerId": "nXLnx8ncZyE",
+      "title": "sed 流编辑器",
+      "providerTitle": "Linux Crash Course - The sed Command",
+      "author": "Learn Linux TV",
+      "duration": 925,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=nXLnx8ncZyE",
+      "thumbnail": "https://i.ytimg.com/vi/nXLnx8ncZyE/hqdefault.jpg",
+      "tags": [
+        "sed",
+        "文本处理"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnXLnx8ncZyE&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    }
+  ]
+}

@@ -19,6 +19,10 @@ grep 管筛选，sed 管修改，到了 awk（以三位发明人 Aho、Weinberge
 
 ## 🧠 核心概念
 
+
+![awk原理动画](../../assets/animations/awk-aggregation.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=awk-aggregation.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ### 4.1 语法骨架：模式{动作}
 
 ```bash
@@ -273,7 +277,11 @@ awk 'NR==1{max=$2; mp=$1}
 
 ## 📺 推荐视频
 
-> 本章暂未收录专属视频。awk 是三剑客中最"编程"的一位，建议先跑通本章三个实战，再阅读下方延伸阅读中的 gawk 官方手册前两章，配合第 5 章的 Bash 变量知识对照理解。
+- [YouTube · awk 文本分析](https://www.youtube.com/watch?v=oPEnvuj9QrI) — Learn Linux TV，16分7秒。观看对应主题后，回到本章用实际输入和输出验证。
+
+[![awk 文本分析 视频封面](https://i.ytimg.com/vi/oPEnvuj9QrI/hqdefault.jpg)](https://www.youtube.com/watch?v=oPEnvuj9QrI)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F02-advanced%2F04-awk%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

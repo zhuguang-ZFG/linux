@@ -42,5 +42,7 @@ PR 描述里请说明：改了什么、为什么改、如何在本地验证。
 - 修改 SVG 后运行 `pwsh -File scripts/check-svg.ps1`；只通过字符串搜索不足以证明 XML 合法。
 - 修改容器示例后运行 `bash scripts/check-docker.sh`，验证真实 HTTP 正文。
 - 新章节遵循模板，并写明环境前提、预期输出、验收和清理方式。没有实际执行的步骤不能标为“验证通过”。
+- 更新媒体后运行 `node scripts/check-media.mjs` 和 `node scripts/sync-media.mjs --check`；标题/作者等元数据核验不能标为完整视频实播通过。
+- 站点变更需 `pnpm run build` 和 `pnpm run test:site` 通过，详见 [学习站开发说明](web/README.md)。
 
 > ⚖️ 提交即表示同意你的贡献以 Apache 2.0 许可证随本仓库发布。

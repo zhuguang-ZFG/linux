@@ -254,9 +254,11 @@ p                      # 粘贴到下一行
 
 ## 📺 推荐视频
 
-B 站韩顺平《一周学会 Linux》是经典的中文入门课，本讲对应的 Vim 与文本查看部分讲得细：
+- [B站 · Vim 快速入门](https://www.bilibili.com/video/BV1Sv411r7vd/?p=16) — 韩顺平，P16，8分32秒。观看对应主题后，回到本章用实际输入和输出验证。
 
-[![韩顺平 一周学会Linux](http://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd)
+[![Vim 快速入门 视频封面](https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd/?p=16)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F01-basics%2F02-%E6%9F%A5%E7%9C%8B%E4%B8%8E%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-Vim.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

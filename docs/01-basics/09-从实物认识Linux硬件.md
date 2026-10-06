@@ -91,7 +91,11 @@ ip -br link
 
 ## 📺 推荐视频
 
-先看 [实物图鉴](../../resources/hardware-gallery.md)，再从 [视频库](../../resources/videos.md) 选择对应硬件基础片段。
+- [YouTube · Linux 知识全景](https://www.youtube.com/watch?v=LKCVKw9CzFo) — Fireship，12分22秒。知识全景补充，实物识别与机器记录仍需按正文完成。
+
+[![Linux 知识全景 视频封面](https://i.ytimg.com/vi/LKCVKw9CzFo/hqdefault.jpg)](https://www.youtube.com/watch?v=LKCVKw9CzFo)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F01-basics%2F09-%E4%BB%8E%E5%AE%9E%E7%89%A9%E8%AE%A4%E8%AF%86Linux%E7%A1%AC%E4%BB%B6.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

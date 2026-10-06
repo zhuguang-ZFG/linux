@@ -233,13 +233,11 @@ Swap:          2.0Gi          0B       2.0Gi
 
 ## 📺 推荐视频
 
-**freeCodeCamp《Linux Operating System - Crash Course for Beginners》**：约 5 小时
-的系统入门课。本章先看开头十几分钟感受氛围即可，等第 4 章装好系统后再回来跟练，
-效果最好。
+- [YouTube · Linux 的第一印象](https://www.youtube.com/watch?v=rrB13utjYV4) — Fireship，2分41秒。观看对应主题后，回到本章用实际输入和输出验证。
 
-[![Linux Operating System - Crash Course for Beginners](https://img.youtube.com/vi/ROjZy1WbCIA/hqdefault.jpg)](https://www.youtube.com/watch?v=ROjZy1WbCIA)
+[![Linux 的第一印象 视频封面](https://i.ytimg.com/vi/rrB13utjYV4/hqdefault.jpg)](https://www.youtube.com/watch?v=rrB13utjYV4)
 
----
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F00-onboarding%2F01-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E4%BA%BA%E9%83%BD%E8%A6%81%E5%AD%A6Linux.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

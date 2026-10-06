@@ -51,9 +51,13 @@ bash scripts/check-docker.sh
 
 ## 素材维护
 
-- `python3 -B scripts/build-animations.py` 重新生成新增的六个 SVG；[动画目录](../assets/animations/catalog.json) 记录全部动画与对应章节。
+- `python3 -B scripts/build-animations.py` 重新生成 18 个 SVG；另有 6 个原始动画。[动画目录](../assets/animations/catalog.json) 记录全部 24 个动画与对应章节、时长和步骤。
 - `scripts/fetch-course-photos.py` 是本次六张照片的来源记录与下载脚本，额外需要 Pillow。它拒绝覆盖已有图片，日常检查和 CI 不运行下载、不需要联网或 Pillow。
 - `scripts/media.test.py` 使用标准库核对新照片的文件摘要和署名、动画 XML 与生成源码，并测试按钮采集的模拟模式；模拟通过不代表 GPIO 真机已通过。
+
+## 学习站与视频映射
+
+见 [站点开发说明](../web/README.md)。核心检查：`node scripts/check-media.mjs`、`node scripts/sync-media.mjs --check`、`pnpm run build`、`pnpm run test:site`。视频数据在 [videos.json](../resources/videos.json)，推荐关系在 [chapter-media.json](../resources/chapter-media.json)。
 
 备份脚本面向 Bash + GNU 工具，不直接支持 macOS 的 BSD find/sort。它使用专用目标目录，清理该目录直属的 `backup_*.tar.gz` 文件。强制终止后如有旧锁，确认没有写入者再处理；数据库应先按应用要求导出一致性备份，不能只打包正在写入的数据目录。
 

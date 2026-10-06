@@ -5,10 +5,11 @@
 text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 .code{font-family:Consolas,monospace}
 .focus{opacity:0}
-@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,99.9%{opacity:1}100%,100%{opacity:0}}.phase-3{animation:step3 12s linear 3}
-@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,95%{transform:translateX(780px)}100%{transform:translateX(0)}}
+.output{opacity:0}.output.phase-0{opacity:1}
+@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,100%{opacity:1}}.phase-3{animation:step3 12s linear 3}
+@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,100%{transform:translateX(780px)}}
 .token{animation:travel 12s ease-in-out 3}
-@media (prefers-reduced-motion:reduce){.focus,.token{animation:none}.token{display:none}}
+@media (prefers-reduced-motion:reduce){.focus,.token,.output{animation:none}.token{display:none}}
 </style>
 <rect width="1080" height="500" rx="22" fill="#0d1117"/>
 <text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
@@ -56,5 +57,5 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <rect x="40" y="356" width="1000" height="106" rx="12" fill="#101f2c"/>
 <text x="58" y="390" fill="#e6edf3" font-size="16">动手：让 AI 解释一条报错，再用官方手册和测试环境验证它的建议。</text>
 <text x="58" y="421" fill="#9da7b3" font-size="14">动画只展示学习流程，不连接任何模型，不会执行命令或上传日志。</text>
-<text x="58" y="445" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 重载图片可重播</text>
+<text x="58" y="445" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
 </svg>

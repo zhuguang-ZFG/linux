@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="640" viewBox="0 0 1080 640" role="img" aria-labelledby="title desc">
+<title id="title">按钮消抖：一次按下为何有多次变化</title>
+<desc id="desc">机械触点会抖动，采样与过滤影响最终记录。四步示意，每 12 秒一轮，播放三轮后停止。波形是原理示意；实际消抖由库与后端实现，不能当成实测时序。</desc>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+.code{font-family:Consolas,monospace}
+.focus{opacity:0}
+.output{opacity:0}.output.phase-0{opacity:1}
+@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,100%{opacity:1}}.phase-3{animation:step3 12s linear 3}
+@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,100%{transform:translateX(780px)}}
+.token{animation:travel 12s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){.focus,.token,.output{animation:none}.token{display:none}}
+</style>
+<rect width="1080" height="640" rx="22" fill="#0d1117"/>
+<text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
+<text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">按钮消抖：一次按下为何有多次变化</text>
+<text x="40" y="120" fill="#9da7b3" font-size="16">机械触点会抖动，采样与过滤影响最终记录</text>
+<path d="M148 320 H928" fill="none" stroke="#303d4d" stroke-width="3"/>
+
+<g>
+<rect x="40" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-0" x="40" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 按钮松开</text>
+<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">pull_up=True</text>
+<text x="56" y="252" fill="#c9d1d9" font-size="14">上拉给输入稳定默认状态</text>
+<text x="56" y="276" fill="#9da7b3" font-size="14">按下时接到 GND</text>
+<circle cx="148" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="300" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-1" x="300" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="316" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">02 触点抖动</text>
+<text class="code" x="316" y="221" fill="#79c0ff" font-size="13">0 → 1 → 0 → 1</text>
+<text x="316" y="252" fill="#c9d1d9" font-size="14">短时间出现多次边沿</text>
+<text x="316" y="276" fill="#9da7b3" font-size="14">不能每个边沿都当新点击</text>
+<circle cx="408" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="560" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-2" x="560" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 过滤抖动</text>
+<text class="code" x="576" y="221" fill="#79c0ff" font-size="13">bounce_time</text>
+<text x="576" y="252" fill="#c9d1d9" font-size="14">按配置抑制短暂变化</text>
+<text x="576" y="276" fill="#9da7b3" font-size="14">过滤窗口不是越大越好</text>
+<circle cx="668" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="820" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 记录状态</text>
+<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">pressed / released</text>
+<text x="836" y="252" fill="#c9d1d9" font-size="14">状态变化时写 CSV</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">高频脉冲可能被漏采</text>
+<circle cx="928" cy="320" r="5" fill="#62758b"/>
+</g>
+<rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>
+<text x="58" y="375" fill="#7c9aab" font-size="12">示意输入与状态 · 非真实采样</text>
+<g class="output phase-0">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">GPIO27：默认 released</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">接线前断电，信号不接 5V</text>
+</g>
+<g class="output phase-1">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">触点瞬间：抖动、反复通断</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">一段机械动作 ≠ 多次独立点击</text>
+</g>
+<g class="output phase-2">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">设置合适的消抖窗口</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">过大可能忽略快速操作</text>
+</g>
+<g class="output phase-3">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">elapsed_s,state,source</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">0.500,pressed,gpio27（示意）</text>
+</g>
+<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
+<rect x="40" y="496" width="1000" height="106" rx="12" fill="#101f2c"/>
+<text x="58" y="530" fill="#e6edf3" font-size="16">动手：分别慢按、快按、长按，比较 CSV 行数并解释差异。</text>
+<text x="58" y="561" fill="#9da7b3" font-size="14">波形是原理示意；实际消抖由库与后端实现，不能当成实测时序。</text>
+<text x="58" y="585" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
+</svg>

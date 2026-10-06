@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从第一条命令到本地 AI：可阅读、可观看、可动手验证的中文 Linux 学习站。">
+  <meta name="theme-color" content="#087f8c">
+  <title>通往 Linux 之路 · 边看边练</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23087f8c'/%3E%3Cpath d='m10 13 7 7-7 7m11 0h9' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到内容</a>
+  <header class="topbar">
+    <button class="menu-button icon-button" id="menu-toggle" aria-label="展开目录" aria-expanded="false">☰</button>
+    <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">›_</span><span>通往 Linux 之路<small>LEARN · WATCH · BUILD</small></span></a>
+    <div class="search-wrap">
+      <label class="sr-only" for="search">搜索章节、动画或视频</label>
+      <input id="search" type="search" placeholder="搜索命令、章节或视频…" autocomplete="off" aria-controls="search-results">
+      <kbd>/</kbd><div id="search-results" class="search-results" hidden></div>
+    </div>
+    <a class="github-link" href="https://github.com/zhuguang-ZFG/linux" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="学习导航"><p class="loading">正在加载目录…</p></aside>
+    <button class="sidebar-scrim" id="menu-scrim" aria-label="关闭目录" hidden></button>
+    <main id="main" tabindex="-1"><div class="initial-loading"><span class="brand-mark">›_</span><p>正在准备你的 Linux 学习地图…</p></div></main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p>学习站需要 JavaScript。也可以直接阅读 <a href="https://github.com/zhuguang-ZFG/linux">GitHub 上的完整 Markdown 教程</a>。</p></noscript>
+  <script type="module" src="./static/app.js"></script>
+</body>
+</html>

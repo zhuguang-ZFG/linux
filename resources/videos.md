@@ -1,76 +1,57 @@
-# 📺 视频资源库
+# 视频课堂与核验记录
 
-> 全部链接经过人工核验（2026-10），点击封面直达。视频版权归各创作者所有。
-> 国内朋友优先看 B站，海外朋友可看 YouTube，内容互补。
+共 **30 条视频或课程选段**，B站分P分别计为选段，不把同一套课程包装成多套课程。核验日期：2026-10-06。
 
-## 🏆 中文系统课（B站）
+[打开可嵌入播放的学习站](https://zhuguang-zfg.github.io/linux/#videos) · [按章节查看配套关系](chapter-media.json)
 
-### 韩顺平 · 一周学会 Linux（153 集 · 500 万+播放）
+本页核对原站标题、作者、分P/CID及可获取的时长。**元数据可读不等于已完整观看或在所有地区可播放**；每条实播状态保存在 [videos.json](videos.json)。GitHub Markdown 使用跳转链接，学习站使用官方外链播放器并保留原站入口。
 
-零基础友好的经典全流程课程：系统知识、环境部署、Shell 脚本、集群实战。
+## B站 · 中文选段
 
-[![韩顺平 一周学会Linux](http://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd)
+| 主题 | 作者 | 分P / 类型 | 时长 | 原站 |
+|---|---|---|---|---|
+| SSH 远程登录 | 韩顺平 | P14 | 15:30 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=14) |
+| Vim 快速入门 | 韩顺平 | P16 | 8:32 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=16) |
+| 帮助指令与手册 | 韩顺平 | P27 | 8:46 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=27) |
+| 压缩与解压 | 韩顺平 | P37 | 11:18 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=37) |
+| 读懂 rwx 权限 | 韩顺平 | P44 | 15:46 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=44) |
+| crond 时间规则 | 韩顺平 | P53 | 5:05 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=53) |
+| 磁盘使用情况查询 | 韩顺平 | P60 | 7:57 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=60) |
+| ps 进程观察 | 韩顺平 | P69 | 10:21 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=69) |
+| Shell 编程入门 | 韩顺平 | P91 | 11:41 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=91) |
+| APT 原理 | 韩顺平 | P112 | 9:45 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=112) |
+| Linux 内核与发行版 | Linux-老林 | P9 | 21:16 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=9) |
+| Shell 环境变量 | Linux-老林 | P15 | 37:31 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15) |
+| 输入输出重定向 | Linux-老林 | P30 | 21:46 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=30) |
+| systemctl 管理服务 | Linux-老林 | P58 | 23:49 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58) |
+| find 与 grep | 韦东山 | P12 | 7:21 | [观看](https://www.bilibili.com/video/BV1w4411B7a4/?p=12) |
 
-### Linux-老林 · Linux 操作系统 100 集入门到精通（2025 新版）
+## YouTube · 专题与概览
 
-按就业导向编排，含云计算运维讲解与学习路线图。
+| 主题 | 作者 | 分P / 类型 | 时长 | 原站 |
+|---|---|---|---|---|
+| Linux 的第一印象 | Fireship | 概览介绍 | 2:41 | [观看](https://www.youtube.com/watch?v=rrB13utjYV4) |
+| Linux 知识全景 | Fireship | 概览介绍 | 12:22 | [观看](https://www.youtube.com/watch?v=LKCVKw9CzFo) |
+| Linux 入门课程 | freeCodeCamp.org | 专题课程 | 167:55 | [观看](https://www.youtube.com/watch?v=ROjZy1WbCIA) |
+| 常用 Linux 命令 | freeCodeCamp.org | 专题课程 | 300:16 | [观看](https://www.youtube.com/watch?v=ZtqBQ68cfJc) |
+| Linux 系统课程 | Boot dev | 专题课程 | 153:30 | [观看](https://www.youtube.com/watch?v=v392lEyM29A) |
+| 树莓派课程介绍 | SSTec Tutorials | 概览介绍 | 1:22 | [观看](https://www.youtube.com/watch?v=fCPM5072YPA) |
+| 树莓派工作坊概览 | Core Electronics | 概览介绍 | 0:38 | [观看](https://www.youtube.com/watch?v=xiR14tSfc-U) |
+| Git 与 GitHub 入门 | freeCodeCamp.org | 专题课程 | 68:30 | [观看](https://www.youtube.com/watch?v=RGOj5yH7evk) |
+| Docker 容器入门 | freeCodeCamp.org | 专题课程 | 130:18 | [观看](https://www.youtube.com/watch?v=fqMOX6JJhGo) |
+| systemd 服务管理 | Learn Linux TV | 专题课程 | 47:40 | [观看](https://www.youtube.com/watch?v=Kzpm-rGAXos) |
+| Ansible 101：入门 | Jeff Geerling | 专题课程 | 63:42 | [观看](https://www.youtube.com/watch?v=goclfp6a2IQ) |
+| GPIO 与 gpiozero | DroneBot Workshop | 专题课程 | 48:39 | [观看](https://www.youtube.com/watch?v=iL_oZGHLHvU) |
+| Ollama 与 Open WebUI | Christian Lempa | 专题课程 | 39:07 | [观看](https://www.youtube.com/watch?v=RQFfK7xIL28) |
+| awk 文本分析 | Learn Linux TV | 专题课程 | 16:07 | [观看](https://www.youtube.com/watch?v=oPEnvuj9QrI) |
+| sed 流编辑器 | Learn Linux TV | 专题课程 | 15:25 | [观看](https://www.youtube.com/watch?v=nXLnx8ncZyE) |
 
-[![Linux操作系统100集入门到精通](http://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2)
+## 怎么看才有效
 
-### 韦东山 · 嵌入式 Linux 快速入门到精通
+1. 先确认本章使用的发行版、硬件和工具版本。旧课里的 CentOS、GPIO 库或安装步骤不能直接套用。
+2. 优先看指定分P。没有可靠时间戳的长视频不编造跳转时间，按原站目录定位。
+3. 视频结束后完成本章实验，保存自己的输出；模型建议、视频画面与实测结果分开记录。
+4. 两条树莓派 overview/introduction 已明确标为概览，不再称作完整课程。
+5. 若嵌入被作者、平台、登录或网络条件限制，使用原站链接。本站不下载、搬运或去除视频水印。
 
-想走嵌入式方向（驱动、ARM 开发板）的进阶之选。
-
-[![韦东山 嵌入式Linux](http://i2.hdslb.com/bfs/archive/b2e859711cde6a85b2720841cf7c5d931b9a2614.jpg)](https://www.bilibili.com/video/BV1w4411B7a4)
-
-## 🌍 英文经典（YouTube）
-
-### Fireship · Linux in 100 Seconds
-
-100 秒建立对 Linux 的第一印象，适合转发给「不知道你在学什么」的朋友。
-
-[![Linux in 100 Seconds](https://img.youtube.com/vi/rrB13utjYV4/hqdefault.jpg)](https://www.youtube.com/watch?v=rrB13utjYV4)
-
-### Fireship · 100+ Linux Things you Need to Know
-
-快节奏扫盲，检验你知识盲区的绝佳素材。
-
-[![100+ Linux Things you Need to Know](https://img.youtube.com/vi/LKCVKw9CzFo/hqdefault.jpg)](https://www.youtube.com/watch?v=LKCVKw9CzFo)
-
-### freeCodeCamp · Linux Operating System - Crash Course for Beginners
-
-Colt Steele 主讲的操作系统入门崩溃课。
-
-[![Linux Operating System - Crash Course](https://img.youtube.com/vi/ROjZy1WbCIA/hqdefault.jpg)](https://www.youtube.com/watch?v=ROjZy1WbCIA)
-
-### freeCodeCamp · The 50 Most Popular Linux & Terminal Commands
-
-50 个最常用命令全撸一遍，配合本教程阶段 1 食用最佳。
-
-[![The 50 Most Popular Linux & Terminal Commands](https://img.youtube.com/vi/ZtqBQ68cfJc/hqdefault.jpg)](https://www.youtube.com/watch?v=ZtqBQ68cfJc)
-
-### Boot.dev · Learn Linux - The Full Course
-
-结构清晰的完整 Linux 课程，适合英文学习者系统过一遍。
-
-[![Learn Linux - The Full Course](https://img.youtube.com/vi/v392lEyM29A/hqdefault.jpg)](https://www.youtube.com/watch?v=v392lEyM29A)
-
-## 🍓 树莓派专题
-
-### SSTec Tutorials · Raspberry Pi Full Course For Beginners
-
-从开箱到项目的树莓派全课程。
-
-[![Raspberry Pi Full Course](https://img.youtube.com/vi/fCPM5072YPA/hqdefault.jpg)](https://www.youtube.com/watch?v=fCPM5072YPA)
-
-### Core Electronics · Raspberry Pi Workshop
-
-工作坊式教学，动手节奏好。
-
-[![Raspberry Pi Workshop](https://img.youtube.com/vi/xiR14tSfc-U/hqdefault.jpg)](https://www.youtube.com/watch?v=xiR14tSfc-U)
-
-## 📌 使用建议
-
-- **先文字后视频**：文字可检索、可跳读，视频适合补直觉
-- **1.5 倍速**看录播，卡住的地方回放
-- 看完任何视频，回到对应章节做「动手实验」再走
+播放器依据：[B站官方站外播放器](https://player.bilibili.com/) · [YouTube 官方嵌入参数](https://developers.google.com/youtube/player_parameters)。视频版权归各创作者所有。

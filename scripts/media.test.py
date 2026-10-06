@@ -36,6 +36,15 @@ class MediaTests(unittest.TestCase):
                 actual = (ROOT / "assets" / "animations" / f"{scene[0]}.svg").read_text(encoding="utf-8")
                 self.assertEqual(actual, module.render(*scene))
                 self.assertIn("prefers-reduced-motion:reduce", actual)
+                tree = ET.fromstring(actual)
+                outputs = [item for item in tree.iter() if "output" in item.attrib.get("class", "").split()]
+                if len(scene) > 6:
+                    self.assertEqual(len(outputs), 4)
+                    for output, lines in zip(outputs, scene[6]):
+                        actual_lines = [item.text for item in output if item.tag.endswith("}text")]
+                        self.assertEqual(actual_lines, lines)
+                else:
+                    self.assertEqual(outputs, [])
 
     def test_new_photo_bytes_and_attribution_match_manifest(self):
         folder = ROOT / "assets" / "images"

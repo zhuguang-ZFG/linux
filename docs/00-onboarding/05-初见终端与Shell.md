@@ -285,14 +285,11 @@ exit               # 会话结束
 
 ## 📺 推荐视频
 
-本章暂无专属视频，推荐两个「复习位」：
+- [YouTube · 常用 Linux 命令](https://www.youtube.com/watch?v=ZtqBQ68cfJc) — freeCodeCamp.org，300分16秒。观看对应主题后，回到本章用实际输入和输出验证。
 
-1. 第 1 章 freeCodeCamp 入门课的终端基础部分，讲法与本章互补：
-   [01-为什么人人都要学Linux.md](01-为什么人人都要学Linux.md)；
-2. 第 4 章韩顺平课程的前几集正好演示终端与常用命令，装好系统后边看边敲：
-   [04-安装你的第一个Linux.md](04-安装你的第一个Linux.md)。
+[![常用 Linux 命令 视频封面](https://i.ytimg.com/vi/ZtqBQ68cfJc/hqdefault.jpg)](https://www.youtube.com/watch?v=ZtqBQ68cfJc)
 
----
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F00-onboarding%2F05-%E5%88%9D%E8%A7%81%E7%BB%88%E7%AB%AF%E4%B8%8EShell.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

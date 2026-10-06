@@ -10,7 +10,7 @@ const fail = message => errors.push(message);
 const read = name => readFileSync(path.join(root, name), 'utf8');
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
-    if (['.git', 'node_modules', '__pycache__', '.venv'].includes(entry.name)) return [];
+    if (['.git', 'node_modules', '__pycache__', '.venv', '_site', '.cache', 'test-results', 'playwright-report'].includes(entry.name)) return [];
     const full = path.join(dir, entry.name);
     return entry.isDirectory() ? walk(full) : [full];
   });
@@ -62,6 +62,8 @@ const animations = readdirSync(path.join(root, 'assets/animations')).filter(name
 const photos = readdirSync(path.join(root, 'assets/images')).filter(name => /\.(jpg|jpeg|png|webp)$/i.test(name));
 if (Number(/精美动画-(\d+)部/.exec(readme)?.[1]) !== animations.length) fail('README: animation badge count differs from files');
 if (Number(/\*\*实物图鉴\*\*：(\d+) 张/.exec(readme)?.[1]) !== photos.length) fail('README: photo count differs from files');
+const videoCount = JSON.parse(read('resources/videos.json')).videos.length;
+if (Number(/视频选段-(\d+)条/.exec(readme)?.[1]) !== videoCount) fail('README: video count differs from metadata');
 for (const [dir, expected] of [['exercises', 6], ['cheatsheets', 6]]) {
   const count = readdirSync(path.join(root, dir)).filter(name => name.endsWith('.md') && name !== 'README.md').length;
   if (count !== expected) fail(`${dir}: expected ${expected}, got ${count}`);

@@ -19,6 +19,10 @@ grep 只能"挑选"行，而 **sed**（Stream Editor，流编辑器）能"修改
 
 ## 🧠 核心概念
 
+
+![sed原理动画](../../assets/animations/sed-replace.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=sed-replace.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ### 3.1 流编辑器的工作方式
 
 sed 不像 vim 那样把整个文件读进内存打开编辑，而是像流水线工人：**每次从输入拿一行，加工完就输出，然后拿下一行**。这个"加工台"就叫**模式空间**（Pattern Space）。
@@ -253,7 +257,11 @@ sed '=' fruits.txt | sed -e 'N' -e 's/\n/\. /'
 
 ## 📺 推荐视频
 
-> 本章暂未收录专属视频。sed 与 grep、awk 并称文本三剑客，[第 4 章 awk 文本分析](04-awk文本分析.md) 之后的整体复习阶段，可回看第 2 章推荐的完整课程对照练习。
+- [YouTube · sed 流编辑器](https://www.youtube.com/watch?v=nXLnx8ncZyE) — Learn Linux TV，15分25秒。观看对应主题后，回到本章用实际输入和输出验证。
+
+[![sed 流编辑器 视频封面](https://i.ytimg.com/vi/nXLnx8ncZyE/hqdefault.jpg)](https://www.youtube.com/watch?v=nXLnx8ncZyE)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F02-advanced%2F03-sed%E6%B5%81%E7%BC%96%E8%BE%91%E5%99%A8.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

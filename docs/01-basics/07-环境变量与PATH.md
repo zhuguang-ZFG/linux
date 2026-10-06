@@ -244,7 +244,11 @@ source ~/.bashrc                         # 永久生效
 
 ## 📺 推荐视频
 
-> 本模块未为本章指定嵌入视频。建议在 B 站或 YouTube 搜索关键词「Linux 环境变量 PATH bashrc 教程」观看演示；第 1 章的 freeCodeCamp 命令速成课（[01-文件与目录操作](01-文件与目录操作.md)）中也有 env 与 alias 的跟练片段。
+- [B站 · Shell 环境变量](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15) — Linux-老林，P15，37分31秒。观看对应主题后，回到本章用实际输入和输出验证。
+
+[![Shell 环境变量 视频封面](https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F01-basics%2F07-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8EPATH.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

@@ -14,6 +14,11 @@ desktop.ini
 *.log
 *.tmp
 __pycache__/
+node_modules/
+_site/
+.cache/
+test-results/
+playwright-report/
 .env
 .env.*
 !.env.example

@@ -236,10 +236,11 @@ A：可以。Ollama 会按请求自动加载与卸载；内存吃紧时会频繁
 
 ## 📺 推荐视频
 
-本章实操性强、工具迭代快，建议以官方文档为准动手：
+- [YouTube · Ollama 与 Open WebUI](https://www.youtube.com/watch?v=RQFfK7xIL28) — Christian Lempa，39分7秒。观看对应主题后，回到本章用实际输入和输出验证。
 
-- Shell 编程基础回看：[项目 2 · 推荐视频](项目2-服务器巡检脚本.md)；
-- Linux 服务与部署基础回看：[项目 1 · 推荐视频](项目1-LNMP网站服务器.md)。
+[![Ollama 与 Open WebUI 视频封面](https://i.ytimg.com/vi/RQFfK7xIL28/hqdefault.jpg)](https://www.youtube.com/watch?v=RQFfK7xIL28)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F04-projects%2F%E9%A1%B9%E7%9B%AE4-Linux%E8%B7%91%E6%9C%AC%E5%9C%B0AI.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 验收清单
 

@@ -88,7 +88,11 @@ with LED(17) as led, Button(27, pull_up=True, bounce_time=0.05) as button:
 
 ## 📺 推荐视频
 
-[树莓派专题](../../resources/videos.md) 的 GPIO 演示可辅助识别接线，编号以本板型号为准。
+- [YouTube · GPIO 与 gpiozero](https://www.youtube.com/watch?v=iL_oZGHLHvU) — DroneBot Workshop，48分39秒。观看对应主题后，回到本章用实际输入和输出验证。
+
+[![GPIO 与 gpiozero 视频封面](https://i.ytimg.com/vi/iL_oZGHLHvU/hqdefault.jpg)](https://www.youtube.com/watch?v=iL_oZGHLHvU)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F05-raspberry-pi%2F04-GPIO%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

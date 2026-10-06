@@ -1,0 +1,458 @@
+{
+  "docs/00-onboarding/01-为什么人人都要学Linux.md": {
+    "videos": [
+      {
+        "id": "y-linux100",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "packet-journey.svg"
+    ]
+  },
+  "docs/00-onboarding/02-Linux的前世今生.md": {
+    "videos": [
+      {
+        "id": "y-linux100",
+        "note": "先建立内核与发行版的背景，不代替本章历史阅读。"
+      },
+      {
+        "id": "b-distros",
+        "note": "先建立内核与发行版的背景，不代替本章历史阅读。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/00-onboarding/03-发行版全景图.md": {
+    "videos": [
+      {
+        "id": "b-distros",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/00-onboarding/04-安装你的第一个Linux.md": {
+    "videos": [
+      {
+        "id": "y-linux-crash",
+        "note": "基础操作预习；安装步骤与版本以本章为准。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/00-onboarding/05-初见终端与Shell.md": {
+    "videos": [
+      {
+        "id": "y-commands",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "terminal-typing.svg"
+    ]
+  },
+  "docs/01-basics/01-文件与目录操作.md": {
+    "videos": [
+      {
+        "id": "y-commands",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/01-basics/02-查看与编辑文件-Vim.md": {
+    "videos": [
+      {
+        "id": "b-vim",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/01-basics/03-用户与权限.md": {
+    "videos": [
+      {
+        "id": "b-permissions",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "permission-bits.svg"
+    ]
+  },
+  "docs/01-basics/04-压缩与归档.md": {
+    "videos": [
+      {
+        "id": "b-archive",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/01-basics/05-软件包管理.md": {
+    "videos": [
+      {
+        "id": "b-apt",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/01-basics/06-进程管理.md": {
+    "videos": [
+      {
+        "id": "b-process",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "process-lifecycle.svg",
+      "process-signals.svg"
+    ]
+  },
+  "docs/01-basics/07-环境变量与PATH.md": {
+    "videos": [
+      {
+        "id": "b-env",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/01-basics/08-高效求助-man与tldr.md": {
+    "videos": [
+      {
+        "id": "b-man",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/01-basics/09-从实物认识Linux硬件.md": {
+    "videos": [
+      {
+        "id": "y-linux-things",
+        "note": "知识全景补充，实物识别与机器记录仍需按正文完成。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/02-advanced/01-管道与重定向.md": {
+    "videos": [
+      {
+        "id": "b-redirection",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "shell-pipeline.svg",
+      "stdout-stderr.svg",
+      "boot-sequence.svg",
+      "terminal-typing.svg"
+    ]
+  },
+  "docs/02-advanced/02-grep文本搜索.md": {
+    "videos": [
+      {
+        "id": "b-grep",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/02-advanced/03-sed流编辑器.md": {
+    "videos": [
+      {
+        "id": "y-sed",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "sed-replace.svg"
+    ]
+  },
+  "docs/02-advanced/04-awk文本分析.md": {
+    "videos": [
+      {
+        "id": "y-awk",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "awk-aggregation.svg"
+    ]
+  },
+  "docs/02-advanced/05-Bash脚本编程.md": {
+    "videos": [
+      {
+        "id": "b-bash",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "backup-transaction.svg"
+    ]
+  },
+  "docs/02-advanced/06-systemd服务与日志.md": {
+    "videos": [
+      {
+        "id": "b-systemd",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      },
+      {
+        "id": "y-systemd",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "systemd-restart.svg",
+      "boot-sequence.svg",
+      "process-lifecycle.svg"
+    ]
+  },
+  "docs/02-advanced/07-磁盘与文件系统.md": {
+    "videos": [
+      {
+        "id": "b-disk",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "filesystem-mount.svg",
+      "inode-links.svg"
+    ]
+  },
+  "docs/02-advanced/08-网络基础与远程连接.md": {
+    "videos": [
+      {
+        "id": "b-ssh",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "packet-journey.svg",
+      "ssh-handshake.svg",
+      "dns-lookup.svg"
+    ]
+  },
+  "docs/02-advanced/09-Git与学习笔记协作.md": {
+    "videos": [
+      {
+        "id": "y-git",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "git-branches.svg"
+    ]
+  },
+  "docs/03-pro/01-性能观测与调优.md": {
+    "videos": [
+      {
+        "id": "b-process",
+        "note": "进程观察的预备知识；USE 方法和性能结论按正文实验核对。"
+      }
+    ],
+    "animations": [
+      "memory-cache.svg"
+    ]
+  },
+  "docs/03-pro/02-内核与系统调用.md": {
+    "videos": [
+      {
+        "id": "b-distros",
+        "note": "内核概念的背景材料，不是内核源码或系统调用专项教程。"
+      },
+      {
+        "id": "y-linux-things",
+        "note": "内核概念的背景材料，不是内核源码或系统调用专项教程。"
+      }
+    ],
+    "animations": [
+      "boot-sequence.svg",
+      "process-lifecycle.svg"
+    ]
+  },
+  "docs/03-pro/03-安全加固.md": {
+    "videos": [
+      {
+        "id": "b-ssh",
+        "note": "SSH 登录基础复习；加固策略与最终配置验证以正文为准。"
+      }
+    ],
+    "animations": [
+      "packet-journey.svg"
+    ]
+  },
+  "docs/03-pro/04-容器与虚拟化.md": {
+    "videos": [
+      {
+        "id": "y-docker",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "docker-volume.svg"
+    ]
+  },
+  "docs/03-pro/05-自动化运维.md": {
+    "videos": [
+      {
+        "id": "b-cron",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      },
+      {
+        "id": "y-ansible",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "cron-schedule.svg"
+    ]
+  },
+  "docs/03-pro/06-Shell脚本进阶.md": {
+    "videos": [
+      {
+        "id": "b-bash",
+        "note": "Shell 基础复习；并发、trap 和失败处理仍需按本章验证。"
+      }
+    ],
+    "animations": [
+      "terminal-typing.svg"
+    ]
+  },
+  "docs/03-pro/07-AI辅助学习与运维.md": {
+    "videos": [
+      {
+        "id": "y-local-ai",
+        "note": "展示本地模型工具背景，不代替人工审阅与证据核对。"
+      }
+    ],
+    "animations": [
+      "ai-review-loop.svg"
+    ]
+  },
+  "docs/04-projects/项目1-LNMP网站服务器.md": {
+    "videos": [
+      {
+        "id": "y-systemd",
+        "note": "服务管理预备知识，不是完整 LNMP 安装录像。"
+      }
+    ],
+    "animations": [
+      "lnmp-request.svg",
+      "packet-journey.svg"
+    ]
+  },
+  "docs/04-projects/项目2-服务器巡检脚本.md": {
+    "videos": [
+      {
+        "id": "b-process",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      },
+      {
+        "id": "b-bash",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "terminal-typing.svg"
+    ]
+  },
+  "docs/04-projects/项目3-个人云盘与内网穿透.md": {
+    "videos": [
+      {
+        "id": "y-docker",
+        "note": "容器部署预备知识，Nextcloud 配置和访问控制见正文。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/04-projects/项目4-Linux跑本地AI.md": {
+    "videos": [
+      {
+        "id": "y-local-ai",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/04-projects/项目5-故障排查20例.md": {
+    "videos": [
+      {
+        "id": "y-systemd",
+        "note": "排障的工具背景；案例根因需要自己的现场证据。"
+      },
+      {
+        "id": "y-linux-full",
+        "note": "排障的工具背景；案例根因需要自己的现场证据。"
+      }
+    ],
+    "animations": [
+      "boot-sequence.svg"
+    ]
+  },
+  "docs/05-raspberry-pi/01-树莓派是什么与选购.md": {
+    "videos": [
+      {
+        "id": "y-pi-intro",
+        "note": "仅为课程介绍与硬件背景，不是完整树莓派课程。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/05-raspberry-pi/02-烧录系统与首次启动.md": {
+    "videos": [
+      {
+        "id": "y-pi-overview",
+        "note": "仅为工作坊概览；当前 Imager 烧录流程以正文和官方说明为准。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/05-raspberry-pi/03-远程连接与基础配置.md": {
+    "videos": [
+      {
+        "id": "b-ssh",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/05-raspberry-pi/04-GPIO硬件编程.md": {
+    "videos": [
+      {
+        "id": "y-gpio",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      }
+    ],
+    "animations": [
+      "gpio-blink.svg"
+    ]
+  },
+  "docs/05-raspberry-pi/05-家庭服务器实战.md": {
+    "videos": [
+      {
+        "id": "y-docker",
+        "note": "容器基础补充，Samba 与家庭存储配置见正文。"
+      }
+    ],
+    "animations": []
+  },
+  "docs/05-raspberry-pi/06-树莓派与边缘AI.md": {
+    "videos": [],
+    "animations": []
+  },
+  "docs/05-raspberry-pi/07-从按钮到数据记录.md": {
+    "videos": [
+      {
+        "id": "y-gpio",
+        "note": "GPIO 基础复习，CSV 记录程序和采样限制以本章为准。"
+      }
+    ],
+    "animations": [
+      "gpio-debounce.svg"
+    ]
+  }
+}

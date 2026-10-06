@@ -313,12 +313,11 @@ Filesystem      Size  Used Avail Use% Mounted on
 
 ## 📺 推荐视频
 
-**B 站 韩顺平《一周学会 Linux》**：中文经典入门课，开篇就是手把手的安装与
-环境配置讲解，适合装系统时开着当「导航」，跟不上的地方随时暂停：
+- [YouTube · Linux 入门课程](https://www.youtube.com/watch?v=ROjZy1WbCIA) — freeCodeCamp.org，167分55秒。基础操作预习；安装步骤与版本以本章为准。
 
-[![韩顺平 一周学会Linux](http://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd)
+[![Linux 入门课程 视频封面](https://i.ytimg.com/vi/ROjZy1WbCIA/hqdefault.jpg)](https://www.youtube.com/watch?v=ROjZy1WbCIA)
 
----
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F00-onboarding%2F04-%E5%AE%89%E8%A3%85%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AALinux.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

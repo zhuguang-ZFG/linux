@@ -1,6 +1,8 @@
 """Build six original, self-contained SVG teaching animations (standard library only)."""
 from html import escape
 from pathlib import Path
+import json
+from animation_scenes import EXTRA_SCENES
 
 ROOT = Path(__file__).resolve().parents[1]
 SCENES = [
@@ -43,29 +45,36 @@ SCENES = [
 ]
 
 
-def render(slug, title, subtitle, cards, exercise, note):
+SCENES.extend(scene[:-1] for scene in EXTRA_SCENES)
+
+
+def render(slug, title, subtitle, cards, exercise, note, frames=None):
     esc = escape
     css = []
     for i in range(4):
         start, end = i * 25, (i + 1) * 25
         if i == 0:
-            frames = "0%,24.9%{opacity:1}25%,100%{opacity:0}"
+            keyframes = "0%,24.9%{opacity:1}25%,100%{opacity:0}"
+        elif i == 3:
+            keyframes = "0%,74.9%{opacity:0}75%,100%{opacity:1}"
         else:
-            frames = f"0%,{start - 0.1}%{{opacity:0}}{start}%,{end - 0.1}%{{opacity:1}}{end}%,100%{{opacity:0}}"
-        css.append(f"@keyframes step{i}{{{frames}}}.phase-{i}{{animation:step{i} 12s linear 3}}")
-    parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500" role="img" aria-labelledby="title desc">
+            keyframes = f"0%,{start - 0.1}%{{opacity:0}}{start}%,{end - 0.1}%{{opacity:1}}{end}%,100%{{opacity:0}}"
+        css.append(f"@keyframes step{i}{{{keyframes}}}.phase-{i}{{animation:step{i} 12s linear 3}}")
+    height = 640 if frames else 500
+    parts = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="{height}" viewBox="0 0 1080 {height}" role="img" aria-labelledby="title desc">
 <title id="title">{esc(title)}</title>
 <desc id="desc">{esc(subtitle)}。四步示意，每 12 秒一轮，播放三轮后停止。{esc(note)}</desc>
 <style>
 text{{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}}
 .code{{font-family:Consolas,monospace}}
 .focus{{opacity:0}}
+.output{{opacity:0}}.output.phase-0{{opacity:1}}
 {''.join(css)}
-@keyframes travel{{0%,15%{{transform:translateX(0)}}25%,40%{{transform:translateX(260px)}}50%,65%{{transform:translateX(520px)}}75%,95%{{transform:translateX(780px)}}100%{{transform:translateX(0)}}}}
+@keyframes travel{{0%,15%{{transform:translateX(0)}}25%,40%{{transform:translateX(260px)}}50%,65%{{transform:translateX(520px)}}75%,100%{{transform:translateX(780px)}}}}
 .token{{animation:travel 12s ease-in-out 3}}
-@media (prefers-reduced-motion:reduce){{.focus,.token{{animation:none}}.token{{display:none}}}}
+@media (prefers-reduced-motion:reduce){{.focus,.token,.output{{animation:none}}.token{{display:none}}}}
 </style>
-<rect width="1080" height="500" rx="22" fill="#0d1117"/>
+<rect width="1080" height="{height}" rx="22" fill="#0d1117"/>
 <text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
 <text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">{esc(title)}</text>
 <text x="40" y="120" fill="#9da7b3" font-size="16">{esc(subtitle)}</text>
@@ -82,11 +91,20 @@ text{{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}}
 <text x="{x+16}" y="276" fill="#9da7b3" font-size="14">{esc(line2)}</text>
 <circle cx="{148+i*260}" cy="320" r="5" fill="#62758b"/>
 </g>''')
+    if frames:
+        parts.append('<rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>')
+        parts.append('<text x="58" y="375" fill="#7c9aab" font-size="12">示意输入与状态 · 非真实采样</text>')
+        for index, lines in enumerate(frames):
+            parts.append(f'<g class="output phase-{index}">')
+            for line_index, line in enumerate(lines):
+                parts.append(f'<text class="code" x="58" y="{407+line_index*27}" fill="#b5e4d4" font-size="16">{esc(line)}</text>')
+            parts.append('</g>')
+    offset = 140 if frames else 0
     parts.append(f'''<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
-<rect x="40" y="356" width="1000" height="106" rx="12" fill="#101f2c"/>
-<text x="58" y="390" fill="#e6edf3" font-size="16">{esc(exercise)}</text>
-<text x="58" y="421" fill="#9da7b3" font-size="14">{esc(note)}</text>
-<text x="58" y="445" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 重载图片可重播</text>
+<rect x="40" y="{356+offset}" width="1000" height="106" rx="12" fill="#101f2c"/>
+<text x="58" y="{390+offset}" fill="#e6edf3" font-size="16">{esc(exercise)}</text>
+<text x="58" y="{421+offset}" fill="#9da7b3" font-size="14">{esc(note)}</text>
+<text x="58" y="{445+offset}" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
 </svg>
 ''')
     return '\n'.join(parts)
@@ -97,3 +115,18 @@ if __name__ == '__main__':
         target = ROOT / 'assets' / 'animations' / f'{scene[0]}.svg'
         target.write_text(render(*scene), encoding='utf-8', newline='\n')
         print(f'Generated {target.name}')
+    catalog_path = ROOT / 'assets/animations/catalog.json'
+    catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+    existing = {entry['file']: entry for entry in catalog}
+    chapters = {f'{scene[0]}.svg': scene[-1] for scene in EXTRA_SCENES}
+    for scene in SCENES:
+        filename = f'{scene[0]}.svg'
+        entry = existing.get(filename)
+        if entry is None:
+            entry = {'file': filename, 'title': scene[1].split('：')[0], 'chapter': chapters[filename]}
+            catalog.append(entry)
+        entry['duration'] = 12
+        entry['width'] = 1080
+        entry['height'] = 640 if len(scene) > 6 else 500
+        entry['steps'] = [{'title': card[0], 'description': '；'.join(card[2:])} for card in scene[3]]
+    catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

@@ -1,0 +1,22 @@
+{
+  "name": "road-to-linux",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.5.0",
+  "engines": {"node": ">=22.12.0"},
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "preview": "node scripts/serve-site.mjs",
+    "test:site": "playwright test",
+    "check:content": "node scripts/check-content.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "esbuild": "0.28.2",
+    "github-slugger": "2.0.0",
+    "marked": "18.1.0",
+    "mermaid": "12.1.0",
+    "sanitize-html": "2.18.0"
+  }
+}

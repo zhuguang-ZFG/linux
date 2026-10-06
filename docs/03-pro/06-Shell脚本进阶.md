@@ -381,7 +381,11 @@ shellcheck host-alive.sh     # 无输出即通过
 
 ## 📺 推荐视频
 
-本章不绑定新视频。建议回看第 1 章的 Fireship 快速回顾里涉及 Shell 的片段，然后把 ShellCheck 报告当作你的"逐集教程"——每一个警告都值得追根问底。
+- [B站 · Shell 编程入门](https://www.bilibili.com/video/BV1Sv411r7vd/?p=91) — 韩顺平，P91，11分41秒。Shell 基础复习；并发、trap 和失败处理仍需按本章验证。
+
+[![Shell 编程入门 视频封面](https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd/?p=91)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F03-pro%2F06-Shell%E8%84%9A%E6%9C%AC%E8%BF%9B%E9%98%B6.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

@@ -21,6 +21,10 @@
 
 ## 🧠 方案设计
 
+
+![LNMP原理动画](../../assets/animations/lnmp-request.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=lnmp-request.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ### LNMP 四个角色怎么协作？
 
 - **Nginx**：门童。只负责接待 HTTP 请求，静态文件（图片、CSS、JS）自己返回，PHP 请求转交给 PHP-FPM；
@@ -238,9 +242,11 @@ curl -I http://你的云主机公网IP            # 从外部再验一次
 
 ## 📺 推荐视频
 
-[![Linux-老林 · Linux 入门到精通 100 集（服务部署相关集数）](http://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2)
+- [YouTube · systemd 服务管理](https://www.youtube.com/watch?v=Kzpm-rGAXos) — Learn Linux TV，47分40秒。服务管理预备知识，不是完整 LNMP 安装录像。
 
-配着视频部署一遍更稳：重点看与服务部署、Nginx 配置相关的集数，其余集数当作随身手册按需回看。
+[![systemd 服务管理 视频封面](https://i.ytimg.com/vi/Kzpm-rGAXos/hqdefault.jpg)](https://www.youtube.com/watch?v=Kzpm-rGAXos)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F04-projects%2F%E9%A1%B9%E7%9B%AE1-LNMP%E7%BD%91%E7%AB%99%E6%9C%8D%E5%8A%A1%E5%99%A8.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 验收清单
 

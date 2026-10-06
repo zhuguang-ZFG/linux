@@ -260,12 +260,12 @@ VERSION_ID="24.04"
 
 ## 📺 推荐视频
 
-**Fireship《Linux in 100 Seconds》**：100 秒快节奏回顾 Linux 是什么、怎么来的，
-正好给本章历史做个卡通版总结（英语原声，字幕即可）：
+- [YouTube · Linux 的第一印象](https://www.youtube.com/watch?v=rrB13utjYV4) — Fireship，2分41秒。先建立内核与发行版的背景，不代替本章历史阅读。
+- [B站 · Linux 内核与发行版](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=9) — Linux-老林，P9，21分16秒。先建立内核与发行版的背景，不代替本章历史阅读。
 
-[![Linux in 100 Seconds](https://img.youtube.com/vi/rrB13utjYV4/hqdefault.jpg)](https://www.youtube.com/watch?v=rrB13utjYV4)
+[![Linux 的第一印象 视频封面](https://i.ytimg.com/vi/rrB13utjYV4/hqdefault.jpg)](https://www.youtube.com/watch?v=rrB13utjYV4)
 
----
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F00-onboarding%2F02-Linux%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

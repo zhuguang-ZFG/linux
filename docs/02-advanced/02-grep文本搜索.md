@@ -242,9 +242,11 @@ grep "Failed password for" fake.log | awk '{print $8}' | sort | uniq -c | sort -
 
 ## 📺 推荐视频
 
-[![Learn Linux - The Full Course（Boot.dev）](https://img.youtube.com/vi/v392lEyM29A/hqdefault.jpg)](https://www.youtube.com/watch?v=v392lEyM29A)
+- [B站 · find 与 grep](https://www.bilibili.com/video/BV1w4411B7a4/?p=12) — 韦东山，P12，7分21秒。观看对应主题后，回到本章用实际输入和输出验证。
 
-Boot.dev 的这门完整课程用英文系统过一遍 Linux 基础工具，其中对 grep 与文本处理流水线的演示与本章内容高度对应，适合作为复习材料。
+[![find 与 grep 视频封面](https://i2.hdslb.com/bfs/archive/b2e859711cde6a85b2720841cf7c5d931b9a2614.jpg)](https://www.bilibili.com/video/BV1w4411B7a4/?p=12)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F02-advanced%2F02-grep%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

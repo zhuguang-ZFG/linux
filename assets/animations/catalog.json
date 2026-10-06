@@ -1,14 +1,500 @@
 [
-  {"file":"terminal-typing.svg","title":"终端输入","chapter":"docs/00-onboarding/05-初见终端与Shell.md"},
-  {"file":"packet-journey.svg","title":"网络包之旅","chapter":"docs/02-advanced/08-网络基础与远程连接.md"},
-  {"file":"process-lifecycle.svg","title":"进程生命周期","chapter":"docs/01-basics/06-进程管理.md"},
-  {"file":"boot-sequence.svg","title":"开机引导","chapter":"docs/03-pro/02-内核与系统调用.md"},
-  {"file":"gpio-blink.svg","title":"GPIO点灯","chapter":"docs/05-raspberry-pi/04-GPIO硬件编程.md"},
-  {"file":"permission-bits.svg","title":"权限位","chapter":"docs/01-basics/03-用户与权限.md"},
-  {"file":"shell-pipeline.svg","title":"管道数据流","chapter":"docs/02-advanced/01-管道与重定向.md"},
-  {"file":"filesystem-mount.svg","title":"文件系统挂载","chapter":"docs/02-advanced/07-磁盘与文件系统.md"},
-  {"file":"docker-volume.svg","title":"容器与持久卷","chapter":"docs/03-pro/04-容器与虚拟化.md"},
-  {"file":"ssh-handshake.svg","title":"SSH身份检查","chapter":"docs/02-advanced/08-网络基础与远程连接.md"},
-  {"file":"backup-transaction.svg","title":"备份发布与清理","chapter":"docs/02-advanced/05-Bash脚本编程.md"},
-  {"file":"ai-review-loop.svg","title":"AI建议审阅验证","chapter":"docs/03-pro/07-AI辅助学习与运维.md"}
+  {
+    "file": "terminal-typing.svg",
+    "title": "终端输入",
+    "chapter": "docs/00-onboarding/05-初见终端与Shell.md"
+  },
+  {
+    "file": "packet-journey.svg",
+    "title": "网络包之旅",
+    "chapter": "docs/02-advanced/08-网络基础与远程连接.md"
+  },
+  {
+    "file": "process-lifecycle.svg",
+    "title": "进程生命周期",
+    "chapter": "docs/01-basics/06-进程管理.md"
+  },
+  {
+    "file": "boot-sequence.svg",
+    "title": "开机引导",
+    "chapter": "docs/03-pro/02-内核与系统调用.md"
+  },
+  {
+    "file": "gpio-blink.svg",
+    "title": "GPIO点灯",
+    "chapter": "docs/05-raspberry-pi/04-GPIO硬件编程.md"
+  },
+  {
+    "file": "permission-bits.svg",
+    "title": "权限位",
+    "chapter": "docs/01-basics/03-用户与权限.md"
+  },
+  {
+    "file": "shell-pipeline.svg",
+    "title": "管道数据流",
+    "chapter": "docs/02-advanced/01-管道与重定向.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 500,
+    "steps": [
+      {
+        "title": "01 读取日志",
+        "description": "标准输出是一串文本；原文件保持不变"
+      },
+      {
+        "title": "02 筛选记录",
+        "description": "只留下匹配的行；没有匹配时返回非零"
+      },
+      {
+        "title": "03 提取字段",
+        "description": "每行只输出第一列；下游不再收到整行"
+      },
+      {
+        "title": "04 排序统计",
+        "description": "相同内容聚到一起；输出每个值的次数"
+      }
+    ]
+  },
+  {
+    "file": "filesystem-mount.svg",
+    "title": "文件系统挂载",
+    "chapter": "docs/02-advanced/07-磁盘与文件系统.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 500,
+    "steps": [
+      {
+        "title": "01 块设备",
+        "description": "先确认设备身份；本教程用镜像文件"
+      },
+      {
+        "title": "02 文件系统",
+        "description": "组织目录与数据块；格式化会改变内容"
+      },
+      {
+        "title": "03 挂载点",
+        "description": "把文件系统接到路径；原目录内容会被遮住"
+      },
+      {
+        "title": "04 访问文件",
+        "description": "读写落在挂载的存储；卸载后路径视图改变"
+      }
+    ]
+  },
+  {
+    "file": "docker-volume.svg",
+    "title": "容器与持久卷",
+    "chapter": "docs/03-pro/04-容器与虚拟化.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 500,
+    "steps": [
+      {
+        "title": "01 创建容器 A",
+        "description": "程序从镜像启动；可写层属于这个容器"
+      },
+      {
+        "title": "02 写入命名卷",
+        "description": "把 keep.txt 写入卷；确认应用写对路径"
+      },
+      {
+        "title": "03 删除容器 A",
+        "description": "容器可写层消失；命名卷仍独立存在"
+      },
+      {
+        "title": "04 创建容器 B",
+        "description": "重新读取 keep.txt；不是从镜像找回数据"
+      }
+    ]
+  },
+  {
+    "file": "ssh-handshake.svg",
+    "title": "SSH身份检查",
+    "chapter": "docs/02-advanced/08-网络基础与远程连接.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 500,
+    "steps": [
+      {
+        "title": "01 连接与协商",
+        "description": "协商算法并交换密钥；连接端口必须可达"
+      },
+      {
+        "title": "02 核对主机",
+        "description": "客户端核对服务器；首次指纹需可信来源"
+      },
+      {
+        "title": "03 验证用户",
+        "description": "私钥留在客户端；服务端验证签名证明"
+      },
+      {
+        "title": "04 登录会话",
+        "description": "用户认证成功后访问；权限仍由系统控制"
+      }
+    ]
+  },
+  {
+    "file": "backup-transaction.svg",
+    "title": "备份发布与清理",
+    "chapter": "docs/02-advanced/05-Bash脚本编程.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 500,
+    "steps": [
+      {
+        "title": "01 检查与加锁",
+        "description": "备份目录在源目录外；同目录一次只允许一写"
+      },
+      {
+        "title": "02 临时归档",
+        "description": "临时文件放在目标盘；出错就保留全部旧备份"
+      },
+      {
+        "title": "03 校验与发布",
+        "description": "确认归档能够读取；同文件系统内改名"
+      },
+      {
+        "title": "04 保留五份",
+        "description": "NUL 分隔完整文件名；只删除专用目录中的旧档"
+      }
+    ]
+  },
+  {
+    "file": "ai-review-loop.svg",
+    "title": "AI建议审阅验证",
+    "chapter": "docs/03-pro/07-AI辅助学习与运维.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 500,
+    "steps": [
+      {
+        "title": "01 提供证据",
+        "description": "只提供必要且脱敏数据；说明哪些事实尚未知"
+      },
+      {
+        "title": "02 提出假设",
+        "description": "要求区分事实与推测；先收集能证伪的证据"
+      },
+      {
+        "title": "03 人工审阅",
+        "description": "核对路径与权限边界；高影响动作先隔离验证"
+      },
+      {
+        "title": "04 实测与记录",
+        "description": "回到原始需求做验收；失败就带新证据再分析"
+      }
+    ]
+  },
+  {
+    "file": "git-branches.svg",
+    "title": "Git 分支",
+    "chapter": "docs/02-advanced/09-Git与学习笔记协作.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 共同起点",
+        "description": "工作区干净；先确认当前分支"
+      },
+      {
+        "title": "02 分支改进",
+        "description": "新增一次独立提交；main 仍停在 A"
+      },
+      {
+        "title": "03 回到主线",
+        "description": "工作区切到主线版本；并非删除分支提交"
+      },
+      {
+        "title": "04 快进合并",
+        "description": "main 前移到 B；分叉时会拒绝快进"
+      }
+    ]
+  },
+  {
+    "file": "stdout-stderr.svg",
+    "title": "重定向顺序",
+    "chapter": "docs/02-advanced/01-管道与重定向.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 初始状态",
+        "description": "两个通道都指向终端；它们可以独立重定向"
+      },
+      {
+        "title": "02 改标准输出",
+        "description": "fd 1 指向日志文件；fd 2 仍指向终端"
+      },
+      {
+        "title": "03 复制指向",
+        "description": "fd 2 复制 fd 1 的目标；此时都写进日志"
+      },
+      {
+        "title": "04 对照反序",
+        "description": "先复制的是旧目标；错误仍可能到终端"
+      }
+    ]
+  },
+  {
+    "file": "sed-replace.svg",
+    "title": "sed",
+    "chapter": "docs/02-advanced/03-sed流编辑器.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 读取原文",
+        "description": "原文件仍在磁盘上；先看不写盘的结果"
+      },
+      {
+        "title": "02 匹配模式",
+        "description": "找出匹配字符串；g 表示每行全部匹配"
+      },
+      {
+        "title": "03 查看输出",
+        "description": "默认只输出到终端；没有修改原文件"
+      },
+      {
+        "title": "04 保存与备份",
+        "description": "确认后才原地修改；先确认旧 .bak 不冲突"
+      }
+    ]
+  },
+  {
+    "file": "awk-aggregation.svg",
+    "title": "awk",
+    "chapter": "docs/02-advanced/04-awk文本分析.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 第一条记录",
+        "description": "$1 是客户端地址；给对应计数器加一"
+      },
+      {
+        "title": "02 第二条记录",
+        "description": "遇到另一个地址；创建新的计数项"
+      },
+      {
+        "title": "03 第三条记录",
+        "description": "再次遇到第一个地址；在原计数上累加"
+      },
+      {
+        "title": "04 结束输出",
+        "description": "输出汇总结果；需要顺序时另外排序"
+      }
+    ]
+  },
+  {
+    "file": "systemd-restart.svg",
+    "title": "systemd",
+    "chapter": "docs/02-advanced/06-systemd服务与日志.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 正常运行",
+        "description": "主进程提供服务；用请求验证真实可用"
+      },
+      {
+        "title": "02 异常退出",
+        "description": "管理器记录失败；日志留下退出信息"
+      },
+      {
+        "title": "03 等待策略",
+        "description": "按配置延迟重启；频繁失败可能触发限流"
+      },
+      {
+        "title": "04 再次启动",
+        "description": "新进程重新运行；还要重新验证请求"
+      }
+    ]
+  },
+  {
+    "file": "cron-schedule.svg",
+    "title": "cron",
+    "chapter": "docs/03-pro/05-自动化运维.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 等待时间",
+        "description": "按系统时区解释；尚未命中 03:30"
+      },
+      {
+        "title": "02 时间匹配",
+        "description": "cron 启动一个 Shell；它不会加载你的终端配置"
+      },
+      {
+        "title": "03 执行命令",
+        "description": "传入完整目录参数；日志必须对任务用户可写"
+      },
+      {
+        "title": "04 核对结果",
+        "description": "不是保存任务就算成功；检查实际归档与退出码"
+      }
+    ]
+  },
+  {
+    "file": "process-signals.svg",
+    "title": "TERM 与 KILL",
+    "chapter": "docs/01-basics/06-进程管理.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 进程运行",
+        "description": "正在写数据或持有资源；记录正确的目标 PID"
+      },
+      {
+        "title": "02 情况 A：TERM",
+        "description": "程序可处理信号；有机会完成清理"
+      },
+      {
+        "title": "03 情况 B：KILL",
+        "description": "内核强制终止；程序无法执行清理回调"
+      },
+      {
+        "title": "04 检查后果",
+        "description": "验证目标确实结束；检查遗留状态与恢复"
+      }
+    ]
+  },
+  {
+    "file": "memory-cache.svg",
+    "title": "内存缓存",
+    "chapter": "docs/03-pro/01-性能观测与调优.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 初始状态",
+        "description": "应用占用一部分内存；其余为空闲与缓存"
+      },
+      {
+        "title": "02 读取文件",
+        "description": "内核缓存磁盘内容；free 因此变小"
+      },
+      {
+        "title": "03 应用申请",
+        "description": "内存重新分配给应用；并非所有缓存都能马上回收"
+      },
+      {
+        "title": "04 综合判断",
+        "description": "观察可用量与换页趋势；再决定是否真的吃紧"
+      }
+    ]
+  },
+  {
+    "file": "inode-links.svg",
+    "title": "硬链接",
+    "chapter": "docs/02-advanced/07-磁盘与文件系统.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 创建文件",
+        "description": "一个目录项；链接计数为 1"
+      },
+      {
+        "title": "02 建硬链接",
+        "description": "两个名字指向同一 inode；链接计数变成 2"
+      },
+      {
+        "title": "03 删一个名字",
+        "description": "copy.txt 仍然存在；链接计数回到 1"
+      },
+      {
+        "title": "04 继续读取",
+        "description": "内容仍然可读；最后的打开引用也很重要"
+      }
+    ]
+  },
+  {
+    "file": "dns-lookup.svg",
+    "title": "DNS",
+    "chapter": "docs/02-advanced/08-网络基础与远程连接.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 本机查询",
+        "description": "先检查本机解析与缓存；命中时可跳过远端查询"
+      },
+      {
+        "title": "02 递归解析",
+        "description": "向配置的解析器查询；解析器也可能使用缓存"
+      },
+      {
+        "title": "03 获得记录",
+        "description": "返回地址与缓存时间；同一名字可能有多个地址"
+      },
+      {
+        "title": "04 连接应用",
+        "description": "继续路由、连接和 TLS；DNS 正常不保证服务正常"
+      }
+    ]
+  },
+  {
+    "file": "lnmp-request.svg",
+    "title": "LNMP",
+    "chapter": "docs/04-projects/项目1-LNMP网站服务器.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 浏览器请求",
+        "description": "客户端发起 HTTP 请求；先到 Nginx"
+      },
+      {
+        "title": "02 转交 PHP",
+        "description": "Nginx 把动态请求交给后端；后端失联可能出现 502"
+      },
+      {
+        "title": "03 查询数据",
+        "description": "应用读取文章等状态；数据库使用专用账户"
+      },
+      {
+        "title": "04 返回响应",
+        "description": "结果经 Nginx 返回；检查页面，不只看进程状态"
+      }
+    ]
+  },
+  {
+    "file": "gpio-debounce.svg",
+    "title": "按钮消抖",
+    "chapter": "docs/05-raspberry-pi/07-从按钮到数据记录.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 按钮松开",
+        "description": "上拉给输入稳定默认状态；按下时接到 GND"
+      },
+      {
+        "title": "02 触点抖动",
+        "description": "短时间出现多次边沿；不能每个边沿都当新点击"
+      },
+      {
+        "title": "03 过滤抖动",
+        "description": "按配置抑制短暂变化；过滤窗口不是越大越好"
+      },
+      {
+        "title": "04 记录状态",
+        "description": "状态变化时写 CSV；高频脉冲可能被漏采"
+      }
+    ]
+  }
 ]

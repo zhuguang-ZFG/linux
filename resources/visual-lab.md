@@ -1,6 +1,6 @@
 # 动画实验室：先预测，再播放，最后动手
 
-本库共 12 个原创 SVG 动画。GitHub 或本地浏览器可直接查看；如果平台只显示静态图，点击图片打开源文件。新增六个动画每轮 12 秒、播放三轮后停止，支持系统的“减少动态效果”设置，静态说明始终可读；重新加载可重播。
+本库共 24 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 18 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
 
 动画是原理示意，不是从真实机器采集的运行录像。验收仍要回到命令与实际输出。
 
@@ -40,7 +40,26 @@
 
 **先猜**：模型给出一条命令，是否就能直接放进教程？**动手**：完成 [AI 辅助学习章节](../docs/03-pro/07-AI辅助学习与运维.md) 的手册核对与实测。
 
-## 已有六个基础动画
+## 新增的十二个状态演示
+
+以下动画额外展示示意输入、命令或状态快照，配合学习站的单步控制观察变化：
+
+| 动画 | 重点观察 |
+|---|---|
+| [Git 分支](../assets/animations/git-branches.svg) | 分支指针、工作区切换和快进合并 |
+| [stdout / stderr](../assets/animations/stdout-stderr.svg) | 重定向顺序如何改变描述符的目标 |
+| [sed 替换](../assets/animations/sed-replace.svg) | 默认输出与原地修改的区别 |
+| [awk 累加](../assets/animations/awk-aggregation.svg) | 每条记录如何改变统计结果 |
+| [systemd 重启](../assets/animations/systemd-restart.svg) | 失败、等待策略和重新验证服务 |
+| [cron 调度](../assets/animations/cron-schedule.svg) | 时间命中、执行环境和日志验收 |
+| [进程信号](../assets/animations/process-signals.svg) | TERM 与 KILL 两种独立情况 |
+| [内存缓存](../assets/animations/memory-cache.svg) | free、缓存与应用分配的关系 |
+| [inode 与硬链接](../assets/animations/inode-links.svg) | 删除一个名字后，文件为何仍可读 |
+| [DNS 查询](../assets/animations/dns-lookup.svg) | 解析成功后还需要连接与应用验证 |
+| [LNMP 请求](../assets/animations/lnmp-request.svg) | Nginx、PHP-FPM 和数据库分工 |
+| [GPIO 消抖](../assets/animations/gpio-debounce.svg) | 触点抖动、过滤窗口和最终记录 |
+
+## 原有六个基础动画
 
 | 动画 | 观察问题 | 继续学习 |
 |---|---|---|

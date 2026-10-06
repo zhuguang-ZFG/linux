@@ -285,9 +285,11 @@ realpath: .../no-such-dir: No such file or directory
 
 ## 📺 推荐视频
 
-[![韩顺平《一周学会Linux》](http://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd)
+- [B站 · Shell 编程入门](https://www.bilibili.com/video/BV1Sv411r7vd/?p=91) — 韩顺平，P91，11分41秒。观看对应主题后，回到本章用实际输入和输出验证。
 
-韩顺平《一周学会Linux》的 Shell 脚本部分对变量、条件、循环、函数讲解细致、节奏友好，与本章结构一一对应，适合边看边把示例敲一遍。
+[![Shell 编程入门 视频封面](https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd/?p=91)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F02-advanced%2F05-Bash%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

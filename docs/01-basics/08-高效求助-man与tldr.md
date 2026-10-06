@@ -234,7 +234,11 @@ man du                    # 精读：-h 是 human-readable，-c 是总计
 
 ## 📺 推荐视频
 
-> 本模块未为本章指定嵌入视频。建议在 B 站或 YouTube 搜索关键词「Linux man 命令 tldr 教程」观看演示；第 2 章的韩顺平《一周学会Linux》（[02-查看与编辑文件-Vim](02-查看与编辑文件-Vim.md)）里也有 man 的使用演示。
+- [B站 · 帮助指令与手册](https://www.bilibili.com/video/BV1Sv411r7vd/?p=27) — 韩顺平，P27，8分46秒。观看对应主题后，回到本章用实际输入和输出验证。
+
+[![帮助指令与手册 视频封面](https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd/?p=27)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F01-basics%2F08-%E9%AB%98%E6%95%88%E6%B1%82%E5%8A%A9-man%E4%B8%8Etldr.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 

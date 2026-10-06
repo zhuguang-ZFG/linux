@@ -13,6 +13,10 @@
 
 ## 🧠 核心概念
 
+
+![Git 分支原理动画](../../assets/animations/git-branches.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=git-branches.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ```mermaid
 flowchart LR
     A[工作区编辑] -->|git add| B[暂存区]
@@ -86,7 +90,11 @@ git log --oneline --graph --all
 
 ## 📺 推荐视频
 
-[视频资源库](../../resources/videos.md) 用于命令行基础复习；Git 操作以官方教程和本地 `git help` 为准。
+- [YouTube · Git 与 GitHub 入门](https://www.youtube.com/watch?v=RGOj5yH7evk) — freeCodeCamp.org，68分30秒。观看对应主题后，回到本章用实际输入和输出验证。
+
+[![Git 与 GitHub 入门 视频封面](https://i.ytimg.com/vi/RGOj5yH7evk/hqdefault.jpg)](https://www.youtube.com/watch?v=RGOj5yH7evk)
+
+[在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F02-advanced%2F09-Git%E4%B8%8E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%8D%8F%E4%BD%9C.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
 
 ## ✅ 自测清单
 
