@@ -1,0 +1,45 @@
+# 实物图鉴：把终端里的名词和真实设备对上
+
+照片用于识别部件，具体兼容性以设备手册为准。新增照片均来自 Wikimedia Commons，完整作者、许可、来源及调整记录见 [CREDITS](../assets/images/CREDITS.md) 和 [来源元数据](../assets/images/SOURCES.json)。它们不是 AI 生成的硬件示意。
+
+## 1. 内存条：看缺口，不只看容量
+
+![DDR4 ECC RDIMM 内存条](../assets/images/ddr4-memory.jpg)
+
+观察金手指、定位缺口和存储颗粒。照片为服务器 RDIMM 示例，不代表普通桌面或树莓派可安装。对应命令：`free -h`。完成 [硬件识别章节](../docs/01-basics/09-从实物认识Linux硬件.md) 后，解释物理容量与 available 的区别。
+
+## 2. NVMe SSD：不是另一种内存条
+
+![M.2 NVMe SSD](../assets/images/nvme-ssd.jpg)
+
+观察固定孔、接口端和器件标签。外形相似不等于协议与主板兼容。对应命令：`lsblk`、`findmnt`。配合 [挂载动画](visual-lab.md) 回答“路径怎样找到持久存储”。
+
+## 3. 网线接头：物理链路只是第一步
+
+![8P8C 网线接头与网线](../assets/images/ethernet-connector.jpg)
+
+通常称作 RJ45 网口接头，图中可观察触点、卡扣与线缆。`ip -br link`、`ip -br address` 分别看接口与地址；插上网线不保证已经获得 IP。对应 [网络章节](../docs/02-advanced/08-网络基础与远程连接.md)。
+
+## 4. 交换机：连接局域网设备
+
+![五口以太网交换机](../assets/images/ethernet-switch.jpg)
+
+观察多个网络端口与电源接口。交换机、路由器和无线接入点的职责不同；这张旧型号照片用于认识结构，不用于推荐速度或性能。
+
+## 5. USB 摄像头：设备存在不代表采集成功
+
+![USB 摄像头](../assets/images/usb-webcam.jpg)
+
+先用 `lsusb` 判断枚举，再用 `v4l2-ctl --list-devices` 判断视频设备，最后真正采集图像。照片不代表 CSI 排线相机的接口与软件栈。对应 [边缘 AI 实验](../docs/05-raspberry-pi/06-树莓派与边缘AI.md)。
+
+## 6. 电阻：先确认阻值，再接 LED
+
+![不同阻值的轴向电阻](../assets/images/axial-resistors.jpg)
+
+色环表示阻值和容差，但不能仅凭照片颜色选元件。图中是一组不同阻值的电阻，**不是本实验的 330Ω 配件清单**。点灯实验按 [GPIO 章节](../docs/05-raspberry-pi/04-GPIO硬件编程.md) 使用合适的限流电阻，接线前断电。
+
+## 延伸观察
+
+已有的 [树莓派全家福](../assets/images/raspberry-pi-family.jpg)、[GPIO 排针](../assets/images/raspberry-pi-gpio-header.jpg)、[microSD](../assets/images/microsd-card.jpg) 和 [服务器机架](../assets/images/datacenter-racks.jpg) 可以继续对照设备与系统视图。每看一张图，写下“它负责什么、Linux 用什么接口观察它、还不能从图中判断什么”。
+
+返回 [学习路线](../LEARNING_PATHS.md) · 下一步 [动画实验室](visual-lab.md)。

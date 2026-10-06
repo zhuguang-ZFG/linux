@@ -21,6 +21,8 @@ jobs:
         run: ./scripts/check-svg.ps1
       - name: Validate Python and the HTTP response
         run: python3 -B scripts/examples.test.py
+      - name: Verify media provenance, generated SVG and GPIO simulation
+        run: python3 -B scripts/media.test.py
       - name: Check shell scripts
         run: shellcheck scripts/*.sh
       - name: Build and exercise Docker example

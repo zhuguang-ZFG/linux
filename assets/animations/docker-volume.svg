@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500" role="img" aria-labelledby="title desc">
+<title id="title">容器重建，数据为什么还能留下？</title>
+<desc id="desc">镜像描述程序；持久卷保存需要跨容器保留的状态。四步示意，每 12 秒一轮，播放三轮后停止。卷仍需备份；docker compose down -v 会删除相关命名卷。</desc>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+.code{font-family:Consolas,monospace}
+.focus{opacity:0}
+@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,99.9%{opacity:1}100%,100%{opacity:0}}.phase-3{animation:step3 12s linear 3}
+@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,95%{transform:translateX(780px)}100%{transform:translateX(0)}}
+.token{animation:travel 12s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){.focus,.token{animation:none}.token{display:none}}
+</style>
+<rect width="1080" height="500" rx="22" fill="#0d1117"/>
+<text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
+<text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">容器重建，数据为什么还能留下？</text>
+<text x="40" y="120" fill="#9da7b3" font-size="16">镜像描述程序；持久卷保存需要跨容器保留的状态</text>
+<path d="M148 320 H928" fill="none" stroke="#303d4d" stroke-width="3"/>
+
+<g>
+<rect x="40" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-0" x="40" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 创建容器 A</text>
+<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">image → container</text>
+<text x="56" y="252" fill="#c9d1d9" font-size="14">程序从镜像启动</text>
+<text x="56" y="276" fill="#9da7b3" font-size="14">可写层属于这个容器</text>
+<circle cx="148" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="300" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-1" x="300" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="316" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">02 写入命名卷</text>
+<text class="code" x="316" y="221" fill="#79c0ff" font-size="13">appdata → /data</text>
+<text x="316" y="252" fill="#c9d1d9" font-size="14">把 keep.txt 写入卷</text>
+<text x="316" y="276" fill="#9da7b3" font-size="14">确认应用写对路径</text>
+<circle cx="408" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="560" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-2" x="560" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 删除容器 A</text>
+<text class="code" x="576" y="221" fill="#79c0ff" font-size="13">docker rm</text>
+<text x="576" y="252" fill="#c9d1d9" font-size="14">容器可写层消失</text>
+<text x="576" y="276" fill="#9da7b3" font-size="14">命名卷仍独立存在</text>
+<circle cx="668" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="820" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 创建容器 B</text>
+<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">挂载同一个 appdata</text>
+<text x="836" y="252" fill="#c9d1d9" font-size="14">重新读取 keep.txt</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">不是从镜像找回数据</text>
+<circle cx="928" cy="320" r="5" fill="#62758b"/>
+</g>
+<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
+<rect x="40" y="356" width="1000" height="106" rx="12" fill="#101f2c"/>
+<text x="58" y="390" fill="#e6edf3" font-size="16">动手：用两个不同容器读写同一个命名卷，比较不挂卷时的结果。</text>
+<text x="58" y="421" fill="#9da7b3" font-size="14">卷仍需备份；docker compose down -v 会删除相关命名卷。</text>
+<text x="58" y="445" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 重载图片可重播</text>
+</svg>

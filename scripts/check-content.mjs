@@ -56,6 +56,10 @@ const badge = /教学章节-(\d+)个/.exec(readme);
 if (!badge || Number(badge[1]) !== chapters.length) fail('README: chapter badge does not match actual count');
 const summary = /6 个阶段 (\d+) 个章节/.exec(readme);
 if (!summary || Number(summary[1]) !== chapters.length) fail('README: chapter summary does not match actual count');
+const animations = readdirSync(path.join(root, 'assets/animations')).filter(name => name.endsWith('.svg'));
+const photos = readdirSync(path.join(root, 'assets/images')).filter(name => /\.(jpg|jpeg|png|webp)$/i.test(name));
+if (Number(/精美动画-(\d+)部/.exec(readme)?.[1]) !== animations.length) fail('README: animation badge count differs from files');
+if (Number(/\*\*实物图鉴\*\*：(\d+) 张/.exec(readme)?.[1]) !== photos.length) fail('README: photo count differs from files');
 for (const [dir, expected] of [['exercises', 6], ['cheatsheets', 6]]) {
   const count = readdirSync(path.join(root, dir)).filter(name => name.endsWith('.md') && name !== 'README.md').length;
   if (count !== expected) fail(`${dir}: expected ${expected}, got ${count}`);
@@ -98,5 +102,5 @@ if (errors.length) {
   for (const error of errors) console.error(error);
   process.exitCode = 1;
 } else {
-  console.log(`PASS: ${markdown.length} Markdown files, ${checkedLinks} local links, ${chapters.length} chapters, 6 exercise sets, 6 cheatsheets, ${checkedScripts} Bash syntax checks; example consistency checks passed.`);
+  console.log(`PASS: ${markdown.length} Markdown files, ${checkedLinks} local links, ${chapters.length} chapters, ${animations.length} animations, ${photos.length} images, 6 exercise sets, 6 cheatsheets, ${checkedScripts} Bash syntax checks; example consistency checks passed.`);
 }

@@ -10,6 +10,7 @@
 | [本地 AI Compose](local-ai/compose.yaml) | [本地 AI 项目](../docs/04-projects/项目4-Linux跑本地AI.md) | Ollama + Open WebUI |
 | [blink.py](pi/blink.py) | [GPIO 章节](../docs/05-raspberry-pi/04-GPIO硬件编程.md) | 真机 LED 闪烁，Ctrl-C 释放资源 |
 | [capture-frame.py](pi/capture-frame.py) | [边缘 AI](../docs/05-raspberry-pi/06-树莓派与边缘AI.md) | USB 摄像头采集图片 |
+| [record-button.py](pi/record-button.py) | [按钮数据记录](../docs/05-raspberry-pi/07-从按钮到数据记录.md) | GPIO27 状态记录，支持明确标记的 `--simulate` 模式 |
 
 ## 质量检查
 
@@ -19,6 +20,7 @@
 node scripts/check-content.mjs
 node --test scripts/backup.test.mjs
 python3 -B scripts/examples.test.py
+python3 -B scripts/media.test.py
 ```
 
 SVG 用 PowerShell 的 XML 解析器检查，Windows 和装有 pwsh 的 Linux 均可：
@@ -35,7 +37,13 @@ Windows PowerShell 用户也可直接运行 `& ./scripts/check-svg.ps1`。Python
 bash scripts/check-docker.sh
 ```
 
-备份回归测试使用独立临时目录，验证路径边界、恢复内容、保留数量、预演、失败清理和锁冲突。内容检查覆盖本地文件链接、38 章目录一致性、6 套练习、6 张速查表与 Bash 语法；不声称验证了每个外部网站或每条需要系统权限的教学命令。
+备份回归测试使用独立临时目录，验证路径边界、恢复内容、保留数量、预演、失败清理和锁冲突。内容检查覆盖本地文件链接、章节与素材数量、6 套练习、6 张速查表与 Bash 语法；不声称验证了每个外部网站或每条需要系统权限的教学命令。
+
+## 素材维护
+
+- `python3 -B scripts/build-animations.py` 重新生成新增的六个 SVG；[动画目录](../assets/animations/catalog.json) 记录全部动画与对应章节。
+- `scripts/fetch-course-photos.py` 是本次六张照片的来源记录与下载脚本，额外需要 Pillow。它拒绝覆盖已有图片，日常检查和 CI 不运行下载、不需要联网或 Pillow。
+- `scripts/media.test.py` 使用标准库核对新照片的文件摘要和署名、动画 XML 与生成源码，并测试按钮采集的模拟模式；模拟通过不代表 GPIO 真机已通过。
 
 备份脚本面向 Bash + GNU 工具，不直接支持 macOS 的 BSD find/sort。它使用专用目标目录，清理该目录直属的 `backup_*.tar.gz` 文件。强制终止后如有旧锁，确认没有写入者再处理；数据库应先按应用要求导出一致性备份，不能只打包正在写入的数据目录。
 

@@ -16,3 +16,11 @@
 | `raspberry-pi-gpio.png` | 树莓派 GPIO 引脚定义图 | Andy Oakley | CC0（http://creativecommons.org/publicdomain/zero/1.0/deed.en） | https://commons.wikimedia.org/wiki/File:Cjam-raspberry-pi-2-model-b-gpio-pins.png |
 | `tux-photo.jpg` | Linux 吉祥物 Tux（实景玩偶） | Renato.pierri | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Tux,_the_Linux_penguin_I.jpg |
 | `tux.png` | Linux 吉祥物 Tux（矢量版） | Larry Ewing, Simon Budig, Garrett LeSage | Attribution | https://commons.wikimedia.org/wiki/File:Tux.svg |
+| `ddr4-memory.jpg` | DDR4 ECC RDIMM 内存条 | Dsimic | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Two_8_GB_DDR4-2133_ECC_1.2_V_RDIMMs_(straightened).jpg |
+| `ethernet-connector.jpg` | 8P8C 网线接头 | David Monniaux（来源页版权声明） | CC BY-SA 3.0（https://creativecommons.org/licenses/by-sa/3.0/） | https://commons.wikimedia.org/wiki/File:Ethernet_RJ45_connector_p1160054.jpg |
+| `ethernet-switch.jpg` | 五口以太网交换机背面 | Sub | Public domain（来源页声明） | https://commons.wikimedia.org/wiki/File:Ethernet_switch_Atlantis_A02-F5P_5_ports_backend.jpg |
+| `usb-webcam.jpg` | USB 摄像头实物 | WrS.tm.pl | CC0（https://creativecommons.org/publicdomain/zero/1.0/） | https://commons.wikimedia.org/wiki/File:USB_webcam_for_PC.jpg |
+| `axial-resistors.jpg` | 不同阻值的轴向电阻 | Evan-Amos | Public domain（来源页声明） | https://commons.wikimedia.org/wiki/File:Electronic-Axial-Lead-Resistors-Array.jpg |
+| `nvme-ssd.jpg` | M.2 NVMe SSD 正面 | D-Kuru | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr%C2%B00915.jpg |
+
+2026-10-06 新增的六张照片仅调整尺寸并重新压缩为 JPEG，未修改场景或器件；按各图片原许可继续提供。机器可读的原始说明、作者信息、来源、下载地址与文件摘要见 [SOURCES.json](SOURCES.json)。仓库代码的 Apache 2.0 许可不替代图片各自的许可。

@@ -1,7 +1,13 @@
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $files = Get-ChildItem -LiteralPath (Join-Path $repoRoot 'assets/animations') -Filter '*.svg'
-if ($files.Count -ne 6) { throw "Expected 6 animations, found $($files.Count)" }
+$catalog = Get-Content -LiteralPath (Join-Path $repoRoot 'assets/animations/catalog.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($files.Count -ne $catalog.Count) { throw "Animation catalog and SVG count differ" }
+foreach ($entry in $catalog) {
+    if (-not (Test-Path -LiteralPath (Join-Path $repoRoot "assets/animations/$($entry.file)"))) {
+        throw "Missing catalog animation: $($entry.file)"
+    }
+}
 foreach ($file in $files) {
     $settings = New-Object System.Xml.XmlReaderSettings
     $settings.DtdProcessing = [System.Xml.DtdProcessing]::Prohibit

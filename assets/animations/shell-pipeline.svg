@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500" role="img" aria-labelledby="title desc">
+<title id="title">管道：让文本依次经过四个工具</title>
+<desc id="desc">看清数据从哪里来，每一步剩下什么。四步示意，每 12 秒一轮，播放三轮后停止。这是一条数据流示意，不代表进程严格逐个启动；管道可以并发处理。</desc>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+.code{font-family:Consolas,monospace}
+.focus{opacity:0}
+@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,99.9%{opacity:1}100%,100%{opacity:0}}.phase-3{animation:step3 12s linear 3}
+@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,95%{transform:translateX(780px)}100%{transform:translateX(0)}}
+.token{animation:travel 12s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){.focus,.token{animation:none}.token{display:none}}
+</style>
+<rect width="1080" height="500" rx="22" fill="#0d1117"/>
+<text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
+<text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">管道：让文本依次经过四个工具</text>
+<text x="40" y="120" fill="#9da7b3" font-size="16">看清数据从哪里来，每一步剩下什么</text>
+<path d="M148 320 H928" fill="none" stroke="#303d4d" stroke-width="3"/>
+
+<g>
+<rect x="40" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-0" x="40" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 读取日志</text>
+<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">cat access.log</text>
+<text x="56" y="252" fill="#c9d1d9" font-size="14">标准输出是一串文本</text>
+<text x="56" y="276" fill="#9da7b3" font-size="14">原文件保持不变</text>
+<circle cx="148" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="300" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-1" x="300" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="316" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">02 筛选记录</text>
+<text class="code" x="316" y="221" fill="#79c0ff" font-size="13">grep &#x27;ERROR&#x27;</text>
+<text x="316" y="252" fill="#c9d1d9" font-size="14">只留下匹配的行</text>
+<text x="316" y="276" fill="#9da7b3" font-size="14">没有匹配时返回非零</text>
+<circle cx="408" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="560" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-2" x="560" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 提取字段</text>
+<text class="code" x="576" y="221" fill="#79c0ff" font-size="13">awk &#x27;{print $1}&#x27;</text>
+<text x="576" y="252" fill="#c9d1d9" font-size="14">每行只输出第一列</text>
+<text x="576" y="276" fill="#9da7b3" font-size="14">下游不再收到整行</text>
+<circle cx="668" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="820" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 排序统计</text>
+<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">sort | uniq -c</text>
+<text x="836" y="252" fill="#c9d1d9" font-size="14">相同内容聚到一起</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">输出每个值的次数</text>
+<circle cx="928" cy="320" r="5" fill="#62758b"/>
+</g>
+<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
+<rect x="40" y="356" width="1000" height="106" rx="12" fill="#101f2c"/>
+<text x="58" y="390" fill="#e6edf3" font-size="16">动手：分别运行管道的前 1、2、3、4 段，核对每一步输出。</text>
+<text x="58" y="421" fill="#9da7b3" font-size="14">这是一条数据流示意，不代表进程严格逐个启动；管道可以并发处理。</text>
+<text x="58" y="445" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 重载图片可重播</text>
+</svg>

@@ -4,12 +4,12 @@
 
 **The Road to Linux Mastery —— 一套人人可学、边看边练的中文 Linux 系统教学工程**
 
-[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-38个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-6部-9cf)](#-配套资源) [![视频](https://img.shields.io/badge/B站·YouTube-10个精选-red)](resources/videos.md) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
+[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-42个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-12部-9cf)](resources/visual-lab.md) [![视频](https://img.shields.io/badge/B站·YouTube-10个精选-red)](resources/videos.md) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
 
 ![终端打字动画](assets/animations/terminal-typing.svg)
 
 > 灵感源自「通往 AGI 之路」：**用清晰的路线图，把一件复杂的事拆成每天都能走的一小步。**
-> AI 时代，所有的模型、容器、云服务器都跑在 Linux 上 —— 这条路，值得每个人走一遍。
+> AI 时代，许多模型服务、容器和云服务器以 Linux 为基础 —— 从命令行到本地 AI，沿着这条路一步步动手。
 
 </div>
 
@@ -19,11 +19,26 @@
 
 这是一套**完整的 Linux 中文教学工程**，遵循「通往 AGI 之路」的知识地图式编排：
 
-- 🗺️ **路线图驱动**：6 个阶段 38 个章节，从「什么是 Linux」到「树莓派边缘 AI」，每一步都知道自己在哪、下一步去哪
-- 🎬 **精美动画**：6 部原创 SVG 动画（终端打字、网络包之旅、进程生命周期、开机引导、GPIO 点灯、权限位）+ 全书 Mermaid 图解
-- 📷 **实物图片**：12 张 Wikimedia Commons 自由版权实物图（树莓派全家福、GPIO、机房、Tux 等），附完整[署名清单](assets/images/CREDITS.md)
+- 🗺️ **路线图驱动**：6 个阶段 42 个章节，从「什么是 Linux」到「树莓派边缘 AI」，增加硬件识别、Git 协作、AI 辅助运维与按钮数据记录
+- 🎬 **原理动画**：12 部原创 SVG 动画，覆盖终端、网络、进程、权限、管道、挂载、容器卷、备份和 AI 验证流程，配套[观看与实操任务](resources/visual-lab.md)
+- 📷 **实物图鉴**：18 张 Wikimedia Commons 图片，新增内存、SSD、网线、交换机、摄像头和电阻实拍，附完整[署名清单](assets/images/CREDITS.md)
 - 📺 **视频导航**：B站 / YouTube 共 10 个课程入口，按主题搭配章节阅读
 - 🧪 **边学边练**：每章自带「动手实验 + 自测清单」，配套 6 套练习题与答案、6 张速查表
+
+## 🧭 先选入口，再开始学习
+
+借鉴 [WaytoAGI](https://www.waytoagi.com) 的知识库、工具、提示词与实践入口，把学习资料组织成可以动手验证的路线：
+
+| 入口 | 适合什么时候打开 |
+|---|---|
+| 🗺️ [选择学习路线](LEARNING_PATHS.md) | 零基础、服务器、本地 AI、树莓派，各自从哪里开始 |
+| 🖼️ [实物图鉴](resources/hardware-gallery.md) | 先认识硬件，再读系统命令 |
+| 🎬 [动画实验室](resources/visual-lab.md) | 先预测数据流，再逐步验证 |
+| 🧰 [工具导航](resources/toolbox.md) | 按任务选择工具，知道它能证明什么 |
+| 💬 [提示词练习](resources/prompt-lab.md) | 用 AI 解释、提问和审阅，再用手册与实验核对 |
+| 📝 [练习与作品](exercises/README.md) | 把看过的内容变成可复做的成果 |
+
+![AI 建议到实测结果的学习流程](assets/animations/ai-review-loop.svg)
 
 ---
 
@@ -67,6 +82,7 @@ flowchart LR
 | 06 | [进程管理](docs/01-basics/06-进程管理.md) | `ps` `top` `kill` 信号机制 |
 | 07 | [环境变量与 PATH](docs/01-basics/07-环境变量与PATH.md) | `export` `$PATH` `alias` 配置文件加载顺序 |
 | 08 | [高效求助 · man 与 tldr](docs/01-basics/08-高效求助-man与tldr.md) | `man` `--help` `tldr` 自学能力养成 |
+| 09 | [从实物认识 Linux 硬件](docs/01-basics/09-从实物认识Linux硬件.md) | 内存、SSD、网卡与 `lscpu` / `lsblk` / `lsusb` |
 
 ### 阶段 2 · 进阶篇 —— 系统管理与脚本（约 2 周）
 
@@ -80,6 +96,7 @@ flowchart LR
 | 06 | [systemd 服务与日志](docs/02-advanced/06-systemd服务与日志.md) | `systemctl` `journalctl` 开机自启 |
 | 07 | [磁盘与文件系统](docs/02-advanced/07-磁盘与文件系统.md) | 分区、LVM、挂载、inode |
 | 08 | [网络基础与远程连接](docs/02-advanced/08-网络基础与远程连接.md) | `ip` `ss` `ssh` `scp` `rsync` |
+| 09 | [Git 与学习笔记协作](docs/02-advanced/09-Git与学习笔记协作.md) | 工作区、提交、分支、证据与知识库贡献 |
 
 ### 阶段 3 · 高级篇 —— 性能、内核与安全（约 1 周，可按基础延长）
 
@@ -91,6 +108,7 @@ flowchart LR
 | 04 | [容器与虚拟化](docs/03-pro/04-容器与虚拟化.md) | Docker 入门、K8s 认知地图 |
 | 05 | [自动化运维](docs/03-pro/05-自动化运维.md) | Ansible、定时任务、Git 化运维 |
 | 06 | [Shell 脚本进阶](docs/03-pro/06-Shell脚本进阶.md) | `getopts`、`trap`、并发、Expect |
+| 07 | [AI 辅助学习与运维](docs/03-pro/07-AI辅助学习与运维.md) | 上下文、提示词、只读排查、人工审阅与实测 |
 
 ### 阶段 4 · 实战篇 —— 用项目固化能力（约 2 周，可按项目延长）
 
@@ -112,6 +130,7 @@ flowchart LR
 | 04 | [GPIO 硬件编程](docs/05-raspberry-pi/04-GPIO硬件编程.md) | 点亮 LED、按键、传感器，gpiozero |
 | 05 | [家庭服务器实战](docs/05-raspberry-pi/05-家庭服务器实战.md) | NAS、Pi-hole 去广告、Docker 家园 |
 | 06 | [树莓派与边缘 AI](docs/05-raspberry-pi/06-树莓派与边缘AI.md) | 摄像头视觉、本地小模型、语音助手 |
+| 07 | [从按钮到数据记录](docs/05-raspberry-pi/07-从按钮到数据记录.md) | GPIO 状态、CSV、模拟与真机结果区分 |
 
 ---
 
@@ -123,8 +142,8 @@ flowchart LR
 | 📚 [书单与网站](resources/books-and-sites.md) | 5 本书与 10+ 学习网站，包含 TLDP、ArchWiki、explainshell |
 | 📝 [练习题与答案](exercises/) | 六个阶段各一套，选择+实操，答案可折叠 |
 | ⚡ [速查表](cheatsheets/) | 常用命令 / Vim / 三剑客 / systemd / 网络 / 树莓派 |
-| 🎬 [原创动画](assets/animations/) | 6 部 SVG 动画源文件，可自由复用 |
-| 🖼️ [实物图片](assets/images/) | 12 张自由版权照片 + [授权署名](assets/images/CREDITS.md) |
+| 🎬 [原创动画](resources/visual-lab.md) | 12 部 SVG 动画，每个主题配观察问题和实操入口 |
+| 🖼️ [实物图片](resources/hardware-gallery.md) | 18 张图片 + [授权署名](assets/images/CREDITS.md)，照片与示意分开标注 |
 | 🛠️ [配套源码与检查](scripts/README.md) | 备份、巡检、Docker、GPIO 与内容质量检查 |
 
 ## 🚀 快速开始

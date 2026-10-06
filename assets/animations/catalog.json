@@ -1,0 +1,14 @@
+[
+  {"file":"terminal-typing.svg","title":"终端输入","chapter":"docs/00-onboarding/05-初见终端与Shell.md"},
+  {"file":"packet-journey.svg","title":"网络包之旅","chapter":"docs/02-advanced/08-网络基础与远程连接.md"},
+  {"file":"process-lifecycle.svg","title":"进程生命周期","chapter":"docs/01-basics/06-进程管理.md"},
+  {"file":"boot-sequence.svg","title":"开机引导","chapter":"docs/03-pro/02-内核与系统调用.md"},
+  {"file":"gpio-blink.svg","title":"GPIO点灯","chapter":"docs/05-raspberry-pi/04-GPIO硬件编程.md"},
+  {"file":"permission-bits.svg","title":"权限位","chapter":"docs/01-basics/03-用户与权限.md"},
+  {"file":"shell-pipeline.svg","title":"管道数据流","chapter":"docs/02-advanced/01-管道与重定向.md"},
+  {"file":"filesystem-mount.svg","title":"文件系统挂载","chapter":"docs/02-advanced/07-磁盘与文件系统.md"},
+  {"file":"docker-volume.svg","title":"容器与持久卷","chapter":"docs/03-pro/04-容器与虚拟化.md"},
+  {"file":"ssh-handshake.svg","title":"SSH身份检查","chapter":"docs/02-advanced/08-网络基础与远程连接.md"},
+  {"file":"backup-transaction.svg","title":"备份发布与清理","chapter":"docs/02-advanced/05-Bash脚本编程.md"},
+  {"file":"ai-review-loop.svg","title":"AI建议审阅验证","chapter":"docs/03-pro/07-AI辅助学习与运维.md"}
+]
