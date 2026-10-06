@@ -18,10 +18,10 @@
 
 ## 🧠 核心概念
 
-
 ![Vim 模式原理动画](../../assets/animations/vim-modes.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=vim-modes.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 看文件：按"块头"选工具
 
 | 场景 | 工具 |

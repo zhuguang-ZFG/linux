@@ -19,10 +19,10 @@
 
 ## 🧠 核心概念
 
-
 ![systemd原理动画](../../assets/animations/systemd-restart.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=systemd-restart.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 6.1 init 进化史：一分钟
 
 开机后内核启动的第一个进程（PID 1）叫 **init**，它负责把系统的其余部分"带起来"，历代演进大致是：

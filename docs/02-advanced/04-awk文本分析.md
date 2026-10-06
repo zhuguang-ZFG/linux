@@ -19,10 +19,10 @@ grep 管筛选，sed 管修改，到了 awk（以三位发明人 Aho、Weinberge
 
 ## 🧠 核心概念
 
-
 ![awk原理动画](../../assets/animations/awk-aggregation.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=awk-aggregation.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 4.1 语法骨架：模式{动作}
 
 ```bash

@@ -19,10 +19,10 @@ grep 只能"挑选"行，而 **sed**（Stream Editor，流编辑器）能"修改
 
 ## 🧠 核心概念
 
-
 ![sed原理动画](../../assets/animations/sed-replace.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=sed-replace.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 3.1 流编辑器的工作方式
 
 sed 不像 vim 那样把整个文件读进内存打开编辑，而是像流水线工人：**每次从输入拿一行，加工完就输出，然后拿下一行**。这个"加工台"就叫**模式空间**（Pattern Space）。

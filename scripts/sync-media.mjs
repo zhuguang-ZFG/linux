@@ -58,9 +58,18 @@ for (const chapter of chapters) {
   });
   const related = animations.filter(item => item.chapter === chapter);
   let text = read(chapter).replaceAll('\r\n', '\n');
+  // Canonical inline block: exactly one blank line after the heading and one before
+  // the following section, so repeated runs stay idempotent across every chapter.
+  const inlineBlock = animation => `\n\n![${animation.title}原理动画](../../assets/animations/${animation.file})\n\n[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=${animation.file})。动画中的输入输出为教学示意，需用本章实验验证。\n\n`;
+  const inlineBlockPattern = animation => {
+    const file = animation.file.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\n*!\\[[^\\]]*原理动画\\]\\(\\.\\.\\/\\.\\.\\/assets\\/animations\\/${file}\\)\\n+\\[在学习站暂停、单步或重播\\]\\(https:\\/\\/zhuguang-zfg\\.github\\.io\\/linux\\/#animation=${file}\\)。动画中的输入输出为教学示意，需用本章实验验证。\\n*`);
+  };
   for (const animation of related.filter(item => item.height === 640)) {
+    const existing = inlineBlockPattern(animation);
+    if (existing.test(text)) text = text.replace(existing, '\n\n');
     if (!text.includes(`assets/animations/${animation.file}`)) {
-      text = text.replace(/(^## .*核心概念\s*$|^## .*方案设计\s*$)/m, `$1\n\n![${animation.title}原理动画](../../assets/animations/${animation.file})\n\n[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=${animation.file})。动画中的输入输出为教学示意，需用本章实验验证。`);
+      text = text.replace(/(^## .*核心概念|^## .*方案设计)[ \t]*\n+/m, (match, heading) => `${heading}${inlineBlock(animation)}`);
     }
   }
   const inlineAnimations = [...text.matchAll(/assets\/animations\/([\w-]+\.svg)/g)].map(match => match[1]);

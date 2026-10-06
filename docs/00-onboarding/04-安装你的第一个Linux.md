@@ -24,10 +24,10 @@
 
 ## 🧠 核心概念
 
-
 ![选安装方式原理动画](../../assets/animations/install-choices.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=install-choices.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 4.1 四条路线总览：先看地图再上路
 
 | 路线 | 难度 | 系统完整度 | 性能 | 主要成本与风险 | 适合谁 |

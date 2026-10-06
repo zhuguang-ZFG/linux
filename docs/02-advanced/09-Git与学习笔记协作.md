@@ -13,10 +13,10 @@
 
 ## 🧠 核心概念
 
-
 ![Git 分支原理动画](../../assets/animations/git-branches.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=git-branches.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ```mermaid
 flowchart LR
     A[工作区编辑] -->|git add| B[暂存区]

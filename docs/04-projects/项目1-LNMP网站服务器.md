@@ -21,10 +21,10 @@
 
 ## 🧠 方案设计
 
-
 ![LNMP原理动画](../../assets/animations/lnmp-request.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=lnmp-request.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### LNMP 四个角色怎么协作？
 
 - **Nginx**：门童。只负责接待 HTTP 请求，静态文件（图片、CSS、JS）自己返回，PHP 请求转交给 PHP-FPM；
