@@ -18,6 +18,8 @@ jobs:
         run: node --test scripts/backup.test.mjs
       - name: Verify chapter navigation rules
         run: node --test scripts/chapter-navigation.test.mjs
+      - name: Verify health report exit codes
+        run: node --test scripts/health-report.test.mjs
       - name: Parse SVG assets
         shell: pwsh
         run: ./scripts/check-svg.ps1
@@ -25,7 +27,9 @@ jobs:
         run: python3 -B scripts/examples.test.py
       - name: Verify media provenance, generated SVG and GPIO simulation
         run: python3 -B scripts/media.test.py
-      - name: Run Linux filesystem demonstration
+      - name: Verify camera lifecycle without hardware
+        run: python3 -B scripts/camera.test.py
+      - name: Run Linux filesystem and scheduling examples
         run: python3 -B scripts/labs.test.py
       - name: Check shell scripts
         run: shellcheck scripts/*.sh

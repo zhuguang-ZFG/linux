@@ -12,6 +12,7 @@
 | [capture-frame.py](pi/capture-frame.py) | [边缘 AI](../docs/05-raspberry-pi/06-树莓派与边缘AI.md) | USB 摄像头采集图片 |
 | [record-button.py](pi/record-button.py) | [按钮数据记录](../docs/05-raspberry-pi/07-从按钮到数据记录.md) | GPIO27 状态记录，支持明确标记的 `--simulate` 模式 |
 | [recover_deleted.py](labs/recover_deleted.py) | [性能与恢复实验](../docs/03-pro/01-性能观测与调优.md) | Linux 上在全新目录演示打开文件被删除后的恢复 |
+| [个人备份定时单元](scheduling/) | [自动化运维](../docs/03-pro/05-自动化运维.md) | 用户级 service/timer，路径与参数配套 |
 
 ## 质量检查
 
@@ -21,8 +22,10 @@
 node scripts/check-content.mjs
 node --test scripts/backup.test.mjs
 node --test scripts/chapter-navigation.test.mjs
+node --test scripts/health-report.test.mjs
 python3 -B scripts/examples.test.py
 python3 -B scripts/media.test.py
+python3 -B scripts/camera.test.py
 python3 -B scripts/labs.test.py
 ```
 
@@ -42,7 +45,9 @@ bash scripts/check-docker.sh
 
 备份回归测试使用独立临时目录，验证路径边界、恢复内容、保留数量、预演扫描失败、失败清理和锁冲突。内容检查覆盖本地文件链接、章节前后导航、章节与素材数量、6 套练习、6 张速查表与 Bash 语法。
 
-`labs.test.py` 在 Linux 上实际运行 `/proc` 恢复和文档中的压缩命令；Windows 上明确跳过，由 Ubuntu CI 覆盖。检查不声称验证了每个外部网站或每条需要系统权限的教学命令。运行实验前可查 [环境对照表](../resources/environment-matrix.md)。
+`labs.test.py` 在 Linux 上实际运行 `/proc` 恢复、压缩、sed，以及 cron/service 中的备份命令；Windows 上明确跳过，由 Ubuntu CI 覆盖。测试不注册系统定时任务。摄像头测试使用模拟驱动检查资源释放、编码失败和文件保护，不代表硬件实测。
+
+`health-report.sh` 退出码为 0（磁盘未达阈值）、1（磁盘告警）、2（参数/依赖/采集错误）；缺少可选的 free/ss 会在报告中标注，已安装工具执行失败则不返回健康结果。检查不声称验证了每个外部网站或每条需要系统权限的教学命令。运行实验前可查 [环境对照表](../resources/environment-matrix.md)。
 
 ## 素材维护
 

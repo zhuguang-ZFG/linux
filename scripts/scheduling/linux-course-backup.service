@@ -1,0 +1,7 @@
+[Unit]
+Description=Linux course directory backup
+
+[Service]
+Type=oneshot
+UMask=0077
+ExecStart="%h/.local/bin/linux-course-backup" "%h/linux-backup-lab/source" "%h/linux-backup-lab/archives"

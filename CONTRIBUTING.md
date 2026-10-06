@@ -37,6 +37,7 @@ PR 描述里请说明：改了什么、为什么改、如何在本地验证。
 - 在仓库根目录运行 `node scripts/check-content.mjs`，确保目录统计、本地链接与 Bash 语法一致。
 - 新增/调整章节时同时修改首页顺序和前后导航；`node --test scripts/chapter-navigation.test.mjs` 验证导航检查器。
 - 文件系统实验在独立临时目录运行 `python3 -B scripts/labs.test.py`；Linux 专属测试不能在 Windows 上伪装为已通过。
+- 修改巡检或摄像头示例后分别运行 `node --test scripts/health-report.test.mjs`、`python3 -B scripts/camera.test.py`，核对失败退出码与已有文件保护。
 - 修改备份逻辑时运行 `node --test scripts/backup.test.mjs`；不要用真实备份目录验证删除行为。
 - 修改 SVG 后运行 `pwsh -File scripts/check-svg.ps1`；只通过字符串搜索不足以证明 XML 合法。
 - 修改容器示例后运行 `bash scripts/check-docker.sh`，验证真实 HTTP 正文。
