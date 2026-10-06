@@ -1,0 +1,33 @@
+name: Media endpoint audit
+# Read-only availability audit of video provider endpoints (Bilibili view API,
+# YouTube oEmbed). Metadata/endpoint availability only — never a playback guarantee.
+# Non-blocking by design: no deployment depends on this workflow and the audit
+# step uses continue-on-error, so it cannot block content, site or deploy jobs.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * 1' # weekly, Monday 03:17 UTC
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run pure-logic regression tests
+        run: node --test scripts/audit-media.test.mjs
+      - name: Audit provider metadata endpoints
+        id: audit
+        continue-on-error: true
+        run: node scripts/audit-media.mjs --strict --json media-audit-report.json
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: media-audit-report
+          path: media-audit-report.json
+          if-no-files-found: warn
+          retention-days: 30

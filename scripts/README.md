@@ -23,6 +23,8 @@ node scripts/check-content.mjs
 node --test scripts/backup.test.mjs
 node --test scripts/chapter-navigation.test.mjs
 node --test scripts/health-report.test.mjs
+node --test scripts/serve-site.test.mjs
+node --test scripts/audit-media.test.mjs
 python3 -B scripts/examples.test.py
 python3 -B scripts/media.test.py
 python3 -B scripts/camera.test.py
@@ -53,7 +55,7 @@ bash scripts/check-docker.sh
 
 - `python3 -B scripts/build-animations.py` 重新生成 18 个 SVG；另有 6 个原始动画。[动画目录](../assets/animations/catalog.json) 记录全部 24 个动画与对应章节、时长和步骤。
 - `scripts/fetch-course-photos.py` 是本次六张照片的来源记录与下载脚本，额外需要 Pillow。它拒绝覆盖已有图片，日常检查和 CI 不运行下载、不需要联网或 Pillow。
-- `scripts/media.test.py` 使用标准库核对新照片的文件摘要和署名、动画 XML 与生成源码，并测试按钮采集的模拟模式；模拟通过不代表 GPIO 真机已通过。
+- `node scripts/audit-media.mjs [--json 报告路径] [--strict] [--timeout 毫秒]` 只读核查 [videos.json](../resources/videos.json) 里每条记录的供应商元数据端点：B 站走公开 view API（按 bvid），YouTube 走官方 oEmbed（按 watch 地址）。脚本不下载、不内嵌任何媒体，`reachable` 仅表示元数据接口可用，**不代表视频可播放**。默认始终退出 0，适合手动维护；`--strict` 在有记录不可达时退出 1。回归测试：`node --test scripts/audit-media.test.mjs`（纯函数，不联网）。CI 中 `.github/workflows/media-audit.yml` 每周（及手动触发）运行一次，上传 JSON 报告工件；审计步骤 `continue-on-error`，不阻塞内容检查、站点构建或 Pages 部署，其证据不构成播放保证。
 
 ## 学习站与视频映射
 
