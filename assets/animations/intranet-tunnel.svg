@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="640" viewBox="0 0 1080 640" role="img" aria-labelledby="title desc">
+<title id="title">内网穿透：不暴露公网也能访问</title>
+<desc id="desc">用加密覆盖网络把家里主机连进私有网。四步示意，每 12 秒一轮，播放三轮后停止。示意动画：Tailscale 是加密覆盖网络；需要公网入口时再评估 frp 等方案。</desc>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+.code{font-family:Consolas,monospace}
+.focus{opacity:0}
+.output{opacity:0}.output.phase-0{opacity:1}
+@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,100%{opacity:1}}.phase-3{animation:step3 12s linear 3}
+@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,100%{transform:translateX(780px)}}
+.token{animation:travel 12s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){.focus,.token,.output{animation:none}.token{display:none}}
+</style>
+<rect width="1080" height="640" rx="22" fill="#0d1117"/>
+<text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
+<text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">内网穿透：不暴露公网也能访问</text>
+<text x="40" y="120" fill="#9da7b3" font-size="16">用加密覆盖网络把家里主机连进私有网</text>
+<path d="M148 320 H928" fill="none" stroke="#303d4d" stroke-width="3"/>
+
+<g>
+<rect x="40" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-0" x="40" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 本地服务</text>
+<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">docker compose up -d</text>
+<text x="56" y="252" fill="#c9d1d9" font-size="14">Nextcloud 与数据库容器</text>
+<text x="56" y="276" fill="#9da7b3" font-size="14">数据存在命名卷里</text>
+<circle cx="148" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="300" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-1" x="300" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="316" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">02 组建私有网</text>
+<text class="code" x="316" y="221" fill="#79c0ff" font-size="13">sudo tailscale up</text>
+<text x="316" y="252" fill="#c9d1d9" font-size="14">设备加入加密 tailnet</text>
+<text x="316" y="276" fill="#9da7b3" font-size="14">地址形如 100.x.x.x</text>
+<circle cx="408" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="560" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-2" x="560" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 远程访问</text>
+<text class="code" x="576" y="221" fill="#79c0ff" font-size="13">手机 / 笔记本</text>
+<text x="576" y="252" fill="#c9d1d9" font-size="14">任意网络访问家庭主机</text>
+<text x="576" y="276" fill="#9da7b3" font-size="14">不向公网发布 8080</text>
+<circle cx="668" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="820" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 直连或中继</text>
+<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">tailscale status</text>
+<text x="836" y="252" fill="#c9d1d9" font-size="14">优先直连，必要时中继</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">不等同于公网暴露</text>
+<circle cx="928" cy="320" r="5" fill="#62758b"/>
+</g>
+<rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>
+<text x="58" y="375" fill="#7c9aab" font-size="12">示意输入与状态 · 非真实采样</text>
+<g class="output phase-0">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">$ docker compose up -d</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">nextcloud:8080 + db_data / nextcloud_data</text>
+</g>
+<g class="output phase-1">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">$ sudo tailscale up</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">设备加入 tailnet：100.x.x.x</text>
+</g>
+<g class="output phase-2">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">手机 → 家庭主机（无公网 IP）</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">不直接向网络接口发布 8080</text>
+</g>
+<g class="output phase-3">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">tailscale status / ping 目标</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">直连优先，打洞失败时经中继</text>
+</g>
+<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
+<rect x="40" y="496" width="1000" height="106" rx="12" fill="#101f2c"/>
+<text x="58" y="530" fill="#e6edf3" font-size="16">动手：部署 Nextcloud 后让第二台设备经 Tailscale 访问，记录实际路径是直连还是中继。</text>
+<text x="58" y="561" fill="#9da7b3" font-size="14">示意动画：Tailscale 是加密覆盖网络；需要公网入口时再评估 frp 等方案。</text>
+<text x="58" y="585" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
+</svg>

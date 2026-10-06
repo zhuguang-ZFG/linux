@@ -678,5 +678,135 @@
         "description": "数据不出网卡；首次加载慢属正常"
       }
     ]
+  },
+  {
+    "file": "apt-deps.svg",
+    "title": "apt 依赖",
+    "chapter": "docs/01-basics/05-软件包管理.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 刷新索引",
+        "description": "拉取镜像站索引；写入 /var/lib/apt/lists/"
+      },
+      {
+        "title": "02 请求安装",
+        "description": "解析 A→B→C→D 依赖链；缺一环就装不起来"
+      },
+      {
+        "title": "03 自动装齐",
+        "description": "依赖地狱一次解决；卸载也用同一条链路"
+      },
+      {
+        "title": "04 手动兜底",
+        "description": "dpkg 手动装包缺依赖时报错；用它自动补齐依赖"
+      }
+    ]
+  },
+  {
+    "file": "file-ops.svg",
+    "title": "文件操作",
+    "chapter": "docs/01-basics/01-文件与目录操作.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 复制备份",
+        "description": "目录必须加 -r；cp -i 覆盖前询问"
+      },
+      {
+        "title": "02 改名移动",
+        "description": "同一位置换名字；换目录则是移动"
+      },
+      {
+        "title": "03 删除不可逆",
+        "description": "命令行 rm 绕过回收站；先 ls 确认目标"
+      },
+      {
+        "title": "04 递归强制",
+        "description": "-r 才能删目录；-f 不再询问，敲错就没了"
+      }
+    ]
+  },
+  {
+    "file": "intranet-tunnel.svg",
+    "title": "内网穿透",
+    "chapter": "docs/04-projects/项目3-个人云盘与内网穿透.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 本地服务",
+        "description": "Nextcloud 与数据库容器；数据存在命名卷里"
+      },
+      {
+        "title": "02 组建私有网",
+        "description": "设备加入加密 tailnet；地址形如 100.x.x.x"
+      },
+      {
+        "title": "03 远程访问",
+        "description": "任意网络访问家庭主机；不向公网发布 8080"
+      },
+      {
+        "title": "04 直连或中继",
+        "description": "优先直连，必要时中继；不等同于公网暴露"
+      }
+    ]
+  },
+  {
+    "file": "triage-flow.svg",
+    "title": "排障四段式",
+    "chapter": "docs/04-projects/项目5-故障排查20例.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 记录现象",
+        "description": "先抄全，不复述印象；记录最近做过什么"
+      },
+      {
+        "title": "02 判断层级",
+        "description": "先缩小范围再深挖；别一上来就重启"
+      },
+      {
+        "title": "03 只读取证",
+        "description": "只读命令先取证；输出留着做对比"
+      },
+      {
+        "title": "04 再动手",
+        "description": "保留原始证据；改完要能复现验证"
+      }
+    ]
+  },
+  {
+    "file": "flash-first-boot.svg",
+    "title": "烧录系统",
+    "chapter": "docs/05-raspberry-pi/02-烧录系统与首次启动.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 选择镜像",
+        "description": "按板型选 64 位系统；镜像来自官方下载"
+      },
+      {
+        "title": "02 确认目标卡",
+        "description": "写卡覆盖整卡内容；先备份卡内已有数据"
+      },
+      {
+        "title": "03 预配置检查",
+        "description": "设置 SSID、密码与国家；不把设置文件传仓库"
+      },
+      {
+        "title": "04 首次启动",
+        "description": "DHCP 列表或 mDNS 找地址；关机用 sudo poweroff"
+      }
+    ]
   }
 ]

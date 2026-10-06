@@ -61,7 +61,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "file-ops.svg"
+    ]
   },
   "docs/01-basics/02-查看与编辑文件-Vim.md": {
     "videos": [
@@ -103,7 +105,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "apt-deps.svg"
+    ]
   },
   "docs/01-basics/06-进程管理.md": {
     "videos": [
@@ -377,7 +381,9 @@
         "note": "容器部署预备知识，Nextcloud 配置和访问控制见正文。"
       }
     ],
-    "animations": []
+    "animations": [
+      "intranet-tunnel.svg"
+    ]
   },
   "docs/04-projects/项目4-Linux跑本地AI.md": {
     "videos": [
@@ -402,6 +408,7 @@
       }
     ],
     "animations": [
+      "triage-flow.svg",
       "boot-sequence.svg"
     ]
   },
@@ -421,7 +428,9 @@
         "note": "仅为工作坊概览；当前 Imager 烧录流程以正文和官方说明为准。"
       }
     ],
-    "animations": []
+    "animations": [
+      "flash-first-boot.svg"
+    ]
   },
   "docs/05-raspberry-pi/03-远程连接与基础配置.md": {
     "videos": [
