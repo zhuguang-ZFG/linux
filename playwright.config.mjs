@@ -1,5 +1,12 @@
 import { defineConfig } from '@playwright/test';
 
+const rawPort = process.env.COURSE_PORT;
+const port = rawPort === undefined || rawPort === '' ? 4173 : /^\d+$/.test(rawPort) ? Number(rawPort) : undefined;
+if (port === undefined || port < 1 || port > 65535) {
+  throw new Error(`Invalid COURSE_PORT "${rawPort}": expected an integer between 1 and 65535.`);
+}
+const siteUrl = `http://127.0.0.1:${port}/linux/`;
+
 export default defineConfig({
   testDir: './tests/site',
   timeout: 30000,
@@ -9,11 +16,10 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: 'list',
   use: {
-    baseURL: 'http://127.0.0.1:4173/linux/',
+    baseURL: siteUrl,
     viewport: { width: 1440, height: 1000 },
-    channel: process.platform === 'win32' ? 'chrome' : undefined,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
-  webServer: { command: 'node scripts/serve-site.mjs', url: 'http://127.0.0.1:4173/linux/', reuseExistingServer: !process.env.CI, timeout: 15000 },
+  webServer: { command: 'node scripts/serve-site.mjs', url: siteUrl, reuseExistingServer: !process.env.CI, timeout: 15000 },
 });
