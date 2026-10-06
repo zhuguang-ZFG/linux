@@ -118,7 +118,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "path-lookup.svg"
+    ]
   },
   "docs/01-basics/08-高效求助-man与tldr.md": {
     "videos": [
@@ -159,7 +161,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "grep-regex.svg"
+    ]
   },
   "docs/02-advanced/03-sed流编辑器.md": {
     "videos": [

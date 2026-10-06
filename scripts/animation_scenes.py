@@ -84,4 +84,18 @@ EXTRA_SCENES = [
         ("04 记录状态", "pressed / released", "状态变化时写 CSV", "高频脉冲可能被漏采")
     ], "动手：分别慢按、快按、长按，比较 CSV 行数并解释差异。", "波形是原理示意；实际消抖由库与后端实现，不能当成实测时序。",
     [["GPIO27：默认 released", "接线前断电，信号不接 5V"], ["触点瞬间：抖动、反复通断", "一段机械动作 ≠ 多次独立点击"], ["设置合适的消抖窗口", "过大可能忽略快速操作"], ["elapsed_s,state,source", "0.500,pressed,gpio27（示意）"]], "docs/05-raspberry-pi/07-从按钮到数据记录.md"),
+    ("path-lookup", "PATH 查找：命令究竟从哪里来", "同名命令可能来自不同目录，查找顺序由 PATH 决定", [
+        ("01 输入命令", "git status", "Shell 先判断是不是路径", "含 / 的才按路径处理"),
+        ("02 依次查找", "echo $PATH", "从左到右逐个目录查找", "靠前的目录抢先命中"),
+        ("03 命中执行", "/usr/bin/git", "执行第一个匹配文件", "后面的同名命令被跳过"),
+        ("04 继承规则", "export PATH=…", "导出的变量才进子进程", "临时赋值只影响当前命令")
+    ], "动手：用 command -v 与 type -a 找出命令来源，再临时改 PATH 验证顺序。", "示意动画：hash 缓存、内建命令与不同 Shell 会改变查找结果，以本机 type -a 为准。",
+    [["$ git status", "PATH=/usr/local/bin:/usr/bin:/bin"], ["找 /usr/local/bin/git → 没有", "找 /usr/bin/git → 命中"], ["执行 /usr/bin/git，参数 status", "其余同名文件不再参与"], ["export PATH=\"$HOME/bin:$PATH\"", "子进程继承的是导出后的 PATH"]], "docs/01-basics/07-环境变量与PATH.md"),
+    ("grep-regex", "grep 匹配：逐行筛选与三种退出码", "命中、未命中与出错是三个不同结果", [
+        ("01 逐行读取", "line = 1 行文本", "模式按行匹配", "默认不跨行匹配"),
+        ("02 匹配模式", "-E 'ERROR|WARN'", "正则分支任一命中即可", "默认打印整行原文"),
+        ("03 输出结果", "grep -n -o", "选项改变输出内容", "不改变是否命中"),
+        ("04 退出码", "0 / 1 / 2", "未命中是 1，不是错误", "读不到文件才是 2")
+    ], "动手：构造命中、未命中与文件不存在三种情况，核对退出码与 stderr。", "示意动画：正则方言由 -E/-P 等选项决定，复杂模式请在本机版本验证。",
+    [["input: 12 ERROR auth failed", "逐行交给模式匹配"], ["pattern: ERROR|WARN → 命中", "其余行不输出"], ["stdout: 12 ERROR auth failed", "stderr: （空）"], ["exit 0 命中｜1 未命中｜2 出错", "$ grep -c ERROR access.log"]], "docs/02-advanced/02-grep文本搜索.md"),
 ]

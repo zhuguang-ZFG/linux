@@ -496,5 +496,57 @@
         "description": "状态变化时写 CSV；高频脉冲可能被漏采"
       }
     ]
+  },
+  {
+    "file": "path-lookup.svg",
+    "title": "PATH 查找",
+    "chapter": "docs/01-basics/07-环境变量与PATH.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 输入命令",
+        "description": "Shell 先判断是不是路径；含 / 的才按路径处理"
+      },
+      {
+        "title": "02 依次查找",
+        "description": "从左到右逐个目录查找；靠前的目录抢先命中"
+      },
+      {
+        "title": "03 命中执行",
+        "description": "执行第一个匹配文件；后面的同名命令被跳过"
+      },
+      {
+        "title": "04 继承规则",
+        "description": "导出的变量才进子进程；临时赋值只影响当前命令"
+      }
+    ]
+  },
+  {
+    "file": "grep-regex.svg",
+    "title": "grep 匹配",
+    "chapter": "docs/02-advanced/02-grep文本搜索.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 逐行读取",
+        "description": "模式按行匹配；默认不跨行匹配"
+      },
+      {
+        "title": "02 匹配模式",
+        "description": "正则分支任一命中即可；默认打印整行原文"
+      },
+      {
+        "title": "03 输出结果",
+        "description": "选项改变输出内容；不改变是否命中"
+      },
+      {
+        "title": "04 退出码",
+        "description": "未命中是 1，不是错误；读不到文件才是 2"
+      }
+    ]
   }
 ]

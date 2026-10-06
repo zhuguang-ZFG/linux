@@ -18,6 +18,10 @@
 
 ## 🧠 核心概念
 
+
+![grep 匹配原理动画](../../assets/animations/grep-regex.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=grep-regex.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ### 2.1 语法骨架
 
 ```bash

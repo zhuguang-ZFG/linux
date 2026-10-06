@@ -18,6 +18,10 @@
 
 ## 🧠 核心概念
 
+
+![PATH 查找原理动画](../../assets/animations/path-lookup.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=path-lookup.svg)。动画中的输入输出为教学示意，需用本章实验验证。
 ### 什么是环境变量
 
 环境变量是一组**键值对**（如 `HOME=/home/alice`），描述进程所处的"环境"。它最重要的特性是**可继承**：进程诞生的子进程会拿到一份环境变量的拷贝。Shell 靠 `PATH` 找命令，程序靠 `LANG` 知道语言，靠 `HOME` 知道你家在哪。
