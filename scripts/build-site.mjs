@@ -108,6 +108,7 @@ cpSync(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true })
 cpSync(path.join(root, 'web/index.html'), path.join(out, 'index.html'));
 cpSync(path.join(root, 'web/styles.css'), path.join(out, 'styles.css'));
 if (existsSync(path.join(root, 'web/og-image.png'))) cpSync(path.join(root, 'web/og-image.png'), path.join(out, 'og-image.png'));
+if (existsSync(path.join(root, 'web/404.html'))) cpSync(path.join(root, 'web/404.html'), path.join(out, '404.html'));
 writeFileSync(path.join(out, '.nojekyll'), '');
 writeFileSync(path.join(out, 'data/course.json'), JSON.stringify({ documents: catalog, chapterOrder, stageNames, videos: videos.videos,
   videoNotice: videos.notice, videosCheckedAt: videos.checkedAt, animations, repo,

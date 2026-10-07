@@ -19,8 +19,9 @@ document.querySelector('#theme-toggle')?.addEventListener('click', () => {
   themePreference = { system: 'dark', dark: 'light', light: 'system' }[themePreference];
   try { localStorage.setItem('linux-course-theme', themePreference); } catch { /* session only */ }
   applyTheme();
+  if (document.querySelector('.article .mermaid')) renderDiagrams(routeVersion).catch(() => {});
 });
-darkQuery.addEventListener('change', () => { if (themePreference === 'system') applyTheme(); });
+darkQuery.addEventListener('change', () => { if (themePreference === 'system') { applyTheme(); if (document.querySelector('.article .mermaid')) renderDiagrams(routeVersion).catch(() => {}); } });
 const topButton = document.querySelector('#back-to-top');
 const progressBar = document.querySelector('#reading-progress');
 const importDialog = document.querySelector('#import-dialog');
@@ -134,11 +135,19 @@ function gallery(kind, params) {
 async function renderDiagrams(version) {
   const nodes = [...main.querySelectorAll('.mermaid')];
   if (!nodes.length) return;
-  const originals = nodes.map(node => node.textContent);
+  const originals = nodes.map(node => node.dataset.source ?? node.textContent);
   try {
     const { default: mermaid } = await import('mermaid');
     if (version !== routeVersion) return;
-    mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'neutral', fontFamily: 'Microsoft YaHei, sans-serif' });
+    const darkTheme = document.documentElement.classList.contains('dark');
+    mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: darkTheme ? 'dark' : 'neutral', fontFamily: 'Microsoft YaHei, sans-serif' });
+    nodes.forEach((node, index) => {
+      node.dataset.source = originals[index];
+      if (node.hasAttribute('data-processed')) {
+        node.removeAttribute('data-processed');
+        node.textContent = originals[index];
+      }
+    });
     await mermaid.run({ nodes, suppressErrors: false });
     nodes.forEach(node => {
       const svg = node.querySelector('svg');
