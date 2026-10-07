@@ -1195,7 +1195,7 @@
       },
       {
         "title": "04 卸载回收",
-        "description": "移除软件本体；autoremove 回收孤儿依赖"
+        "description": "再 sudo apt autoremove；回收不再被依赖的包"
       }
     ]
   }

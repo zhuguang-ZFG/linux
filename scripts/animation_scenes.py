@@ -270,7 +270,7 @@ EXTRA_SCENES = [
         ("01 刷新目录", "sudo apt update", "更新本地索引清单", "不升级任何软件"),
         ("02 升级已装", "sudo apt upgrade", "update 之后才动手", "把已装软件升到最新"),
         ("03 安装新软件", "sudo apt install tree", "自动解析并装好依赖", "一条命令装全家桶"),
-        ("04 卸载回收", "sudo apt remove tree", "移除软件本体", "autoremove 回收孤儿依赖")
+        ("04 卸载回收", "sudo apt remove tree", "再 sudo apt autoremove", "回收不再被依赖的包")
     ], "动手：按 update → upgrade → install → show → remove → autoremove 走完 tree 生命周期，再用 apt list --installed 核对。", "示意动画：apt 依赖解析依据本地索引，索引过期会装错版本；dpkg 手动装包不会自动拉依赖。",
-    [["sudo apt update", "只刷新 /var/lib/apt/lists 索引清单"], ["sudo apt upgrade", "真正升级已装软件（更新目录之后）"], ["sudo apt install tree", "自动解析依赖，装好全家桶"], ["sudo apt remove tree → autoremove", "卸载并回收不再被依赖的包"]], "docs/01-basics/05-软件包管理.md"),
+    [["sudo apt update", "只刷新 /var/lib/apt/lists 索引清单"], ["sudo apt upgrade", "真正升级已装软件（更新目录之后）"], ["sudo apt install tree", "自动解析依赖，装好全家桶"], ["sudo apt remove tree → sudo apt autoremove", "卸载并回收不再被依赖的包"]], "docs/01-basics/05-软件包管理.md"),
 ]

@@ -49,8 +49,8 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
 <text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 卸载回收</text>
 <text class="code" x="836" y="221" fill="#79c0ff" font-size="13">sudo apt remove tree</text>
-<text x="836" y="252" fill="#c9d1d9" font-size="14">移除软件本体</text>
-<text x="836" y="276" fill="#9da7b3" font-size="14">autoremove 回收孤儿依赖</text>
+<text x="836" y="252" fill="#c9d1d9" font-size="14">再 sudo apt autoremove</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">回收不再被依赖的包</text>
 <circle cx="928" cy="320" r="5" fill="#62758b"/>
 </g>
 <rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>
@@ -68,7 +68,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">自动解析依赖，装好全家桶</text>
 </g>
 <g class="output phase-3">
-<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">sudo apt remove tree → autoremove</text>
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">sudo apt remove tree → sudo apt autoremove</text>
 <text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">卸载并回收不再被依赖的包</text>
 </g>
 <circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
