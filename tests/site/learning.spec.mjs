@@ -130,6 +130,33 @@ test('animation ends at the final state instead of wrapping to its first frame',
   await expect(page.frameLocator('#animation-frame').locator('.output.phase-3')).toHaveCSS('opacity', '1');
 });
 
+test('animation restores the step from a deep link and announces it', async ({ page }) => {
+  await page.goto('#animation=git-branches.svg&step=3');
+  await expect(page.locator('#animation-time')).toHaveText('6.0 / 12s');
+  await expect(page.locator('[data-step-card="2"]')).toHaveClass(/active/);
+  await expect(page.frameLocator('#animation-frame').locator('.output.phase-2')).toHaveCSS('opacity', '1');
+  await expect(page.locator('#animation-announcer')).toHaveText(/第 3 步，共 4 步/);
+});
+
+test('animation supports keyboard step, play/pause and reset', async ({ page }) => {
+  await page.goto('#animation=git-branches.svg');
+  await expect(page.locator('#animation-time')).toHaveText('0.0 / 12s');
+  await page.keyboard.press('ArrowRight');
+  await expect(page.locator('#animation-time')).toHaveText('3.0 / 12s');
+  await expect(page.locator('[data-step-card="1"]')).toHaveClass(/active/);
+  await page.keyboard.press('ArrowLeft');
+  await expect(page.locator('#animation-time')).toHaveText('0.0 / 12s');
+  await page.keyboard.press('Space');
+  await expect(page.locator('#animation-play')).toHaveText('暂停');
+  await expect.poll(async () => Number(await page.locator('#animation-progress').inputValue())).toBeGreaterThan(0.1);
+  await page.keyboard.press('Space');
+  const paused = Number(await page.locator('#animation-progress').inputValue());
+  await page.waitForTimeout(150);
+  expect(Number(await page.locator('#animation-progress').inputValue())).toBeCloseTo(paused, 1);
+  await page.keyboard.press('r');
+  await expect(page.locator('#animation-time')).toHaveText('0.0 / 12s');
+});
+
 test('reduced-motion preference still provides paused controls and readable steps', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('#animation=git-branches.svg');

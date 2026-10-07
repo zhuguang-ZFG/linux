@@ -193,9 +193,11 @@ function animationPage(file) {
   document.title = `${animation.title} · 动画实验室`;
   const doc = docs.get(animation.chapter);
   const steps = animation.steps || [];
-  main.innerHTML = `<div class="page"><div class="breadcrumb"><a href="#animations">动画实验室</a> / ${escape(doc ? data.stageNames[doc.stage] : 'Linux 原理')}</div><h1 class="page-title">${escape(animation.title)}</h1><p class="page-lead">先想一想下一步会发生什么，再播放或单步观察。示例数据用于解释原理。</p><div class="player-panel"><div class="animation-stage" style="aspect-ratio:${animation.width || 1080}/${animation.height || 500}"><iframe id="animation-frame" src="./assets/animations/${encodeURIComponent(file)}" title="${escape(animation.title)} 原理动画"></iframe></div><div class="player-controls"><button class="button primary small" id="animation-play" disabled>播放</button><button class="button small" id="animation-step" disabled>下一步</button><button class="button small" id="animation-reset" disabled>重播</button><label class="sr-only" for="animation-progress">动画时间</label><input id="animation-progress" type="range" min="0" max="${animation.duration}" value="0" step="0.05" disabled><span class="player-time" id="animation-time">0.0 / ${animation.duration}s</span><label class="sr-only" for="animation-speed">播放速度</label><select id="animation-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div>
+  const stepParam = Number(new URLSearchParams(location.hash.slice(1)).get('step'));
+  const initialStep = Number.isInteger(stepParam) && stepParam >= 1 ? Math.min(stepParam, steps.length || 1) : 1;
+  main.innerHTML = `<div class="page"><div class="breadcrumb"><a href="#animations">动画实验室</a> / ${escape(doc ? data.stageNames[doc.stage] : 'Linux 原理')}</div><h1 class="page-title">${escape(animation.title)}</h1><p class="page-lead">先想一想下一步会发生什么，再播放或单步观察。示例数据用于解释原理。</p><div class="player-panel"><div class="animation-stage" style="aspect-ratio:${animation.width || 1080}/${animation.height || 500}"><iframe id="animation-frame" src="./assets/animations/${encodeURIComponent(file)}" title="${escape(animation.title)} 原理动画"></iframe></div><div class="player-controls"><button class="button primary small" id="animation-play" disabled>播放</button><button class="button small" id="animation-step" disabled>下一步</button><button class="button small" id="animation-reset" disabled>重播</button><label class="sr-only" for="animation-progress">动画时间</label><input id="animation-progress" type="range" min="0" max="${animation.duration}" value="0" step="0.05" disabled><span class="player-time" id="animation-time">0.0 / ${animation.duration}s</span><label class="sr-only" for="animation-speed">播放速度</label><select id="animation-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select><span class="sr-only" role="status" id="animation-announcer"></span></div></div>
     ${steps.length ? `<div class="steps-grid">${steps.map((step, index) => `<div class="step-card ${index === 0 ? 'active' : ''}" data-step-card="${index}"><strong>${escape(step.title)}</strong><p>${escape(step.description)}</p></div>`).join('')}</div>` : ''}
-    <div class="practice-banner"><div><h3>验证理解的下一步</h3><p>${escape(doc?.title || '打开对应章节，运行自己的实验。')}</p></div><a class="button" href="${readRoute(animation.chapter)}">进入章节实验 →</a></div><p class="count-note">默认暂停，按需播放。原始 SVG 保留静态说明，<a href="./assets/animations/${encodeURIComponent(file)}" target="_blank" rel="noopener noreferrer">也可独立打开 ↗</a>。</p>${footer()}</div>`;
+    <div class="practice-banner"><div><h3>验证理解的下一步</h3><p>${escape(doc?.title || '打开对应章节，运行自己的实验。')}</p></div><a class="button" href="${readRoute(animation.chapter)}">进入章节实验 →</a></div><p class="count-note">默认暂停，按需播放（快捷键：空格 播放/暂停，←/→ 单步，R 重播）。原始 SVG 保留静态说明，<a href="./assets/animations/${encodeURIComponent(file)}" target="_blank" rel="noopener noreferrer">也可独立打开 ↗</a>。</p>${footer()}</div>`;
   const frame = document.querySelector('#animation-frame');
   let raf = null, alive = true;
   cleanup = () => { alive = false; if (raf) cancelAnimationFrame(raf); };
@@ -215,6 +217,13 @@ function animationPage(file) {
     const speed = document.querySelector('#animation-speed');
     [play, step, reset, progress].forEach(control => { control.disabled = false; });
     let current = 0, playing = false, last = null;
+    const announcer = document.querySelector('#animation-announcer');
+    let announced = -1;
+    const announce = index => {
+      if (!steps.length || index === announced || !announcer) return;
+      announced = index;
+      announcer.textContent = `第 ${index + 1} 步，共 ${steps.length} 步：${steps[index]?.title || ''}`;
+    };
     function seek(value) {
       current = Math.max(0, Math.min(animation.duration, value));
       const visualTime = Math.min(current, Math.max(0, animation.duration - 0.001));
@@ -225,6 +234,7 @@ function animationPage(file) {
       progress.value = String(current); time.textContent = `${current.toFixed(1)} / ${animation.duration}s`;
       const index = Math.min(steps.length - 1, Math.floor(current / animation.duration * steps.length));
       main.querySelectorAll('[data-step-card]').forEach(card => card.classList.toggle('active', Number(card.dataset.stepCard) === index));
+      announce(index);
     }
     function pause() { playing = false; last = null; play.textContent = '播放'; if (raf) cancelAnimationFrame(raf); }
     function tick(stamp) {
@@ -234,15 +244,33 @@ function animationPage(file) {
       if (current >= animation.duration) { pause(); return; }
       raf = requestAnimationFrame(tick);
     }
-    play.addEventListener('click', () => {
+    function togglePlay() {
       if (playing) { pause(); return; }
       if (current >= animation.duration) seek(0);
-      playing = true; play.textContent = '暂停'; raf = requestAnimationFrame(tick);
-    });
+      playing = true; play.textContent = '暂停'; last = null; raf = requestAnimationFrame(tick);
+    }
+    play.addEventListener('click', togglePlay);
     step.addEventListener('click', () => { pause(); const size = animation.duration / (steps.length || 4); seek(Math.min(animation.duration, (Math.floor(current / size + 0.001) + 1) * size)); });
     reset.addEventListener('click', () => { pause(); seek(0); });
     progress.addEventListener('input', () => { pause(); seek(Number(progress.value)); });
-    seek(0);
+    const size = animation.duration / (steps.length || 4);
+    const onKey = event => {
+      if (!alive) return;
+      const tag = event.target?.tagName || '';
+      if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
+      if (tag === 'BUTTON' && (event.key === ' ' || event.key === 'Enter')) return;
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      switch (event.key) {
+        case ' ': case 'Spacebar': event.preventDefault(); togglePlay(); break;
+        case 'ArrowRight': event.preventDefault(); pause(); seek(Math.min(animation.duration, (Math.floor(current / size + 0.001) + 1) * size)); break;
+        case 'ArrowLeft': event.preventDefault(); pause(); seek(Math.max(0, Math.floor((current - 0.001) / size) * size)); break;
+        case 'r': case 'R': case 'Home': event.preventDefault(); pause(); seek(0); break;
+        case 'End': event.preventDefault(); pause(); seek(animation.duration); break;
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    frame.contentDocument?.addEventListener('keydown', onKey);
+    seek((initialStep - 1) * size);
   });
 }
 
