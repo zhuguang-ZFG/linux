@@ -20,6 +20,10 @@
 
 ## 🧠 核心概念
 
+![Bash 退出码原理动画](../../assets/animations/bash-exitcode.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=bash-exitcode.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 5.1 shebang 与三种执行方式
 
 脚本第一行 `#!/bin/bash` 叫 **shebang**（sharp + bang），告诉内核"用哪个解释器运行本文件"。同一个脚本的三种跑法：

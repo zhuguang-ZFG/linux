@@ -1276,5 +1276,83 @@
         "description": "list 有 ≠ 常驻内存；吃紧时频繁换入换出"
       }
     ]
+  },
+  {
+    "file": "bash-exitcode.svg",
+    "title": "Bash 退出码",
+    "chapter": "docs/02-advanced/05-Bash脚本编程.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 每条命令留信号",
+        "description": "0 成功，非 0 失败；$? 保存上一条"
+      },
+      {
+        "title": "02 && 短路",
+        "description": "成功才继续往下；失败即停不执行"
+      },
+      {
+        "title": "03 || 兜底",
+        "description": "失败时走兜底；exit 1 举手认输"
+      },
+      {
+        "title": "04 安全模式",
+        "description": "-e 失败即退出；管道任一环失败算失败"
+      }
+    ]
+  },
+  {
+    "file": "journal-query.svg",
+    "title": "journalctl",
+    "chapter": "docs/02-advanced/06-systemd服务与日志.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 统一收集",
+        "description": "stdout / stderr 全收；不再散落 /var/log"
+      },
+      {
+        "title": "02 按单元过滤",
+        "description": "只看这个 unit；-f 持续跟踪"
+      },
+      {
+        "title": "03 时间与级别",
+        "description": "-b 本次开机；-p 只看严重级别"
+      },
+      {
+        "title": "04 条件叠加",
+        "description": "多条件组合检索；--disk-usage 看占用"
+      }
+    ]
+  },
+  {
+    "file": "event-record.svg",
+    "title": "按钮数据记录",
+    "chapter": "docs/05-raspberry-pi/07-从按钮到数据记录.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 轮询状态",
+        "description": "循环采样引脚电平；检测变化触发记录"
+      },
+      {
+        "title": "02 变化落行",
+        "description": "只有变化才写 CSV；长按期间不再写新行"
+      },
+      {
+        "title": "03 来源标签",
+        "description": "模拟数据保留标记；不删标签冒充实测"
+      },
+      {
+        "title": "04 局限与统计",
+        "description": "快按可能漏采；消抖 50ms 适合慢按钮"
+      }
+    ]
   }
 ]

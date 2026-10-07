@@ -294,4 +294,25 @@ EXTRA_SCENES = [
         ("04 按需加载", "ollama ps 看驻留", "list 有 ≠ 常驻内存", "吃紧时频繁换入换出")
     ], "动手：先 free -h 看内存再选模型规模；对比 ollama list 与 ollama ps，说明已下载与驻留的区别。", "示意动画：推理速度受硬件限制，纯 CPU 以秒/字计；模型按需加载，不常驻内存。",
     [["free -h：内存决定可选规模", "16GB 起跑 7B，8GB 用 3B"], ["GPU 显存加速；不足时混合推理", "部分层进内存，速度介于中间"], ["量化：默认下发已量化版本", "参数精度压缩，门槛更低"], ["ollama ps：此刻驻留的模型", "list 有 ≠ 已加载进内存"]], "docs/04-projects/项目4-Linux跑本地AI.md"),
+    ("bash-exitcode", "Bash 退出码：脚本世界的错误信号", "0 成功、非 0 失败，&& 与 || 顺着信号短路", [
+        ("01 每条命令留信号", "ls /no/such → 2", "0 成功，非 0 失败", "$? 保存上一条"),
+        ("02 && 短路", "cmd1 && cmd2", "成功才继续往下", "失败即停不执行"),
+        ("03 || 兜底", "cmd1 || 报错退出", "失败时走兜底", "exit 1 举手认输"),
+        ("04 安全模式", "set -euo pipefail", "-e 失败即退出", "管道任一环失败算失败")
+    ], "动手：写 disk-alert.sh：从 df 取根分区使用率，超过阈值 exit 1 否则 exit 0；再配 set -euo pipefail 验证两种分支。", "示意动画：if 判断与 && 语境中的失败不触发 set -e，这是设计；管道默认只看最后一环，需 pipefail 兜底。",
+    [["ls /no/such → 退出码 2", "$? 保存上一条命令的退出码"], ["mkdir -p && install", "成功才继续，失败即停"], ["[[ -d dir ]] || exit 1", "失败时走兜底分支"], ["set -euo pipefail", "失败即退、未定义即报、管道全环"]], "docs/02-advanced/05-Bash脚本编程.md"),
+    ("journal-query", "journalctl：服务日志的统一检索", "stdout/stderr 全进 journal，按条件过滤", [
+        ("01 统一收集", "进程输出 → journald", "stdout / stderr 全收", "不再散落 /var/log"),
+        ("02 按单元过滤", "journalctl -u ssh", "只看这个 unit", "-f 持续跟踪"),
+        ("03 时间与级别", "--since / -b / -p err", "-b 本次开机", "-p 只看严重级别"),
+        ("04 条件叠加", "-u ssh -p err --since today", "多条件组合检索", "--disk-usage 看占用")
+    ], "动手：按日志侦探实验：journalctl -u ssh -p err -b 查错误；--since 统计时段行数；-o verbose 统计 unit 排行。", "示意动画：journal 默认限制普通用户权限，读系统日志需 adm 组；日志进分页器后可继续搜索。",
+    [["demo-web.service 输出", "stdout/stderr 统一进 journal"], ["journalctl -u demo-web.service", "-f 持续跟踪，Ctrl+C 退出"], ["journalctl -b / --since / -p err", "本次开机 / 时段 / 严重级别"], ["-u ssh -p err --since today", "多条件叠加，--disk-usage 看占用"]], "docs/02-advanced/06-systemd服务与日志.md"),
+    ("event-record", "按钮数据记录：变化才落一行 CSV", "状态变化才写行，轮询本身不是点击", [
+        ("01 轮询状态", "20ms 读 GPIO27", "循环采样引脚电平", "检测变化触发记录"),
+        ("02 变化落行", "elapsed_s,state,source", "只有变化才写 CSV", "长按期间不再写新行"),
+        ("03 来源标签", "simulated / gpio27", "模拟数据保留标记", "不删标签冒充实测"),
+        ("04 局限与统计", "awk 统计 pressed", "快按可能漏采", "消抖 50ms 适合慢按钮")
+    ], "动手：慢按、快按、长按三组各存一个 CSV，用 awk 统计 pressed 行数，解释长按不重复记、快按漏采的原因。", "示意动画：记录的是状态变化而非高精度中断计数；20ms 轮询可能漏掉很短脉冲，消抖参数按场景选择。",
+    [["按钮接通/断开 → GPIO27", "循环轮询电平，检测变化"], ["变化时写一行 CSV", "elapsed_s, state, source 三列"], ["模拟模式 source=simulated", "真实模式 source=gpio27"], ["awk 统计 pressed 行数", "快按漏采、长按不重复记"]], "docs/05-raspberry-pi/07-从按钮到数据记录.md"),
 ]

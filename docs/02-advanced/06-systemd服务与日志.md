@@ -19,6 +19,10 @@
 
 ## 🧠 核心概念
 
+![journalctl原理动画](../../assets/animations/journal-query.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=journal-query.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![systemd原理动画](../../assets/animations/systemd-restart.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=systemd-restart.svg)。动画中的输入输出为教学示意，需用本章实验验证。

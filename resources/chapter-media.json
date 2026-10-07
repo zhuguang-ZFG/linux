@@ -217,7 +217,8 @@
       }
     ],
     "animations": [
-      "backup-transaction.svg"
+      "backup-transaction.svg",
+      "bash-exitcode.svg"
     ]
   },
   "docs/02-advanced/06-systemd服务与日志.md": {
@@ -233,6 +234,7 @@
     ],
     "animations": [
       "systemd-restart.svg",
+      "journal-query.svg",
       "boot-sequence.svg",
       "process-lifecycle.svg"
     ]
@@ -508,7 +510,8 @@
       }
     ],
     "animations": [
-      "gpio-debounce.svg"
+      "gpio-debounce.svg",
+      "event-record.svg"
     ]
   }
 }

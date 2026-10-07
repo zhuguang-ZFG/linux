@@ -4,7 +4,7 @@
 
 **The Road to Linux Mastery —— 一套人人可学、边看边练的中文 Linux 系统教学工程**
 
-[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-42个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-54部-9cf)](resources/visual-lab.md) [![视频](https://img.shields.io/badge/视频选段-32条-red)](resources/videos.md) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
+[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-42个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-57部-9cf)](resources/visual-lab.md) [![视频](https://img.shields.io/badge/视频选段-32条-red)](resources/videos.md) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
 
 **[进入在线学习站 →](https://zhuguang-zfg.github.io/linux/)** · [站内视频课堂](https://zhuguang-zfg.github.io/linux/#videos) · [可控制的动画演示](https://zhuguang-zfg.github.io/linux/#animations)
 
@@ -22,7 +22,7 @@
 这是一套**完整的 Linux 中文教学工程**，遵循「通往 AGI 之路」的知识地图式编排：
 
 - 🗺️ **路线图驱动**：6 个阶段 42 个章节，从「什么是 Linux」到「树莓派边缘 AI」，增加硬件识别、Git 协作、AI 辅助运维与按钮数据记录
-- 🎬 **原理动画**：54 部原创 SVG 动画，新增 Git 分支、重定向、sed/awk、服务重启、信号、内存缓存、inode、DNS、LNMP、消抖、PATH/grep、归档、Vim 模式、安装选型、边缘 OCR、本地模型、apt 依赖、文件操作、内网穿透、排障四段式、烧录启动、内核与发行版、发行版家族、man 手册、硬件识别、选购要点、远程配置、家庭服务器、系统调用切换、防火墙规则链、容器隔离、负载判读、sudo 借权、Git 提交三区、环境变量继承、apt 全流程、Ansible 批量、Vim 整行操作与模型选型；学习站支持暂停、单步、拖动和重播
+- 🎬 **原理动画**：57 部原创 SVG 动画，新增 Git 分支、重定向、sed/awk、服务重启、信号、内存缓存、inode、DNS、LNMP、消抖、PATH/grep、归档、Vim 模式、安装选型、边缘 OCR、本地模型、apt 依赖、文件操作、内网穿透、排障四段式、烧录启动、内核与发行版、发行版家族、man 手册、硬件识别、选购要点、远程配置、家庭服务器、系统调用切换、防火墙规则链、容器隔离、负载判读、sudo 借权、Git 提交三区、环境变量继承、apt 全流程、Ansible 批量、Vim 整行操作、模型选型、退出码协议、journalctl 检索与按钮数据记录；学习站支持暂停、单步、拖动和重播
 - 📷 **实物图鉴**：20 张 Wikimedia Commons 图片，新增内存、SSD、网线、交换机、摄像头、电阻、显卡与 NAS 实拍，附完整[署名清单](assets/images/CREDITS.md)
 - 📺 **视频课堂**：16 个 B站分P选段 + 16 条 YouTube 视频，记录作者、时长和核验状态，学习站使用官方播放器并保留原站入口
 - 🧪 **边学边练**：每章自带「动手实验 + 自测清单」，配套 6 套练习题与答案、6 张速查表
@@ -145,7 +145,7 @@ flowchart LR
 | 📚 [书单与网站](resources/books-and-sites.md) | 5 本书与 10+ 学习网站，包含 TLDP、ArchWiki、explainshell |
 | 📝 [练习题与答案](exercises/) | 六个阶段各一套，选择+实操，答案可折叠 |
 | ⚡ [速查表](cheatsheets/) | 常用命令 / Vim / 三剑客 / systemd / 网络 / 树莓派 |
-| 🎬 [原创动画](resources/visual-lab.md) | 54 部 SVG 动画，学习站提供播放控制、文字步骤和实操入口 |
+| 🎬 [原创动画](resources/visual-lab.md) | 57 部 SVG 动画，学习站提供播放控制、文字步骤和实操入口 |
 | 🖼️ [实物图片](resources/hardware-gallery.md) | 20 张图片 + [授权署名](assets/images/CREDITS.md)，照片与示意分开标注 |
 | 🛠️ [配套源码与检查](scripts/README.md) | 备份、巡检、Docker、GPIO 与内容质量检查 |
 
