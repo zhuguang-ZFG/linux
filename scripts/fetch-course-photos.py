@@ -1,4 +1,4 @@
-"""Fetch the eleven explicitly selected Commons photos and retain attribution metadata.
+"""Fetch the fourteen explicitly selected Commons photos and retain attribution metadata.
 
 Run manually when adding these assets; CI never needs network access.
 """
@@ -29,6 +29,9 @@ SELECTION = [
     ("mechanical-keyboard.jpg", "File:Mechanical Keyboard.jpg", "机械键盘实物"),
     ("motherboard-g41.jpg", "File:PCWare IPM41-D3 Motherboard (53162758424).jpg", "micro-ATX 主板实物（G41 芯片组）"),
     ("router-wifi.jpg", "File:Freedom Box Wifi Router.jpg", "家用无线路由器实物"),
+    ("mouse.jpg", "File:Mouse Computer G-Tune NEXTGEAR-MICRO am550SA2.jpg", "电脑鼠标实物"),
+    ("monitor.jpg", "File:Computer display, Rostov-on-Don, Russia.jpg", "桌面显示器实物"),
+    ("pc-tower.jpg", "File:Black mid tower case.jpg", "塔式机箱实物（mid tower）"),
 ]
 
 

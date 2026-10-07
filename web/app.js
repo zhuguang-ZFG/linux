@@ -157,6 +157,14 @@ async function readDocument(id, section, version) {
   main.querySelectorAll('img').forEach(img => img.addEventListener('error', () => { img.hidden = true; }));
   renderDiagrams(routeVersion);
   if (section) requestAnimationFrame(() => main.querySelector(`#${CSS.escape(section)}`)?.scrollIntoView());
+  const onReadKey = event => {
+    if (event.target?.tagName && /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+    if (event.key === 'ArrowLeft' && doc.previous) { event.preventDefault(); location.hash = readRoute(doc.previous); }
+    else if (event.key === 'ArrowRight' && doc.next) { event.preventDefault(); location.hash = readRoute(doc.next); }
+  };
+  document.addEventListener('keydown', onReadKey);
+  cleanup = () => document.removeEventListener('keydown', onReadKey);
 }
 
 function videoPage(id) {
@@ -164,8 +172,11 @@ function videoPage(id) {
   if (!video) { missing(); return; }
   document.title = `${video.title} · 视频课堂`;
   const related = data.documents.filter(doc => doc.media.videos.some(ref => (typeof ref === 'string' ? ref : ref.id) === id));
+  const videoIndex = data.videos.findIndex(item => item.id === id);
+  const prevVideo = data.videos[videoIndex - 1];
+  const nextVideo = data.videos[videoIndex + 1];
   main.innerHTML = `<div class="page"><div class="breadcrumb"><a href="#videos">视频课堂</a> / ${video.platform === 'bilibili' ? 'B站' : 'YouTube'}</div><h1 class="page-title">${escape(video.title)}</h1><p class="page-lead">${escape(video.author)} · ${escape(video.kind)}${video.page ? ` · P${video.page}` : ''} · ${minutes(video.duration)}</p><div class="player-panel"><div class="video-stage" id="video-stage"><img class="video-cover" src="${escape(video.thumbnail)}" alt="" referrerpolicy="no-referrer"><button class="load-player" data-load-video="${escape(id)}">▷ 加载${video.platform === 'bilibili' ? 'B站' : 'YouTube'}播放器</button></div><div class="player-meta"><a class="button small" href="${escape(video.url)}" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><p>${escape(video.note)}</p><p>如果播放器不可用、要求登录或所在网络无法访问，请使用原站入口。不会自动播放或下载视频。</p><details><summary>来源与核验记录</summary><p>原站标题：${escape(video.providerTitle)}<br>资料核对：${escape(video.verification.checkedAt.slice(0, 10))} · ${video.platform === 'bilibili' ? '平台接口核对分P、CID、作者与时长' : '平台 oEmbed 核对标题、作者与封面'}<br>完整实播：尚未逐条完成。接口可读取不代表所有地区都能播放。</p><a href="${escape(video.verification.source)}" target="_blank" rel="noopener noreferrer">元数据来源 ↗</a></details></div></div>
-    <section><div class="section-heading"><div><h2>看完，回到这里动手</h2><p>将视频里的解释与自己的实际输出对照。</p></div></div><div class="route-grid">${related.filter(doc => doc.index >= 0).slice(0, 8).map(doc => `<a class="route-card" href="${readRoute(doc.id)}"><span class="tag">${escape(data.stageNames[doc.stage])}</span><h3>${escape(doc.title)}</h3><p>${escape(doc.duration)}</p><span class="arrow">阅读与实验 →</span></a>`).join('')}</div></section>${footer()}</div>`;
+    <section><div class="section-heading"><div><h2>看完，回到这里动手</h2><p>将视频里的解释与自己的实际输出对照。</p></div></div><div class="route-grid">${related.filter(doc => doc.index >= 0).slice(0, 8).map(doc => `<a class="route-card" href="${readRoute(doc.id)}"><span class="tag">${escape(data.stageNames[doc.stage])}</span><h3>${escape(doc.title)}</h3><p>${escape(doc.duration)}</p><span class="arrow">阅读与实验 →</span></a>`).join('')}</div></section>${prevVideo || nextVideo ? `<nav class="lesson-next" aria-label="相邻视频">${prevVideo ? `<a href="${videoRoute(prevVideo.id)}">← ${escape(prevVideo.title)}</a>` : '<span></span>'}${nextVideo ? `<a href="${videoRoute(nextVideo.id)}">${escape(nextVideo.title)} →</a>` : ''}</nav>` : ''}${footer()}</div>`;
 }
 
 function loadVideo(id) {
@@ -348,7 +359,16 @@ search.addEventListener('input', async () => {
   results.hidden = false;
 });
 search.addEventListener('keydown', event => {
-  if (event.key === 'Enter' && !results.hidden) results.querySelector('a')?.click();
+  if (!results.hidden && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+    const items = [...results.querySelectorAll('a')];
+    if (!items.length) return;
+    event.preventDefault();
+    const current = items.findIndex(item => item.classList.contains('selected'));
+    let next = event.key === 'ArrowDown' ? (current + 1) % items.length : (current - 1 + items.length) % items.length;
+    items.forEach((item, index) => item.classList.toggle('selected', index === next));
+    items[next].scrollIntoView({ block: 'nearest' });
+  }
+  if (event.key === 'Enter' && !results.hidden) (results.querySelector('a.selected') || results.querySelector('a'))?.click();
   if (event.key === 'Escape') { results.hidden = true; search.blur(); }
 });
 document.addEventListener('keydown', event => {

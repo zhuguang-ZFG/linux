@@ -57,6 +57,24 @@ flowchart LR
 
 键盘是最直接的输入设备之一。机械键盘每个按键下有独立开关，手感与寿命和薄膜键盘不同；图中彩色灯光只影响外观，不影响按键识别。来源：SolarMainframe，CC BY-SA 4.0。
 
+### 输出设备：显示器
+
+![桌面显示器实物](../../assets/images/monitor.jpg)
+
+显示器是主要的输出设备。分辨率、接口（HDMI/DP）与刷新率决定显示体验；Linux 桌面与分辨率设置可在图形界面调整，命令行也能用 `xrandr` 查询。来源：Vyacheslav Argenberg，CC BY 4.0。
+
+### 输入设备：鼠标
+
+![电脑鼠标实物](../../assets/images/mouse.jpg)
+
+鼠标与键盘是最基础的输入设备。滚轮、侧键等按键通常即插即用，Linux 大多无需驱动；`xinput list` 可查看已识别的输入设备。来源：Qurren，CC BY-SA 4.0。
+
+### 主机形态：塔式机箱
+
+![塔式机箱实物](../../assets/images/pc-tower.jpg)
+
+塔式机箱是台式机最常见的形态，内部容纳主板、电源、硬盘与扩展卡；尺寸（中塔/全塔）决定可装部件数量。照片为个人中塔主机，用于认识形态，不作为品牌推荐。来源：TheJosh，公有领域。
+
 ## 🛠 命令实操
 
 Ubuntu/Debian 可按需安装 PCI/USB 查看工具：

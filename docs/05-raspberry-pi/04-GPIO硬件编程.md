@@ -13,6 +13,10 @@ GPIO（General Purpose Input/Output）让程序控制电平、读取按键。本
 
 ## 🧠 核心概念
 
+![按钮输入原理动画](../../assets/animations/gpio-button.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=gpio-button.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![不同阻值的轴向电阻实物](../../assets/images/axial-resistors.jpg)
 
 照片帮助识别色环与引脚，图中元件并非本实验的 330Ω 配件清单。实际连接前按标识或测量确认阻值。照片：Evan-Amos，公有领域，见 [署名](../../assets/images/CREDITS.md)。

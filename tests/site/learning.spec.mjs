@@ -10,7 +10,7 @@ test('home shows the actual catalog and accessible route entries', async ({ page
   await expect(page.locator('.hero h1')).toContainText('能动手的本领');
   await expect(page.locator('.stat-strip')).toContainText('42');
   await expect(page.locator('.stat-strip')).toContainText('32');
-  await expect(page.locator('.stat-strip')).toContainText('60');
+  await expect(page.locator('.stat-strip')).toContainText('63');
   await expect(page.locator('.chapter-link')).toHaveCount(42);
   await page.getByRole('link', { name: '开始第一课' }).click();
   await expect(page.locator('.article h1')).toContainText('为什么人人');
@@ -182,6 +182,47 @@ test('animation copy-link shares a step deep link without reloading the player',
   await expect.poll(() => page.evaluate(() => window.__copied)).toContain('step=2');
   await expect(page.locator('#animation-time')).toHaveText('3.0 / 12s');
   await expect(page.locator('#animation-frame')).toHaveCount(1);
+});
+
+test('video page navigates to adjacent videos in gallery order', async ({ page }) => {
+  await page.goto('#video=b-vim');
+  const nav = page.locator('.lesson-next');
+  await expect(nav.locator('a').first()).toHaveAttribute('href', '#video=b-ssh');
+  await expect(nav.locator('a').last()).toHaveAttribute('href', '#video=b-man');
+  await nav.locator('a').last().click();
+  await expect(page).toHaveURL(/#video=b-man/);
+  await expect(page.locator('#video-stage')).toBeVisible();
+  const nav2 = page.locator('.lesson-next');
+  await expect(nav2.locator('a').first()).toHaveAttribute('href', '#video=b-vim');
+  await nav2.locator('a').first().click();
+  await expect(page).toHaveURL(/#video=b-vim/);
+});
+
+test('reading page arrow keys navigate between adjacent chapters', async ({ page }) => {
+  await page.goto(`#read=${encodeURIComponent('docs/00-onboarding/01-为什么人人都要学Linux.md')}`);
+  await expect(page.locator('.article h1')).toBeVisible();
+  await page.keyboard.press('ArrowRight');
+  await expect(page).toHaveURL(/#read=docs%2F00-onboarding%2F02-/);
+  await expect(page.locator('.article h1')).toContainText('Linux 的前世今生');
+  await page.keyboard.press('ArrowLeft');
+  await expect(page).toHaveURL(/#read=docs%2F00-onboarding%2F01-/);
+  await expect(page.locator('.article h1')).toContainText('为什么人人');
+});
+
+test('search supports arrow-key selection and Enter opens the picked result', async ({ page }) => {
+  await page.goto('');
+  await page.locator('#search').fill('sed');
+  await expect(page.locator('.search-result').first()).toBeVisible();
+  const firstHref = await page.locator('.search-result').first().getAttribute('href');
+  await page.keyboard.press('ArrowDown');
+  await expect(page.locator('.search-result.selected')).toHaveCount(1);
+  expect(await page.locator('.search-result.selected').getAttribute('href')).toBe(firstHref);
+  await page.keyboard.press('ArrowDown');
+  const selectedHref = await page.locator('.search-result.selected').getAttribute('href');
+  expect(selectedHref).not.toBe(firstHref);
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(new RegExp(`#${selectedHref.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
+  await expect(page.locator('main')).not.toContainText('没有找到');
 });
 
 test('dark mode remaps theme variables and keeps reading surface readable', async ({ page }) => {

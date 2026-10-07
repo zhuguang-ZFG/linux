@@ -336,4 +336,25 @@ EXTRA_SCENES = [
         ("04 双写落盘", "tee + 去色", "终端看彩色原文", "报告存 /var/log")
     ], "动手：运行 bash scripts/health-report.sh 85，观察 0/1/2 三种退出码；详细版用 sed 去色后落盘对比。", "示意动画：阈值只是示例，按机器调整；落盘必须去 ANSI 色码，避免日志被转义序列污染。",
     [["timer 09:00 触发巡检", "错过的时间点自动补跑"], ["check_cpu: 72% / check_mem: 63%", "check_disk: / 已用 88%"], ["CRIT 磁盘 88% ≥ 85%", "CPU 72% / 内存 63% → OK"], ["终端：彩色 OK/WARN/CRIT", "报告：health-report-日期.log（纯文本）"]], "docs/04-projects/项目2-服务器巡检脚本.md"),
+    ("path-navigation", "路径解析：绝对还是相对", "绝对路径从 / 写起；相对路径与 ..、~、- 都依赖当前位置", [
+        ("01 查看位置", "pwd → /home/alice/projects", "相对路径从此处出发", "绝对路径恒从 / 写起"),
+        ("02 相对前进", "cd web", "落到 projects 下 web", "相对写短但依赖位置"),
+        ("03 上一级", "cd ..", ". 当前目录", ".. 上一级目录"),
+        ("04 快捷方式", "cd ~/downloads", "~ 是家目录缩写", "绝对引用 /var/log 不迷路")
+    ], "动手：在家目录用 pwd 与 cd 走一遍 相对、..、~、-，再对照绝对路径引用 /var/log。", "示意动画：- 表示上一次所在目录；- 与 ~ 只在交互 Shell 展开，脚本里注意写法。",
+    [["当前目录 /home/alice/projects", "pwd 输出完整绝对路径"], ["cd web → /home/alice/projects/web", "相对路径依赖当前位置"], ["cd .. → /home/alice/projects", ". 当前 / .. 上一级"], ["cd ~/downloads → /home/alice/downloads", "绝对路径从任意位置一致"]], "docs/01-basics/01-文件与目录操作.md"),
+    ("grep-options", "grep 选项：从匹配到过滤再到统计", "行级过滤逐行判断；选项叠加与管道让结果更精确", [
+        ("01 行级匹配", "grep error app.log", "逐行读入判断", "匹配行打印到 stdout"),
+        ("02 忽略大小写", "grep -i error", "ERROR / Error 都命中", "输出顺序不改变"),
+        ("03 反向过滤", "grep -v '^#'", "去掉注释与空行", "输出不含模式的行"),
+        ("04 管道统计", "grep -i error | wc -l", "下游继续处理", "与 -c 结果一致")
+    ], "动手：对 sshd_config 叠加 -n -i -v 过滤，再用管道 wc -l 与 grep -c 对照计数。", "示意动画：-r 递归目录、-w 全词匹配、-C 显示上下文；这里演示最常用的选项组合。",
+    [["app.log: ERROR → 匹配", "app.log: info → 跳过"], ["ERROR / error 都输出", "大小写不影响顺序"], ["^# 注释行被过滤", "剩余行继续带向下游"], ["grep -c error 与 wc -l 同值", "管道让 grep 成为过滤器"]], "docs/02-advanced/02-grep文本搜索.md"),
+    ("gpio-button", "按钮输入：上拉、按下与事件", "内部上拉让电平确定；事件回调避免轮询占 CPU", [
+        ("01 先接线", "GPIO27 + GND", "按钮断开 → 引脚悬空", "先核对器件内部连接"),
+        ("02 内部上拉", "pull_up=True", "平时读到 1（高）", "松开时电平确定"),
+        ("03 按下变化", "GND 接通 → 读到 0", "电平变化产生事件", "与轮询循环不同"),
+        ("04 事件回调", "when_pressed → LED 亮", "按下亮、松开灭", "bounce_time 滤抖动")
+    ], "动手：把 LED(17) 与 Button(27, pull_up=True) 组合，按下亮、松开灭；再与轮询读电平对比。", "示意动画：上拉是内部电阻，不必另接；事件回调由库在后台分发，程序在 pause() 等待。",
+    [["GPIO27 —— 按钮断开", "接线前关机断电、对图 BCM 编号"], ["内部上拉 → 平时 GPIO27 = 1", "电平确定不悬浮"], ["按下 → GND 接通 → GPIO27 = 0", "电平变化触发事件"], ["when_pressed: LED 亮", "when_released: LED 灭"]], "docs/05-raspberry-pi/04-GPIO硬件编程.md"),
 ]

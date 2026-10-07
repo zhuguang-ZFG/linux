@@ -67,7 +67,8 @@
       }
     ],
     "animations": [
-      "file-ops.svg"
+      "file-ops.svg",
+      "path-navigation.svg"
     ]
   },
   "docs/01-basics/02-查看与编辑文件-Vim.md": {
@@ -185,7 +186,8 @@
       }
     ],
     "animations": [
-      "grep-regex.svg"
+      "grep-regex.svg",
+      "grep-options.svg"
     ]
   },
   "docs/02-advanced/03-sed流编辑器.md": {
@@ -485,7 +487,8 @@
       }
     ],
     "animations": [
-      "gpio-blink.svg"
+      "gpio-blink.svg",
+      "gpio-button.svg"
     ]
   },
   "docs/05-raspberry-pi/05-家庭服务器实战.md": {

@@ -68,6 +68,24 @@ NAS 把多块硬盘放进专用设备并联网共享，是独立存储的一种�
 
 路由器把宽带接入、交换与无线接入集于一台设备。家用场景通常在网页管理页配置它，不用命令行；物理连接正常后才去排查地址与路由。对应 [网络章节](../docs/02-advanced/08-网络基础与远程连接.md)。
 
+## 12. 显示器：观察一切结果的窗口
+
+![桌面显示器实物](../assets/images/monitor.jpg)
+
+分辨率、接口与刷新率决定显示体验；Linux 桌面设置可以调整，命令行用 `xrandr` 查询。显示器本身不参与计算，是纯输出设备。
+
+## 13. 鼠标：最常见的指针输入
+
+![电脑鼠标实物](../assets/images/mouse.jpg)
+
+鼠标与键盘是最基础的输入设备，通常即插即用。`xinput list` 查看已识别输入设备；滚轮与侧键的功能由桌面或应用解释。
+
+## 14. 塔式机箱：主机的常见形态
+
+![塔式机箱实物](../assets/images/pc-tower.jpg)
+
+中塔/全塔机箱容纳主板、电源、硬盘与扩展卡，尺寸决定可装部件数量。台式机、迷你主机与服务器的区别常在形态与扩展性。
+
 ## 延伸观察
 
 已有的 [树莓派全家福](../assets/images/raspberry-pi-family.jpg)、[GPIO 排针](../assets/images/raspberry-pi-gpio-header.jpg)、[microSD](../assets/images/microsd-card.jpg) 和 [服务器机架](../assets/images/datacenter-racks.jpg) 可以继续对照设备与系统视图。每看一张图，写下“它负责什么、Linux 用什么接口观察它、还不能从图中判断什么”。

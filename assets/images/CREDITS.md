@@ -27,5 +27,8 @@
 | `mechanical-keyboard.jpg` | 机械键盘实物 | SolarMainframe | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Mechanical_Keyboard.jpg |
 | `motherboard-g41.jpg` | micro-ATX 主板实物（G41 芯片组） | Davidson F | CC0（https://creativecommons.org/publicdomain/zero/1.0/） | https://commons.wikimedia.org/wiki/File:PCWare_IPM41-D3_Motherboard_(53162758424).jpg |
 | `router-wifi.jpg` | 家用无线路由器实物 | Saiphani02 | CC BY 4.0（https://creativecommons.org/licenses/by/4.0） | https://commons.wikimedia.org/wiki/File:Freedom_Box_Wifi_Router.jpg |
+| `mouse.jpg` | 电脑鼠标实物 | Qurren | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Mouse_Computer_G-Tune_NEXTGEAR-MICRO_am550SA2.jpg |
+| `monitor.jpg` | 桌面显示器实物 | Vyacheslav Argenberg | CC BY 4.0（https://creativecommons.org/licenses/by/4.0） | https://commons.wikimedia.org/wiki/File:Computer_display,_Rostov-on-Don,_Russia.jpg |
+| `pc-tower.jpg` | 塔式机箱实物（mid tower） | TheJosh | Public domain（来源页声明） | https://commons.wikimedia.org/wiki/File:Black_mid_tower_case.jpg |
 
-2026-10-06 新增的六张及 2026-10-07 新增的三张照片，均仅调整尺寸并重新压缩为 JPEG，未修改场景或器件；按各图片原许可继续提供。机器可读的原始说明、作者信息、来源、下载地址与文件摘要见 [SOURCES.json](SOURCES.json)。仓库代码的 Apache 2.0 许可不替代图片各自的许可。
+2026-10-06 新增的六张及 2026-10-07 新增的六张照片，均仅调整尺寸并重新压缩为 JPEG，未修改场景或器件；按各图片原许可继续提供。机器可读的原始说明、作者信息、来源、下载地址与文件摘要见 [SOURCES.json](SOURCES.json)。仓库代码的 Apache 2.0 许可不替代图片各自的许可。

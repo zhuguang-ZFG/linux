@@ -174,5 +174,53 @@
     "width": 667,
     "height": 1000,
     "sha256": "0d2d8f984eaaa35b22804a7724b7dd6c0ac59258a8523d9e9c10a8f256a5d81b"
+  },
+  {
+    "file": "mouse.jpg",
+    "caption": "电脑鼠标实物",
+    "commons_title": "File:Mouse Computer G-Tune NEXTGEAR-MICRO am550SA2.jpg",
+    "author": "photo: Qurren (talk) Taken with Canon PowerShot G9 X",
+    "source": "https://commons.wikimedia.org/wiki/File:Mouse_Computer_G-Tune_NEXTGEAR-MICRO_am550SA2.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Mouse_Computer_G-Tune_NEXTGEAR-MICRO_am550SA2.jpg/1280px-Mouse_Computer_G-Tune_NEXTGEAR-MICRO_am550SA2.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Mouse Computer Gaming PC G-Tune NEXTGEAR-MICRO am550SA2.",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 1000,
+    "height": 1000,
+    "sha256": "ecb6d340f987f1ae4a9ab30a72113e9f24ba988fedc3cb659a8f442876a6c45c"
+  },
+  {
+    "file": "monitor.jpg",
+    "caption": "桌面显示器实物",
+    "commons_title": "File:Computer display, Rostov-on-Don, Russia.jpg",
+    "author": "Vyacheslav Argenberg",
+    "source": "https://commons.wikimedia.org/wiki/File:Computer_display,_Rostov-on-Don,_Russia.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Computer_display%2C_Rostov-on-Don%2C_Russia.jpg/1280px-Computer_display%2C_Rostov-on-Don%2C_Russia.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "description": "Computer display monitor. A tribute to Anton Corbijn. Rostov-on-Don, Russia.",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 1200,
+    "height": 798,
+    "sha256": "0c2666b16f618901a42e1469729cbb754765d1e56bdd6c132390e6bb301bbc32"
+  },
+  {
+    "file": "pc-tower.jpg",
+    "caption": "塔式机箱实物（mid tower）",
+    "commons_title": "File:Black mid tower case.jpg",
+    "author": "TheJosh",
+    "source": "https://commons.wikimedia.org/wiki/File:Black_mid_tower_case.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Black_mid_tower_case.jpg/1280px-Black_mid_tower_case.jpg",
+    "license": "Public domain",
+    "license_url": "",
+    "description": "This is my current computer, its a mid tower case",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 750,
+    "height": 1000,
+    "sha256": "d0b0e2a4370bea2de27649a20fbbff61e3d71acafa08536164741ce5bfd0e653"
   }
 ]

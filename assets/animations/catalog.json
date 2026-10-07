@@ -1432,5 +1432,83 @@
         "description": "终端看彩色原文；报告存 /var/log"
       }
     ]
+  },
+  {
+    "file": "path-navigation.svg",
+    "title": "路径解析",
+    "chapter": "docs/01-basics/01-文件与目录操作.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 查看位置",
+        "description": "相对路径从此处出发；绝对路径恒从 / 写起"
+      },
+      {
+        "title": "02 相对前进",
+        "description": "落到 projects 下 web；相对写短但依赖位置"
+      },
+      {
+        "title": "03 上一级",
+        "description": ". 当前目录；.. 上一级目录"
+      },
+      {
+        "title": "04 快捷方式",
+        "description": "~ 是家目录缩写；绝对引用 /var/log 不迷路"
+      }
+    ]
+  },
+  {
+    "file": "grep-options.svg",
+    "title": "grep 选项",
+    "chapter": "docs/02-advanced/02-grep文本搜索.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 行级匹配",
+        "description": "逐行读入判断；匹配行打印到 stdout"
+      },
+      {
+        "title": "02 忽略大小写",
+        "description": "ERROR / Error 都命中；输出顺序不改变"
+      },
+      {
+        "title": "03 反向过滤",
+        "description": "去掉注释与空行；输出不含模式的行"
+      },
+      {
+        "title": "04 管道统计",
+        "description": "下游继续处理；与 -c 结果一致"
+      }
+    ]
+  },
+  {
+    "file": "gpio-button.svg",
+    "title": "按钮输入",
+    "chapter": "docs/05-raspberry-pi/04-GPIO硬件编程.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 先接线",
+        "description": "按钮断开 → 引脚悬空；先核对器件内部连接"
+      },
+      {
+        "title": "02 内部上拉",
+        "description": "平时读到 1（高）；松开时电平确定"
+      },
+      {
+        "title": "03 按下变化",
+        "description": "电平变化产生事件；与轮询循环不同"
+      },
+      {
+        "title": "04 事件回调",
+        "description": "按下亮、松开灭；bounce_time 滤抖动"
+      }
+    ]
   }
 ]
