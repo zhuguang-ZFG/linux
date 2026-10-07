@@ -1,4 +1,4 @@
-"""Fetch the six explicitly selected Commons photos and retain attribution metadata.
+"""Fetch the eight explicitly selected Commons photos and retain attribution metadata.
 
 Run manually when adding these assets; CI never needs network access.
 """
@@ -24,6 +24,8 @@ SELECTION = [
     ("usb-webcam.jpg", "File:USB webcam for PC.jpg", "USB 摄像头实物"),
     ("axial-resistors.jpg", "File:Electronic-Axial-Lead-Resistors-Array.jpg", "不同阻值的轴向电阻"),
     ("nvme-ssd.jpg", "File:Samsung 980 PRO PCIe 4.0 NVMe SSD 1TB-top PNr°0915.jpg", "M.2 NVMe SSD 正面"),
+    ("gpu-card.jpg", "File:RTX 3090 Founders Edition.jpg", "GeForce RTX 3090 显卡实物"),
+    ("nas-device.jpg", "File:Synology Disk Station DS223J - NAS-Server.jpg", "Synology DiskStation 网络存储"),
 ]
 
 
@@ -38,10 +40,14 @@ def plain(value):
 
 
 def main():
-    records = []
+    sources_path = OUT / "SOURCES.json"
+    prior = json.loads(sources_path.read_text(encoding="utf-8")) if sources_path.exists() else []
+    prior_by_file = {record["file"]: record for record in prior}
+    additions = []
     for filename, title, caption in SELECTION:
         if (OUT / filename).exists():
-            raise SystemExit(f"Refusing to overwrite existing asset: {filename}")
+            print(f"Skipping existing asset: {filename}")
+            continue
         query = urllib.parse.urlencode({"action": "query", "format": "json", "titles": title,
                                         "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": 1200})
         data = json.loads(fetch("https://commons.wikimedia.org/w/api.php?" + query))
@@ -66,9 +72,10 @@ def main():
             "width": image.width, "height": image.height,
             "sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
         }
-        records.append(record)
+        additions.append(record)
         print(f"Saved {filename}: {image.width}x{image.height}, {license_name}")
-    (OUT / "SOURCES.json").write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    merged = prior + [record for record in additions if record["file"] not in prior_by_file]
+    sources_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -38,6 +38,18 @@
 
 色环表示阻值和容差，但不能仅凭照片颜色选元件。图中是一组不同阻值的电阻，**不是本实验的 330Ω 配件清单**。点灯实验按 [GPIO 章节](../docs/05-raspberry-pi/04-GPIO硬件编程.md) 使用合适的限流电阻，接线前断电。
 
+## 7. 显卡：显存决定本地推理体验
+
+![GeForce RTX 3090 显卡实物](../assets/images/gpu-card.jpg)
+
+观察散热器、供电与接口。本地大模型的推理速度与显存强相关，选模型规模前先看硬件。对应命令：`nvidia-smi`。配合 [本地 AI 项目](../docs/04-projects/项目4-Linux跑本地AI.md) 的硬件要求表选择模型。
+
+## 8. NAS：独立存储的形态
+
+![Synology DiskStation 网络存储](../assets/images/nas-device.jpg)
+
+NAS 把多块硬盘放进专用设备并联网共享，是独立存储的一种常见形态；本教程的家庭服务器用树莓派 + Samba 实现更小的共享目录。对应 [家庭服务器实战](../docs/05-raspberry-pi/05-家庭服务器实战.md)。
+
 ## 延伸观察
 
 已有的 [树莓派全家福](../assets/images/raspberry-pi-family.jpg)、[GPIO 排针](../assets/images/raspberry-pi-gpio-header.jpg)、[microSD](../assets/images/microsd-card.jpg) 和 [服务器机架](../assets/images/datacenter-racks.jpg) 可以继续对照设备与系统视图。每看一张图，写下“它负责什么、Linux 用什么接口观察它、还不能从图中判断什么”。

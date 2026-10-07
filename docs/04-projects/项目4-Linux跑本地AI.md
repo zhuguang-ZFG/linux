@@ -17,6 +17,10 @@
 
 ## 🧠 方案设计
 
+![本地模型选型原理动画](../../assets/animations/model-fit.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=model-fit.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![本地模型原理动画](../../assets/animations/local-ai-request.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=local-ai-request.svg)。动画中的输入输出为教学示意，需用本章实验验证。
@@ -39,6 +43,10 @@
 | 32B 及以上 | 不推荐 | 64 GB | 24 GB 起或多卡 | deepseek-r1:32b |
 
 > 💡 显存不足时，Ollama 会自动把部分层放进内存做混合推理，速度介于纯 CPU 与纯 GPU 之间；默认下发的已是量化（Quantization）版本，门槛比原生精度低得多。
+
+![GeForce RTX 3090 显卡实物](../../assets/images/gpu-card.jpg)
+
+显存决定模型推理速度；图中为 RTX 3090，实际部署前先跑 `nvidia-smi` 核对驱动与显存。照片：Adam Kapetanakis，CC BY-SA 4.0，见 [署名](../../assets/images/CREDITS.md)。
 
 ### 本地模型与云端 API 的分工
 

@@ -273,4 +273,25 @@ EXTRA_SCENES = [
         ("04 卸载回收", "sudo apt remove tree", "再 sudo apt autoremove", "回收不再被依赖的包")
     ], "动手：按 update → upgrade → install → show → remove → autoremove 走完 tree 生命周期，再用 apt list --installed 核对。", "示意动画：apt 依赖解析依据本地索引，索引过期会装错版本；dpkg 手动装包不会自动拉依赖。",
     [["sudo apt update", "只刷新 /var/lib/apt/lists 索引清单"], ["sudo apt upgrade", "真正升级已装软件（更新目录之后）"], ["sudo apt install tree", "自动解析依赖，装好全家桶"], ["sudo apt remove tree → sudo apt autoremove", "卸载并回收不再被依赖的包"]], "docs/01-basics/05-软件包管理.md"),
+    ("ansible-flow", "Ansible：一句话管一群机器", "无 Agent：SSH 连过去执行，模块幂等、重跑安全", [
+        ("01 主机清单", "inventory.ini", "告诉 Ansible 管谁", "web1 web2 db1"),
+        ("02 SSH 连接", "先手动 ssh 通", "Ansible 无 Agent", "目标机只需 Python"),
+        ("03 模块执行", "apt / copy / service", "声明目标状态", "已达成显示 ok"),
+        ("04 幂等重跑", "ansible-playbook", "第二遍 changed=0", "配置进版本库可回滚")
+    ], "动手：写 inventory-local.ini 把本机设为 local 连接，跑两遍 site.yml，观察第二遍 changed 归零。", "示意动画：Ansible 通过 SSH 执行模块；模块声明目标状态，未变化返回 ok 而非重复修改。",
+    [["inventory.ini：webservers 组", "web1 / web2 / db1 主机清单"], ["ssh web1 免密直连", "无 Agent，目标机只需 Python"], ["apt: nginx state=present", "已装好显示 ok，有变化才 changed"], ["重跑 playbook：changed=0", "幂等 + 配置进版本库可回滚"]], "docs/03-pro/05-自动化运维.md"),
+    ("vim-operations", "Vim 普通模式：整行操作与搜索", "先 Esc 回普通模式，再下达指令", [
+        ("01 光标移动", "h j k l / gg G", "左右下上 / 文件头尾", "0 行首 $ 行尾"),
+        ("02 搜索", "/关键词", "n 下一个 N 上一个", "hlsearch 高亮命中"),
+        ("03 整行操作", "dd / yy / p", "dd 剪切行 yy 复制行", "p 粘贴到下一行"),
+        ("04 撤销存盘", "u / :wq / :q!", "u 撤销上一步", ":wq 保存退出")
+    ], "动手：按生存挑战走一遍：i 输入三行 → Esc → dd 删行 → u 撤销 → yy+p 复制粘贴 → /搜索 → :wq。", "示意动画：普通模式不产生文字，指令作用于行与光标；.swp 是异常退出残留。",
+    [["普通模式：vim hello.txt 启动", "按 i 才进入插入模式"], ["h j k l / gg G / 0 $", "光标在行与文件间移动"], ["/关键词 → n N 跳转", "set hlsearch 高亮命中"], ["dd 剪切 / yy 复制 / p 粘贴", "u 撤销，:wq 保存退出"]], "docs/01-basics/02-查看与编辑文件-Vim.md"),
+    ("model-fit", "本地模型选型：先看硬件再选规模", "7B 建议 16GB 内存，量化与混合推理降低门槛", [
+        ("01 内存下限", "7B 建议 16GB", "1.5B-3B 流畅", "先 free -h 再选型"),
+        ("02 显存加速", "GPU 8GB → 7B", "有 GPU 用显存跑", "不足则混合推理"),
+        ("03 量化降门槛", "默认已量化", "压缩参数精度", "门槛比原生低"),
+        ("04 按需加载", "ollama ps 看驻留", "list 有 ≠ 常驻内存", "吃紧时频繁换入换出")
+    ], "动手：先 free -h 看内存再选模型规模；对比 ollama list 与 ollama ps，说明已下载与驻留的区别。", "示意动画：推理速度受硬件限制，纯 CPU 以秒/字计；模型按需加载，不常驻内存。",
+    [["free -h：内存决定可选规模", "16GB 起跑 7B，8GB 用 3B"], ["GPU 显存加速；不足时混合推理", "部分层进内存，速度介于中间"], ["量化：默认下发已量化版本", "参数精度压缩，门槛更低"], ["ollama ps：此刻驻留的模型", "list 有 ≠ 已加载进内存"]], "docs/04-projects/项目4-Linux跑本地AI.md"),
 ]

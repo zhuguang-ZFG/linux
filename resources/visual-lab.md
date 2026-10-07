@@ -1,6 +1,6 @@
 # 动画实验室：先预测，再播放，最后动手
 
-本库共 51 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 45 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
+本库共 54 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 48 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
 
 动画是原理示意，不是从真实机器采集的运行录像。验收仍要回到命令与实际输出。
 
@@ -40,7 +40,7 @@
 
 **先猜**：模型给出一条命令，是否就能直接放进教程？**动手**：完成 [AI 辅助学习章节](../docs/03-pro/07-AI辅助学习与运维.md) 的手册核对与实测。
 
-## 新增的三十九个状态演示
+## 新增的四十二个状态演示
 
 以下动画额外展示示意输入、命令或状态快照，配合学习站的单步控制观察变化：
 
@@ -66,6 +66,9 @@
 | [Git 提交](../assets/animations/git-commit.svg) | 工作区、暂存区与历史三区流转 |
 | [环境变量继承](../assets/animations/env-scope.svg) | export 升舱、子进程拷贝与改动不回传 |
 | [apt 全流程](../assets/animations/apt-flow.svg) | 更新目录、确认、安装与卸载回收 |
+| [Ansible 批量](../assets/animations/ansible-flow.svg) | 主机清单、SSH 无 Agent 与幂等重跑 |
+| [Vim 整行操作](../assets/animations/vim-operations.svg) | 光标、搜索、dd/yy/p 与撤销存盘 |
+| [模型选型](../assets/animations/model-fit.svg) | 内存下限、显存加速、量化与按需加载 |
 | [归档与压缩](../assets/animations/archive-compress.svg) | 归档与压缩为何是两步 |
 | [Vim 模式](../assets/animations/vim-modes.svg) | 普通/插入/命令模式与保存退出 |
 | [选安装方式](../assets/animations/install-choices.svg) | 四种安装路线的磁盘边界与风险 |

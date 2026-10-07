@@ -77,7 +77,8 @@
       }
     ],
     "animations": [
-      "vim-modes.svg"
+      "vim-modes.svg",
+      "vim-operations.svg"
     ]
   },
   "docs/01-basics/03-用户与权限.md": {
@@ -346,7 +347,8 @@
       }
     ],
     "animations": [
-      "cron-schedule.svg"
+      "cron-schedule.svg",
+      "ansible-flow.svg"
     ]
   },
   "docs/03-pro/06-Shell脚本进阶.md": {
@@ -417,7 +419,8 @@
       }
     ],
     "animations": [
-      "local-ai-request.svg"
+      "local-ai-request.svg",
+      "model-fit.svg"
     ]
   },
   "docs/04-projects/项目5-故障排查20例.md": {

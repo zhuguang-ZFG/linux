@@ -94,5 +94,37 @@
     "width": 1200,
     "height": 428,
     "sha256": "9e6be9289d0b918a34bd43f20e13ae3135a4c4f0aee69294e4c43ed6e4d38622"
+  },
+  {
+    "file": "gpu-card.jpg",
+    "caption": "GeForce RTX 3090 显卡实物",
+    "commons_title": "File:RTX 3090 Founders Edition.jpg",
+    "author": "Adam Kapetanakis",
+    "source": "https://commons.wikimedia.org/wiki/File:RTX_3090_Founders_Edition.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/RTX_3090_Founders_Edition.jpg/1280px-RTX_3090_Founders_Edition.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "GeForce RTX 3090 Founders Edition.",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 1200,
+    "height": 900,
+    "sha256": "46a6c0256c9f3c062f6406a76902ac014578235a1dc212ac2bb3a7d44c59fb80"
+  },
+  {
+    "file": "nas-device.jpg",
+    "caption": "Synology DiskStation 网络存储",
+    "commons_title": "File:Synology Disk Station DS223J - NAS-Server.jpg",
+    "author": "DYVER",
+    "source": "https://commons.wikimedia.org/wiki/File:Synology_Disk_Station_DS223J_-_NAS-Server.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Synology_Disk_Station_DS223J_-_NAS-Server.jpg/1280px-Synology_Disk_Station_DS223J_-_NAS-Server.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Digital Hardware",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 1200,
+    "height": 801,
+    "sha256": "00a96b2c757aa682be488276c287e667662c0e4b9739af77cd8bcfd3147d4389"
   }
 ]

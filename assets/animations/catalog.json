@@ -1198,5 +1198,83 @@
         "description": "再 sudo apt autoremove；回收不再被依赖的包"
       }
     ]
+  },
+  {
+    "file": "ansible-flow.svg",
+    "title": "Ansible",
+    "chapter": "docs/03-pro/05-自动化运维.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 主机清单",
+        "description": "告诉 Ansible 管谁；web1 web2 db1"
+      },
+      {
+        "title": "02 SSH 连接",
+        "description": "Ansible 无 Agent；目标机只需 Python"
+      },
+      {
+        "title": "03 模块执行",
+        "description": "声明目标状态；已达成显示 ok"
+      },
+      {
+        "title": "04 幂等重跑",
+        "description": "第二遍 changed=0；配置进版本库可回滚"
+      }
+    ]
+  },
+  {
+    "file": "vim-operations.svg",
+    "title": "Vim 普通模式",
+    "chapter": "docs/01-basics/02-查看与编辑文件-Vim.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 光标移动",
+        "description": "左右下上 / 文件头尾；0 行首 $ 行尾"
+      },
+      {
+        "title": "02 搜索",
+        "description": "n 下一个 N 上一个；hlsearch 高亮命中"
+      },
+      {
+        "title": "03 整行操作",
+        "description": "dd 剪切行 yy 复制行；p 粘贴到下一行"
+      },
+      {
+        "title": "04 撤销存盘",
+        "description": "u 撤销上一步；:wq 保存退出"
+      }
+    ]
+  },
+  {
+    "file": "model-fit.svg",
+    "title": "本地模型选型",
+    "chapter": "docs/04-projects/项目4-Linux跑本地AI.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 内存下限",
+        "description": "1.5B-3B 流畅；先 free -h 再选型"
+      },
+      {
+        "title": "02 显存加速",
+        "description": "有 GPU 用显存跑；不足则混合推理"
+      },
+      {
+        "title": "03 量化降门槛",
+        "description": "压缩参数精度；门槛比原生低"
+      },
+      {
+        "title": "04 按需加载",
+        "description": "list 有 ≠ 常驻内存；吃紧时频繁换入换出"
+      }
+    ]
   }
 ]
