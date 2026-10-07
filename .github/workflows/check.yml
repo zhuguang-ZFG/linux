@@ -58,7 +58,9 @@ jobs:
       - name: Build reading and media site
         run: pnpm run build
       - name: Install Chromium for browser checks
-        run: pnpm exec playwright install --with-deps chromium
+        run: |
+          sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+          pnpm exec playwright install --with-deps chromium
       - name: Test desktop, mobile and media controls
         run: pnpm run test:site
       - name: Check animation player structure and text overflow

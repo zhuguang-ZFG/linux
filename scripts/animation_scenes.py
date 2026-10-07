@@ -305,7 +305,7 @@ EXTRA_SCENES = [
         ("01 统一收集", "进程输出 → journald", "stdout / stderr 全收", "不再散落 /var/log"),
         ("02 按单元过滤", "journalctl -u ssh", "只看这个 unit", "-f 持续跟踪"),
         ("03 时间与级别", "--since / -b / -p err", "-b 本次开机", "-p 只看严重级别"),
-        ("04 条件叠加", "-u ssh -p err --since today", "多条件组合检索", "--disk-usage 看占用")
+        ("04 条件叠加", "-u ssh -p err --since", "多条件组合检索", "--disk-usage 看占用")
     ], "动手：按日志侦探实验：journalctl -u ssh -p err -b 查错误；--since 统计时段行数；-o verbose 统计 unit 排行。", "示意动画：journal 默认限制普通用户权限，读系统日志需 adm 组；日志进分页器后可继续搜索。",
     [["demo-web.service 输出", "stdout/stderr 统一进 journal"], ["journalctl -u demo-web.service", "-f 持续跟踪，Ctrl+C 退出"], ["journalctl -b / --since / -p err", "本次开机 / 时段 / 严重级别"], ["-u ssh -p err --since today", "多条件叠加，--disk-usage 看占用"]], "docs/02-advanced/06-systemd服务与日志.md"),
     ("event-record", "按钮数据记录：变化才落一行 CSV", "状态变化才写行，轮询本身不是点击", [
