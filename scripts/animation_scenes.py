@@ -168,4 +168,53 @@ EXTRA_SCENES = [
         ("04 首次启动", "ssh 用户@pi-lab.local", "DHCP 列表或 mDNS 找地址", "关机用 sudo poweroff")
     ], "动手：烧录后用 DHCP 租约表或 mDNS 找到树莓派并首次登录，关机时用 sudo poweroff。", "示意动画：不确定设备名就拔插读卡器对比容量；首次启动期间不要断电。",
     [["Imager → 选型号 + 系统", "镜像从官方渠道获取"], ["目标：整张 microSD", "选错设备可能覆盖电脑磁盘"], ["预配置：用户名 / SSH / Wi-Fi", "设置文件与截图不要上传仓库"], ["首次启动 → ssh 用户@pi-lab.local", "关机用 sudo poweroff，别直接拔电"]], "docs/05-raspberry-pi/02-烧录系统与首次启动.md"),
+    ("kernel-distro", "内核与发行版：三层结构各管什么", "三层结构各管什么，验明身份的两条命令", [
+        ("01 硬件之上", "CPU / 内存 / 硬盘 / 网卡", "内核驱动与调度", "你操作的是抽象层"),
+        ("02 内核调度", "uname -r", "只显示内核版本号", "6.8.0-45-generic"),
+        ("03 发行版组装", "cat /etc/os-release", "内核 + 工具 + 仓库", "ID_LIKE 暴露家族出身"),
+        ("04 用户界面", "桌面环境 GNOME / KDE", "窗口、图标、任务栏", "你不直接指挥发动机")
+    ], "动手：运行 uname -r 与 cat /etc/os-release，说出内核版本、发行版版本与三层结构各对应哪个角色。", "严格说 Linux 只是内核；完整系统 = 内核 + GNU 工具 + 发行版软件。Free 指自由而非免费。",
+    [["硬件之上：CPU、内存、硬盘、网卡", "内核：驱动硬件、分配资源"], ["uname -r → 6.8.0-45-generic", "内核版本与发行版版本是两回事"], ["发行版：把内核和工具组装成整车", "ID_LIKE=debian → 属于 Debian 系"], ["桌面环境：窗口、图标、任务栏", "你操作驾驶舱，不直接指挥发动机"]], "docs/00-onboarding/02-Linux的前世今生.md"),
+    ("distro-family", "发行版家族：同一内核长出上百种整车", "同一颗内核，长出上百种整车", [
+        ("01 一颗内核", "Linux 内核 1991", "GPL 保证组装自由", "上百种整车由此而来"),
+        ("02 四大家族", "apt dnf pacman zypper", "Debian / RHEL / Arch / SUSE", "包管理器就是方言"),
+        ("03 按需选型", "新手 LTS / 服务器求稳", "极客滚动更新", "国产化 openEuler 与 UOS"),
+        ("04 验明出身", "cat /etc/os-release", "ID_LIKE 对号入座", "apt 与 dnf 别用混")
+    ], "动手：用决策表为三类人各选一个发行版——新手桌面、生产服务器、国产化办公，并各说一句理由。", "发行版 = 内核 + GNU 工具 + 应用组装成的整车，附软件仓库；认准 LTS 别追新。",
+    [["Linux 内核 1991 → 上百种发行版", "发动机一样，整车各不同"], ["Debian 系 apt .deb｜RHEL 系 dnf .rpm", "Arch 系 pacman｜SUSE 系 zypper"], ["新手认准 LTS，服务器求稳", "极客随便折腾，场景决定一切"], ["cat /etc/os-release → ID_LIKE=debian", "按 ID_LIKE 换包管理器，别混用"]], "docs/00-onboarding/03-发行版全景图.md"),
+    ("man-help", "man 手册：求助三步走", "权威、速览、例题，各回答一个问题", [
+        ("01 不认识的命令", "别背，查手册", "man 是官方说明书", "--help 是速览卡片"),
+        ("02 权威精读", "man 5 passwd", "分节 1 命令 5 配置", "8 是系统管理命令"),
+        ("03 关键词反查", "man -k password", "等于 apropos", "拿到命令名再精读"),
+        ("04 速抄例题", "tldr tar", "一页几个常用例子", "先 tldr 后 man")
+    ], "动手：忘了一个命令的名字，用 man -k 反查，再用 man 精读，全程不出终端，最后 q 退出。", "man 5 passwd 讲的是 /etc/passwd 文件格式，不是命令；tldr 是例题不是规范。",
+    [["遇到不认识的命令", "man 权威说明 / --help 速览 / tldr 例题"], ["man 内部就是 less：空格翻页", "/关键词 搜索，q 退出"], ["man -k password → passwd (1) (5)", "反查 → 精读 两步走"], ["tldr tar → 十行给出常用例子", "出问题再回 man 精读"]], "docs/01-basics/08-高效求助-man与tldr.md"),
+    ("hardware-detect", "硬件识别：实物对应系统命令", "内存、磁盘、总线与网卡，各有查看命令", [
+        ("01 内存工作台", "free -h", "应用可用内存", "free 小不等于不足"),
+        ("02 持久存储", "lsblk -o NAME,TYPE", "数据写在哪块盘", "挂载点看 findmnt"),
+        ("03 总线设备", "lspci / lsusb", "PCI 与 USB 枚举", "枚举 ≠ 能取画面"),
+        ("04 网络接口", "ip -br link", "网卡接口列表", "有接口 ≠ 有路由")
+    ], "动手：用 lscpu、free -h、findmnt /、ip -br link 做一份不含序列号的硬件记录，注明运行环境。", "虚拟机和容器看到的设备视图受限；软件容量与包装数字注意 GB/GiB 单位。",
+    [["CPU 内存 磁盘 网卡：四类实物", "虚拟机看到的是虚拟硬件"], ["lscpu / free -h → 计算与内存", "逻辑 CPU 不等于物理核心数"], ["lsblk → 数据落盘位置", "lspci / lsusb → 设备是否枚举"], ["ip -br link → 接口名称", "有接口不等于有可用路由"]], "docs/01-basics/09-从实物认识Linux硬件.md"),
+    ("pi-buying", "选购要点：按任务核对配件", "先明确要做什么，再逐项核对五项配件", [
+        ("01 先问用途", "命令行 / 桌面 / 硬件控制", "Pi 4/5 完整 Linux", "Zero 适合轻量任务"),
+        ("02 分清系列", "Pi vs Zero vs Pico", "Pico 是微控制器", "不跑完整 Linux"),
+        ("03 核对配件", "电源 存储 散热 网络 接口", "先看需求再看价格", "低功率充电器别凑合"),
+        ("04 验明板子", "uname -m", "常见 aarch64", "先查再配系统")
+    ], "动手：写一份「我已有 / 我缺少 / 为什么需要」的配件清单，并定一个第一周目标（SSH、共享目录或点灯）。", "能亮灯不等于电源稳定；GPIO 是信号接口，不直接驱动电机或大功率负载。",
+    [["你要做什么？", "Linux 命令行 / 桌面 / 低功耗硬件控制"], ["Pi 4/5：完整 Linux + GPIO", "Zero：轻量｜Pico：微控制器"], ["电源 存储 散热 网络 接口", "负载一高掉盘重启，先查供电"], ["查板型：/proc/device-tree/model", "uname -m → aarch64"]], "docs/05-raspberry-pi/01-树莓派是什么与选购.md"),
+    ("pi-remote", "远程配置：公钥登录三步", "密钥认证、稳定寻址与基础配置", [
+        ("01 生成密钥", "ssh-keygen -t ed25519", "本机生成密钥对", "私钥留在本机"),
+        ("02 复制公钥", "ssh-copy-id 用户@主机", "把公钥装到目标机", "主机名比 IP 好记"),
+        ("03 密钥登录", "ssh 用户@主机名", "publickey 认证", "成功后再禁密码"),
+        ("04 基础配置", "sudo raspi-config", "时区 / 网络 / 更新", "一次只改一项")
+    ], "动手：重启后仍能用主机名与密钥重新登录；记录 hostname、timedatectl 与 vcgencmd measure_temp 输出。", "公钥登录成功后才考虑禁用密码；频繁掉线先查供电与无线信号，别直接怀疑 SSH。",
+    [["$ ssh-keygen -t ed25519", "生成一对密钥，私钥留在本机"], ["$ ssh-copy-id 用户@pi-lab.local", "把公钥装进 authorized_keys"], ["$ ssh 用户@pi-lab.local", "PreferredAuthentications=publickey"], ["sudo raspi-config → 时区 / 网络", "timedatectl / vcgencmd measure_temp"]], "docs/05-raspberry-pi/03-远程连接与基础配置.md"),
+    ("pi-homeserver", "家庭服务器：Samba 共享起步", "认证共享、验证落盘与盘外备份", [
+        ("01 安装服务", "sudo apt install samba", "装共享服务与工具", "共享密码独立设置"),
+        ("02 设置密码", "smbpasswd -a $USER", "独立认证共享账号", "guest ok = no"),
+        ("03 启用验证", "testparm -s", "先验证配置再加载", "enable --now smbd"),
+        ("04 访问备份", "smbclient -L localhost", "看到 pi-share 即成功", "备份要放在盘外")
+    ], "动手：客户端上传文件 → 树莓派 sha256sum 记录 → 重启 → 下载比对；再备份到另一目录并恢复到第三目录。", "共享盘不是备份，客户端误删会同步影响；Pi-hole 只屏蔽命中的域名，不向公网开放递归 DNS。",
+    [["$ sudo apt install samba", "客户端 smb://树莓派IP/pi-share 访问"], ["$ sudo smbpasswd -a 用户", "共享密码与登录密码相互独立"], ["testparm -s → 配置正确", "systemctl enable --now smbd"], ["smbclient -L localhost → pi-share", "共享不是备份：备份目标在源目录外"]], "docs/05-raspberry-pi/05-家庭服务器实战.md"),
 ]

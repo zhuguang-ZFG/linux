@@ -13,6 +13,10 @@ CPU、内存、磁盘和网卡不是终端里的四组抽象数字。先看真�
 
 ## 🧠 核心概念
 
+![硬件识别原理动画](../../assets/animations/hardware-detect.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=hardware-detect.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ```mermaid
 flowchart LR
     A[磁盘上的程序] --> B[读入内存]

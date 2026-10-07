@@ -808,5 +808,187 @@
         "description": "DHCP 列表或 mDNS 找地址；关机用 sudo poweroff"
       }
     ]
+  },
+  {
+    "file": "kernel-distro.svg",
+    "title": "内核与发行版",
+    "chapter": "docs/00-onboarding/02-Linux的前世今生.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 硬件之上",
+        "description": "内核驱动与调度；你操作的是抽象层"
+      },
+      {
+        "title": "02 内核调度",
+        "description": "只显示内核版本号；6.8.0-45-generic"
+      },
+      {
+        "title": "03 发行版组装",
+        "description": "内核 + 工具 + 仓库；ID_LIKE 暴露家族出身"
+      },
+      {
+        "title": "04 用户界面",
+        "description": "窗口、图标、任务栏；你不直接指挥发动机"
+      }
+    ]
+  },
+  {
+    "file": "distro-family.svg",
+    "title": "发行版家族",
+    "chapter": "docs/00-onboarding/03-发行版全景图.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 一颗内核",
+        "description": "GPL 保证组装自由；上百种整车由此而来"
+      },
+      {
+        "title": "02 四大家族",
+        "description": "Debian / RHEL / Arch / SUSE；包管理器就是方言"
+      },
+      {
+        "title": "03 按需选型",
+        "description": "极客滚动更新；国产化 openEuler 与 UOS"
+      },
+      {
+        "title": "04 验明出身",
+        "description": "ID_LIKE 对号入座；apt 与 dnf 别用混"
+      }
+    ]
+  },
+  {
+    "file": "man-help.svg",
+    "title": "man 手册",
+    "chapter": "docs/01-basics/08-高效求助-man与tldr.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 不认识的命令",
+        "description": "man 是官方说明书；--help 是速览卡片"
+      },
+      {
+        "title": "02 权威精读",
+        "description": "分节 1 命令 5 配置；8 是系统管理命令"
+      },
+      {
+        "title": "03 关键词反查",
+        "description": "等于 apropos；拿到命令名再精读"
+      },
+      {
+        "title": "04 速抄例题",
+        "description": "一页几个常用例子；先 tldr 后 man"
+      }
+    ]
+  },
+  {
+    "file": "hardware-detect.svg",
+    "title": "硬件识别",
+    "chapter": "docs/01-basics/09-从实物认识Linux硬件.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 内存工作台",
+        "description": "应用可用内存；free 小不等于不足"
+      },
+      {
+        "title": "02 持久存储",
+        "description": "数据写在哪块盘；挂载点看 findmnt"
+      },
+      {
+        "title": "03 总线设备",
+        "description": "PCI 与 USB 枚举；枚举 ≠ 能取画面"
+      },
+      {
+        "title": "04 网络接口",
+        "description": "网卡接口列表；有接口 ≠ 有路由"
+      }
+    ]
+  },
+  {
+    "file": "pi-buying.svg",
+    "title": "选购要点",
+    "chapter": "docs/05-raspberry-pi/01-树莓派是什么与选购.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 先问用途",
+        "description": "Pi 4/5 完整 Linux；Zero 适合轻量任务"
+      },
+      {
+        "title": "02 分清系列",
+        "description": "Pico 是微控制器；不跑完整 Linux"
+      },
+      {
+        "title": "03 核对配件",
+        "description": "先看需求再看价格；低功率充电器别凑合"
+      },
+      {
+        "title": "04 验明板子",
+        "description": "常见 aarch64；先查再配系统"
+      }
+    ]
+  },
+  {
+    "file": "pi-remote.svg",
+    "title": "远程配置",
+    "chapter": "docs/05-raspberry-pi/03-远程连接与基础配置.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 生成密钥",
+        "description": "本机生成密钥对；私钥留在本机"
+      },
+      {
+        "title": "02 复制公钥",
+        "description": "把公钥装到目标机；主机名比 IP 好记"
+      },
+      {
+        "title": "03 密钥登录",
+        "description": "publickey 认证；成功后再禁密码"
+      },
+      {
+        "title": "04 基础配置",
+        "description": "时区 / 网络 / 更新；一次只改一项"
+      }
+    ]
+  },
+  {
+    "file": "pi-homeserver.svg",
+    "title": "家庭服务器",
+    "chapter": "docs/05-raspberry-pi/05-家庭服务器实战.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 安装服务",
+        "description": "装共享服务与工具；共享密码独立设置"
+      },
+      {
+        "title": "02 设置密码",
+        "description": "独立认证共享账号；guest ok = no"
+      },
+      {
+        "title": "03 启用验证",
+        "description": "先验证配置再加载；enable --now smbd"
+      },
+      {
+        "title": "04 访问备份",
+        "description": "看到 pi-share 即成功；备份要放在盘外"
+      }
+    ]
   }
 ]

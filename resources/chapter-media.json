@@ -21,7 +21,9 @@
         "note": "先建立内核与发行版的背景，不代替本章历史阅读。"
       }
     ],
-    "animations": []
+    "animations": [
+      "kernel-distro.svg"
+    ]
   },
   "docs/00-onboarding/03-发行版全景图.md": {
     "videos": [
@@ -30,7 +32,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "distro-family.svg"
+    ]
   },
   "docs/00-onboarding/04-安装你的第一个Linux.md": {
     "videos": [
@@ -139,7 +143,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "man-help.svg"
+    ]
   },
   "docs/01-basics/09-从实物认识Linux硬件.md": {
     "videos": [
@@ -148,7 +154,9 @@
         "note": "知识全景补充，实物识别与机器记录仍需按正文完成。"
       }
     ],
-    "animations": []
+    "animations": [
+      "hardware-detect.svg"
+    ]
   },
   "docs/02-advanced/01-管道与重定向.md": {
     "videos": [
@@ -419,7 +427,9 @@
         "note": "仅为课程介绍与硬件背景，不是完整树莓派课程。"
       }
     ],
-    "animations": []
+    "animations": [
+      "pi-buying.svg"
+    ]
   },
   "docs/05-raspberry-pi/02-烧录系统与首次启动.md": {
     "videos": [
@@ -439,7 +449,9 @@
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
-    "animations": []
+    "animations": [
+      "pi-remote.svg"
+    ]
   },
   "docs/05-raspberry-pi/04-GPIO硬件编程.md": {
     "videos": [
@@ -459,7 +471,9 @@
         "note": "容器基础补充，Samba 与家庭存储配置见正文。"
       }
     ],
-    "animations": []
+    "animations": [
+      "pi-homeserver.svg"
+    ]
   },
   "docs/05-raspberry-pi/06-树莓派与边缘AI.md": {
     "videos": [],

@@ -20,6 +20,10 @@
 
 ## 🧠 核心概念
 
+![man 手册原理动画](../../assets/animations/man-help.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=man-help.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 为什么"会求助"是第一技能
 
 Linux 的命令、参数多如牛毛，且不同发行版细节有差。靠背诵永远学不完；靠搜索引擎又良莠不齐。Linux 的哲学是：**手册随系统走（offline docs）**——`man` 是权威的"官方说明书"，`--help` 是"速览卡片"，`tldr` 是"网友抄的例题"。三者配合，90% 的问题不出终端就能解决。

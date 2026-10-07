@@ -23,6 +23,10 @@
 
 ## 🧠 核心概念
 
+![内核与发行版原理动画](../../assets/animations/kernel-distro.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=kernel-distro.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 2.1 1969：Unix 在贝尔实验室诞生
 
 故事开始于一个失败的项目。20 世纪 60 年代，贝尔实验室（Bell Labs）、麻省理工等
