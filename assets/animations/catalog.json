@@ -1120,5 +1120,83 @@
         "description": "谁有资格用 sudo；全程可审计"
       }
     ]
+  },
+  {
+    "file": "git-commit.svg",
+    "title": "Git 提交三区",
+    "chapter": "docs/02-advanced/09-Git与学习笔记协作.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 工作区",
+        "description": "改动只在本机文件里；git status 显示 ?? / M"
+      },
+      {
+        "title": "02 暂存区",
+        "description": "挑出本次要提交的内容；git diff --cached 预览"
+      },
+      {
+        "title": "03 本地提交",
+        "description": "钉成本地历史快照；commit 是本地快照"
+      },
+      {
+        "title": "04 推送协作",
+        "description": "把提交传到远端仓库；PR 写清问题证据与复验"
+      }
+    ]
+  },
+  {
+    "file": "env-scope.svg",
+    "title": "export",
+    "chapter": "docs/01-basics/07-环境变量与PATH.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 普通变量",
+        "description": "只属于当前 Shell；子进程看不到"
+      },
+      {
+        "title": "02 升舱",
+        "description": "升舱为环境变量；子进程会继承拷贝"
+      },
+      {
+        "title": "03 子进程查岗",
+        "description": "子进程看到 Beijing；看不到普通变量 name"
+      },
+      {
+        "title": "04 改动不回传",
+        "description": "改的是自己的拷贝；不影响父进程的值"
+      }
+    ]
+  },
+  {
+    "file": "apt-flow.svg",
+    "title": "apt 全流程",
+    "chapter": "docs/01-basics/05-软件包管理.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 刷新目录",
+        "description": "更新本地索引清单；不升级任何软件"
+      },
+      {
+        "title": "02 升级已装",
+        "description": "update 之后才动手；把已装软件升到最新"
+      },
+      {
+        "title": "03 安装新软件",
+        "description": "自动解析并装好依赖；一条命令装全家桶"
+      },
+      {
+        "title": "04 卸载回收",
+        "description": "移除软件本体；autoremove 回收孤儿依赖"
+      }
+    ]
   }
 ]

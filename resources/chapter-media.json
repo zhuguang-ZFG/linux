@@ -111,7 +111,8 @@
       }
     ],
     "animations": [
-      "apt-deps.svg"
+      "apt-deps.svg",
+      "apt-flow.svg"
     ]
   },
   "docs/01-basics/06-进程管理.md": {
@@ -134,7 +135,8 @@
       }
     ],
     "animations": [
-      "path-lookup.svg"
+      "path-lookup.svg",
+      "env-scope.svg"
     ]
   },
   "docs/01-basics/08-高效求助-man与tldr.md": {
@@ -271,7 +273,8 @@
       }
     ],
     "animations": [
-      "git-branches.svg"
+      "git-branches.svg",
+      "git-commit.svg"
     ]
   },
   "docs/03-pro/01-性能观测与调优.md": {

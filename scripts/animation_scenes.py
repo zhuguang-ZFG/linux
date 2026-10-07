@@ -252,4 +252,25 @@ EXTRA_SCENES = [
         ("04 /etc/sudoers", "sudo visudo 编辑", "谁有资格用 sudo", "全程可审计")
     ], "动手：用 sudo visudo 查看自己的 sudoers 条目；对比 su - 与 sudo -i 的提示符，结束后 exit。", "示意动画：sudo 放行范围由 /etc/sudoers 决定；真实审计记录在 /var/log/auth.log。",
     [["alice：要改系统配置，但没权限", "root 能越过一切权限检查"], ["su - bob：输 bob 的密码，彻底切换", "切过去全程以 bob/root 身份干活"], ["sudo apt update：输自己的密码", "只以 root 执行这一条命令"], ["/etc/sudoers 决定谁能用 sudo", "必须 visudo 编辑，记录可审计"]], "docs/01-basics/03-用户与权限.md"),
+    ("git-commit", "Git 提交三区：工作区、暂存区与历史", "git add 选内容，git commit 钉快照，git push 才上传", [
+        ("01 工作区", "编辑 notes.md", "改动只在本机文件里", "git status 显示 ?? / M"),
+        ("02 暂存区", "git add notes.md", "挑出本次要提交的内容", "git diff --cached 预览"),
+        ("03 本地提交", "git commit -m", "钉成本地历史快照", "commit 是本地快照"),
+        ("04 推送协作", "git push / PR", "把提交传到远端仓库", "PR 写清问题证据与复验")
+    ], "动手：在临时练习仓库按章操作：改 notes.md → git add → git diff --cached → git commit，再用 git show 说明改动。", "示意动画：Git 不会自动判断内容正确；误提交密码后仅删文件不够，历史中可能仍有副本。",
+    [["工作区：notes.md 出现改动", "git status 显示 ?? 或 M"], ["git add → 暂存区", "git diff --cached 预览本次提交"], ["git commit → 本地历史多一条快照", "commit 是本地快照，push 才上传"], ["git push → 远端仓库", "PR 描述写清问题、修改、证据、验证"]], "docs/02-advanced/09-Git与学习笔记协作.md"),
+    ("env-scope", "export：决定变量要不要传给孩子", "传的是拷贝，子进程里改不影响父进程", [
+        ("01 普通变量", "name=\"alice\"", "只属于当前 Shell", "子进程看不到"),
+        ("02 升舱", "export CITY=\"Beijing\"", "升舱为环境变量", "子进程会继承拷贝"),
+        ("03 子进程查岗", "bash -c 'echo $CITY'", "子进程看到 Beijing", "看不到普通变量 name"),
+        ("04 改动不回传", "子进程里改 CITY", "改的是自己的拷贝", "不影响父进程的值")
+    ], "动手：name=\"alice\"、export CITY=\"Beijing\"，再用 bash -c 'echo $CITY' 在子进程查岗，验证继承与拷贝。", "示意动画：export 只决定是否随 fork 传递；写 ~/.bashrc 并 source 才能在当前会话永久生效。",
+    [["bash：name=alice（普通变量）", "export CITY=Beijing（环境变量）"], ["子进程 bash -c 'echo $CITY'", "看到 Beijing；name 是空"], ["拷贝：子进程改 CITY 不影响父进程", "环境变量随 fork 继续传递"], ["永久生效：写 ~/.bashrc 再 source", "新终端自动加载，已开的要 source"]], "docs/01-basics/07-环境变量与PATH.md"),
+    ("apt-flow", "apt 全流程：先刷新目录，再动手", "update 只刷新索引目录，upgrade 才升级已装软件", [
+        ("01 刷新目录", "sudo apt update", "更新本地索引清单", "不升级任何软件"),
+        ("02 升级已装", "sudo apt upgrade", "update 之后才动手", "把已装软件升到最新"),
+        ("03 安装新软件", "sudo apt install tree", "自动解析并装好依赖", "一条命令装全家桶"),
+        ("04 卸载回收", "sudo apt remove tree", "移除软件本体", "autoremove 回收孤儿依赖")
+    ], "动手：按 update → upgrade → install → show → remove → autoremove 走完 tree 生命周期，再用 apt list --installed 核对。", "示意动画：apt 依赖解析依据本地索引，索引过期会装错版本；dpkg 手动装包不会自动拉依赖。",
+    [["sudo apt update", "只刷新 /var/lib/apt/lists 索引清单"], ["sudo apt upgrade", "真正升级已装软件（更新目录之后）"], ["sudo apt install tree", "自动解析依赖，装好全家桶"], ["sudo apt remove tree → autoremove", "卸载并回收不再被依赖的包"]], "docs/01-basics/05-软件包管理.md"),
 ]

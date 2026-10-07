@@ -18,6 +18,10 @@
 
 ## 🧠 核心概念
 
+![export原理动画](../../assets/animations/env-scope.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=env-scope.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![PATH 查找原理动画](../../assets/animations/path-lookup.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=path-lookup.svg)。动画中的输入输出为教学示意，需用本章实验验证。
