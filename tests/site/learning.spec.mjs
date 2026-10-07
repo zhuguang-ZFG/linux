@@ -10,7 +10,7 @@ test('home shows the actual catalog and accessible route entries', async ({ page
   await expect(page.locator('.hero h1')).toContainText('能动手的本领');
   await expect(page.locator('.stat-strip')).toContainText('42');
   await expect(page.locator('.stat-strip')).toContainText('30');
-  await expect(page.locator('.stat-strip')).toContainText('43');
+  await expect(page.locator('.stat-strip')).toContainText('45');
   await expect(page.locator('.chapter-link')).toHaveCount(42);
   await page.getByRole('link', { name: '开始第一课' }).click();
   await expect(page.locator('.article h1')).toContainText('为什么人人');

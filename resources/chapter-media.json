@@ -293,6 +293,7 @@
     ],
     "animations": [
       "boot-sequence.svg",
+      "syscall-switch.svg",
       "process-lifecycle.svg"
     ]
   },
@@ -304,6 +305,7 @@
       }
     ],
     "animations": [
+      "firewall-chains.svg",
       "packet-journey.svg"
     ]
   },

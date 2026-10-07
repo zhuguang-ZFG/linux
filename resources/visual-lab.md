@@ -1,6 +1,6 @@
 # 动画实验室：先预测，再播放，最后动手
 
-本库共 43 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 37 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
+本库共 45 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 39 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
 
 动画是原理示意，不是从真实机器采集的运行录像。验收仍要回到命令与实际输出。
 
@@ -40,7 +40,7 @@
 
 **先猜**：模型给出一条命令，是否就能直接放进教程？**动手**：完成 [AI 辅助学习章节](../docs/03-pro/07-AI辅助学习与运维.md) 的手册核对与实测。
 
-## 新增的三十一个状态演示
+## 新增的三十三个状态演示
 
 以下动画额外展示示意输入、命令或状态快照，配合学习站的单步控制观察变化：
 
@@ -58,6 +58,8 @@
 | [选购要点](../assets/animations/pi-buying.svg) | 按任务核对电源、存储、散热与网络 |
 | [远程配置](../assets/animations/pi-remote.svg) | 公钥登录、稳定寻址与 raspi-config |
 | [家庭服务器](../assets/animations/pi-homeserver.svg) | Samba 认证共享、落盘验证与盘外备份 |
+| [系统调用](../assets/animations/syscall-switch.svg) | 用户态陷入内核态、页缓存命中与返回路径 |
+| [防火墙规则](../assets/animations/firewall-chains.svg) | 逐条匹配、命中即停与默认拒绝兜底 |
 | [归档与压缩](../assets/animations/archive-compress.svg) | 归档与压缩为何是两步 |
 | [Vim 模式](../assets/animations/vim-modes.svg) | 普通/插入/命令模式与保存退出 |
 | [选安装方式](../assets/animations/install-choices.svg) | 四种安装路线的磁盘边界与风险 |

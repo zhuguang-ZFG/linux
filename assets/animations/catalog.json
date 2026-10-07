@@ -990,5 +990,57 @@
         "description": "看到 pi-share 即成功；备份要放在盘外"
       }
     ]
+  },
+  {
+    "file": "syscall-switch.svg",
+    "title": "系统调用",
+    "chapter": "docs/03-pro/02-内核与系统调用.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 用户态发起",
+        "description": "应用跑在受限的用户态；不能直接读磁盘设备"
+      },
+      {
+        "title": "02 陷入内核",
+        "description": "glibc 触发特权级切换；CPU 从用户态切到内核态"
+      },
+      {
+        "title": "03 内核代办",
+        "description": "命中页缓存直接拷贝；未命中发起磁盘 IO 并睡眠"
+      },
+      {
+        "title": "04 返回用户态",
+        "description": "数据拷回用户缓冲区；strace 能看到每次调用"
+      }
+    ]
+  },
+  {
+    "file": "firewall-chains.svg",
+    "title": "防火墙规则",
+    "chapter": "docs/03-pro/03-安全加固.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 数据包到达",
+        "description": "先过防火墙最外层；再谈端口监听与应用"
+      },
+      {
+        "title": "02 逐条匹配",
+        "description": "从上往下比对规则；第一条命中就停止"
+      },
+      {
+        "title": "03 命中动作",
+        "description": "命中规则决定放行或丢弃；22 放行、3306 拒绝"
+      },
+      {
+        "title": "04 默认兜底",
+        "description": "没有规则命中走默认；所以先 allow SSH 再 enable"
+      }
+    ]
   }
 ]
