@@ -195,9 +195,13 @@ function animationPage(file) {
   const steps = animation.steps || [];
   const stepParam = Number(new URLSearchParams(location.hash.slice(1)).get('step'));
   const initialStep = Number.isInteger(stepParam) && stepParam >= 1 ? Math.min(stepParam, steps.length || 1) : 1;
+  const animIndex = data.animations.findIndex(item => item.file === file);
+  const prevAnim = data.animations[animIndex - 1];
+  const nextAnim = data.animations[animIndex + 1];
   main.innerHTML = `<div class="page"><div class="breadcrumb"><a href="#animations">动画实验室</a> / ${escape(doc ? data.stageNames[doc.stage] : 'Linux 原理')}</div><h1 class="page-title">${escape(animation.title)}</h1><p class="page-lead">先想一想下一步会发生什么，再播放或单步观察。示例数据用于解释原理。</p><div class="player-panel"><div class="animation-stage" style="aspect-ratio:${animation.width || 1080}/${animation.height || 500}"><iframe id="animation-frame" src="./assets/animations/${encodeURIComponent(file)}" title="${escape(animation.title)} 原理动画"></iframe></div><div class="player-controls"><button class="button primary small" id="animation-play" disabled>播放</button><button class="button small" id="animation-step" disabled>下一步</button><button class="button small" id="animation-reset" disabled>重播</button><label class="sr-only" for="animation-progress">动画时间</label><input id="animation-progress" type="range" min="0" max="${animation.duration}" value="0" step="0.05" disabled><span class="player-time" id="animation-time">0.0 / ${animation.duration}s</span><label class="sr-only" for="animation-speed">播放速度</label><select id="animation-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select><span class="sr-only" role="status" id="animation-announcer"></span></div></div>
     ${steps.length ? `<div class="steps-grid">${steps.map((step, index) => `<div class="step-card ${index === 0 ? 'active' : ''}" data-step-card="${index}"><strong>${escape(step.title)}</strong><p>${escape(step.description)}</p></div>`).join('')}</div>` : ''}
-    <div class="practice-banner"><div><h3>验证理解的下一步</h3><p>${escape(doc?.title || '打开对应章节，运行自己的实验。')}</p></div><a class="button" href="${readRoute(animation.chapter)}">进入章节实验 →</a></div><p class="count-note">默认暂停，按需播放（快捷键：空格 播放/暂停，←/→ 单步，R 重播）。原始 SVG 保留静态说明，<a href="./assets/animations/${encodeURIComponent(file)}" target="_blank" rel="noopener noreferrer">也可独立打开 ↗</a>。</p>${footer()}</div>`;
+    ${prevAnim || nextAnim ? `<nav class="lesson-next" aria-label="相邻动画">${prevAnim ? `<a href="${animationRoute(prevAnim.file)}">← ${escape(prevAnim.title)}</a>` : '<span></span>'}${nextAnim ? `<a href="${animationRoute(nextAnim.file)}">${escape(nextAnim.title)} →</a>` : ''}</nav>` : ''}
+    <div class="practice-banner"><div><h3>验证理解的下一步</h3><p>${escape(doc?.title || '打开对应章节，运行自己的实验。')}</p></div><a class="button" href="${readRoute(animation.chapter)}">进入章节实验 →</a></div><p class="count-note">默认暂停，按需播放（快捷键：空格 播放/暂停，←/→ 单步，R 重播）。原始 SVG 保留静态说明，<a href="./assets/animations/${encodeURIComponent(file)}" target="_blank" rel="noopener noreferrer">也可独立打开 ↗</a>。 <button class="text-button" id="animation-copy-link" type="button">复制链接（含当前步骤）</button></p>${footer()}</div>`;
   const frame = document.querySelector('#animation-frame');
   let raf = null, alive = true;
   cleanup = () => { alive = false; if (raf) cancelAnimationFrame(raf); };
@@ -224,6 +228,15 @@ function animationPage(file) {
       announced = index;
       announcer.textContent = `第 ${index + 1} 步，共 ${steps.length} 步：${steps[index]?.title || ''}`;
     };
+    const copyLink = document.querySelector('#animation-copy-link');
+    if (copyLink) copyLink.addEventListener('click', async () => {
+      const url = new URL(location.href);
+      const params = new URLSearchParams(url.hash.slice(1));
+      params.set('step', String(Math.min(steps.length, Math.floor(current / animation.duration * steps.length) + 1)));
+      url.hash = params.toString();
+      try { await navigator.clipboard.writeText(url.href); toast('已复制：打开后定位到当前步骤'); }
+      catch { toast('无法自动复制，请手动复制地址栏链接'); }
+    });
     function seek(value) {
       current = Math.max(0, Math.min(animation.duration, value));
       const visualTime = Math.min(current, Math.max(0, animation.duration - 0.001));

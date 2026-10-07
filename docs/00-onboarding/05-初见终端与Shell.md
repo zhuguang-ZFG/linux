@@ -24,6 +24,10 @@
 
 ## 🧠 核心概念
 
+![一条命令原理动画](../../assets/animations/cmd-execution.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=cmd-execution.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ### 5.1 Terminal、Shell、Bash：一间厨房三个角色
 
 三个词天天被混用，其实分工明确。先看一张数据流向图：

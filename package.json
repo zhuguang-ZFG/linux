@@ -9,8 +9,9 @@
     "build": "node scripts/build-site.mjs",
     "preview": "node scripts/serve-site.mjs",
     "test:site": "playwright test",
+    "check:overflow": "node scripts/check-overflow.mjs",
     "check:content": "node scripts/check-content.mjs",
-    "check:all": "node scripts/check-content.mjs && node scripts/check-media.mjs && node scripts/sync-media.mjs --check && python3 -B scripts/media.test.py && python3 -B scripts/examples.test.py && python3 -B scripts/camera.test.py && python3 -B scripts/labs.test.py"
+    "check:all": "node scripts/check-content.mjs && node scripts/check-media.mjs && node scripts/sync-media.mjs --check && python3 -B scripts/media.test.py && python3 -B scripts/examples.test.py && python3 -B scripts/camera.test.py && python3 -B scripts/labs.test.py && pnpm run build && node scripts/check-overflow.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",

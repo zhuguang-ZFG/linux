@@ -10,7 +10,7 @@ test('home shows the actual catalog and accessible route entries', async ({ page
   await expect(page.locator('.hero h1')).toContainText('能动手的本领');
   await expect(page.locator('.stat-strip')).toContainText('42');
   await expect(page.locator('.stat-strip')).toContainText('32');
-  await expect(page.locator('.stat-strip')).toContainText('57');
+  await expect(page.locator('.stat-strip')).toContainText('60');
   await expect(page.locator('.chapter-link')).toHaveCount(42);
   await page.getByRole('link', { name: '开始第一课' }).click();
   await expect(page.locator('.article h1')).toContainText('为什么人人');
@@ -155,6 +155,46 @@ test('animation supports keyboard step, play/pause and reset', async ({ page }) 
   expect(Number(await page.locator('#animation-progress').inputValue())).toBeCloseTo(paused, 1);
   await page.keyboard.press('r');
   await expect(page.locator('#animation-time')).toHaveText('0.0 / 12s');
+});
+
+test('animation page navigates to adjacent animations in catalog order', async ({ page }) => {
+  await page.goto('#animation=journal-query.svg');
+  const nav = page.locator('.lesson-next');
+  await expect(nav).toContainText('Bash 退出码');
+  await expect(nav).toContainText('按钮数据记录');
+  await expect(nav.locator('a').first()).toHaveAttribute('href', '#animation=bash-exitcode.svg');
+  await nav.locator('a').last().click();
+  await expect(page.locator('#animation-frame')).toHaveAttribute('src', /event-record\.svg/);
+  await expect(page.locator('h1.page-title')).toContainText('按钮数据记录');
+  const nav2 = page.locator('.lesson-next');
+  await expect(nav2).toContainText('journalctl');
+  await nav2.locator('a').first().click();
+  await expect(page.locator('#animation-frame')).toHaveAttribute('src', /journal-query\.svg/);
+  await expect(page.locator('h1.page-title')).toContainText('journalctl');
+});
+
+test('animation copy-link shares a step deep link without reloading the player', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(navigator, 'clipboard', { value: { writeText: async text => { window.__copied = text; } } }));
+  await page.goto('#animation=git-branches.svg&step=2');
+  await expect(page.locator('#animation-time')).toHaveText('3.0 / 12s');
+  await page.locator('#animation-copy-link').click();
+  await expect.poll(() => page.evaluate(() => window.__copied)).toContain('#animation=git-branches.svg');
+  await expect.poll(() => page.evaluate(() => window.__copied)).toContain('step=2');
+  await expect(page.locator('#animation-time')).toHaveText('3.0 / 12s');
+  await expect(page.locator('#animation-frame')).toHaveCount(1);
+});
+
+test('dark mode remaps theme variables and keeps reading surface readable', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('');
+  const bodyBg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  expect(bodyBg).toBe('rgb(11, 15, 20)');
+  await page.goto(`#read=${encodeURIComponent('docs/02-advanced/01-管道与重定向.md')}`);
+  await expect(page.locator('.article h1')).toBeVisible();
+  const blockquoteBg = await page.locator('.article blockquote').first().evaluate(el => getComputedStyle(el).backgroundColor);
+  expect(blockquoteBg).toBe('rgb(16, 37, 43)');
+  const codeBg = await page.locator('.article code').first().evaluate(el => getComputedStyle(el).backgroundColor);
+  expect(codeBg).toBe('rgb(27, 40, 54)');
 });
 
 test('reduced-motion preference still provides paused controls and readable steps', async ({ page }) => {

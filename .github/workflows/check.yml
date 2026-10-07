@@ -61,6 +61,8 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
       - name: Test desktop, mobile and media controls
         run: pnpm run test:site
+      - name: Check animation player structure and text overflow
+        run: pnpm run check:overflow
       - name: Save failed browser traces
         if: failure()
         uses: actions/upload-artifact@v7

@@ -50,6 +50,24 @@
 
 NAS 把多块硬盘放进专用设备并联网共享，是独立存储的一种常见形态；本教程的家庭服务器用树莓派 + Samba 实现更小的共享目录。对应 [家庭服务器实战](../docs/05-raspberry-pi/05-家庭服务器实战.md)。
 
+## 9. 主板：所有部件的中枢
+
+![micro-ATX 主板实物](../assets/images/motherboard-g41.jpg)
+
+观察 CPU 插座、内存槽、SATA 接口与供电电容。具体兼容性以主板型号为准，不能凭外形判断接口代际。对应命令：`lspci`、`lsblk`。配合 [硬件识别章节](../docs/01-basics/09-从实物认识Linux硬件.md) 对照系统视图与实物。
+
+## 10. 键盘：最直接的输入设备
+
+![机械键盘实物](../assets/images/mechanical-keyboard.jpg)
+
+机械键盘每个按键下有独立开关，手感与寿命和薄膜键盘不同；彩色灯光只影响外观。键盘是即插即用输入设备，无需在 Linux 里安装驱动即可识别。
+
+## 11. 路由器：家庭网络的出口
+
+![家用无线路由器实物](../assets/images/router-wifi.jpg)
+
+路由器把宽带接入、交换与无线接入集于一台设备。家用场景通常在网页管理页配置它，不用命令行；物理连接正常后才去排查地址与路由。对应 [网络章节](../docs/02-advanced/08-网络基础与远程连接.md)。
+
 ## 延伸观察
 
 已有的 [树莓派全家福](../assets/images/raspberry-pi-family.jpg)、[GPIO 排针](../assets/images/raspberry-pi-gpio-header.jpg)、[microSD](../assets/images/microsd-card.jpg) 和 [服务器机架](../assets/images/datacenter-racks.jpg) 可以继续对照设备与系统视图。每看一张图，写下“它负责什么、Linux 用什么接口观察它、还不能从图中判断什么”。

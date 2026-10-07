@@ -27,6 +27,12 @@ flowchart LR
 
 虚拟机看到的是虚拟硬件，容器可能看到经过限制或共享的视图。命令能看到什么，不一定等于你独占了多少资源。
 
+### 主板：所有部件的中枢
+
+![micro-ATX 主板实物](../../assets/images/motherboard-g41.jpg)
+
+主板上固定 CPU、内存、硬盘和扩展卡，也提供供电与数据通路。图中是较早的 LGA775 micro-ATX 板，观察 CPU 插座、内存槽、SATA 接口与电容布局即可；具体规格以你的主板型号为准。来源：Davidson F，CC0（公有领域声明），详见 [署名](../../assets/images/CREDITS.md)。
+
 ### 内存：工作台
 
 ![DDR4 ECC RDIMM 内存条实物](../../assets/images/ddr4-memory.jpg)
@@ -44,6 +50,12 @@ flowchart LR
 ![以太网交换机端口实物](../../assets/images/ethernet-switch.jpg)
 
 交换机连接局域网中的设备。连接灯亮只说明物理链路有一定进展，不代表获得了 IP、DNS 正常或网站可访问。照片是较早型号的实物，用于观察端口，不作为性能或选购推荐。来源：Sub，公有领域。
+
+### 输入设备：键盘
+
+![机械键盘实物](../../assets/images/mechanical-keyboard.jpg)
+
+键盘是最直接的输入设备之一。机械键盘每个按键下有独立开关，手感与寿命和薄膜键盘不同；图中彩色灯光只影响外观，不影响按键识别。来源：SolarMainframe，CC BY-SA 4.0。
 
 ## 🛠 命令实操
 

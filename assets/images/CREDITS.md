@@ -24,5 +24,8 @@
 | `nvme-ssd.jpg` | M.2 NVMe SSD 正面 | D-Kuru | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Samsung_980_PRO_PCIe_4.0_NVMe_SSD_1TB-top_PNr%C2%B00915.jpg |
 | `gpu-card.jpg` | GeForce RTX 3090 显卡实物 | Adam Kapetanakis | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:RTX_3090_Founders_Edition.jpg |
 | `nas-device.jpg` | Synology DiskStation 网络存储 | DYVER | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Synology_Disk_Station_DS223J_-_NAS-Server.jpg |
+| `mechanical-keyboard.jpg` | 机械键盘实物 | SolarMainframe | CC BY-SA 4.0（https://creativecommons.org/licenses/by-sa/4.0） | https://commons.wikimedia.org/wiki/File:Mechanical_Keyboard.jpg |
+| `motherboard-g41.jpg` | micro-ATX 主板实物（G41 芯片组） | Davidson F | CC0（https://creativecommons.org/publicdomain/zero/1.0/） | https://commons.wikimedia.org/wiki/File:PCWare_IPM41-D3_Motherboard_(53162758424).jpg |
+| `router-wifi.jpg` | 家用无线路由器实物 | Saiphani02 | CC BY 4.0（https://creativecommons.org/licenses/by/4.0） | https://commons.wikimedia.org/wiki/File:Freedom_Box_Wifi_Router.jpg |
 
-2026-10-06 新增的六张照片仅调整尺寸并重新压缩为 JPEG，未修改场景或器件；按各图片原许可继续提供。机器可读的原始说明、作者信息、来源、下载地址与文件摘要见 [SOURCES.json](SOURCES.json)。仓库代码的 Apache 2.0 许可不替代图片各自的许可。
+2026-10-06 新增的六张及 2026-10-07 新增的三张照片，均仅调整尺寸并重新压缩为 JPEG，未修改场景或器件；按各图片原许可继续提供。机器可读的原始说明、作者信息、来源、下载地址与文件摘要见 [SOURCES.json](SOURCES.json)。仓库代码的 Apache 2.0 许可不替代图片各自的许可。

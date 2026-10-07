@@ -1354,5 +1354,83 @@
         "description": "快按可能漏采；消抖 50ms 适合慢按钮"
       }
     ]
+  },
+  {
+    "file": "bash-trap.svg",
+    "title": "trap",
+    "chapter": "docs/03-pro/06-Shell脚本进阶.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 脚本运行",
+        "description": "主进程持有临时文件；终端等待任务完成"
+      },
+      {
+        "title": "02 用户打断",
+        "description": "内核向前台进程发信号；未设 trap 会立即终止"
+      },
+      {
+        "title": "03 trap 清理",
+        "description": "捕获信号先执行清理；临时文件被移除"
+      },
+      {
+        "title": "04 EXIT 兜底",
+        "description": "任何退出都走善终；正常结束同样触发"
+      }
+    ]
+  },
+  {
+    "file": "cmd-execution.svg",
+    "title": "一条命令",
+    "chapter": "docs/00-onboarding/05-初见终端与Shell.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 敲下命令",
+        "description": "终端窗口收集输入；提示符等待命令"
+      },
+      {
+        "title": "02 Shell 解析",
+        "description": "shell 翻译这条命令；定位可执行程序"
+      },
+      {
+        "title": "03 内核执行",
+        "description": "内核真正启动程序；stdout 收到输出"
+      },
+      {
+        "title": "04 回到终端",
+        "description": "输出流向终端窗口；提示符再次出现"
+      }
+    ]
+  },
+  {
+    "file": "health-check.svg",
+    "title": "每日巡检",
+    "chapter": "docs/04-projects/项目2-服务器巡检脚本.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 定时触发",
+        "description": "每天自动启动巡检；Persistent=true 补跑"
+      },
+      {
+        "title": "02 逐项检查",
+        "description": "一个指标一个函数；采集当前数值"
+      },
+      {
+        "title": "03 阈值判定",
+        "description": "人眼三秒扫完；低于阈值绿色通过"
+      },
+      {
+        "title": "04 双写落盘",
+        "description": "终端看彩色原文；报告存 /var/log"
+      }
+    ]
   }
 ]

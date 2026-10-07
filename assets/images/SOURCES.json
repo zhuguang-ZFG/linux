@@ -126,5 +126,53 @@
     "width": 1200,
     "height": 801,
     "sha256": "00a96b2c757aa682be488276c287e667662c0e4b9739af77cd8bcfd3147d4389"
+  },
+  {
+    "file": "mechanical-keyboard.jpg",
+    "caption": "机械键盘实物",
+    "commons_title": "File:Mechanical Keyboard.jpg",
+    "author": "SolarMainframe",
+    "source": "https://commons.wikimedia.org/wiki/File:Mechanical_Keyboard.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Mechanical_Keyboard.jpg/1280px-Mechanical_Keyboard.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "A simple image of a mechanical keyboard for usage in the public domain. This image was taken with the preset rainbow effect on the keyboard.",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 1200,
+    "height": 900,
+    "sha256": "b014b8f945be87a5736c336292a3873b8e9b790c1f1a786ab29ee923137de6bf"
+  },
+  {
+    "file": "motherboard-g41.jpg",
+    "caption": "micro-ATX 主板实物（G41 芯片组）",
+    "commons_title": "File:PCWare IPM41-D3 Motherboard (53162758424).jpg",
+    "author": "Davidson F",
+    "source": "https://commons.wikimedia.org/wiki/File:PCWare_IPM41-D3_Motherboard_(53162758424).jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/PCWare_IPM41-D3_Motherboard_%2853162758424%29.jpg/1280px-PCWare_IPM41-D3_Motherboard_%2853162758424%29.jpg",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "description": "The IPM41-D3 is a micro-ATX motherboard featuring the Intel G41 Express chipset and an LGA 775 socket, designed for compatibility with various Intel processors, from Celeron to Core 2 Quad series.\nKey Features:\n- Chipset: Intel G41 Express\n- CPU Socket: LGA 775\n- Memory: Two DDR3 slots supporting up to 8 GB of RAM at 1066/800 MHz\n- Storage: Four SATA II ports\n- USB: Four USB 2.0 ports, with the option to expand to four more via headers\nMysterious Origins:\n- The IPM41-D3 motherboard has been distributed by various companies worldwide, with Brazil's PCWARE (Digitron) being one notable distributor.\n- It has been integrated into pre-assembled desktop computers by well-known brands like Compaq, HP, and Itautec, possibly under the name \"Pau Brazil.\"\n- Most IPM41-D3 variants feature AMIBIOS firmware, lacking specific manufacturer markings, but bearing model and revision numbers on the PCB.\n- An exception is the Intel Desktop Board DG41WV, a version with Intel's UEFI firmware and Intel branding on the PCB.\n- Release date discrepancies exist, with some sources indicating 2009 and Intel's official website suggesting Q1 2010 for the DG41WV.\n- Positivo also rebranded the motherboard as POS-PIG41BO, but firmware details for this version are unavailable.\n- Despite multiple distributors, the original manufacturer is challenging to identify, but evidence suggests Pegatron Corporation, a Taiwanese electronics manufacturing company, may have designed it.\nRead more in:\n\n<a href=\"https://archive.org/details/ipm41-d3\" rel=\"noreferrer nofollow\">archive.org/details/ipm41-d3</a>",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 1200,
+    "height": 800,
+    "sha256": "dd0c1fe46e8ef9ac0abd7fa928ef19ac4ddeeb48b7545154770f0c67a9d0410e"
+  },
+  {
+    "file": "router-wifi.jpg",
+    "caption": "家用无线路由器实物",
+    "commons_title": "File:Freedom Box Wifi Router.jpg",
+    "author": "Saiphani02",
+    "source": "https://commons.wikimedia.org/wiki/File:Freedom_Box_Wifi_Router.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Freedom_Box_Wifi_Router.jpg/1280px-Freedom_Box_Wifi_Router.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "description": "Freedom Box Wifi Router",
+    "retrieved": "2026-10-07",
+    "changes": "Resized and JPEG recompressed; no scene or object edits.",
+    "width": 667,
+    "height": 1000,
+    "sha256": "0d2d8f984eaaa35b22804a7724b7dd6c0ac59258a8523d9e9c10a8f256a5d81b"
   }
 ]

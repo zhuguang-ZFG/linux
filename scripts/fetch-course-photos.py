@@ -1,4 +1,4 @@
-"""Fetch the eight explicitly selected Commons photos and retain attribution metadata.
+"""Fetch the eleven explicitly selected Commons photos and retain attribution metadata.
 
 Run manually when adding these assets; CI never needs network access.
 """
@@ -26,6 +26,9 @@ SELECTION = [
     ("nvme-ssd.jpg", "File:Samsung 980 PRO PCIe 4.0 NVMe SSD 1TB-top PNr°0915.jpg", "M.2 NVMe SSD 正面"),
     ("gpu-card.jpg", "File:RTX 3090 Founders Edition.jpg", "GeForce RTX 3090 显卡实物"),
     ("nas-device.jpg", "File:Synology Disk Station DS223J - NAS-Server.jpg", "Synology DiskStation 网络存储"),
+    ("mechanical-keyboard.jpg", "File:Mechanical Keyboard.jpg", "机械键盘实物"),
+    ("motherboard-g41.jpg", "File:PCWare IPM41-D3 Motherboard (53162758424).jpg", "micro-ATX 主板实物（G41 芯片组）"),
+    ("router-wifi.jpg", "File:Freedom Box Wifi Router.jpg", "家用无线路由器实物"),
 ]
 
 

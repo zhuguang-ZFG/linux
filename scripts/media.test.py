@@ -50,8 +50,8 @@ class MediaTests(unittest.TestCase):
         folder = ROOT / "assets" / "images"
         records = json.loads((folder / "SOURCES.json").read_text(encoding="utf-8"))
         credits = (folder / "CREDITS.md").read_text(encoding="utf-8")
-        self.assertEqual(len(records), 8)
-        self.assertEqual(len({r["file"] for r in records}), 8)
+        self.assertEqual(len(records), 11)
+        self.assertEqual(len({r["file"] for r in records}), 11)
         for record in records:
             with self.subTest(file=record["file"]):
                 data = (folder / record["file"]).read_bytes()

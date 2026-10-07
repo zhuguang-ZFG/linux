@@ -55,7 +55,8 @@
       }
     ],
     "animations": [
-      "terminal-typing.svg"
+      "terminal-typing.svg",
+      "cmd-execution.svg"
     ]
   },
   "docs/01-basics/01-文件与目录操作.md": {
@@ -361,6 +362,7 @@
       }
     ],
     "animations": [
+      "bash-trap.svg",
       "terminal-typing.svg"
     ]
   },
@@ -399,6 +401,7 @@
       }
     ],
     "animations": [
+      "health-check.svg",
       "terminal-typing.svg"
     ]
   },

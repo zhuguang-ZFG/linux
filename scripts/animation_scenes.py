@@ -315,4 +315,25 @@ EXTRA_SCENES = [
         ("04 局限与统计", "awk 统计 pressed", "快按可能漏采", "消抖 50ms 适合慢按钮")
     ], "动手：慢按、快按、长按三组各存一个 CSV，用 awk 统计 pressed 行数，解释长按不重复记、快按漏采的原因。", "示意动画：记录的是状态变化而非高精度中断计数；20ms 轮询可能漏掉很短脉冲，消抖参数按场景选择。",
     [["按钮接通/断开 → GPIO27", "循环轮询电平，检测变化"], ["变化时写一行 CSV", "elapsed_s, state, source 三列"], ["模拟模式 source=simulated", "真实模式 source=gpio27"], ["awk 统计 pressed 行数", "快按漏采、长按不重复记"]], "docs/05-raspberry-pi/07-从按钮到数据记录.md"),
+    ("bash-trap", "trap：让脚本无论怎样退出都善终", "信号到达时先清理，EXIT 兜底覆盖所有退出路径", [
+        ("01 脚本运行", "health.sh 处理中", "主进程持有临时文件", "终端等待任务完成"),
+        ("02 用户打断", "Ctrl-C → SIGINT", "内核向前台进程发信号", "未设 trap 会立即终止"),
+        ("03 trap 清理", "trap cleanup INT", "捕获信号先执行清理", "临时文件被移除"),
+        ("04 EXIT 兜底", "exit → EXIT trap", "任何退出都走善终", "正常结束同样触发")
+    ], "动手：写带临时文件的脚本，设 trap cleanup INT EXIT；Ctrl-C 与正常跑完各一次，对比临时文件是否残留。", "示意动画：SIGKILL 无法被捕获；trap '...' EXIT 在脚本无论以何种方式退出时都执行，是最后的兜底。",
+    [["health.sh：处理中", "临时文件 /tmp/work.tmp 已创建"], ["Ctrl-C → SIGINT 到达", "未设 trap 时：立即终止、残留现场"], ["trap 捕获 → cleanup()", "rm 临时文件后干净退出"], ["exit → EXIT trap 兜底", "正常完成也走同一善终路径"]], "docs/03-pro/06-Shell脚本进阶.md"),
+    ("cmd-execution", "一条命令：从键盘到屏幕的旅程", "终端收字符，Shell 翻译，内核执行，结果回显", [
+        ("01 敲下命令", "whoami 逐字符回显", "终端窗口收集输入", "提示符等待命令"),
+        ("02 Shell 解析", "拆词并查 PATH", "shell 翻译这条命令", "定位可执行程序"),
+        ("03 内核执行", "fork + exec 运行", "内核真正启动程序", "stdout 收到输出"),
+        ("04 回到终端", "屏幕显示 linuxboy", "输出流向终端窗口", "提示符再次出现")
+    ], "动手：敲 whoami 观察回显与输出的先后；再敲 type whoami，看 shell 如何定位命令来源。", "示意动画：终端只负责字符收发与显示，解析与执行在 shell 与内核；省略了别名展开、环境变量等细节。",
+    [["终端：whoami 逐字符回显", "提示符 linuxboy@ubuntu:~$"], ["Shell：拆词 + 查 PATH", "定位到 /usr/bin/whoami"], ["内核：fork + exec 运行", "程序输出写入 stdout"], ["终端：显示 linuxboy", "提示符恢复，等你下一条命令"]], "docs/00-onboarding/05-初见终端与Shell.md"),
+    ("health-check", "每日巡检：测完再判，判完双写", "各指标独立采集，阈值决定三色，终端与落盘各一份", [
+        ("01 定时触发", "systemd timer 09:00", "每天自动启动巡检", "Persistent=true 补跑"),
+        ("02 逐项检查", "check_cpu / mem / disk", "一个指标一个函数", "采集当前数值"),
+        ("03 阈值判定", "≥85% CRIT / 其余 OK", "人眼三秒扫完", "低于阈值绿色通过"),
+        ("04 双写落盘", "tee + 去色", "终端看彩色原文", "报告存 /var/log")
+    ], "动手：运行 bash scripts/health-report.sh 85，观察 0/1/2 三种退出码；详细版用 sed 去色后落盘对比。", "示意动画：阈值只是示例，按机器调整；落盘必须去 ANSI 色码，避免日志被转义序列污染。",
+    [["timer 09:00 触发巡检", "错过的时间点自动补跑"], ["check_cpu: 72% / check_mem: 63%", "check_disk: / 已用 88%"], ["CRIT 磁盘 88% ≥ 85%", "CPU 72% / 内存 63% → OK"], ["终端：彩色 OK/WARN/CRIT", "报告：health-report-日期.log（纯文本）"]], "docs/04-projects/项目2-服务器巡检脚本.md"),
 ]
