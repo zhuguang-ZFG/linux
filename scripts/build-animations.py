@@ -48,6 +48,25 @@ SCENES = [
 SCENES.extend(scene[:-1] for scene in EXTRA_SCENES)
 
 
+def _text_width(text, size, bold=False):
+    """保守估算文本像素宽度：CJK/箭头按全角，其余按 0.6em；粗体再放宽 6%。"""
+    factor = 1.06 if bold else 1.0
+    w = 0.0
+    for ch in text:
+        o = ord(ch)
+        w += size * (1.0 if o >= 0x2E80 or o in (0x2190, 0x2191, 0x2192, 0x2193, 0x21D2) else 0.60)
+    return w * factor
+
+
+def fit_font(text, base, max_width, bold=False):
+    """把字号收缩到估算宽度不超过 max_width*0.92 为止（CI 字体比本地宽约 3-6%）。"""
+    limit = max_width * 0.92
+    size = float(base)
+    while size > 9 and _text_width(text, size, bold) > limit:
+        size -= 0.5
+    return max(9.0, size)
+
+
 def render(slug, title, subtitle, cards, exercise, note, frames=None):
     esc = escape
     css = []
@@ -76,8 +95,8 @@ text{{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}}
 </style>
 <rect width="1080" height="{height}" rx="22" fill="#0d1117"/>
 <text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
-<text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">{esc(title)}</text>
-<text x="40" y="120" fill="#9da7b3" font-size="16">{esc(subtitle)}</text>
+<text x="40" y="88" fill="#f0f6fc" font-size="{fit_font(title, 28, 1000, bold=True):g}" font-weight="bold">{esc(title)}</text>
+<text x="40" y="120" fill="#9da7b3" font-size="{fit_font(subtitle, 16, 1000):g}">{esc(subtitle)}</text>
 <path d="M148 320 H928" fill="none" stroke="#303d4d" stroke-width="3"/>
 ''']
     for i, (heading, command, line1, line2) in enumerate(cards):
@@ -85,10 +104,10 @@ text{{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}}
         parts.append(f'''<g>
 <rect x="{x}" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
 <rect class="focus phase-{i}" x="{x}" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
-<text x="{x+16}" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">{esc(heading)}</text>
-<text class="code" x="{x+16}" y="221" fill="#79c0ff" font-size="13">{esc(command)}</text>
-<text x="{x+16}" y="252" fill="#c9d1d9" font-size="14">{esc(line1)}</text>
-<text x="{x+16}" y="276" fill="#9da7b3" font-size="14">{esc(line2)}</text>
+<text x="{x+16}" y="189" fill="#f0f6fc" font-size="{fit_font(heading, 18, 196, bold=True):g}" font-weight="bold">{esc(heading)}</text>
+<text class="code" x="{x+16}" y="221" fill="#79c0ff" font-size="{fit_font(command, 13, 196):g}">{esc(command)}</text>
+<text x="{x+16}" y="252" fill="#c9d1d9" font-size="{fit_font(line1, 14, 196):g}">{esc(line1)}</text>
+<text x="{x+16}" y="276" fill="#9da7b3" font-size="{fit_font(line2, 14, 196):g}">{esc(line2)}</text>
 <circle cx="{148+i*260}" cy="320" r="5" fill="#62758b"/>
 </g>''')
     if frames:
@@ -97,13 +116,13 @@ text{{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}}
         for index, lines in enumerate(frames):
             parts.append(f'<g class="output phase-{index}">')
             for line_index, line in enumerate(lines):
-                parts.append(f'<text class="code" x="58" y="{407+line_index*27}" fill="#b5e4d4" font-size="16">{esc(line)}</text>')
+                parts.append(f'<text class="code" x="58" y="{407+line_index*27}" fill="#b5e4d4" font-size="{fit_font(line, 16, 974):g}">{esc(line)}</text>')
             parts.append('</g>')
     offset = 140 if frames else 0
     parts.append(f'''<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
 <rect x="40" y="{356+offset}" width="1000" height="106" rx="12" fill="#101f2c"/>
-<text x="58" y="{390+offset}" fill="#e6edf3" font-size="16">{esc(exercise)}</text>
-<text x="58" y="{421+offset}" fill="#9da7b3" font-size="14">{esc(note)}</text>
+<text x="58" y="{390+offset}" fill="#e6edf3" font-size="{fit_font(exercise, 16, 974):g}">{esc(exercise)}</text>
+<text x="58" y="{421+offset}" fill="#9da7b3" font-size="{fit_font(note, 14, 974):g}">{esc(note)}</text>
 <text x="58" y="{445+offset}" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
 </svg>
 ''')

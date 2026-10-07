@@ -73,7 +73,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 </g>
 <circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
 <rect x="40" y="496" width="1000" height="106" rx="12" fill="#101f2c"/>
-<text x="58" y="530" fill="#e6edf3" font-size="16">动手：按 default deny → allow 22 → allow 80,443 → deny 3306 → enable 的顺序配置 UFW，核对规则表与默认策略。</text>
+<text x="58" y="530" fill="#e6edf3" font-size="14.5">动手：按 default deny → allow 22 → allow 80,443 → deny 3306 → enable 的顺序配置 UFW，核对规则表与默认策略。</text>
 <text x="58" y="561" fill="#9da7b3" font-size="14">示意动画：真实匹配还涉及方向、协议与状态；enable 前没放行 SSH 会当场断线，顺序与默认策略共同决定结果。</text>
 <text x="58" y="585" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
 </svg>

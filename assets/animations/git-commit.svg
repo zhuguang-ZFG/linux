@@ -73,7 +73,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 </g>
 <circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
 <rect x="40" y="496" width="1000" height="106" rx="12" fill="#101f2c"/>
-<text x="58" y="530" fill="#e6edf3" font-size="16">动手：在临时练习仓库按章操作：改 notes.md → git add → git diff --cached → git commit，再用 git show 说明改动。</text>
+<text x="58" y="530" fill="#e6edf3" font-size="14">动手：在临时练习仓库按章操作：改 notes.md → git add → git diff --cached → git commit，再用 git show 说明改动。</text>
 <text x="58" y="561" fill="#9da7b3" font-size="14">示意动画：Git 不会自动判断内容正确；误提交密码后仅删文件不够，历史中可能仍有副本。</text>
 <text x="58" y="585" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
 </svg>

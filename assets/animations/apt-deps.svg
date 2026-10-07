@@ -23,7 +23,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 刷新索引</text>
 <text class="code" x="56" y="221" fill="#79c0ff" font-size="13">sudo apt update</text>
 <text x="56" y="252" fill="#c9d1d9" font-size="14">拉取镜像站索引</text>
-<text x="56" y="276" fill="#9da7b3" font-size="14">写入 /var/lib/apt/lists/</text>
+<text x="56" y="276" fill="#9da7b3" font-size="12.5">写入 /var/lib/apt/lists/</text>
 <circle cx="148" cy="320" r="5" fill="#62758b"/>
 </g>
 <g>

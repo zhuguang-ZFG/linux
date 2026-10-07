@@ -41,7 +41,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 按需选型</text>
 <text class="code" x="576" y="221" fill="#79c0ff" font-size="13">新手 LTS / 服务器求稳</text>
 <text x="576" y="252" fill="#c9d1d9" font-size="14">极客滚动更新</text>
-<text x="576" y="276" fill="#9da7b3" font-size="14">国产化 openEuler 与 UOS</text>
+<text x="576" y="276" fill="#9da7b3" font-size="13.5">国产化 openEuler 与 UOS</text>
 <circle cx="668" cy="320" r="5" fill="#62758b"/>
 </g>
 <g>
