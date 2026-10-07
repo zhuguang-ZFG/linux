@@ -196,7 +196,27 @@ async function readDocument(id, section, version) {
     else if (event.key === 'ArrowRight' && doc.next) { event.preventDefault(); location.hash = readRoute(doc.next); }
   };
   document.addEventListener('keydown', onReadKey);
-  cleanup = () => document.removeEventListener('keydown', onReadKey);
+  const tocLinks = [...main.querySelectorAll('.toc a')];
+  const onTocScroll = () => {
+    const threshold = 170;
+    let current = null;
+    for (const [el, link] of tocEntries) {
+      const top = el.getBoundingClientRect().top;
+      if (top <= threshold && (!current || top > current.top)) current = { top, link };
+    }
+    tocLinks.forEach(link => link.classList.toggle('active', Boolean(current && link === current.link)));
+  };
+  const tocEntries = [];
+  for (const link of tocLinks) {
+    const section = new URLSearchParams(link.getAttribute('href').slice(1)).get('section');
+    const el = section ? document.getElementById(section) : null;
+    if (el) tocEntries.push([el, link]);
+  }
+  if (tocEntries.length) {
+    window.addEventListener('scroll', onTocScroll, { passive: true });
+    onTocScroll();
+  }
+  cleanup = () => { document.removeEventListener('keydown', onReadKey); if (tocEntries.length) window.removeEventListener('scroll', onTocScroll); };
 }
 
 function videoPage(id) {
@@ -411,13 +431,18 @@ search.addEventListener('input', async () => {
   try { await loadSearchIndex(); } catch { /* Title and media matching stay available without the full-text index. */ }
   if (version !== searchVersion) return;
   const chapterText = doc => searchIndex?.get(doc.id)?.searchText || '';
+  const highlight = (text, query) => {
+    const q = query.trim().toLowerCase();
+    const index = text.toLowerCase().indexOf(q);
+    return index < 0 ? escape(text) : `${escape(text.slice(0, index))}<mark>${escape(text.slice(index, index + q.length))}</mark>${escape(text.slice(index + q.length))}`;
+  };
   const hits = [
-    ...data.documents.filter(doc => doc.index >= 0 && (doc.title.toLowerCase().includes(query) || chapterText(doc).includes(query))).sort((a, b) => Number(b.title.toLowerCase().includes(query)) - Number(a.title.toLowerCase().includes(query))).slice(0, 5).map(doc => ({ title: doc.title, kind: '章节', href: readRoute(doc.id) })),
-    ...data.videos.filter(video => `${video.title} ${video.author} ${video.tags.join(' ')}`.toLowerCase().includes(query)).slice(0, 3).map(video => ({ title: video.title, kind: video.platform === 'bilibili' ? 'B站视频' : 'YouTube 视频', href: videoRoute(video.id) })),
-    ...data.animations.filter(item => item.title.toLowerCase().includes(query)).slice(0, 2).map(item => ({ title: item.title, kind: '动画', href: animationRoute(item.file) })),
+    ...data.documents.filter(doc => doc.index >= 0 && (doc.title.toLowerCase().includes(query) || chapterText(doc).includes(query))).sort((a, b) => Number(b.title.toLowerCase().includes(query)) - Number(a.title.toLowerCase().includes(query))).slice(0, 5).map(doc => ({ title: doc.title, kind: '章节', context: doc.stage === null ? '' : data.stageNames[doc.stage], href: readRoute(doc.id) })),
+    ...data.videos.filter(video => `${video.title} ${video.author} ${video.tags.join(' ')}`.toLowerCase().includes(query)).slice(0, 3).map(video => ({ title: video.title, kind: video.platform === 'bilibili' ? 'B站视频' : 'YouTube 视频', context: video.platform === 'bilibili' ? 'B站' : '英文', href: videoRoute(video.id) })),
+    ...data.animations.filter(item => item.title.toLowerCase().includes(query)).slice(0, 2).map(item => ({ title: item.title, kind: '动画', context: '动画实验室', href: animationRoute(item.file) })),
   ];
   const note = searchIndex ? '' : '<div class="search-note">全文索引暂时不可用，当前仅按标题与媒体匹配。</div>';
-  results.innerHTML = `${note}${hits.length ? hits.map(hit => `<a class="search-result" href="${hit.href}"><small>${hit.kind}</small>${escape(hit.title)}</a>`).join('') : '<div class="search-empty">没有匹配结果，试试“权限”“Docker”或“GPIO”。</div>'}`;
+  results.innerHTML = `${note}${hits.length ? hits.map(hit => `<a class="search-result" href="${hit.href}"><small>${hit.kind}</small>${hit.context ? `<span class="search-context">${escape(hit.context)}</span>` : ''}${highlight(hit.title, query)}</a>`).join('') : '<div class="search-empty">没有匹配结果，试试“权限”“Docker”或“GPIO”。</div>'}`;
   results.hidden = false;
 });
 search.addEventListener('keydown', event => {

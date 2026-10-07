@@ -302,6 +302,24 @@ test('question-mark shortcut opens the keyboard help and Escape closes it', asyn
   await expect(page.locator('#help-dialog')).toBeVisible();
 });
 
+test('search highlights the matched term and shows chapter stage context', async ({ page }) => {
+  await page.goto('');
+  await page.locator('#search').fill('权限');
+  await expect(page.locator('.search-result').first()).toBeVisible();
+  await expect(page.locator('.search-result mark').first()).toHaveText('权限');
+  await expect(page.locator('.search-result[href*="03-%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90"] .search-context')).toHaveText('基础命令');
+});
+
+test('reading TOC highlights the section in view while scrolling', async ({ page }) => {
+  await page.goto(`#read=${encodeURIComponent('docs/01-basics/02-查看与编辑文件-Vim.md')}`);
+  await expect(page.locator('.toc')).toBeVisible();
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight / 2));
+  await expect.poll(() => page.locator('.toc a.active').count()).toBeGreaterThan(0);
+  const active = await page.locator('.toc a.active').textContent();
+  expect(active.trim().length).toBeGreaterThan(0);
+  await expect(page.locator(`.toc a`).filter({ hasText: active.trim() })).toHaveCount(1);
+});
+
 test('dark mode remaps theme variables and keeps reading surface readable', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('');
