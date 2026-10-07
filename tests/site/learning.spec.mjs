@@ -268,6 +268,40 @@ test('progress export copies the completed list as JSON', async ({ page }) => {
   expect(payload.completed).toContain('docs/01-basics/01-文件与目录操作.md');
 });
 
+test('progress import merges exported JSON and ignores invalid entries', async ({ page }) => {
+  await page.goto(`#read=${encodeURIComponent('docs/01-basics/01-文件与目录操作.md')}`);
+  await page.locator('[data-complete]').click();
+  const exported = JSON.stringify({ exportedAt: new Date().toISOString(), completed: ['docs/01-basics/01-文件与目录操作.md', 'docs/01-basics/02-查看与编辑文件-Vim.md', 'not-a-real-chapter'] });
+  await page.locator('[data-action="clear-progress"]').click();
+  await expect(page.locator('.sidebar-progress')).toContainText('0 / 42');
+  await page.locator('[data-action="import-progress"]').click();
+  await page.locator('#import-input').fill(exported);
+  await page.locator('#import-confirm').click();
+  await expect(page.locator('.sidebar-progress')).toContainText('2 / 42');
+  await expect(page.locator('#toast')).toContainText('忽略 1 条无效');
+  await page.reload();
+  await expect(page.locator('.sidebar-progress')).toContainText('2 / 42');
+});
+
+test('reading progress bar fills as the page scrolls', async ({ page }) => {
+  await page.goto(`#read=${encodeURIComponent('docs/01-basics/02-查看与编辑文件-Vim.md')}`);
+  await expect(page.locator('.article h1')).toBeVisible();
+  await expect(page.locator('#reading-progress')).toHaveCSS('width', '0px');
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect.poll(() => page.locator('#reading-progress').evaluate(el => parseFloat(getComputedStyle(el).width))).toBeGreaterThan(0);
+});
+
+test('question-mark shortcut opens the keyboard help and Escape closes it', async ({ page }) => {
+  await page.goto('');
+  await page.keyboard.press('?');
+  await expect(page.locator('#help-dialog')).toBeVisible();
+  await expect(page.locator('#help-dialog')).toContainText('相邻章节');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#help-dialog')).not.toBeVisible();
+  await page.locator('footer [data-action="help"]').click();
+  await expect(page.locator('#help-dialog')).toBeVisible();
+});
+
 test('dark mode remaps theme variables and keeps reading surface readable', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('');

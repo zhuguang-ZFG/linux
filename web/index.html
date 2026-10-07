@@ -32,8 +32,26 @@
     <button class="sidebar-scrim" id="menu-scrim" aria-label="关闭目录" hidden></button>
     <main id="main" tabindex="-1"><div class="initial-loading"><span class="brand-mark">›_</span><p>正在准备你的 Linux 学习地图…</p></div></main>
   </div>
+  <div id="reading-progress"></div>
   <div id="toast" role="status" aria-live="polite"></div>
   <button id="back-to-top" aria-label="回到顶部" hidden>↑</button>
+  <dialog id="import-dialog" aria-labelledby="import-title">
+    <h2 id="import-title">导入学习标记</h2>
+    <p>粘贴之前「导出标记」得到的内容，将合并到本机进度（重复与无效章节会自动忽略）。</p>
+    <textarea id="import-input" rows="6" spellcheck="false" placeholder='{"exportedAt":"…","completed":["docs/…"]}'></textarea>
+    <div class="dialog-actions"><button class="text-button" data-close-dialog>取消</button><button class="button primary small" id="import-confirm">导入</button></div>
+  </dialog>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <h2 id="help-title">快捷键</h2>
+    <table>
+      <tr><td><kbd>/</kbd></td><td>聚焦搜索</td></tr>
+      <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>相邻章节 · 视频 · 动画单步</td></tr>
+      <tr><td><kbd>空格</kbd> <kbd>R</kbd></td><td>动画播放 / 暂停 · 重播</td></tr>
+      <tr><td><kbd>?</kbd></td><td>打开本帮助</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>关闭搜索、目录或本帮助</td></tr>
+    </table>
+    <div class="dialog-actions"><button class="button small" data-close-dialog>关闭</button></div>
+  </dialog>
   <noscript><p>学习站需要 JavaScript。也可以直接阅读 <a href="https://github.com/zhuguang-ZFG/linux">GitHub 上的完整 Markdown 教程</a>。</p></noscript>
   <script type="module" src="./static/app.js"></script>
 </body>

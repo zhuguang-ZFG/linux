@@ -22,8 +22,15 @@ document.querySelector('#theme-toggle')?.addEventListener('click', () => {
 });
 darkQuery.addEventListener('change', () => { if (themePreference === 'system') applyTheme(); });
 const topButton = document.querySelector('#back-to-top');
+const progressBar = document.querySelector('#reading-progress');
+const importDialog = document.querySelector('#import-dialog');
+const importInput = document.querySelector('#import-input');
+const helpDialog = document.querySelector('#help-dialog');
 if (topButton) {
-  const onScroll = () => { topButton.hidden = window.scrollY < 600; };
+  const onScroll = () => {
+    topButton.hidden = window.scrollY < 600;
+    if (progressBar) { const max = document.documentElement.scrollHeight - window.innerHeight; progressBar.style.width = `${max > 0 ? Math.min(100, window.scrollY / max * 100) : 0}%`; }
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   onScroll();
@@ -78,7 +85,7 @@ function renderSidebar() {
     <div class="nav-group-label">PRACTICE · 实践工具</div>
     ${nav(readRoute('resources/prompt-lab.md'), '✦', '提示词练习')}${nav(readRoute('exercises/README.md'), '✓', '练习与自测')}
     ${nav(readRoute('resources/environment-matrix.md'), '⌘', '实验环境对照')}
-  </nav><div class="sidebar-progress"><span>我的学习进度</span><span style="float:right">${completed.size} / ${data.chapterOrder.length}</span><div class="progress-track"><div class="progress-fill" style="width:${completed.size / data.chapterOrder.length * 100}%"></div></div><span>仅保存在当前浏览器</span> · <button class="text-button" data-action="clear-progress">清空标记</button> · <button class="text-button" data-action="export-progress">导出标记</button></div>`;
+  </nav><div class="sidebar-progress"><span>我的学习进度</span><span style="float:right">${completed.size} / ${data.chapterOrder.length}</span><div class="progress-track"><div class="progress-fill" style="width:${completed.size / data.chapterOrder.length * 100}%"></div></div><span>仅保存在当前浏览器</span> · <button class="text-button" data-action="import-progress">导入标记</button> · <button class="text-button" data-action="clear-progress">清空标记</button> · <button class="text-button" data-action="export-progress">导出标记</button></div>`;
 }
 
 function videoCard(video) {
@@ -87,7 +94,7 @@ function videoCard(video) {
 function animationCard(animation) {
   return `<article class="media-card"><a class="media-thumb animation-thumb" href="${animationRoute(animation.file)}"><img src="./assets/animations/${encodeURIComponent(animation.file)}" alt="${escape(animation.title)} 动画预览" loading="lazy"><span class="platform-pill">原创演示</span><span class="duration-pill">可暂停 · 可单步</span></a><div class="media-info"><h3><a href="${animationRoute(animation.file)}">${escape(animation.title)}</a></h3><p>${escape(docs.get(animation.chapter)?.title || 'Linux 原理演示')}</p><div class="card-actions"><span>先预测，再验证</span><a href="${animationRoute(animation.file)}">打开演示 →</a></div></div></article>`;
 }
-const footer = () => `<footer class="footer-note">通往 Linux 之路 · 以知识地图、工具与实践组织学习。<a href="${readRoute('assets/images/CREDITS.md')}">图片署名</a> · 视频版权归原作者，播放能力以原站为准。<a href="${data.repo}" target="_blank" rel="noopener noreferrer">参与共建 ↗</a></footer>`;
+const footer = () => `<footer class="footer-note">通往 Linux 之路 · 以知识地图、工具与实践组织学习。<a href="${readRoute('assets/images/CREDITS.md')}">图片署名</a> · 视频版权归原作者，播放能力以原站为准。<button class="text-button" data-action="help">快捷键 ?</button> · <a href="${data.repo}" target="_blank" rel="noopener noreferrer">参与共建 ↗</a></footer>`;
 
 function home() {
   const featuredVideos = ['b-redirection', 'y-git', 'y-docker'].map(id => videoMap.get(id)).filter(Boolean);
@@ -365,6 +372,24 @@ document.addEventListener('click', event => {
     const payload = JSON.stringify({ exportedAt: new Date().toISOString(), completed: [...completed] }, null, 2);
     navigator.clipboard.writeText(payload).then(() => toast('已复制学习标记 JSON，可粘贴保存或换机恢复')).catch(() => toast('无法自动复制，请手动选择标记内容'));
   }
+  if (event.target.closest('[data-action="help"]')) { helpDialog?.showModal(); return; }
+  if (event.target.closest('[data-action="import-progress"]')) { importDialog?.showModal(); importInput?.focus(); return; }
+  if (event.target.closest('[data-close-dialog]')) { event.target.closest('dialog')?.close(); return; }
+  if (event.target.closest('#import-confirm')) {
+    const raw = importInput.value.trim();
+    importDialog.close(); importInput.value = '';
+    let payload;
+    try { payload = JSON.parse(raw); } catch { toast('JSON 解析失败：请粘贴完整的「导出标记」内容'); return; }
+    const list = Array.isArray(payload) ? payload : (Array.isArray(payload?.completed) ? payload.completed : null);
+    if (!list) { toast('格式不对：需要包含 completed 数组（如 {"completed":["docs/…"]}）'); return; }
+    const valid = list.filter(id => typeof id === 'string' && data.chapterOrder.includes(id));
+    let added = 0;
+    valid.forEach(id => { if (!completed.has(id)) { completed.add(id); added++; } });
+    if (added) saveProgress();
+    renderSidebar();
+    toast(valid.length ? `已导入 ${valid.length} 条学习标记（新增 ${added} 条${valid.length !== list.length ? `，忽略 ${list.length - valid.length} 条无效` : ''}）` : '没有有效的章节标记，进度未改动');
+    return;
+  }
   const load = event.target.closest('[data-load-video]'); if (load) loadVideo(load.dataset.loadVideo);
   if (!event.target.closest('.search-wrap')) results.hidden = true;
 });
@@ -410,6 +435,7 @@ search.addEventListener('keydown', event => {
 });
 document.addEventListener('keydown', event => {
   if (event.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) { event.preventDefault(); search.focus(); }
+  if (event.key === '?' && !/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) { event.preventDefault(); helpDialog?.showModal(); }
   if (event.key === 'Escape') closeMenu();
 });
 window.addEventListener('hashchange', render);
