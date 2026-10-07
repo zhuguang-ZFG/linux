@@ -88,7 +88,8 @@
       }
     ],
     "animations": [
-      "permission-bits.svg"
+      "permission-bits.svg",
+      "sudo-elevation.svg"
     ]
   },
   "docs/01-basics/04-压缩与归档.md": {
@@ -238,6 +239,10 @@
       {
         "id": "b-disk",
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      },
+      {
+        "id": "b-partition",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
     "animations": [
@@ -273,11 +278,16 @@
     "videos": [
       {
         "id": "b-process",
-        "note": "进程观察的预备知识；USE 方法和性能结论按正文实验核对。"
+        "note": "进程观察与 USE 方法的背景；性能结论按正文实验核对。"
+      },
+      {
+        "id": "y-gregg60s",
+        "note": "进程观察与 USE 方法的背景；性能结论按正文实验核对。"
       }
     ],
     "animations": [
-      "memory-cache.svg"
+      "memory-cache.svg",
+      "load-vs-cpu.svg"
     ]
   },
   "docs/03-pro/02-内核与系统调用.md": {
@@ -317,7 +327,8 @@
       }
     ],
     "animations": [
-      "docker-volume.svg"
+      "docker-volume.svg",
+      "container-isolation.svg"
     ]
   },
   "docs/03-pro/05-自动化运维.md": {

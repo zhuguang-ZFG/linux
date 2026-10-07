@@ -9,8 +9,8 @@ test('home shows the actual catalog and accessible route entries', async ({ page
   await page.goto('');
   await expect(page.locator('.hero h1')).toContainText('能动手的本领');
   await expect(page.locator('.stat-strip')).toContainText('42');
-  await expect(page.locator('.stat-strip')).toContainText('30');
-  await expect(page.locator('.stat-strip')).toContainText('45');
+  await expect(page.locator('.stat-strip')).toContainText('32');
+  await expect(page.locator('.stat-strip')).toContainText('48');
   await expect(page.locator('.chapter-link')).toHaveCount(42);
   await page.getByRole('link', { name: '开始第一课' }).click();
   await expect(page.locator('.article h1')).toContainText('为什么人人');
@@ -60,13 +60,13 @@ test('full-text-only matches still work through the lazily loaded index', async 
   await expect.poll(() => indexRequests.length).toBe(1);
 });
 
-test('platform filters show 15 Bilibili parts and 15 YouTube videos', async ({ page }) => {
+test('platform filters show 16 Bilibili parts and 16 YouTube videos', async ({ page }) => {
   await page.goto('#videos');
-  await expect(page.locator('.media-card')).toHaveCount(30);
+  await expect(page.locator('.media-card')).toHaveCount(32);
   await page.getByRole('link', { name: 'B站 · 中文', exact: true }).click();
-  await expect(page.locator('.media-card')).toHaveCount(15);
+  await expect(page.locator('.media-card')).toHaveCount(16);
   await page.getByRole('link', { name: 'YouTube · English', exact: true }).click();
-  await expect(page.locator('.media-card')).toHaveCount(15);
+  await expect(page.locator('.media-card')).toHaveCount(16);
 });
 
 test('Bilibili embeds the selected CID only after explicit loading and keeps fallback', async ({ page }) => {

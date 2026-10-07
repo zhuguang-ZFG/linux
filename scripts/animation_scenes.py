@@ -231,4 +231,25 @@ EXTRA_SCENES = [
         ("04 默认兜底", "default deny incoming", "没有规则命中走默认", "所以先 allow SSH 再 enable")
     ], "动手：按 default deny → allow 22 → allow 80,443 → deny 3306 → enable 的顺序配置 UFW，核对规则表与默认策略。", "示意动画：真实匹配还涉及方向、协议与状态；enable 前没放行 SSH 会当场断线，顺序与默认策略共同决定结果。",
     [["入站包 → 本机 22/tcp（SSH）", "另一个入站包 → 3306/tcp（数据库）"], ["对照 ufw 规则表，从上往下比对", "22/tcp ALLOW IN ｜ 3306/tcp DENY IN"], ["SSH 包命中 ALLOW → 放行", "数据库包命中 DENY → 丢弃"], ["没有命中任何规则的包", "→ default deny incoming，直接丢弃"]], "docs/03-pro/03-安全加固.md"),
+    ("container-isolation", "容器隔离：Namespace 与 Cgroups 的分工", "容器不是轻量虚拟机，而是被 Namespace 和 Cgroups 武装的普通进程", [
+        ("01 普通进程", "应用 + 依赖 共享宿主机", "看得见所有进程与网络", "与别的服务抢资源"),
+        ("02 Namespace", "PID / NET / MNT", "容器内自己像 PID 1", "独立网卡、端口与挂载视图"),
+        ("03 Cgroups", "cpu / memory 配额", "最多 2 核、1GB 内存", "超限被限流而非失控"),
+        ("04 武装进程", "docker run 创建容器", "MB 级、秒级启动", "共享内核，隔离弱于虚拟机")
+    ], "动手：docker run --rm busybox ps -ef 看容器内 PID 1 是谁；再用 docker stats 观察 CPU/内存使用。", "示意动画：命名空间与配额由内核机制完成；容器共享宿主机内核，安全敏感场景用「VM 里再跑容器」。",
+    [["app 进程：想读文件、开端口", "默认看到宿主机所有进程与网络"], ["PID namespace：容器内自己变 PID 1", "NET namespace：独立网卡与端口空间"], ["Cgroups：cpu=2 核、memory=1GB", "超限被限流，而不是失控"], ["docker run：秒级启动一个容器", "共享内核的普通进程，隔离弱于 VM"]], "docs/03-pro/04-容器与虚拟化.md"),
+    ("load-vs-cpu", "load average 与 CPU 使用率", "磁盘卡死时 CPU 很闲、load 却高——队列与占比是两回事", [
+        ("01 uptime 三数", "load: 0.52 0.48 0.45", "过去 1 / 5 / 15 分钟均值", "统计 R + D 状态任务数"),
+        ("02 磁盘卡住", "进程进入 D 状态", "等磁盘 IO 连信号都不应", "CPU 很闲、load 却高"),
+        ("03 CPU 使用率", "us / sy / wa / id", "忙碌时间占采样周期", "是采样瞬间的快照"),
+        ("04 联合判读", "负载高 / CPU 低", "高负载 + 低 CPU → 查磁盘", "都高 → 过载；都低 → 突发")
+    ], "动手：运行 yes > /dev/null & 制造 CPU 压力，对比 uptime 与 vmstat 的 r、us 列；kill %1 观察负载回落。", "示意动画：负载是队列长度视角、使用率是时间占比视角；D 状态任务会让 CPU 闲而负载高。",
+    [["uptime → load average: 0.52 0.48 0.45", "统计 R + D 状态的任务数，是队列长度"], ["磁盘卡住：任务进 D 状态排队", "CPU 很闲、load 却高 → 先查磁盘"], ["vmstat：r=等待 CPU 的任务数", "us/sy/wa/id 是时间占比快照"], ["负载高 + CPU 低 → 查 IO", "都高 → 计算过载；都低 → 短时突发"]], "docs/03-pro/01-性能观测与调优.md"),
+    ("sudo-elevation", "su 与 sudo：借权的两种姿势", "日常首选 sudo：输自己的密码，只借执行这一条命令", [
+        ("01 普通用户 alice", "想改系统配置", "没有 root 不能直接动", "需要借 root 的力"),
+        ("02 su - bob", "彻底切换身份", "输目标用户的密码", "切过去全程是对方"),
+        ("03 sudo 单条命令", "sudo apt update", "输自己的密码", "只限被放行的命令"),
+        ("04 /etc/sudoers", "sudo visudo 编辑", "谁有资格用 sudo", "全程可审计")
+    ], "动手：用 sudo visudo 查看自己的 sudoers 条目；对比 su - 与 sudo -i 的提示符，结束后 exit。", "示意动画：sudo 放行范围由 /etc/sudoers 决定；真实审计记录在 /var/log/auth.log。",
+    [["alice：要改系统配置，但没权限", "root 能越过一切权限检查"], ["su - bob：输 bob 的密码，彻底切换", "切过去全程以 bob/root 身份干活"], ["sudo apt update：输自己的密码", "只以 root 执行这一条命令"], ["/etc/sudoers 决定谁能用 sudo", "必须 visudo 编辑，记录可审计"]], "docs/01-basics/03-用户与权限.md"),
 ]

@@ -25,6 +25,7 @@ BILIBILI = [
     ("b-redirection", "BV1ZZ37zdEp2", 30, "输入输出重定向", ["管道", "重定向"]),
     ("b-systemd", "BV1ZZ37zdEp2", 58, "systemctl 管理服务", ["systemd", "服务"]),
     ("b-grep", "BV1w4411B7a4", 12, "find 与 grep", ["grep", "文件搜索"]),
+    ("b-partition", "BV1Sv411r7vd", 58, "磁盘分区机制", ["磁盘", "分区"]),
 ]
 YOUTUBE = [
     ("y-linux100", "rrB13utjYV4", "Linux 的第一印象", ["启蒙", "概览"]),
@@ -42,6 +43,7 @@ YOUTUBE = [
     ("y-local-ai", "RQFfK7xIL28", "Ollama 与 Open WebUI", ["本地AI", "Docker"]),
     ("y-awk", "oPEnvuj9QrI", "awk 文本分析", ["awk", "文本处理"]),
     ("y-sed", "nXLnx8ncZyE", "sed 流编辑器", ["sed", "文本处理"]),
+    ("y-gregg60s", "ZdVpKx6Wmc8", "Linux 性能分析 60 秒", ["性能", "USE"]),
 ]
 
 

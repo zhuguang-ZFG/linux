@@ -1042,5 +1042,83 @@
         "description": "没有规则命中走默认；所以先 allow SSH 再 enable"
       }
     ]
+  },
+  {
+    "file": "container-isolation.svg",
+    "title": "容器隔离",
+    "chapter": "docs/03-pro/04-容器与虚拟化.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 普通进程",
+        "description": "看得见所有进程与网络；与别的服务抢资源"
+      },
+      {
+        "title": "02 Namespace",
+        "description": "容器内自己像 PID 1；独立网卡、端口与挂载视图"
+      },
+      {
+        "title": "03 Cgroups",
+        "description": "最多 2 核、1GB 内存；超限被限流而非失控"
+      },
+      {
+        "title": "04 武装进程",
+        "description": "MB 级、秒级启动；共享内核，隔离弱于虚拟机"
+      }
+    ]
+  },
+  {
+    "file": "load-vs-cpu.svg",
+    "title": "load average 与 CPU 使用率",
+    "chapter": "docs/03-pro/01-性能观测与调优.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 uptime 三数",
+        "description": "过去 1 / 5 / 15 分钟均值；统计 R + D 状态任务数"
+      },
+      {
+        "title": "02 磁盘卡住",
+        "description": "等磁盘 IO 连信号都不应；CPU 很闲、load 却高"
+      },
+      {
+        "title": "03 CPU 使用率",
+        "description": "忙碌时间占采样周期；是采样瞬间的快照"
+      },
+      {
+        "title": "04 联合判读",
+        "description": "高负载 + 低 CPU → 查磁盘；都高 → 过载；都低 → 突发"
+      }
+    ]
+  },
+  {
+    "file": "sudo-elevation.svg",
+    "title": "su 与 sudo",
+    "chapter": "docs/01-basics/03-用户与权限.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 普通用户 alice",
+        "description": "没有 root 不能直接动；需要借 root 的力"
+      },
+      {
+        "title": "02 su - bob",
+        "description": "输目标用户的密码；切过去全程是对方"
+      },
+      {
+        "title": "03 sudo 单条命令",
+        "description": "输自己的密码；只限被放行的命令"
+      },
+      {
+        "title": "04 /etc/sudoers",
+        "description": "谁有资格用 sudo；全程可审计"
+      }
+    ]
   }
 ]

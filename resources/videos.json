@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-06T15:23:02+00:00",
+  "checkedAt": "2026-10-07T03:39:55+00:00",
   "notice": "核验标题、作者、分P和可获取的时长。页面/接口可读取不等于已完整播放；不下载或搬运视频。",
   "videos": [
     {
@@ -24,7 +24,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -51,7 +51,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -78,7 +78,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -105,7 +105,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -132,7 +132,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -159,7 +159,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -186,7 +186,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -213,7 +213,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -240,7 +240,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -267,7 +267,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -294,7 +294,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -321,7 +321,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -348,7 +348,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -375,7 +375,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -402,9 +402,36 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1w4411B7a4",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-partition",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 58,
+      "cid": 259259327,
+      "title": "磁盘分区机制",
+      "providerTitle": "058_韩顺平Linux_磁盘分区机制",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 964,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=58",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "磁盘",
+        "分区"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
       }
     },
@@ -427,7 +454,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DrrB13utjYV4&format=json",
         "watchPageStatus": "OK",
@@ -453,7 +480,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DLKCVKw9CzFo&format=json",
         "watchPageStatus": "OK",
@@ -479,7 +506,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DROjZy1WbCIA&format=json",
         "watchPageStatus": "OK",
@@ -505,7 +532,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZtqBQ68cfJc&format=json",
         "watchPageStatus": "OK",
@@ -531,7 +558,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dv392lEyM29A&format=json",
         "watchPageStatus": "OK",
@@ -557,7 +584,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfCPM5072YPA&format=json",
         "watchPageStatus": "OK",
@@ -583,7 +610,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DxiR14tSfc-U&format=json",
         "watchPageStatus": "OK",
@@ -609,7 +636,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRGOj5yH7evk&format=json",
         "watchPageStatus": "OK",
@@ -635,7 +662,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfqMOX6JJhGo&format=json",
         "watchPageStatus": "OK",
@@ -661,7 +688,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKzpm-rGAXos&format=json",
         "watchPageStatus": "OK",
@@ -687,7 +714,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dgoclfp6a2IQ&format=json",
         "watchPageStatus": "OK",
@@ -713,7 +740,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DiL_oZGHLHvU&format=json",
         "watchPageStatus": "OK",
@@ -739,7 +766,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRQFfK7xIL28&format=json",
         "watchPageStatus": "OK",
@@ -765,7 +792,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoPEnvuj9QrI&format=json",
         "watchPageStatus": "OK",
@@ -791,9 +818,35 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-06T15:23:02+00:00",
+        "checkedAt": "2026-10-07T03:39:55+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnXLnx8ncZyE&format=json",
+        "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "y-gregg60s",
+      "platform": "youtube",
+      "providerId": "ZdVpKx6Wmc8",
+      "title": "Linux 性能分析 60 秒",
+      "providerTitle": "Linux Performance Analysis in 60 seconds",
+      "author": "Brendan Gregg",
+      "duration": 72,
+      "language": "English",
+      "url": "https://www.youtube.com/watch?v=ZdVpKx6Wmc8",
+      "thumbnail": "https://i.ytimg.com/vi/ZdVpKx6Wmc8/hqdefault.jpg",
+      "tags": [
+        "性能",
+        "USE"
+      ],
+      "kind": "专题课程",
+      "start": 0,
+      "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
+      "verification": {
+        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "metadata": "verified",
+        "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZdVpKx6Wmc8&format=json",
         "watchPageStatus": "OK",
         "playback": "not_tested"
       }

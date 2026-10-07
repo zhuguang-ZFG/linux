@@ -1,6 +1,6 @@
 # 视频课堂与核验记录
 
-共 **30 条视频或课程选段**，B站分P分别计为选段，不把同一套课程包装成多套课程。核验日期：2026-10-06。
+共 **32 条视频或课程选段**，B站分P分别计为选段，不把同一套课程包装成多套课程。核验日期：2026-10-07。
 
 [打开可嵌入播放的学习站](https://zhuguang-zfg.github.io/linux/#videos) · [按章节查看配套关系](chapter-media.json)
 
@@ -25,6 +25,7 @@
 | 输入输出重定向 | Linux-老林 | P30 | 21:46 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=30) |
 | systemctl 管理服务 | Linux-老林 | P58 | 23:49 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58) |
 | find 与 grep | 韦东山 | P12 | 7:21 | [观看](https://www.bilibili.com/video/BV1w4411B7a4/?p=12) |
+| 磁盘分区机制 | 韩顺平 | P58 | 16:04 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=58) |
 
 ## YouTube · 专题与概览
 
@@ -45,6 +46,7 @@
 | Ollama 与 Open WebUI | Christian Lempa | 专题课程 | 39:07 | [观看](https://www.youtube.com/watch?v=RQFfK7xIL28) |
 | awk 文本分析 | Learn Linux TV | 专题课程 | 16:07 | [观看](https://www.youtube.com/watch?v=oPEnvuj9QrI) |
 | sed 流编辑器 | Learn Linux TV | 专题课程 | 15:25 | [观看](https://www.youtube.com/watch?v=nXLnx8ncZyE) |
+| Linux 性能分析 60 秒 | Brendan Gregg | 专题课程 | 1:12 | [观看](https://www.youtube.com/watch?v=ZdVpKx6Wmc8) |
 
 ## 怎么看才有效
 
