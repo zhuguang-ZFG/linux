@@ -64,10 +64,12 @@ if (Number(/精美动画-(\d+)部/.exec(readme)?.[1]) !== animations.length) fai
 if (Number(/\*\*实物图鉴\*\*：(\d+) 张/.exec(readme)?.[1]) !== photos.length) fail('README: photo count differs from files');
 const videoCount = JSON.parse(read('resources/videos.json')).videos.length;
 if (Number(/视频选段-(\d+)条/.exec(readme)?.[1]) !== videoCount) fail('README: video count differs from metadata');
-for (const [dir, expected] of [['exercises', 6], ['cheatsheets', 6]]) {
-  const count = readdirSync(path.join(root, dir)).filter(name => name.endsWith('.md') && name !== 'README.md').length;
-  if (count !== expected) fail(`${dir}: expected ${expected}, got ${count}`);
-}
+const countIn = dir => readdirSync(path.join(root, dir)).filter(name => name.endsWith('.md') && name !== 'README.md').length;
+if (countIn('exercises') !== 6) fail(`exercises: expected 6, got ${countIn('exercises')}`);
+const cheatsheetCount = countIn('cheatsheets');
+const listedCheatsheets = (/\| ⚡ \[速查表\]\(cheatsheets\/\) \| ([^|]+)\|/.exec(readme)?.[1] || '').split('/').map(item => item.trim()).filter(Boolean).length;
+if (!listedCheatsheets) fail('README: cheatsheet row missing');
+else if (listedCheatsheets !== cheatsheetCount) fail(`README lists ${listedCheatsheets} cheatsheets, directory has ${cheatsheetCount}`);
 
 const bash = process.env.BASH_BIN || (process.platform === 'win32' ? 'C:/Program Files/Git/bin/bash.exe' : 'bash');
 let checkedScripts = 0;
@@ -106,5 +108,5 @@ if (errors.length) {
   for (const error of errors) console.error(error);
   process.exitCode = 1;
 } else {
-  console.log(`PASS: ${markdown.length} Markdown files, ${checkedLinks} local links, ${chapters.length} chapters, ${animations.length} animations, ${photos.length} images, 6 exercise sets, 6 cheatsheets, ${checkedScripts} Bash syntax checks; example consistency checks passed.`);
+  console.log(`PASS: ${markdown.length} Markdown files, ${checkedLinks} local links, ${chapters.length} chapters, ${animations.length} animations, ${photos.length} images, 6 exercise sets, ${cheatsheetCount} cheatsheets, ${checkedScripts} Bash syntax checks; example consistency checks passed.`);
 }

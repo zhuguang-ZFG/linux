@@ -84,7 +84,7 @@ function renderSidebar() {
     }).join('')}
     <div class="nav-group-label">PRACTICE · 实践工具</div>
     ${nav(readRoute('resources/prompt-lab.md'), '✦', '提示词练习')}${nav(readRoute('exercises/README.md'), '✓', '练习与自测')}
-    ${nav(readRoute('resources/environment-matrix.md'), '⌘', '实验环境对照')}
+    ${nav(readRoute('resources/environment-matrix.md'), '⌘', '实验环境对照')}${nav(readRoute('resources/error-index.md'), '🚨', '错误信息索引')}${nav(readRoute('resources/misconceptions.md'), '❌', '常见误解')}
   </nav><div class="sidebar-progress"><span>我的学习进度</span><span style="float:right">${completed.size} / ${data.chapterOrder.length}</span><div class="progress-track"><div class="progress-fill" style="width:${completed.size / data.chapterOrder.length * 100}%"></div></div><span>仅保存在当前浏览器</span> · <button class="text-button" data-action="import-progress">导入标记</button> · <button class="text-button" data-action="clear-progress">清空标记</button> · <button class="text-button" data-action="export-progress">导出标记</button></div>`;
 }
 

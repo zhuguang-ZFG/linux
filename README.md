@@ -38,6 +38,8 @@
 | 🖼️ [实物图鉴](resources/hardware-gallery.md) | 先认识硬件，再读系统命令 |
 | 🎬 [动画实验室](resources/visual-lab.md) | 先预测数据流，再逐步验证 |
 | 🧰 [工具导航](resources/toolbox.md) | 按任务选择工具，知道它能证明什么 |
+| 🚨 [错误信息索引](resources/error-index.md) | 看到报错先查表：第一诊断与只读检查命令 |
+| ❌ [常见误解 30 条](resources/misconceptions.md) | 先破再立，每条都附自己验证的方法 |
 | 💬 [提示词练习](resources/prompt-lab.md) | 用 AI 解释、提问和审阅，再用手册与实验核对 |
 | 📝 [练习与作品](exercises/README.md) | 把看过的内容变成可复做的成果 |
 
@@ -144,7 +146,7 @@ flowchart LR
 | 📺 [视频资源库](resources/videos.md) | 67 条视频或选段；资料已核对，完整实播状态单独记录 |
 | 📚 [书单与网站](resources/books-and-sites.md) | 5 本书与 10+ 学习网站，包含 TLDP、ArchWiki、explainshell |
 | 📝 [练习题与答案](exercises/) | 六个阶段各一套，选择+实操，答案可折叠 |
-| ⚡ [速查表](cheatsheets/) | 常用命令 / Vim / 三剑客 / systemd / 网络 / 树莓派 |
+| ⚡ [速查表](cheatsheets/) | 常用命令 / 权限与用户 / 磁盘与存储 / 性能观测 / Vim / 三剑客 / systemd / 网络 / 树莓派 |
 | 🎬 [原创动画](resources/visual-lab.md) | 74 部 SVG 动画，学习站提供播放控制、文字步骤和实操入口 |
 | 🖼️ [实物图片](resources/hardware-gallery.md) | 26 张图片 + [授权署名](assets/images/CREDITS.md)，照片与示意分开标注 |
 | 🛠️ [配套源码与检查](scripts/README.md) | 备份、巡检、Docker、GPIO 与内容质量检查 |
