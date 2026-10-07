@@ -1588,5 +1588,213 @@
         "description": "输出记录为实测；未解决回到循环"
       }
     ]
+  },
+  {
+    "file": "ssh-tunnel.svg",
+    "title": "SSH 隧道",
+    "chapter": "docs/04-projects/项目3-个人云盘与内网穿透.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 场景",
+        "description": "外网无法直接访问；先分清谁在听、谁在连"
+      },
+      {
+        "title": "02 -L 本地转发",
+        "description": "客户端本机添加监听；由你发起连接进入内网"
+      },
+      {
+        "title": "03 -R 远程转发",
+        "description": "远端服务器上添加监听；方向相反，依赖远端配置"
+      },
+      {
+        "title": "04 边界",
+        "description": "服务认证仍各自负责；用完即断，最小暴露"
+      }
+    ]
+  },
+  {
+    "file": "archive-pipe.svg",
+    "title": "tar 与 gzip",
+    "chapter": "docs/01-basics/04-压缩与归档.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 两个工具",
+        "description": "职责分离；tar 不压缩，gzip 不认识目录"
+      },
+      {
+        "title": "02 两步组合",
+        "description": "管道串联；-f - 输出到标准输出"
+      },
+      {
+        "title": "03 一步捷径",
+        "description": "内部调用 gzip；解包要用同样的顺序"
+      },
+      {
+        "title": "04 逆向解包",
+        "description": "先解压再拆包；顺序反了会报错"
+      }
+    ]
+  },
+  {
+    "file": "awk-structure.svg",
+    "title": "awk 程序",
+    "chapter": "docs/02-advanced/04-awk文本分析.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 BEGIN 段",
+        "description": "读文件前执行一次；在这里初始化变量"
+      },
+      {
+        "title": "02 主循环",
+        "description": "逐行处理；$0 整行、$1 第一字段"
+      },
+      {
+        "title": "03 模式与动作",
+        "description": "按模式筛选；模式-动作成对出现"
+      },
+      {
+        "title": "04 END 段",
+        "description": "读完执行一次；汇总、排序与输出"
+      }
+    ]
+  },
+  {
+    "file": "sed-address.svg",
+    "title": "sed 地址",
+    "chapter": "docs/02-advanced/03-sed流编辑器.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 无地址",
+        "description": "作用全篇；范围最大也最危险"
+      },
+      {
+        "title": "02 行号地址",
+        "description": "精确到一行；行号会随文件变化"
+      },
+      {
+        "title": "03 范围地址",
+        "description": "块内生效；结束模式不匹配会延续到底"
+      },
+      {
+        "title": "04 多命令",
+        "description": "组合多个编辑；-i 原地改前先备份"
+      }
+    ]
+  },
+  {
+    "file": "hardware-bus.svg",
+    "title": "硬件识别",
+    "chapter": "docs/01-basics/09-从实物认识Linux硬件.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 三个视角",
+        "description": "总线、外设与块设备；先看主板总线树"
+      },
+      {
+        "title": "02 设备节点",
+        "description": "内核创建节点；设备名可能变化"
+      },
+      {
+        "title": "03 内核日志",
+        "description": "插拔前后对比；错误也在这里出现"
+      },
+      {
+        "title": "04 硬件描述",
+        "description": "描述硬件的另一种形态；先确认平台再看文件"
+      }
+    ]
+  },
+  {
+    "file": "distro-package.svg",
+    "title": "发行版家族",
+    "chapter": "docs/00-onboarding/03-发行版全景图.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 Debian 系",
+        "description": "Debian、Ubuntu、树莓派 OS；同家族命令互通"
+      },
+      {
+        "title": "02 Red Hat 系",
+        "description": "RHEL、Fedora、CentOS；yum 是它的旧名字"
+      },
+      {
+        "title": "03 其他路线",
+        "description": "滚动更新与企业管理；不要跨家族抄命令"
+      },
+      {
+        "title": "04 怎么选",
+        "description": "发行版是手段不是信仰；新命令先到虚拟机试"
+      }
+    ]
+  },
+  {
+    "file": "boot-chain.svg",
+    "title": "开机四棒",
+    "chapter": "docs/00-onboarding/04-安装你的第一个Linux.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 固件",
+        "description": "找到可引导设备；启动顺序在这里生效"
+      },
+      {
+        "title": "02 引导加载",
+        "description": "选择内核与参数；菜单超时与恢复模式"
+      },
+      {
+        "title": "03 内核启动",
+        "description": "驱动初始化；root= 参数决定根文件系统"
+      },
+      {
+        "title": "04 init 登场",
+        "description": "拉起服务到目标；失败先看内核与系统日志"
+      }
+    ]
+  },
+  {
+    "file": "pi-network.svg",
+    "title": "树莓派寻址",
+    "chapter": "docs/05-raspberry-pi/03-远程连接与基础配置.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 DHCP 请求",
+        "description": "还没有地址；地址池由路由器管理"
+      },
+      {
+        "title": "02 获得租约",
+        "description": "拿到 IP 与租期；租期到前自动续约"
+      },
+      {
+        "title": "03 名字广播",
+        "description": "局域网内可解析；依赖客户端与网络支持"
+      },
+      {
+        "title": "04 固定下来",
+        "description": "同一设备同一地址；比板内静态更少冲突"
+      }
+    ]
   }
 ]

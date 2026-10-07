@@ -4,6 +4,10 @@
       {
         "id": "y-linux100",
         "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+      },
+      {
+        "id": "b-applications",
+        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
       }
     ],
     "animations": [
@@ -18,6 +22,10 @@
       },
       {
         "id": "b-distros",
+        "note": "先建立内核与发行版的背景，不代替本章历史阅读。"
+      },
+      {
+        "id": "b-unix",
         "note": "先建立内核与发行版的背景，不代替本章历史阅读。"
       }
     ],
@@ -34,7 +42,8 @@
       }
     ],
     "animations": [
-      "distro-family.svg"
+      "distro-family.svg",
+      "distro-package.svg"
     ]
   },
   "docs/00-onboarding/04-安装你的第一个Linux.md": {
@@ -42,17 +51,26 @@
       {
         "id": "y-linux-crash",
         "note": "基础操作预习；安装步骤与版本以本章为准。"
+      },
+      {
+        "id": "b-install-ubuntu",
+        "note": "基础操作预习；安装步骤与版本以本章为准。"
       }
     ],
     "animations": [
-      "install-choices.svg"
+      "install-choices.svg",
+      "boot-chain.svg"
     ]
   },
   "docs/00-onboarding/05-初见终端与Shell.md": {
     "videos": [
       {
         "id": "y-commands",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "Shell 基础补充；终端练习仍按本章实验。"
+      },
+      {
+        "id": "b-shell-basics",
+        "note": "Shell 基础补充；终端练习仍按本章实验。"
       }
     ],
     "animations": [
@@ -64,7 +82,15 @@
     "videos": [
       {
         "id": "y-commands",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "目录结构背景与指令演示；具体操作按本章实验记录。"
+      },
+      {
+        "id": "b-dir-cmds",
+        "note": "目录结构背景与指令演示；具体操作按本章实验记录。"
+      },
+      {
+        "id": "b-dir-structure",
+        "note": "目录结构背景与指令演示；具体操作按本章实验记录。"
       }
     ],
     "animations": [
@@ -76,7 +102,11 @@
     "videos": [
       {
         "id": "b-vim",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "vim 快捷键补充；模式切换按本章动画与实验练习。"
+      },
+      {
+        "id": "b-vim-keys",
+        "note": "vim 快捷键补充；模式切换按本章动画与实验练习。"
       }
     ],
     "animations": [
@@ -88,7 +118,15 @@
     "videos": [
       {
         "id": "b-permissions",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "用户管理与权限修改补充；命令以本教程当前环境说明为准。"
+      },
+      {
+        "id": "b-user-mgmt",
+        "note": "用户管理与权限修改补充；命令以本教程当前环境说明为准。"
+      },
+      {
+        "id": "b-chmod",
+        "note": "用户管理与权限修改补充；命令以本教程当前环境说明为准。"
       }
     ],
     "animations": [
@@ -100,18 +138,27 @@
     "videos": [
       {
         "id": "b-archive",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "压缩与解压进阶；参数组合与覆盖风险以本章为准。"
+      },
+      {
+        "id": "b-archive2",
+        "note": "压缩与解压进阶；参数组合与覆盖风险以本章为准。"
       }
     ],
     "animations": [
-      "archive-compress.svg"
+      "archive-compress.svg",
+      "archive-pipe.svg"
     ]
   },
   "docs/01-basics/05-软件包管理.md": {
     "videos": [
       {
         "id": "b-apt",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "软件源与更新实例；不要直接套用其他发行版的源结构。"
+      },
+      {
+        "id": "b-apt-src",
+        "note": "软件源与更新实例；不要直接套用其他发行版的源结构。"
       }
     ],
     "animations": [
@@ -123,7 +170,15 @@
     "videos": [
       {
         "id": "b-process",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "进程观察、父子关系与终止信号的补充；信号操作只对测试进程执行。"
+      },
+      {
+        "id": "b-process-tree",
+        "note": "进程观察、父子关系与终止信号的补充；信号操作只对测试进程执行。"
+      },
+      {
+        "id": "b-kill-proc",
+        "note": "进程观察、父子关系与终止信号的补充；信号操作只对测试进程执行。"
       }
     ],
     "animations": [
@@ -135,7 +190,11 @@
     "videos": [
       {
         "id": "b-env",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "环境变量设置的补充；PATH 定位顺序仍按本章实验验证。"
+      },
+      {
+        "id": "b-set-env",
+        "note": "环境变量设置的补充；PATH 定位顺序仍按本章实验验证。"
       }
     ],
     "animations": [
@@ -163,7 +222,8 @@
       }
     ],
     "animations": [
-      "hardware-detect.svg"
+      "hardware-detect.svg",
+      "hardware-bus.svg"
     ]
   },
   "docs/02-advanced/01-管道与重定向.md": {
@@ -184,7 +244,11 @@
     "videos": [
       {
         "id": "b-grep",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "查找工具补充；grep 正则与选项按本章实验验证。"
+      },
+      {
+        "id": "b-find",
+        "note": "查找工具补充；grep 正则与选项按本章实验验证。"
       }
     ],
     "animations": [
@@ -200,7 +264,8 @@
       }
     ],
     "animations": [
-      "sed-replace.svg"
+      "sed-replace.svg",
+      "sed-address.svg"
     ]
   },
   "docs/02-advanced/04-awk文本分析.md": {
@@ -211,14 +276,19 @@
       }
     ],
     "animations": [
-      "awk-aggregation.svg"
+      "awk-aggregation.svg",
+      "awk-structure.svg"
     ]
   },
   "docs/02-advanced/05-Bash脚本编程.md": {
     "videos": [
       {
         "id": "b-bash",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "Shell 循环补充；脚本语法、退出码与失败处理按本章验证。"
+      },
+      {
+        "id": "b-shell-loop",
+        "note": "Shell 循环补充；脚本语法、退出码与失败处理按本章验证。"
       }
     ],
     "animations": [
@@ -230,11 +300,19 @@
     "videos": [
       {
         "id": "b-systemd",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "服务管理与日志原理补充；journalctl 查询按本章实验。"
+      },
+      {
+        "id": "b-logs",
+        "note": "服务管理与日志原理补充；journalctl 查询按本章实验。"
+      },
+      {
+        "id": "b-logs-service",
+        "note": "服务管理与日志原理补充；journalctl 查询按本章实验。"
       },
       {
         "id": "y-systemd",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "服务管理与日志原理补充；journalctl 查询按本章实验。"
       }
     ],
     "animations": [
@@ -248,11 +326,15 @@
     "videos": [
       {
         "id": "b-disk",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "磁盘扩容实例；操作前确认设备名并完成备份。"
       },
       {
         "id": "b-partition",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "磁盘扩容实例；操作前确认设备名并完成备份。"
+      },
+      {
+        "id": "b-disk-add",
+        "note": "磁盘扩容实例；操作前确认设备名并完成备份。"
       }
     ],
     "animations": [
@@ -264,7 +346,15 @@
     "videos": [
       {
         "id": "b-ssh",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "远程传输与 NAT 原理补充；网络配置与加固以本章为准。"
+      },
+      {
+        "id": "b-scp",
+        "note": "远程传输与 NAT 原理补充；网络配置与加固以本章为准。"
+      },
+      {
+        "id": "b-nat",
+        "note": "远程传输与 NAT 原理补充；网络配置与加固以本章为准。"
       }
     ],
     "animations": [
@@ -292,6 +382,10 @@
         "note": "进程观察与 USE 方法的背景；性能结论按正文实验核对。"
       },
       {
+        "id": "b-io-monitor",
+        "note": "进程观察与 USE 方法的背景；性能结论按正文实验核对。"
+      },
+      {
         "id": "y-gregg60s",
         "note": "进程观察与 USE 方法的背景；性能结论按正文实验核对。"
       }
@@ -305,11 +399,15 @@
     "videos": [
       {
         "id": "b-distros",
-        "note": "内核概念的背景材料，不是内核源码或系统调用专项教程。"
+        "note": "内核源码阅读方法；本章的系统调用实验仍是验收依据。"
+      },
+      {
+        "id": "b-kernel-read",
+        "note": "内核源码阅读方法；本章的系统调用实验仍是验收依据。"
       },
       {
         "id": "y-linux-things",
-        "note": "内核概念的背景材料，不是内核源码或系统调用专项教程。"
+        "note": "内核源码阅读方法；本章的系统调用实验仍是验收依据。"
       }
     ],
     "animations": [
@@ -322,7 +420,11 @@
     "videos": [
       {
         "id": "b-ssh",
-        "note": "SSH 登录基础复习；加固策略与最终配置验证以正文为准。"
+        "note": "SSH 与隐藏权限补充；加固策略与最终配置验证以正文为准。"
+      },
+      {
+        "id": "b-hidden-perm",
+        "note": "SSH 与隐藏权限补充；加固策略与最终配置验证以正文为准。"
       }
     ],
     "animations": [
@@ -346,11 +448,15 @@
     "videos": [
       {
         "id": "b-cron",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "定时任务实例；cron 环境与路径差异按本章实验验证。"
+      },
+      {
+        "id": "b-cron-apply",
+        "note": "定时任务实例；cron 环境与路径差异按本章实验验证。"
       },
       {
         "id": "y-ansible",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "定时任务实例；cron 环境与路径差异按本章实验验证。"
       }
     ],
     "animations": [
@@ -362,7 +468,15 @@
     "videos": [
       {
         "id": "b-bash",
-        "note": "Shell 基础复习；并发、trap 和失败处理仍需按本章验证。"
+        "note": "Shell 基础、函数与实战补充；并发、trap 和失败处理仍需按本章验证。"
+      },
+      {
+        "id": "b-shell-func",
+        "note": "Shell 基础、函数与实战补充；并发、trap 和失败处理仍需按本章验证。"
+      },
+      {
+        "id": "b-shell-practice",
+        "note": "Shell 基础、函数与实战补充；并发、trap 和失败处理仍需按本章验证。"
       }
     ],
     "animations": [
@@ -386,7 +500,11 @@
     "videos": [
       {
         "id": "y-systemd",
-        "note": "服务管理预备知识，不是完整 LNMP 安装录像。"
+        "note": "服务管理与数据库安装预备；LNMP 完整部署与验收见正文。"
+      },
+      {
+        "id": "b-mysql",
+        "note": "服务管理与数据库安装预备；LNMP 完整部署与验收见正文。"
       }
     ],
     "animations": [
@@ -398,11 +516,19 @@
     "videos": [
       {
         "id": "b-process",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "巡检相关统计与定时备份演示；脚本与验收标准以本章为准。"
       },
       {
         "id": "b-bash",
-        "note": "观看对应主题后，回到本章用实际输入和输出验证。"
+        "note": "巡检相关统计与定时备份演示；脚本与验收标准以本章为准。"
+      },
+      {
+        "id": "b-count-stats",
+        "note": "巡检相关统计与定时备份演示；脚本与验收标准以本章为准。"
+      },
+      {
+        "id": "b-cron-backup",
+        "note": "巡检相关统计与定时备份演示；脚本与验收标准以本章为准。"
       }
     ],
     "animations": [
@@ -414,11 +540,20 @@
     "videos": [
       {
         "id": "y-docker",
-        "note": "容器部署预备知识，Nextcloud 配置和访问控制见正文。"
+        "note": "内网穿透原理与工具演示；方案选择与暴露面控制见正文。"
+      },
+      {
+        "id": "b-tunnel-basics",
+        "note": "内网穿透原理与工具演示；方案选择与暴露面控制见正文。"
+      },
+      {
+        "id": "b-nps",
+        "note": "内网穿透原理与工具演示；方案选择与暴露面控制见正文。"
       }
     ],
     "animations": [
-      "intranet-tunnel.svg"
+      "intranet-tunnel.svg",
+      "ssh-tunnel.svg"
     ]
   },
   "docs/04-projects/项目4-Linux跑本地AI.md": {
@@ -437,11 +572,15 @@
     "videos": [
       {
         "id": "y-systemd",
-        "note": "排障的工具背景；案例根因需要自己的现场证据。"
+        "note": "排障的工具背景与启动流程；案例根因需要自己的现场证据。"
       },
       {
         "id": "y-linux-full",
-        "note": "排障的工具背景；案例根因需要自己的现场证据。"
+        "note": "排障的工具背景与启动流程；案例根因需要自己的现场证据。"
+      },
+      {
+        "id": "b-boot-flow",
+        "note": "排障的工具背景与启动流程；案例根因需要自己的现场证据。"
       }
     ],
     "animations": [
@@ -479,7 +618,8 @@
       }
     ],
     "animations": [
-      "pi-remote.svg"
+      "pi-remote.svg",
+      "pi-network.svg"
     ]
   },
   "docs/05-raspberry-pi/04-GPIO硬件编程.md": {
@@ -506,7 +646,16 @@
     ]
   },
   "docs/05-raspberry-pi/06-树莓派与边缘AI.md": {
-    "videos": [],
+    "videos": [
+      {
+        "id": "b-pi-llm",
+        "note": "第三方厂商教程演示 Pi 5 部署流程；模型选择、内存与温度按本章实验记录。"
+      },
+      {
+        "id": "b-pi-llava",
+        "note": "第三方厂商教程演示 Pi 5 部署流程；模型选择、内存与温度按本章实验记录。"
+      }
+    ],
     "animations": [
       "edge-inference.svg"
     ]

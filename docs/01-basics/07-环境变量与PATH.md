@@ -252,7 +252,8 @@ source ~/.bashrc                         # 永久生效
 
 ## 📺 推荐视频
 
-- [B站 · Shell 环境变量](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15) — Linux-老林，P15，37分31秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [B站 · Shell 环境变量](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15) — Linux-老林，P15，37分31秒。环境变量设置的补充；PATH 定位顺序仍按本章实验验证。
+- [B站 · 设置环境变量](https://www.bilibili.com/video/BV1Sv411r7vd/?p=93) — 韩顺平，P93，9分41秒。环境变量设置的补充；PATH 定位顺序仍按本章实验验证。
 
 [![Shell 环境变量 视频封面](https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15)
 

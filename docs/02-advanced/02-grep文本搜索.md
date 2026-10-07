@@ -250,7 +250,8 @@ grep "Failed password for" fake.log | awk '{print $8}' | sort | uniq -c | sort -
 
 ## 📺 推荐视频
 
-- [B站 · find 与 grep](https://www.bilibili.com/video/BV1w4411B7a4/?p=12) — 韦东山，P12，7分21秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [B站 · find 与 grep](https://www.bilibili.com/video/BV1w4411B7a4/?p=12) — 韦东山，P12，7分21秒。查找工具补充；grep 正则与选项按本章实验验证。
+- [B站 · 查找指令](https://www.bilibili.com/video/BV1Sv411r7vd/?p=35) — 韩顺平，P35，13分33秒。查找工具补充；grep 正则与选项按本章实验验证。
 
 [![find 与 grep 视频封面](https://i2.hdslb.com/bfs/archive/b2e859711cde6a85b2720841cf7c5d931b9a2614.jpg)](https://www.bilibili.com/video/BV1w4411B7a4/?p=12)
 

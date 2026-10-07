@@ -262,7 +262,8 @@ p                      # 粘贴到下一行
 
 ## 📺 推荐视频
 
-- [B站 · Vim 快速入门](https://www.bilibili.com/video/BV1Sv411r7vd/?p=16) — 韩顺平，P16，8分32秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [B站 · Vim 快速入门](https://www.bilibili.com/video/BV1Sv411r7vd/?p=16) — 韩顺平，P16，8分32秒。vim 快捷键补充；模式切换按本章动画与实验练习。
+- [B站 · vi/vim 快捷键](https://www.bilibili.com/video/BV1Sv411r7vd/?p=17) — 韩顺平，P17，19分9秒。vim 快捷键补充；模式切换按本章动画与实验练习。
 
 [![Vim 快速入门 视频封面](https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd/?p=16)
 

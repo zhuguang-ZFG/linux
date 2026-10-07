@@ -1,6 +1,6 @@
 # 视频课堂与核验记录
 
-共 **32 条视频或课程选段**，B站分P分别计为选段，不把同一套课程包装成多套课程。核验日期：2026-10-07。
+共 **67 条视频或课程选段**，B站分P分别计为选段，不把同一套课程包装成多套课程。核验日期：2026-10-07。
 
 [打开可嵌入播放的学习站](https://zhuguang-zfg.github.io/linux/#videos) · [按章节查看配套关系](chapter-media.json)
 
@@ -26,6 +26,41 @@
 | systemctl 管理服务 | Linux-老林 | P58 | 23:49 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58) |
 | find 与 grep | 韦东山 | P12 | 7:21 | [观看](https://www.bilibili.com/video/BV1w4411B7a4/?p=12) |
 | 磁盘分区机制 | 韩顺平 | P58 | 16:04 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=58) |
+| 文件与目录指令 | 韩顺平 | P29 | 7:33 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=29) |
+| 用户管理 | 韩顺平 | P21 | 15:26 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=21) |
+| 终止进程 | 韩顺平 | P71 | 16:15 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=71) |
+| Shell 自定义函数 | 韩顺平 | P104 | 5:21 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=104) |
+| 日志介绍与实例 | 韩顺平 | P117 | 8:51 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=117) |
+| Linux 应用领域 | 韩顺平 | P2 | 5:05 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=2) |
+| Linux 与 Unix 渊源 | 韩顺平 | P4 | 18:09 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=4) |
+| Ubuntu 安装演示 | 韩顺平 | P108 | 9:32 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=108) |
+| Bash Shell 基础 | Linux-老林 | P13 | 13:34 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=13) |
+| 目录结构介绍 | 韩顺平 | P12 | 7:50 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=12) |
+| vi/vim 快捷键 | 韩顺平 | P17 | 19:09 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=17) |
+| 修改权限 | 韩顺平 | P46 | 9:32 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=46) |
+| 压缩和解压（进阶） | 韩顺平 | P38 | 9:59 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=38) |
+| APT 更新源与实例 | 韩顺平 | P113 | 12:28 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=113) |
+| 父子进程 | 韩顺平 | P70 | 8:21 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=70) |
+| 设置环境变量 | 韩顺平 | P93 | 9:41 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=93) |
+| 查找指令 | 韩顺平 | P35 | 13:33 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=35) |
+| Shell for 循环 | 韩顺平 | P100 | 12:12 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=100) |
+| 日志服务原理图 | 韩顺平 | P118 | 4:30 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=118) |
+| 增加磁盘应用实例 | 韩顺平 | P59 | 23:02 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=59) |
+| 远程文件传输 | 韩顺平 | P15 | 13:58 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=15) |
+| NAT 网络原理图 | 韩顺平 | P63 | 13:42 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=63) |
+| IO 读写监控 | 韩顺平 | P149 | 10:55 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=149) |
+| 内核源码阅读及 main | 韩顺平 | P131 | 13:19 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=131) |
+| 隐藏权限设置及查询 | Linux-老林 | P49 | 9:39 | [观看](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=49) |
+| crond 应用实例 | 韩顺平 | P54 | 14:55 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=54) |
+| 定时备份数据库（实战） | 韩顺平 | P106 | 25:27 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=106) |
+| 安装配置 MySQL 5.7 | 韩顺平 | P89 | 15:14 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=89) |
+| 统计访问量和连接数 | 韩顺平 | P142 | 14:01 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=142) |
+| 定时备份数据库（入门） | 韩顺平 | P105 | 7:24 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=105) |
+| CentOS 7 启动流程详解 | 韩顺平 | P148 | 12:01 | [观看](https://www.bilibili.com/video/BV1Sv411r7vd/?p=148) |
+| 内网穿透基本原理 | 二叉树树 | P1 | 23:10 | [观看](https://www.bilibili.com/video/BV1ShqBYdEDC/?p=1) |
+| NPS 内网穿透工具 | 大橘炸了 | P1 | 32:11 | [观看](https://www.bilibili.com/video/BV1Ed4y1f7jZ/?p=1) |
+| 树莓派 5 部署大模型（Ollama 与交互界面） | 创乐博智能科技 | P2 | 15:24 | [观看](https://www.bilibili.com/video/BV14EP7ebE92/?p=2) |
+| LLaVA 多模态模型 | 创乐博智能科技 | P11 | 6:56 | [观看](https://www.bilibili.com/video/BV14EP7ebE92/?p=11) |
 
 ## YouTube · 专题与概览
 

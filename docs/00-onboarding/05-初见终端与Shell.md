@@ -289,7 +289,8 @@ exit               # 会话结束
 
 ## 📺 推荐视频
 
-- [YouTube · 常用 Linux 命令](https://www.youtube.com/watch?v=ZtqBQ68cfJc) — freeCodeCamp.org，300分16秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [YouTube · 常用 Linux 命令](https://www.youtube.com/watch?v=ZtqBQ68cfJc) — freeCodeCamp.org，300分16秒。Shell 基础补充；终端练习仍按本章实验。
+- [B站 · Bash Shell 基础](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=13) — Linux-老林，P13，13分34秒。Shell 基础补充；终端练习仍按本章实验。
 
 [![常用 Linux 命令 视频封面](https://i.ytimg.com/vi/ZtqBQ68cfJc/hqdefault.jpg)](https://www.youtube.com/watch?v=ZtqBQ68cfJc)
 

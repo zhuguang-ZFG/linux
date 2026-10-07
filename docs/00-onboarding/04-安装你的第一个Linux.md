@@ -24,6 +24,10 @@
 
 ## 🧠 核心概念
 
+![开机四棒原理动画](../../assets/animations/boot-chain.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=boot-chain.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![选安装方式原理动画](../../assets/animations/install-choices.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=install-choices.svg)。动画中的输入输出为教学示意，需用本章实验验证。
@@ -318,6 +322,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 ## 📺 推荐视频
 
 - [YouTube · Linux 入门课程](https://www.youtube.com/watch?v=ROjZy1WbCIA) — freeCodeCamp.org，167分55秒。基础操作预习；安装步骤与版本以本章为准。
+- [B站 · Ubuntu 安装演示](https://www.bilibili.com/video/BV1Sv411r7vd/?p=108) — 韩顺平，P108，9分32秒。基础操作预习；安装步骤与版本以本章为准。
 
 [![Linux 入门课程 视频封面](https://i.ytimg.com/vi/ROjZy1WbCIA/hqdefault.jpg)](https://www.youtube.com/watch?v=ROjZy1WbCIA)
 

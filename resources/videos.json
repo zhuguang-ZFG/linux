@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-07T03:39:55+00:00",
+  "checkedAt": "2026-10-07T11:32:38+00:00",
   "notice": "核验标题、作者、分P和可获取的时长。页面/接口可读取不等于已完整播放；不下载或搬运视频。",
   "videos": [
     {
@@ -848,6 +848,945 @@
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZdVpKx6Wmc8&format=json",
         "watchPageStatus": "OK",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-dir-cmds",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 29,
+      "cid": 257396218,
+      "title": "文件与目录指令",
+      "providerTitle": "029_韩顺平Linux_文件目录指令(2)",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 453,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=29",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "文件",
+        "目录"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-user-mgmt",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 21,
+      "cid": 257395137,
+      "title": "用户管理",
+      "providerTitle": "021_韩顺平Linux_用户管理(1)",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 926,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=21",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "用户",
+        "权限"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-kill-proc",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 71,
+      "cid": 261759591,
+      "title": "终止进程",
+      "providerTitle": "071_韩顺平Linux_终止进程",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 975,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=71",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "进程",
+        "信号"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-shell-func",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 104,
+      "cid": 261761419,
+      "title": "Shell 自定义函数",
+      "providerTitle": "104_韩顺平Linux_自定义函数",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 321,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=104",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "Shell",
+        "函数"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-logs",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 117,
+      "cid": 264330803,
+      "title": "日志介绍与实例",
+      "providerTitle": "117_韩顺平Linux_日志介绍和实例",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 531,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=117",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
+      "tags": [
+        "日志",
+        "systemd"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-applications",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 2,
+      "cid": 257390081,
+      "title": "Linux 应用领域",
+      "providerTitle": "002_韩顺平Linux_应用领域",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 305,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=2",
+      "tags": [
+        "概述"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-unix",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 4,
+      "cid": 257390680,
+      "title": "Linux 与 Unix 渊源",
+      "providerTitle": "004_韩顺平Linux_Linux与Unix",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 1089,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=4",
+      "tags": [
+        "历史"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-install-ubuntu",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 108,
+      "cid": 264329834,
+      "title": "Ubuntu 安装演示",
+      "providerTitle": "108_韩顺平Linux_ubuntu安装",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 572,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=108",
+      "tags": [
+        "安装"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-shell-basics",
+      "platform": "bilibili",
+      "providerId": "BV1ZZ37zdEp2",
+      "page": 13,
+      "cid": 30843801246,
+      "title": "Bash Shell 基础",
+      "providerTitle": "【Linux零基础-11】Linux Bash Shell基础",
+      "courseTitle": "【全100集】Linux操作系统从零基础入门到精通必学教程！通俗易懂，2025最新版，学完即可就业！Linux安装丨Linux云计算运维丨Linux学习路线图",
+      "author": "Linux-老林",
+      "duration": 814,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=13",
+      "tags": [
+        "Shell",
+        "终端"
+      ],
+      "kind": "课程选段",
+      "note": "课程讲解偏长，按需定位主题；命令以本教程当前环境为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg"
+    },
+    {
+      "id": "b-dir-structure",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 12,
+      "cid": 257392455,
+      "title": "目录结构介绍",
+      "providerTitle": "012_韩顺平Linux_目录结构介绍",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 470,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=12",
+      "tags": [
+        "文件",
+        "目录"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-vim-keys",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 17,
+      "cid": 257394330,
+      "title": "vi/vim 快捷键",
+      "providerTitle": "017_韩顺平Linux_vi vim快捷键",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 1149,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=17",
+      "tags": [
+        "Vim",
+        "编辑"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-chmod",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 46,
+      "cid": 259257806,
+      "title": "修改权限",
+      "providerTitle": "046_韩顺平Linux_修改权限",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 572,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=46",
+      "tags": [
+        "权限"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-archive2",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 38,
+      "cid": 257397432,
+      "title": "压缩和解压（进阶）",
+      "providerTitle": "038_韩顺平Linux_压缩和解压(2)",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 599,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=38",
+      "tags": [
+        "归档",
+        "压缩"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-apt-src",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 113,
+      "cid": 264330215,
+      "title": "APT 更新源与实例",
+      "providerTitle": "113_韩顺平Linux_APT更新源和实例",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 748,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=113",
+      "tags": [
+        "软件包",
+        "APT"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-process-tree",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 70,
+      "cid": 261759497,
+      "title": "父子进程",
+      "providerTitle": "070_韩顺平Linux_父子进程",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 501,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=70",
+      "tags": [
+        "进程"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-set-env",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 93,
+      "cid": 261760942,
+      "title": "设置环境变量",
+      "providerTitle": "093_韩顺平Linux_设置环境变量",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 581,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=93",
+      "tags": [
+        "环境变量"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-find",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 35,
+      "cid": 257397296,
+      "title": "查找指令",
+      "providerTitle": "035_韩顺平Linux_查找指令(1)",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 813,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=35",
+      "tags": [
+        "搜索",
+        "find"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-shell-loop",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 100,
+      "cid": 261761202,
+      "title": "Shell for 循环",
+      "providerTitle": "100_韩顺平Linux_for循环",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 732,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=100",
+      "tags": [
+        "Shell",
+        "循环"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-logs-service",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 118,
+      "cid": 264330871,
+      "title": "日志服务原理图",
+      "providerTitle": "118_韩顺平Linux_日志服务原理图",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 270,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=118",
+      "tags": [
+        "日志",
+        "systemd"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-disk-add",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 59,
+      "cid": 259259344,
+      "title": "增加磁盘应用实例",
+      "providerTitle": "059_韩顺平Linux_增加磁盘应用实例",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 1382,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=59",
+      "tags": [
+        "磁盘",
+        "挂载"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-scp",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 15,
+      "cid": 257394209,
+      "title": "远程文件传输",
+      "providerTitle": "015_韩顺平Linux_远程文件传输",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 838,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=15",
+      "tags": [
+        "网络",
+        "传输"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-nat",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 63,
+      "cid": 259259680,
+      "title": "NAT 网络原理图",
+      "providerTitle": "063_韩顺平Linux_NAT网络原理图",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 822,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=63",
+      "tags": [
+        "网络",
+        "NAT"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-io-monitor",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 149,
+      "cid": 264333919,
+      "title": "IO 读写监控",
+      "providerTitle": "149_韩顺平Linux_io读写监控",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 655,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=149",
+      "tags": [
+        "性能",
+        "IO"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-kernel-read",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 131,
+      "cid": 264331957,
+      "title": "内核源码阅读及 main",
+      "providerTitle": "131_韩顺平Linux_内核源码阅读及main",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 799,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=131",
+      "tags": [
+        "内核",
+        "源码"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-hidden-perm",
+      "platform": "bilibili",
+      "providerId": "BV1ZZ37zdEp2",
+      "page": 49,
+      "cid": 30844125986,
+      "title": "隐藏权限设置及查询",
+      "providerTitle": "【Linux零基础-47】隐藏权限设置及查询",
+      "courseTitle": "【全100集】Linux操作系统从零基础入门到精通必学教程！通俗易懂，2025最新版，学完即可就业！Linux安装丨Linux云计算运维丨Linux学习路线图",
+      "author": "Linux-老林",
+      "duration": 579,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=49",
+      "tags": [
+        "权限",
+        "加固"
+      ],
+      "kind": "课程选段",
+      "note": "课程讲解偏长，按需定位主题；命令以本教程当前环境为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg"
+    },
+    {
+      "id": "b-cron-apply",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 54,
+      "cid": 259258729,
+      "title": "crond 应用实例",
+      "providerTitle": "054_韩顺平Linux_crond应用实例",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 895,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=54",
+      "tags": [
+        "定时",
+        "自动化"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-shell-practice",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 106,
+      "cid": 261761524,
+      "title": "定时备份数据库（实战）",
+      "providerTitle": "106_韩顺平Linux_定时备份数据库(2)",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 1527,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=106",
+      "tags": [
+        "Shell",
+        "备份"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-mysql",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 89,
+      "cid": 261760845,
+      "title": "安装配置 MySQL 5.7",
+      "providerTitle": "089_韩顺平Linux_安装配置mysql5.7",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 914,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=89",
+      "tags": [
+        "数据库",
+        "LNMP"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-count-stats",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 142,
+      "cid": 264333094,
+      "title": "统计访问量和连接数",
+      "providerTitle": "142_韩顺平Linux_统计访问量和连接数",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 841,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=142",
+      "tags": [
+        "巡检",
+        "统计"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-cron-backup",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 105,
+      "cid": 261761513,
+      "title": "定时备份数据库（入门）",
+      "providerTitle": "105_韩顺平Linux_定时备份数据库(1)",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 444,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=105",
+      "tags": [
+        "定时",
+        "备份"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-boot-flow",
+      "platform": "bilibili",
+      "providerId": "BV1Sv411r7vd",
+      "page": 148,
+      "cid": 264333813,
+      "title": "CentOS 7 启动流程详解",
+      "providerTitle": "148_韩顺平Linux_CentOS7启动流程详解",
+      "courseTitle": "【小白入门 通俗易懂】韩顺平 一周学会Linux",
+      "author": "韩顺平",
+      "duration": 721,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=148",
+      "tags": [
+        "启动",
+        "排障"
+      ],
+      "kind": "课程选段",
+      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
+        "playback": "not_tested"
+      },
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+    },
+    {
+      "id": "b-tunnel-basics",
+      "platform": "bilibili",
+      "providerId": "BV1ShqBYdEDC",
+      "page": 1,
+      "cid": 27320126046,
+      "title": "内网穿透基本原理",
+      "providerTitle": "内网穿透基本原理和实操，无需公网服务器",
+      "courseTitle": "内网穿透基本原理和实操，无需公网服务器",
+      "author": "二叉树树",
+      "duration": 1390,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1ShqBYdEDC/?p=1",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/b3200874baf9831e23b5a9482be976c9f26a1d2e.jpg",
+      "tags": [
+        "穿透",
+        "原理"
+      ],
+      "kind": "课程选段",
+      "note": "第三方工具教程，方案选择与暴露面控制以本章正文为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ShqBYdEDC",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-nps",
+      "platform": "bilibili",
+      "providerId": "BV1Ed4y1f7jZ",
+      "page": 1,
+      "cid": 1140419770,
+      "title": "NPS 内网穿透工具",
+      "providerTitle": "一键实现内网穿透：NPS内网穿透工具的完整使用指南",
+      "courseTitle": "一键实现内网穿透：NPS内网穿透工具的完整使用指南",
+      "author": "大橘炸了",
+      "duration": 1931,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1Ed4y1f7jZ/?p=1",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/4f4fe6088652b1b0ce7d7b78d8a77c7ac6fa2743.jpg",
+      "tags": [
+        "穿透",
+        "工具"
+      ],
+      "kind": "课程选段",
+      "note": "第三方工具教程，方案选择与暴露面控制以本章正文为准。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Ed4y1f7jZ",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-pi-llm",
+      "platform": "bilibili",
+      "providerId": "BV14EP7ebE92",
+      "page": 2,
+      "cid": 28589948953,
+      "title": "树莓派 5 部署大模型（Ollama 与交互界面）",
+      "providerTitle": "2.树莓派5搭建大模型配置说明以及AI大模型部署环境Ollama 和UI交互式环境搭建",
+      "courseTitle": "创乐博 树莓派5 本地部署大模型全套保姆级手把手搭建教程 零基础搭建 Deepseek R1/Llama 3/Qwen2/LLAVA多模态模型",
+      "author": "创乐博智能科技",
+      "duration": 924,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV14EP7ebE92/?p=2",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/710142508e1dad07c8997f290644e1f5072ebc8c.png",
+      "tags": [
+        "树莓派",
+        "Ollama"
+      ],
+      "kind": "课程选段",
+      "note": "第三方硬件厂商教程，演示 Pi 5 环境；模型选择与内存占用请按本章实验记录。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV14EP7ebE92",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-pi-llava",
+      "platform": "bilibili",
+      "providerId": "BV14EP7ebE92",
+      "page": 11,
+      "cid": 28590147625,
+      "title": "LLaVA 多模态模型",
+      "providerTitle": "11.LLaVA 多模态大模型搭建及使用",
+      "courseTitle": "创乐博 树莓派5 本地部署大模型全套保姆级手把手搭建教程 零基础搭建 Deepseek R1/Llama 3/Qwen2/LLAVA多模态模型",
+      "author": "创乐博智能科技",
+      "duration": 416,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV14EP7ebE92/?p=11",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/710142508e1dad07c8997f290644e1f5072ebc8c.png",
+      "tags": [
+        "树莓派",
+        "多模态"
+      ],
+      "kind": "课程选段",
+      "note": "第三方硬件厂商教程，演示 Pi 5 环境；模型选择与内存占用请按本章实验记录。",
+      "verification": {
+        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV14EP7ebE92",
         "playback": "not_tested"
       }
     }

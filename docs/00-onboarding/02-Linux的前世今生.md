@@ -270,6 +270,7 @@ VERSION_ID="24.04"
 
 - [YouTube · Linux 的第一印象](https://www.youtube.com/watch?v=rrB13utjYV4) — Fireship，2分41秒。先建立内核与发行版的背景，不代替本章历史阅读。
 - [B站 · Linux 内核与发行版](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=9) — Linux-老林，P9，21分16秒。先建立内核与发行版的背景，不代替本章历史阅读。
+- [B站 · Linux 与 Unix 渊源](https://www.bilibili.com/video/BV1Sv411r7vd/?p=4) — 韩顺平，P4，18分9秒。先建立内核与发行版的背景，不代替本章历史阅读。
 
 [![Linux 的第一印象 视频封面](https://i.ytimg.com/vi/rrB13utjYV4/hqdefault.jpg)](https://www.youtube.com/watch?v=rrB13utjYV4)
 

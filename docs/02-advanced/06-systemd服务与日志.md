@@ -269,8 +269,10 @@ journalctl -o verbose --no-pager \
 
 ## 📺 推荐视频
 
-- [B站 · systemctl 管理服务](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58) — Linux-老林，P58，23分49秒。观看对应主题后，回到本章用实际输入和输出验证。
-- [YouTube · systemd 服务管理](https://www.youtube.com/watch?v=Kzpm-rGAXos) — Learn Linux TV，47分40秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [B站 · systemctl 管理服务](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58) — Linux-老林，P58，23分49秒。服务管理与日志原理补充；journalctl 查询按本章实验。
+- [B站 · 日志介绍与实例](https://www.bilibili.com/video/BV1Sv411r7vd/?p=117) — 韩顺平，P117，8分51秒。服务管理与日志原理补充；journalctl 查询按本章实验。
+- [B站 · 日志服务原理图](https://www.bilibili.com/video/BV1Sv411r7vd/?p=118) — 韩顺平，P118，4分30秒。服务管理与日志原理补充；journalctl 查询按本章实验。
+- [YouTube · systemd 服务管理](https://www.youtube.com/watch?v=Kzpm-rGAXos) — Learn Linux TV，47分40秒。服务管理与日志原理补充；journalctl 查询按本章实验。
 
 [![systemctl 管理服务 视频封面](https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=58)
 

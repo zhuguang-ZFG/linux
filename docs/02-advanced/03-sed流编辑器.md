@@ -19,6 +19,10 @@ grep 只能"挑选"行，而 **sed**（Stream Editor，流编辑器）能"修改
 
 ## 🧠 核心概念
 
+![sed 地址原理动画](../../assets/animations/sed-address.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=sed-address.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![sed原理动画](../../assets/animations/sed-replace.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=sed-replace.svg)。动画中的输入输出为教学示意，需用本章实验验证。

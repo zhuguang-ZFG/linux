@@ -1,6 +1,6 @@
 # 动画实验室：先预测，再播放，最后动手
 
-本库共 66 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 60 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
+本库共 74 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 68 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
 
 动画是原理示意，不是从真实机器采集的运行录像。验收仍要回到命令与实际输出。
 
@@ -111,5 +111,14 @@
 | [开机引导](../assets/animations/boot-sequence.svg) | 从上电到登录涉及哪些阶段？ | [内核与系统调用](../docs/03-pro/02-内核与系统调用.md) |
 | [GPIO 点灯](../assets/animations/gpio-blink.svg) | 输出电平如何影响 LED？ | [GPIO](../docs/05-raspberry-pi/04-GPIO硬件编程.md) |
 | [权限位](../assets/animations/permission-bits.svg) | 三组 rwx 分别属于谁？ | [用户与权限](../docs/01-basics/03-用户与权限.md) |
+
+| [SSH 隧道](../assets/animations/ssh-tunnel.svg) | -L 与 -R 的监听方向有何不同？ | [内网穿透](../docs/04-projects/项目3-个人云盘与内网穿透.md) |
+| [归档与压缩](../assets/animations/archive-pipe.svg) | tar 与 gzip 的组合顺序为何重要？ | [压缩与归档](../docs/01-basics/04-压缩与归档.md) |
+| [awk 三段结构](../assets/animations/awk-structure.svg) | BEGIN、逐行与 END 各做什么？ | [awk 文本分析](../docs/02-advanced/04-awk文本分析.md) |
+| [sed 地址](../assets/animations/sed-address.svg) | 如何只改目标行而不是全篇？ | [sed 流编辑器](../docs/02-advanced/03-sed流编辑器.md) |
+| [硬件识别](../assets/animations/hardware-bus.svg) | 命令行怎样看清硬件与驱动？ | [实物认识硬件](../docs/01-basics/09-从实物认识Linux硬件.md) |
+| [发行版家族](../assets/animations/distro-package.svg) | 包管理器如何标记发行版血统？ | [发行版全景图](../docs/00-onboarding/03-发行版全景图.md) |
+| [开机四棒](../assets/animations/boot-chain.svg) | 从上电到登录，控制棒如何传递？ | [安装第一个 Linux](../docs/00-onboarding/04-安装你的第一个Linux.md) |
+| [树莓派寻址](../assets/animations/pi-network.svg) | DHCP 租约与 mDNS 如何找到设备？ | [远程连接](../docs/05-raspberry-pi/03-远程连接与基础配置.md) |
 
 配合 [实物图鉴](hardware-gallery.md) 看真实设备，回到 [学习路线](../LEARNING_PATHS.md) 选择下一项成果。

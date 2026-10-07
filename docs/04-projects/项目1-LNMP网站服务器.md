@@ -242,7 +242,8 @@ curl -I http://你的云主机公网IP            # 从外部再验一次
 
 ## 📺 推荐视频
 
-- [YouTube · systemd 服务管理](https://www.youtube.com/watch?v=Kzpm-rGAXos) — Learn Linux TV，47分40秒。服务管理预备知识，不是完整 LNMP 安装录像。
+- [YouTube · systemd 服务管理](https://www.youtube.com/watch?v=Kzpm-rGAXos) — Learn Linux TV，47分40秒。服务管理与数据库安装预备；LNMP 完整部署与验收见正文。
+- [B站 · 安装配置 MySQL 5.7](https://www.bilibili.com/video/BV1Sv411r7vd/?p=89) — 韩顺平，P89，15分14秒。服务管理与数据库安装预备；LNMP 完整部署与验收见正文。
 
 [![systemd 服务管理 视频封面](https://i.ytimg.com/vi/Kzpm-rGAXos/hqdefault.jpg)](https://www.youtube.com/watch?v=Kzpm-rGAXos)
 

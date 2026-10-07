@@ -234,6 +234,7 @@ Swap:          2.0Gi          0B       2.0Gi
 ## 📺 推荐视频
 
 - [YouTube · Linux 的第一印象](https://www.youtube.com/watch?v=rrB13utjYV4) — Fireship，2分41秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [B站 · Linux 应用领域](https://www.bilibili.com/video/BV1Sv411r7vd/?p=2) — 韩顺平，P2，5分5秒。观看对应主题后，回到本章用实际输入和输出验证。
 
 [![Linux 的第一印象 视频封面](https://i.ytimg.com/vi/rrB13utjYV4/hqdefault.jpg)](https://www.youtube.com/watch?v=rrB13utjYV4)
 
