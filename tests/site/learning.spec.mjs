@@ -10,7 +10,7 @@ test('home shows the actual catalog and accessible route entries', async ({ page
   await expect(page.locator('.hero h1')).toContainText('能动手的本领');
   await expect(page.locator('.stat-strip')).toContainText('42');
   await expect(page.locator('.stat-strip')).toContainText('32');
-  await expect(page.locator('.stat-strip')).toContainText('63');
+  await expect(page.locator('.stat-strip')).toContainText('66');
   await expect(page.locator('.chapter-link')).toHaveCount(42);
   await page.getByRole('link', { name: '开始第一课' }).click();
   await expect(page.locator('.article h1')).toContainText('为什么人人');
@@ -223,6 +223,49 @@ test('search supports arrow-key selection and Enter opens the picked result', as
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(new RegExp(`#${selectedHref.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
   await expect(page.locator('main')).not.toContainText('没有找到');
+});
+
+test('video page arrow keys navigate between adjacent videos', async ({ page }) => {
+  await page.goto('#video=b-vim');
+  await expect(page.locator('#video-stage')).toBeVisible();
+  await page.keyboard.press('ArrowRight');
+  await expect(page).toHaveURL(/#video=b-man/);
+  await page.keyboard.press('ArrowLeft');
+  await expect(page).toHaveURL(/#video=b-vim/);
+});
+
+test('theme toggle cycles system/dark/light and remembers the choice', async ({ page }) => {
+  await page.goto('');
+  const toggle = page.locator('#theme-toggle');
+  await expect(toggle).toBeVisible();
+  await toggle.click();
+  await expect(page.locator('html')).toHaveClass(/dark/);
+  await page.reload();
+  await expect(page.locator('html')).toHaveClass(/dark/);
+  await toggle.click();
+  await expect(page.locator('html')).not.toHaveClass(/dark/);
+});
+
+test('back-to-top appears after scrolling and returns to the top', async ({ page }) => {
+  await page.goto(`#read=${encodeURIComponent('docs/01-basics/02-查看与编辑文件-Vim.md')}`);
+  await expect(page.locator('.article h1')).toBeVisible();
+  const button = page.locator('#back-to-top');
+  await expect(button).toBeHidden();
+  await page.evaluate(() => window.scrollTo(0, 1200));
+  await expect(button).toBeVisible();
+  await button.click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(50);
+});
+
+test('progress export copies the completed list as JSON', async ({ page }) => {
+  await page.addInitScript(() => Object.defineProperty(navigator, 'clipboard', { value: { writeText: async text => { window.__copied = text; } } }));
+  await page.goto(`#read=${encodeURIComponent('docs/01-basics/01-文件与目录操作.md')}`);
+  await page.locator('[data-complete]').click();
+  await page.locator('[data-action="export-progress"]').click();
+  await expect.poll(() => page.evaluate(() => window.__copied)).toContain('completed');
+  const payload = JSON.parse(await page.evaluate(() => window.__copied));
+  expect(Array.isArray(payload.completed)).toBe(true);
+  expect(payload.completed).toContain('docs/01-basics/01-文件与目录操作.md');
 });
 
 test('dark mode remaps theme variables and keeps reading surface readable', async ({ page }) => {

@@ -59,7 +59,7 @@ jobs:
         run: pnpm run build
       - name: Install Chromium for browser checks
         run: |
-          sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+          sudo apt-get update && sudo apt-get install -y fonts-noto-cjk fonts-liberation
           pnpm exec playwright install --with-deps chromium
       - name: Test desktop, mobile and media controls
         run: pnpm run test:site

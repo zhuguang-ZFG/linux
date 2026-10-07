@@ -21,7 +21,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <rect x="40" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
 <rect class="focus phase-0" x="40" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
 <text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 查看位置</text>
-<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">pwd → /home/alice/projects</text>
+<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">pwd → /home/alice</text>
 <text x="56" y="252" fill="#c9d1d9" font-size="14">相对路径从此处出发</text>
 <text x="56" y="276" fill="#9da7b3" font-size="14">绝对路径恒从 / 写起</text>
 <circle cx="148" cy="320" r="5" fill="#62758b"/>
@@ -50,7 +50,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 快捷方式</text>
 <text class="code" x="836" y="221" fill="#79c0ff" font-size="13">cd ~/downloads</text>
 <text x="836" y="252" fill="#c9d1d9" font-size="14">~ 是家目录缩写</text>
-<text x="836" y="276" fill="#9da7b3" font-size="14">绝对引用 /var/log 不迷路</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">引用 /var/log 不迷路</text>
 <circle cx="928" cy="320" r="5" fill="#62758b"/>
 </g>
 <rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>

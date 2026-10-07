@@ -50,7 +50,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 武装进程</text>
 <text class="code" x="836" y="221" fill="#79c0ff" font-size="13">docker run 创建容器</text>
 <text x="836" y="252" fill="#c9d1d9" font-size="14">MB 级、秒级启动</text>
-<text x="836" y="276" fill="#9da7b3" font-size="14">共享内核，隔离弱于虚拟机</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">共享内核，弱于虚拟机</text>
 <circle cx="928" cy="320" r="5" fill="#62758b"/>
 </g>
 <rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>

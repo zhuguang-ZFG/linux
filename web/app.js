@@ -3,6 +3,31 @@ const sidebar = document.querySelector('#sidebar');
 const search = document.querySelector('#search');
 const results = document.querySelector('#search-results');
 const escape = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+const themeLabel = { system: '跟随系统', dark: '深色', light: '浅色' };
+let themePreference;
+try { themePreference = localStorage.getItem('linux-course-theme') || 'system'; } catch { themePreference = 'system'; }
+const darkQuery = matchMedia('(prefers-color-scheme: dark)');
+function applyTheme() {
+  const dark = themePreference === 'dark' || (themePreference === 'system' && darkQuery.matches);
+  document.documentElement.classList.toggle('dark', dark);
+  const label = themeLabel[themePreference];
+  const btn = document.querySelector('#theme-toggle');
+  if (btn) { btn.title = `主题：${label}（点击切换）`; btn.setAttribute('aria-label', `切换主题（当前：${label}）`); }
+}
+applyTheme();
+document.querySelector('#theme-toggle')?.addEventListener('click', () => {
+  themePreference = { system: 'dark', dark: 'light', light: 'system' }[themePreference];
+  try { localStorage.setItem('linux-course-theme', themePreference); } catch { /* session only */ }
+  applyTheme();
+});
+darkQuery.addEventListener('change', () => { if (themePreference === 'system') applyTheme(); });
+const topButton = document.querySelector('#back-to-top');
+if (topButton) {
+  const onScroll = () => { topButton.hidden = window.scrollY < 600; };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  onScroll();
+}
 const readRoute = id => `#read=${encodeURIComponent(id)}`;
 const videoRoute = id => `#video=${encodeURIComponent(id)}`;
 const animationRoute = file => `#animation=${encodeURIComponent(file)}`;
@@ -53,7 +78,7 @@ function renderSidebar() {
     <div class="nav-group-label">PRACTICE · 实践工具</div>
     ${nav(readRoute('resources/prompt-lab.md'), '✦', '提示词练习')}${nav(readRoute('exercises/README.md'), '✓', '练习与自测')}
     ${nav(readRoute('resources/environment-matrix.md'), '⌘', '实验环境对照')}
-  </nav><div class="sidebar-progress"><span>我的学习进度</span><span style="float:right">${completed.size} / ${data.chapterOrder.length}</span><div class="progress-track"><div class="progress-fill" style="width:${completed.size / data.chapterOrder.length * 100}%"></div></div><span>仅保存在当前浏览器</span> · <button class="text-button" data-action="clear-progress">清空标记</button></div>`;
+  </nav><div class="sidebar-progress"><span>我的学习进度</span><span style="float:right">${completed.size} / ${data.chapterOrder.length}</span><div class="progress-track"><div class="progress-fill" style="width:${completed.size / data.chapterOrder.length * 100}%"></div></div><span>仅保存在当前浏览器</span> · <button class="text-button" data-action="clear-progress">清空标记</button> · <button class="text-button" data-action="export-progress">导出标记</button></div>`;
 }
 
 function videoCard(video) {
@@ -177,6 +202,14 @@ function videoPage(id) {
   const nextVideo = data.videos[videoIndex + 1];
   main.innerHTML = `<div class="page"><div class="breadcrumb"><a href="#videos">视频课堂</a> / ${video.platform === 'bilibili' ? 'B站' : 'YouTube'}</div><h1 class="page-title">${escape(video.title)}</h1><p class="page-lead">${escape(video.author)} · ${escape(video.kind)}${video.page ? ` · P${video.page}` : ''} · ${minutes(video.duration)}</p><div class="player-panel"><div class="video-stage" id="video-stage"><img class="video-cover" src="${escape(video.thumbnail)}" alt="" referrerpolicy="no-referrer"><button class="load-player" data-load-video="${escape(id)}">▷ 加载${video.platform === 'bilibili' ? 'B站' : 'YouTube'}播放器</button></div><div class="player-meta"><a class="button small" href="${escape(video.url)}" target="_blank" rel="noopener noreferrer">在原站打开 ↗</a><p>${escape(video.note)}</p><p>如果播放器不可用、要求登录或所在网络无法访问，请使用原站入口。不会自动播放或下载视频。</p><details><summary>来源与核验记录</summary><p>原站标题：${escape(video.providerTitle)}<br>资料核对：${escape(video.verification.checkedAt.slice(0, 10))} · ${video.platform === 'bilibili' ? '平台接口核对分P、CID、作者与时长' : '平台 oEmbed 核对标题、作者与封面'}<br>完整实播：尚未逐条完成。接口可读取不代表所有地区都能播放。</p><a href="${escape(video.verification.source)}" target="_blank" rel="noopener noreferrer">元数据来源 ↗</a></details></div></div>
     <section><div class="section-heading"><div><h2>看完，回到这里动手</h2><p>将视频里的解释与自己的实际输出对照。</p></div></div><div class="route-grid">${related.filter(doc => doc.index >= 0).slice(0, 8).map(doc => `<a class="route-card" href="${readRoute(doc.id)}"><span class="tag">${escape(data.stageNames[doc.stage])}</span><h3>${escape(doc.title)}</h3><p>${escape(doc.duration)}</p><span class="arrow">阅读与实验 →</span></a>`).join('')}</div></section>${prevVideo || nextVideo ? `<nav class="lesson-next" aria-label="相邻视频">${prevVideo ? `<a href="${videoRoute(prevVideo.id)}">← ${escape(prevVideo.title)}</a>` : '<span></span>'}${nextVideo ? `<a href="${videoRoute(nextVideo.id)}">${escape(nextVideo.title)} →</a>` : ''}</nav>` : ''}${footer()}</div>`;
+  const onVideoKey = event => {
+    if (event.target?.tagName && /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+    if (event.key === 'ArrowLeft' && prevVideo) { event.preventDefault(); location.hash = videoRoute(prevVideo.id); }
+    else if (event.key === 'ArrowRight' && nextVideo) { event.preventDefault(); location.hash = videoRoute(nextVideo.id); }
+  };
+  document.addEventListener('keydown', onVideoKey);
+  cleanup = () => document.removeEventListener('keydown', onVideoKey);
 }
 
 function loadVideo(id) {
@@ -328,6 +361,10 @@ document.addEventListener('click', event => {
     complete.textContent = completed.has(id) ? '✓ 已标记学完' : '标记已学完';
   }
   if (event.target.closest('[data-action="clear-progress"]')) { completed.clear(); saveProgress(); renderSidebar(); render(); toast('已清空本机学习标记'); }
+  if (event.target.closest('[data-action="export-progress"]')) {
+    const payload = JSON.stringify({ exportedAt: new Date().toISOString(), completed: [...completed] }, null, 2);
+    navigator.clipboard.writeText(payload).then(() => toast('已复制学习标记 JSON，可粘贴保存或换机恢复')).catch(() => toast('无法自动复制，请手动选择标记内容'));
+  }
   const load = event.target.closest('[data-load-video]'); if (load) loadVideo(load.dataset.loadVideo);
   if (!event.target.closest('.search-wrap')) results.hidden = true;
 });

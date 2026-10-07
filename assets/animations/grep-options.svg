@@ -48,7 +48,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <rect x="820" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
 <rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
 <text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 管道统计</text>
-<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">grep -i error | wc -l</text>
+<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">grep -c error</text>
 <text x="836" y="252" fill="#c9d1d9" font-size="14">下游继续处理</text>
 <text x="836" y="276" fill="#9da7b3" font-size="14">与 -c 结果一致</text>
 <circle cx="928" cy="320" r="5" fill="#62758b"/>

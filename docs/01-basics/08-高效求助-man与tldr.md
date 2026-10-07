@@ -20,6 +20,10 @@
 
 ## 🧠 核心概念
 
+![求助四件套原理动画](../../assets/animations/help-path.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=help-path.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![man 手册原理动画](../../assets/animations/man-help.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=man-help.svg)。动画中的输入输出为教学示意，需用本章实验验证。

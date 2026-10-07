@@ -467,7 +467,7 @@
       },
       {
         "title": "04 返回响应",
-        "description": "结果经 Nginx 返回；检查页面，不只看进程状态"
+        "description": "结果经 Nginx 返回；检查页面，不只盯进程"
       }
     ]
   },
@@ -701,7 +701,7 @@
       },
       {
         "title": "04 手动兜底",
-        "description": "dpkg 手动装包缺依赖时报错；用它自动补齐依赖"
+        "description": "手动装包缺依赖即报错；用它自动补齐依赖"
       }
     ]
   },
@@ -805,7 +805,7 @@
       },
       {
         "title": "04 首次启动",
-        "description": "DHCP 列表或 mDNS 找地址；关机用 sudo poweroff"
+        "description": "DHCP 或 mDNS 找地址；关机用 sudo poweroff"
       }
     ]
   },
@@ -849,7 +849,7 @@
       },
       {
         "title": "02 四大家族",
-        "description": "Debian / RHEL / Arch / SUSE；包管理器就是方言"
+        "description": "Debian RHEL Arch SUSE；包管理器就是方言"
       },
       {
         "title": "03 按需选型",
@@ -1009,7 +1009,7 @@
       },
       {
         "title": "03 内核代办",
-        "description": "命中页缓存直接拷贝；未命中发起磁盘 IO 并睡眠"
+        "description": "命中页缓存直接拷贝；未命中发起磁盘 IO"
       },
       {
         "title": "04 返回用户态",
@@ -1039,7 +1039,7 @@
       },
       {
         "title": "04 默认兜底",
-        "description": "没有规则命中走默认；所以先 allow SSH 再 enable"
+        "description": "没有规则命中走默认；先 allow SSH 再 enable"
       }
     ]
   },
@@ -1065,7 +1065,7 @@
       },
       {
         "title": "04 武装进程",
-        "description": "MB 级、秒级启动；共享内核，隔离弱于虚拟机"
+        "description": "MB 级、秒级启动；共享内核，弱于虚拟机"
       }
     ]
   },
@@ -1091,7 +1091,7 @@
       },
       {
         "title": "04 联合判读",
-        "description": "高负载 + 低 CPU → 查磁盘；都高 → 过载；都低 → 突发"
+        "description": "高负载低 CPU → 查磁盘；都高 → 过载；都低 → 突发"
       }
     ]
   },
@@ -1455,7 +1455,7 @@
       },
       {
         "title": "04 快捷方式",
-        "description": "~ 是家目录缩写；绝对引用 /var/log 不迷路"
+        "description": "~ 是家目录缩写；引用 /var/log 不迷路"
       }
     ]
   },
@@ -1508,6 +1508,84 @@
       {
         "title": "04 事件回调",
         "description": "按下亮、松开灭；bounce_time 滤抖动"
+      }
+    ]
+  },
+  {
+    "file": "license-compare.svg",
+    "title": "三种开源许可证",
+    "chapter": "docs/00-onboarding/02-Linux的前世今生.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 三张许可证",
+        "description": "都是开源许可证；义务与气质不同"
+      },
+      {
+        "title": "02 GPL 传染",
+        "description": "Copyleft 传递自由；闭源分发不可"
+      },
+      {
+        "title": "03 MIT 宽松",
+        "description": "几乎无附加义务；可并入闭源项目"
+      },
+      {
+        "title": "04 Apache 专利",
+        "description": "兼容企业场景；也允许闭源使用"
+      }
+    ]
+  },
+  {
+    "file": "help-path.svg",
+    "title": "求助四件套",
+    "chapter": "docs/01-basics/08-高效求助-man与tldr.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 速览参数",
+        "description": "几行参数速览；不进入分页器"
+      },
+      {
+        "title": "02 拆穿身份",
+        "description": "别名 / 内建 / 外部；which 找不到内建"
+      },
+      {
+        "title": "03 权威手册",
+        "description": "完整 SYNOPSIS 与选项；less 里 q 退出"
+      },
+      {
+        "title": "04 抄个例子",
+        "description": "几个能跑的例子；社区维护非权威"
+      }
+    ]
+  },
+  {
+    "file": "prompt-verify.svg",
+    "title": "结构化提问",
+    "chapter": "docs/03-pro/07-AI辅助学习与运维.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 环境摘要",
+        "description": "上下文完整才可比对；不贴密钥与完整日志"
+      },
+      {
+        "title": "02 三栏拆解",
+        "description": "AI 先分类再回答；缺失信息明说不知道"
+      },
+      {
+        "title": "03 只读检查",
+        "description": "每条说明验证什么；暂不动配置与服务"
+      },
+      {
+        "title": "04 亲自核对",
+        "description": "输出记录为实测；未解决回到循环"
       }
     ]
   }

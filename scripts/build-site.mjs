@@ -107,6 +107,7 @@ writeFileSync(path.join(out, 'data/search.json'), JSON.stringify({ documents: se
 cpSync(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true });
 cpSync(path.join(root, 'web/index.html'), path.join(out, 'index.html'));
 cpSync(path.join(root, 'web/styles.css'), path.join(out, 'styles.css'));
+if (existsSync(path.join(root, 'web/og-image.png'))) cpSync(path.join(root, 'web/og-image.png'), path.join(out, 'og-image.png'));
 writeFileSync(path.join(out, '.nojekyll'), '');
 writeFileSync(path.join(out, 'data/course.json'), JSON.stringify({ documents: catalog, chapterOrder, stageNames, videos: videos.videos,
   videoNotice: videos.notice, videosCheckedAt: videos.checkedAt, animations, repo,

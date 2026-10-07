@@ -41,7 +41,7 @@ text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
 <text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 内核代办</text>
 <text class="code" x="576" y="221" fill="#79c0ff" font-size="13">校验 fd → 取数据</text>
 <text x="576" y="252" fill="#c9d1d9" font-size="14">命中页缓存直接拷贝</text>
-<text x="576" y="276" fill="#9da7b3" font-size="14">未命中发起磁盘 IO 并睡眠</text>
+<text x="576" y="276" fill="#9da7b3" font-size="14">未命中发起磁盘 IO</text>
 <circle cx="668" cy="320" r="5" fill="#62758b"/>
 </g>
 <g>

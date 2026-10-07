@@ -23,6 +23,10 @@
 
 ## 🧠 核心概念
 
+![三种开源许可证原理动画](../../assets/animations/license-compare.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=license-compare.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![内核与发行版原理动画](../../assets/animations/kernel-distro.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=kernel-distro.svg)。动画中的输入输出为教学示意，需用本章实验验证。

@@ -22,7 +22,8 @@
       }
     ],
     "animations": [
-      "kernel-distro.svg"
+      "kernel-distro.svg",
+      "license-compare.svg"
     ]
   },
   "docs/00-onboarding/03-发行版全景图.md": {
@@ -150,7 +151,8 @@
       }
     ],
     "animations": [
-      "man-help.svg"
+      "man-help.svg",
+      "help-path.svg"
     ]
   },
   "docs/01-basics/09-从实物认识Linux硬件.md": {
@@ -376,7 +378,8 @@
       }
     ],
     "animations": [
-      "ai-review-loop.svg"
+      "ai-review-loop.svg",
+      "prompt-verify.svg"
     ]
   },
   "docs/04-projects/项目1-LNMP网站服务器.md": {

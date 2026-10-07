@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="从第一条命令到本地 AI：可阅读、可观看、可动手验证的中文 Linux 学习站。">
   <meta name="theme-color" content="#087f8c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="通往 Linux 之路 · 边看边练">
+  <meta property="og:description" content="从第一条命令到本地 AI：原创 SVG 原理动画、B站与 YouTube 视频选段、Wikimedia 实物图鉴、练习与速查表——可阅读、可观看、可动手验证的中文 Linux 学习站。">
+  <meta property="og:url" content="https://zhuguang-zfg.github.io/linux/">
+  <meta property="og:image" content="https://zhuguang-zfg.github.io/linux/og-image.png">
   <title>通往 Linux 之路 · 边看边练</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23087f8c'/%3E%3Cpath d='m10 13 7 7-7 7m11 0h9' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E">
@@ -19,6 +24,7 @@
       <input id="search" type="search" placeholder="搜索命令、章节或视频…" autocomplete="off" aria-controls="search-results">
       <kbd>/</kbd><div id="search-results" class="search-results" hidden></div>
     </div>
+    <button class="icon-button" id="theme-toggle" aria-label="切换主题" title="主题：跟随系统">◐</button>
     <a class="github-link" href="https://github.com/zhuguang-ZFG/linux" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
   </header>
   <div class="layout">
@@ -27,6 +33,7 @@
     <main id="main" tabindex="-1"><div class="initial-loading"><span class="brand-mark">›_</span><p>正在准备你的 Linux 学习地图…</p></div></main>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
+  <button id="back-to-top" aria-label="回到顶部" hidden>↑</button>
   <noscript><p>学习站需要 JavaScript。也可以直接阅读 <a href="https://github.com/zhuguang-ZFG/linux">GitHub 上的完整 Markdown 教程</a>。</p></noscript>
   <script type="module" src="./static/app.js"></script>
 </body>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="640" viewBox="0 0 1080 640" role="img" aria-labelledby="title desc">
+<title id="title">结构化提问：让 AI 给出可验证的回答</title>
+<desc id="desc">环境摘要先行，事实/假设/缺口分列，只给只读检查。四步示意，每 12 秒一轮，播放三轮后停止。示意动画：模型输出只是待核对文本；链接存在不代表结论成立，实测为准。</desc>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+.code{font-family:Consolas,monospace}
+.focus{opacity:0}
+.output{opacity:0}.output.phase-0{opacity:1}
+@keyframes step0{0%,24.9%{opacity:1}25%,100%{opacity:0}}.phase-0{animation:step0 12s linear 3}@keyframes step1{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,100%{opacity:0}}.phase-1{animation:step1 12s linear 3}@keyframes step2{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}.phase-2{animation:step2 12s linear 3}@keyframes step3{0%,74.9%{opacity:0}75%,100%{opacity:1}}.phase-3{animation:step3 12s linear 3}
+@keyframes travel{0%,15%{transform:translateX(0)}25%,40%{transform:translateX(260px)}50%,65%{transform:translateX(520px)}75%,100%{transform:translateX(780px)}}
+.token{animation:travel 12s ease-in-out 3}
+@media (prefers-reduced-motion:reduce){.focus,.token,.output{animation:none}.token{display:none}}
+</style>
+<rect width="1080" height="640" rx="22" fill="#0d1117"/>
+<text x="40" y="48" fill="#7ee787" font-size="13" letter-spacing="2">LINUX · VISUAL LAB</text>
+<text x="40" y="88" fill="#f0f6fc" font-size="28" font-weight="bold">结构化提问：让 AI 给出可验证的回答</text>
+<text x="40" y="120" fill="#9da7b3" font-size="16">环境摘要先行，事实/假设/缺口分列，只给只读检查</text>
+<path d="M148 320 H928" fill="none" stroke="#303d4d" stroke-width="3"/>
+
+<g>
+<rect x="40" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-0" x="40" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="56" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">01 环境摘要</text>
+<text class="code" x="56" y="221" fill="#79c0ff" font-size="13">os-release / uname -r</text>
+<text x="56" y="252" fill="#c9d1d9" font-size="14">上下文完整才可比对</text>
+<text x="56" y="276" fill="#9da7b3" font-size="14">不贴密钥与完整日志</text>
+<circle cx="148" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="300" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-1" x="300" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="316" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">02 三栏拆解</text>
+<text class="code" x="316" y="221" fill="#79c0ff" font-size="13">事实 / 假设 / 缺口</text>
+<text x="316" y="252" fill="#c9d1d9" font-size="14">AI 先分类再回答</text>
+<text x="316" y="276" fill="#9da7b3" font-size="14">缺失信息明说不知道</text>
+<circle cx="408" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="560" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-2" x="560" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="576" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">03 只读检查</text>
+<text class="code" x="576" y="221" fill="#79c0ff" font-size="13">最多三条命令</text>
+<text x="576" y="252" fill="#c9d1d9" font-size="14">每条说明验证什么</text>
+<text x="576" y="276" fill="#9da7b3" font-size="14">暂不动配置与服务</text>
+<circle cx="668" cy="320" r="5" fill="#62758b"/>
+</g>
+<g>
+<rect x="820" y="157" width="220" height="145" rx="14" fill="#161b22" stroke="#303d4d"/>
+<rect class="focus phase-3" x="820" y="157" width="220" height="145" rx="14" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<text x="836" y="189" fill="#f0f6fc" font-size="18" font-weight="bold">04 亲自核对</text>
+<text class="code" x="836" y="221" fill="#79c0ff" font-size="13">man 条目打开看</text>
+<text x="836" y="252" fill="#c9d1d9" font-size="14">输出记录为实测</text>
+<text x="836" y="276" fill="#9da7b3" font-size="14">未解决回到循环</text>
+<circle cx="928" cy="320" r="5" fill="#62758b"/>
+</g>
+<rect x="40" y="350" width="1000" height="123" rx="12" fill="#172735"/>
+<text x="58" y="375" fill="#7c9aab" font-size="12">示意输入与状态 · 非真实采样</text>
+<g class="output phase-0">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">发行版 / Bash / 权限 → 摘要</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">脱敏后填入提示词</text>
+</g>
+<g class="output phase-1">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">事实：日志含 ERROR 一行</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">假设：磁盘已满（缺证据）</text>
+</g>
+<g class="output phase-2">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">检查命令：df -h / grep -c</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">每条都说明验证什么</text>
+</g>
+<g class="output phase-3">
+<text class="code" x="58" y="407" fill="#b5e4d4" font-size="16">记录实测输出与范围</text>
+<text class="code" x="58" y="434" fill="#b5e4d4" font-size="16">否定或采纳都写理由</text>
+</g>
+<circle class="token" cx="148" cy="320" r="8" fill="#7ee787"/>
+<rect x="40" y="496" width="1000" height="106" rx="12" fill="#101f2c"/>
+<text x="58" y="530" fill="#e6edf3" font-size="16">动手：用结构化提示词提问 grep 退出码，对照 man grep 的 EXIT STATUS 核对模型回答。</text>
+<text x="58" y="561" fill="#9da7b3" font-size="14">示意动画：模型输出只是待核对文本；链接存在不代表结论成立，实测为准。</text>
+<text x="58" y="585" fill="#7790a9" font-size="12">静态文字始终可读 · 支持减少动态效果设置 · 学习站可暂停与单步</text>
+</svg>
