@@ -27,6 +27,10 @@ flowchart LR
 
 本章针对 Pi 4/5 的 40 针排针。gpiozero 的 `LED(17)` 使用 **BCM GPIO17**，不是物理第 17 针。GPIO 信号为 3.3V 逻辑，不能接入 5V 信号；接线前关机断电，LED 必须串联限流电阻，不直接驱动电机。
 
+![树莓派 GPIO 引脚定义图](../../assets/images/raspberry-pi-gpio.png)
+
+BCM 编号与物理针脚对照，接线前断电对图。图片：Andy Oakley，CC0，见 [署名](../../assets/images/CREDITS.md)。
+
 ![点灯示意动画](../../assets/animations/gpio-blink.svg)
 
 动画表达工作原理，实际针脚方向以主板和 `pinout` 输出为准。
@@ -49,6 +53,10 @@ python3 scripts/pi/blink.py
 ```
 
 预期 LED 每半秒切换亮灭，Ctrl-C 后关闭。程序用 `with LED(17)` 管理资源，用 `pause()` 等待信号，不用占满 CPU 的无限切换循环。
+
+![面包板 LED 电路实物](../../assets/images/pi-led-breadboard.jpg)
+
+面包板点灯的实际连接形态；本实验的 330Ω 限流电阻按标识或测量确认。照片：Mitch Barrie，CC BY-SA 2.0，见 [署名](../../assets/images/CREDITS.md)。
 
 ### 增加按钮输入
 
