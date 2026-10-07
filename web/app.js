@@ -140,6 +140,20 @@ async function renderDiagrams(version) {
     if (version !== routeVersion) return;
     mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'neutral', fontFamily: 'Microsoft YaHei, sans-serif' });
     await mermaid.run({ nodes, suppressErrors: false });
+    nodes.forEach(node => {
+      const svg = node.querySelector('svg');
+      const viewBox = (svg?.getAttribute('viewBox') || '').split(/\s+/).map(Number);
+      const width = viewBox[2];
+      if (!svg || !Number.isFinite(width) || width <= node.clientWidth) return;
+      svg.style.width = `${width}px`;
+      svg.style.height = 'auto';
+      svg.style.maxWidth = 'none';
+      if (node.nextElementSibling?.classList.contains('mermaid-hint')) return;
+      const hint = document.createElement('p');
+      hint.className = 'mermaid-hint';
+      hint.textContent = `↔ 宽幅依赖图（原尺寸 ${Math.round(width)}px），可横向滚动查看完整内容`;
+      node.insertAdjacentElement('afterend', hint);
+    });
   } catch {
     if (version !== routeVersion) return;
     nodes.forEach((node, index) => { node.textContent = originals[index]; node.setAttribute('aria-label', '图解源码，可在 GitHub 查看'); });
