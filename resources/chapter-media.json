@@ -131,7 +131,8 @@
     ],
     "animations": [
       "permission-bits.svg",
-      "sudo-elevation.svg"
+      "sudo-elevation.svg",
+      "umask-bits.svg"
     ]
   },
   "docs/01-basics/04-压缩与归档.md": {
@@ -183,7 +184,8 @@
     ],
     "animations": [
       "process-lifecycle.svg",
-      "process-signals.svg"
+      "process-signals.svg",
+      "oom-killer.svg"
     ]
   },
   "docs/01-basics/07-环境变量与PATH.md": {
@@ -236,6 +238,7 @@
     "animations": [
       "shell-pipeline.svg",
       "stdout-stderr.svg",
+      "pipe-buffer.svg",
       "boot-sequence.svg",
       "terminal-typing.svg"
     ]
@@ -318,6 +321,7 @@
     "animations": [
       "systemd-restart.svg",
       "journal-query.svg",
+      "journald-flow.svg",
       "boot-sequence.svg",
       "process-lifecycle.svg"
     ]
@@ -339,7 +343,8 @@
     ],
     "animations": [
       "filesystem-mount.svg",
-      "inode-links.svg"
+      "inode-links.svg",
+      "page-cache.svg"
     ]
   },
   "docs/02-advanced/08-网络基础与远程连接.md": {
@@ -360,7 +365,8 @@
     "animations": [
       "packet-journey.svg",
       "ssh-handshake.svg",
-      "dns-lookup.svg"
+      "dns-lookup.svg",
+      "tcp-handshake.svg"
     ]
   },
   "docs/02-advanced/09-Git与学习笔记协作.md": {
@@ -372,7 +378,8 @@
     ],
     "animations": [
       "git-branches.svg",
-      "git-commit.svg"
+      "git-commit.svg",
+      "git-rebase.svg"
     ]
   },
   "docs/03-pro/01-性能观测与调优.md": {
@@ -441,7 +448,8 @@
     ],
     "animations": [
       "docker-volume.svg",
-      "container-isolation.svg"
+      "container-isolation.svg",
+      "cgroup-limit.svg"
     ]
   },
   "docs/03-pro/05-自动化运维.md": {

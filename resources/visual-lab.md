@@ -1,6 +1,6 @@
 # 动画实验室：先预测，再播放，最后动手
 
-本库共 74 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 68 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
+本库共 82 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 76 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
 
 动画是原理示意，不是从真实机器采集的运行录像。验收仍要回到命令与实际输出。
 
@@ -120,5 +120,14 @@
 | [发行版家族](../assets/animations/distro-package.svg) | 包管理器如何标记发行版血统？ | [发行版全景图](../docs/00-onboarding/03-发行版全景图.md) |
 | [开机四棒](../assets/animations/boot-chain.svg) | 从上电到登录，控制棒如何传递？ | [安装第一个 Linux](../docs/00-onboarding/04-安装你的第一个Linux.md) |
 | [树莓派寻址](../assets/animations/pi-network.svg) | DHCP 租约与 mDNS 如何找到设备？ | [远程连接](../docs/05-raspberry-pi/03-远程连接与基础配置.md) |
+
+| [管道缓冲](../assets/animations/pipe-buffer.svg) | 数据在管道里如何排队与中断？ | [管道与重定向](../docs/02-advanced/01-管道与重定向.md) |
+| [umask 位运算](../assets/animations/umask-bits.svg) | 新文件权限是怎么算出来的？ | [用户与权限](../docs/01-basics/03-用户与权限.md) |
+| [页缓存](../assets/animations/page-cache.svg) | 写完之后数据去了哪里？ | [磁盘与文件系统](../docs/02-advanced/07-磁盘与文件系统.md) |
+| [OOM 选择](../assets/animations/oom-killer.svg) | 内存告急时谁会被牺牲？ | [进程管理](../docs/01-basics/06-进程管理.md) |
+| [journald 日志流](../assets/animations/journald-flow.svg) | 日志从哪来、在哪里被检索？ | [systemd 与日志](../docs/02-advanced/06-systemd服务与日志.md) |
+| [cgroup 限额](../assets/animations/cgroup-limit.svg) | 容器资源限制写在哪里？ | [容器与虚拟化](../docs/03-pro/04-容器与虚拟化.md) |
+| [TCP 握手](../assets/animations/tcp-handshake.svg) | 连接建立与关闭的完整过程 | [网络与远程连接](../docs/02-advanced/08-网络基础与远程连接.md) |
+| [Git 变基](../assets/animations/git-rebase.svg) | 变基与合并改写了什么？ | [Git 协作](../docs/02-advanced/09-Git与学习笔记协作.md) |
 
 配合 [实物图鉴](hardware-gallery.md) 看真实设备，回到 [学习路线](../LEARNING_PATHS.md) 选择下一项成果。

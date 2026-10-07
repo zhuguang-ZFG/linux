@@ -17,6 +17,10 @@ Git 解决的正是这个问题：它把你的每次修改变成**有说明、�
 
 ## 🧠 核心概念
 
+![变基还是合并原理动画](../../assets/animations/git-rebase.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=git-rebase.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 ![Git 提交三区原理动画](../../assets/animations/git-commit.svg)
 
 [在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=git-commit.svg)。动画中的输入输出为教学示意，需用本章实验验证。

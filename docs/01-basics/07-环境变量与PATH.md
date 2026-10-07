@@ -269,6 +269,17 @@ source ~/.bashrc                         # 永久生效
 - [ ] 我会定义 `alias` 并知道脚本里看不到别名
 - [ ] 我追加 PATH 时永远带着 `$PATH:`，不会覆盖清单
 
+## 🧭 知识连通
+
+| 方向 | 内容 |
+|---|---|
+| 前置 | [文件与目录操作](01-文件与目录操作.md)：PATH 里装的都是目录 |
+| 本章产出 | 变量作用域、PATH 查找规则、shell 与会话的继承关系 |
+| 后续用到 | [Bash 脚本](../02-advanced/05-Bash脚本编程.md)、[systemd 服务的环境](../02-advanced/06-systemd服务与日志.md)、[cron 任务的精简 PATH](../03-pro/05-自动化运维.md)、AI/GPU 工具链安装 |
+| 配套资源 | [错误索引](../../resources/error-index.md)（command not found） · [环境对照](../../resources/environment-matrix.md) |
+
+> 「cron 里能跑、终端里不能跑」的经典谜题答案就在本章：不同场景加载的环境不一样。
+
 ## 🔗 延伸阅读
 
 - [man7.org · Linux man-pages](https://man7.org/linux/man-pages/)：`bash(1)` 的 INVOCATION 一节讲透启动文件

@@ -307,6 +307,17 @@ realpath: .../no-such-dir: No such file or directory
 - [ ] 能逐字解释 `set -euo pipefail` 三个部分各防什么事故
 - [ ] 会用 `bash -n` 与 `bash -x` 定位脚本问题
 
+## 🧭 知识连通
+
+| 方向 | 内容 |
+|---|---|
+| 前置 | [管道与重定向](01-管道与重定向.md) + [环境变量与 PATH](../01-basics/07-环境变量与PATH.md) |
+| 本章产出 | 变量、条件、循环、函数、退出码与失败处理 |
+| 后续用到 | [Shell 脚本进阶](../03-pro/06-Shell脚本进阶.md)、[自动化运维](../03-pro/05-自动化运维.md)、[项目 2 巡检](../04-projects/项目2-服务器巡检脚本.md)、本仓库的 `scripts/` 全部脚本 |
+| 配套资源 | [三剑客速查](../../cheatsheets/三剑客速查.md) · [提示词练习](../../resources/prompt-lab.md)（脚本审阅卡） |
+
+> 脚本是「把学会的命令固定成资产」的工具；本仓库的 [备份脚本](../../scripts/backup.sh) 与[其回归测试](../../scripts/backup.test.mjs) 就是本章思想的完整示范。
+
 ## 🔗 延伸阅读
 
 - 《Advanced Bash-Scripting Guide》（Bash 脚本百科全书）：[ABS Guide](https://tldp.org/LDP/abs/html/)

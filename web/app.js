@@ -73,7 +73,7 @@ function renderSidebar() {
   const current = params.get('read');
   const nav = (hash, icon, title, count) => `<a class="nav-link ${location.hash === hash || location.hash.startsWith(`${hash}&`) || (!location.hash && hash === '#home') || (hash === '#videos' && params.has('video')) || (hash === '#animations' && params.has('animation')) ? 'active' : ''}" href="${hash}"><span class="nav-icon" aria-hidden="true">${icon}</span>${title}${count ? `<span class="nav-count">${count}</span>` : ''}</a>`;
   sidebar.innerHTML = `<nav aria-label="主要导航">
-    ${nav('#home', '⌂', '学习首页')}${nav(readRoute('LEARNING_PATHS.md'), '↗', '选择学习路线')}
+    ${nav('#home', '⌂', '学习首页')}${nav(readRoute('LEARNING_PATHS.md'), '↗', '选择学习路线')}${nav(readRoute('resources/knowledge-map.md'), '🕸', '知识地图')}
     ${nav('#videos', '▷', '视频课堂', data.videos.length)}${nav('#animations', '◇', '动画实验室', data.animations.length)}
     ${nav(readRoute('resources/hardware-gallery.md'), '▦', '实物图鉴')}
     <div class="nav-group-label">LEARNING MAP · 学习地图</div>

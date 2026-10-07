@@ -1796,5 +1796,213 @@
         "description": "同一设备同一地址；比板内静态更少冲突"
       }
     ]
+  },
+  {
+    "file": "pipe-buffer.svg",
+    "title": "管道的缓冲区",
+    "chapter": "docs/02-advanced/01-管道与重定向.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 上游写入",
+        "description": "约 64KB 的临时仓库；写满就会被阻塞"
+      },
+      {
+        "title": "02 下游读取",
+        "description": "读走即腾空；两端速度因此解耦"
+      },
+      {
+        "title": "03 下游退出",
+        "description": "管道断开；上游写入收到 SIGPIPE"
+      },
+      {
+        "title": "04 退出码",
+        "description": "上游被信号终止；管道失败要用 pipefail"
+      }
+    ]
+  },
+  {
+    "file": "umask-bits.svg",
+    "title": "新文件权限",
+    "chapter": "docs/01-basics/03-用户与权限.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 基数",
+        "description": "新建时的起点；目录从可执行位开始"
+      },
+      {
+        "title": "02 掩码",
+        "description": "清除对应位；是减法而不是赋值"
+      },
+      {
+        "title": "03 文件结果",
+        "description": "属主保留读写；组与其他去掉写位"
+      },
+      {
+        "title": "04 目录结果",
+        "description": "目录需要 x 才能进入；002 保留同组可写"
+      }
+    ]
+  },
+  {
+    "file": "page-cache.svg",
+    "title": "页缓存",
+    "chapter": "docs/02-advanced/07-磁盘与文件系统.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 应用写入",
+        "description": "数据先到内存；命令立刻返回"
+      },
+      {
+        "title": "02 标记脏页",
+        "description": "内核记下待写；多次写可以被合并"
+      },
+      {
+        "title": "03 后台回写",
+        "description": "按策略异步落盘；sync 强制等待完成"
+      },
+      {
+        "title": "04 拔出安全",
+        "description": "未回写会丢失；文件系统可能损坏"
+      }
+    ]
+  },
+  {
+    "file": "oom-killer.svg",
+    "title": "OOM",
+    "chapter": "docs/01-basics/06-进程管理.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 内存耗尽",
+        "description": "新分配无法满足；系统需要自我保护"
+      },
+      {
+        "title": "02 评分",
+        "description": "占用越大越不重要分越高；不是单纯杀最大进程"
+      },
+      {
+        "title": "03 选择牺牲",
+        "description": "内核日志留下记录；服务可能因此中断"
+      },
+      {
+        "title": "04 防护",
+        "description": "负值提高生存概率；根因仍是内存不足"
+      }
+    ]
+  },
+  {
+    "file": "journald-flow.svg",
+    "title": "日志的旅程",
+    "chapter": "docs/02-advanced/06-systemd服务与日志.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 日志来源",
+        "description": "stdout 与 stderr 也被收集；写入者是多个"
+      },
+      {
+        "title": "02 统一收集",
+        "description": "附带单元与优先级；不再是散装文本"
+      },
+      {
+        "title": "03 存储",
+        "description": "容量可限制；旧日志自动轮替"
+      },
+      {
+        "title": "04 条件检索",
+        "description": "按单元、级别与启动过滤；比翻文件高效"
+      }
+    ]
+  },
+  {
+    "file": "cgroup-limit.svg",
+    "title": "cgroup",
+    "chapter": "docs/03-pro/04-容器与虚拟化.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 限额文件",
+        "description": "位于 /sys/fs/cgroup；运行时只是替你写文件"
+      },
+      {
+        "title": "02 实时计费",
+        "description": "CPU 超出被节流；不是立刻杀掉"
+      },
+      {
+        "title": "03 内存超限",
+        "description": "容器进程被杀；宿主保持可用"
+      },
+      {
+        "title": "04 观察",
+        "description": "显示限额内的用量；容器内 free 是宿主总量"
+      }
+    ]
+  },
+  {
+    "file": "tcp-handshake.svg",
+    "title": "TCP 三次握手",
+    "chapter": "docs/02-advanced/08-网络基础与远程连接.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 SYN",
+        "description": "请求建立连接；携带自己的初始序号"
+      },
+      {
+        "title": "02 SYN+ACK",
+        "description": "同意并回执；两边序号各自独立"
+      },
+      {
+        "title": "03 ACK",
+        "description": "连接建立完成；此时才开始传数据"
+      },
+      {
+        "title": "04 关闭",
+        "description": "两个方向分别关闭；主动方进入 TIME_WAIT"
+      }
+    ]
+  },
+  {
+    "file": "git-rebase.svg",
+    "title": "变基还是合并",
+    "chapter": "docs/02-advanced/09-Git与学习笔记协作.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 分叉现场",
+        "description": "历史分成两条线；先看清分叉再决定"
+      },
+      {
+        "title": "02 合并",
+        "description": "保留真实时序；历史出现两个父提交"
+      },
+      {
+        "title": "03 变基",
+        "description": "历史变直线；所有哈希被改写"
+      },
+      {
+        "title": "04 选择",
+        "description": "本地整理优先变基；强制推送前要三思"
+      }
+    ]
   }
 ]
