@@ -146,7 +146,7 @@ flowchart LR
 
 | 资源 | 说明 |
 |------|------|
-| 📺 [视频资源库](resources/videos.md) | 67 条视频或选段；资料已核对，完整实播状态单独记录 |
+| 📺 [视频资源库](resources/videos.md) | 76 条视频或选段；资料已核对，完整实播状态单独记录 |
 | 📚 [书单与网站](resources/books-and-sites.md) | 5 本书与 10+ 学习网站，包含 TLDP、ArchWiki、explainshell |
 | 📝 [练习题与答案](exercises/) | 六个阶段各一套，选择+实操，答案可折叠 |
 | ⚡ [速查表](cheatsheets/) | 常用命令 / 权限与用户 / 磁盘与存储 / 性能观测 / Vim / 三剑客 / systemd / 网络 / Git / 容器 / 树莓派 |

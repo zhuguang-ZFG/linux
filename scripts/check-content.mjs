@@ -64,6 +64,15 @@ if (Number(/精美动画-(\d+)部/.exec(readme)?.[1]) !== animations.length) fai
 if (Number(/\*\*实物图鉴\*\*：(\d+) 张/.exec(readme)?.[1]) !== photos.length) fail('README: photo count differs from files');
 const videoCount = JSON.parse(read('resources/videos.json')).videos.length;
 if (Number(/视频选段-(\d+)条/.exec(readme)?.[1]) !== videoCount) fail('README: video count differs from metadata');
+for (const [label, pattern, actual] of [
+  ['video', /\| 📺 \[视频资源库\]\(resources\/videos\.md\) \| (\d+) 条/, videoCount],
+  ['animation', /\| 🎬 \[原创动画\]\(resources\/visual-lab\.md\) \| (\d+) 部/, animations.length],
+  ['photo', /\| 🖼️ \[实物图片\]\(resources\/hardware-gallery\.md\) \| (\d+) 张/, photos.length],
+]) {
+  const listed = Number(pattern.exec(readme)?.[1]);
+  if (!listed) fail(`README: ${label} resource row missing`);
+  else if (listed !== actual) fail(`README: ${label} resource row says ${listed}, actual is ${actual}`);
+}
 const countIn = dir => readdirSync(path.join(root, dir)).filter(name => name.endsWith('.md') && name !== 'README.md').length;
 if (countIn('exercises') !== 6) fail(`exercises: expected 6, got ${countIn('exercises')}`);
 const cheatsheetCount = countIn('cheatsheets');
