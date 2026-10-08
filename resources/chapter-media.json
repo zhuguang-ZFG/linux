@@ -11,6 +11,7 @@
       }
     ],
     "animations": [
+      "batch-rename.svg",
       "packet-journey.svg"
     ]
   },
@@ -644,7 +645,8 @@
       }
     ],
     "animations": [
-      "pi-buying.svg"
+      "pi-buying.svg",
+      "pi-vs-pico.svg"
     ]
   },
   "docs/05-raspberry-pi/02-烧录系统与首次启动.md": {
@@ -655,7 +657,8 @@
       }
     ],
     "animations": [
-      "flash-first-boot.svg"
+      "flash-first-boot.svg",
+      "headless-setup.svg"
     ]
   },
   "docs/05-raspberry-pi/03-远程连接与基础配置.md": {
@@ -694,7 +697,8 @@
       }
     ],
     "animations": [
-      "pi-homeserver.svg"
+      "pi-homeserver.svg",
+      "backup-321.svg"
     ]
   },
   "docs/05-raspberry-pi/06-树莓派与边缘AI.md": {
@@ -709,7 +713,8 @@
       }
     ],
     "animations": [
-      "edge-inference.svg"
+      "edge-inference.svg",
+      "edge-vs-cloud.svg"
     ]
   },
   "docs/05-raspberry-pi/07-从按钮到数据记录.md": {

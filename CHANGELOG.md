@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 
+- 媒体：新增 5 个原创 SVG 动画（批量改名、Pi 与 Pico、无头安装、3-2-1 备份、云端 vs 边缘），动画 82→87；单动画章节清零，42 章全部至少 2 个动画；visual-lab 与 README 计数同步。
 - 仓库规范：CI 状态徽章、站点预览截图、issue/PR 模板、SECURITY 与行为准则、CHANGELOG。
 - 站点体验：侧边栏「继续上次阅读」入口；回到同一章节时恢复上次滚动位置；Playwright 31→33。
 - 内容：实物图鉴补全 6 张树莓派硬件照片；新增 [Git](cheatsheets/Git速查.md) 与 [容器](cheatsheets/容器速查.md) 速查表（9→11）；修正 3 处伪 Bash 代码块与过时计数文案。

@@ -106,6 +106,10 @@ Command Line Interface）一句话能处理一千个文件。当同事还在手�
 会写一行简单命令的你，3 秒钟下班。这种「把重复劳动交给机器」的能力，会伴随你的
 整个职业生涯。
 
+![批量改名：一条命令胜过两百次点击](../../assets/animations/batch-rename.svg)
+
+[在学习站暂停、单步或重播](https://zhuguang-zfg.github.io/linux/#animation=batch-rename.svg)。动画中的输入输出为教学示意，需用本章实验验证。
+
 #### 收益三：思维——理解计算机真正的样子
 
 Linux 把系统的运转过程摊开给你看：文件、进程（Process，运行中的程序）、权限、

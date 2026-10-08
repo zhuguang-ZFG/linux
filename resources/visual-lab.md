@@ -1,6 +1,6 @@
 # 动画实验室：先预测，再播放，最后动手
 
-本库共 82 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 76 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
+本库共 87 个原创 SVG 动画。[在线动画实验室](https://zhuguang-zfg.github.io/linux/#animations) 提供暂停、单步、速度调整、时间拖动和重播。GitHub 文档内仍可直接查看 SVG；生成的 81 个动画独立打开时每轮 12 秒、播放三轮后停止，支持“减少动态效果”设置，静态说明始终可读。
 
 动画是原理示意，不是从真实机器采集的运行录像。验收仍要回到命令与实际输出。
 
@@ -40,7 +40,7 @@
 
 **先猜**：模型给出一条命令，是否就能直接放进教程？**动手**：完成 [AI 辅助学习章节](../docs/03-pro/07-AI辅助学习与运维.md) 的手册核对与实测。
 
-## 新增的五十四个状态演示
+## 新增的五十九个状态演示
 
 以下动画额外展示示意输入、命令或状态快照，配合学习站的单步控制观察变化：
 
@@ -100,6 +100,11 @@
 | [DNS 查询](../assets/animations/dns-lookup.svg) | 解析成功后还需要连接与应用验证 |
 | [LNMP 请求](../assets/animations/lnmp-request.svg) | Nginx、PHP-FPM 和数据库分工 |
 | [GPIO 消抖](../assets/animations/gpio-debounce.svg) | 触点抖动、过滤窗口和最终记录 |
+| [批量改名](../assets/animations/batch-rename.svg) | GUI 逐个 vs CLI 循环一次处理一批 |
+| [Pi 与 Pico](../assets/animations/pi-vs-pico.svg) | Linux 单板与微控制器的物种差异 |
+| [无头安装](../assets/animations/headless-setup.svg) | 预写身份、网络与 SSH 公钥，开机即用 |
+| [3-2-1 备份](../assets/animations/backup-321.svg) | 三份数据、两种介质、一份离线 |
+| [云端 vs 边缘](../assets/animations/edge-vs-cloud.svg) | 延迟与隐私权衡，先测再选 |
 
 ## 原有六个基础动画
 

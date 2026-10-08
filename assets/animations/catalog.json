@@ -2004,5 +2004,135 @@
         "description": "本地整理优先变基；强制推送前要三思"
       }
     ]
+  },
+  {
+    "file": "batch-rename.svg",
+    "title": "批量改名",
+    "chapter": "docs/00-onboarding/01-为什么人人都要学Linux.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 手工改名",
+        "description": "一次只能处理一张；200 张 = 200 次点击"
+      },
+      {
+        "title": "02 找出规律",
+        "description": "文件名里有共同结构；规律才能变成规则"
+      },
+      {
+        "title": "03 一条命令",
+        "description": "循环逐张改名；3 秒钟完成全部"
+      },
+      {
+        "title": "04 先试后跑",
+        "description": "echo 打印将执行的命令；确认规则无误再全量"
+      }
+    ]
+  },
+  {
+    "file": "pi-vs-pico.svg",
+    "title": "Pi 与 Pico",
+    "chapter": "docs/05-raspberry-pi/01-树莓派是什么与选购.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 单板计算机",
+        "description": "CPU + 内存 + 接口在一板；能跑完整 Linux 系统"
+      },
+      {
+        "title": "02 微控制器",
+        "description": "几 MB 内存级；没有操作系统可装"
+      },
+      {
+        "title": "03 系统差异",
+        "description": "Pico：MicroPython/C；Pico 不是更小的 Pi"
+      },
+      {
+        "title": "04 按任务选",
+        "description": "想玩实时控制再买 Pico；买错型号第一天就翻车"
+      }
+    ]
+  },
+  {
+    "file": "headless-setup.svg",
+    "title": "无头安装",
+    "chapter": "docs/05-raspberry-pi/02-烧录系统与首次启动.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 预写身份",
+        "description": "主机名 / 用户名 / 密码；写进系统镜像"
+      },
+      {
+        "title": "02 预写网络",
+        "description": "并开启 SSH 服务；同时写入公钥"
+      },
+      {
+        "title": "03 通电即联",
+        "description": "无需显示器键盘；开机自动完成配置"
+      },
+      {
+        "title": "04 首次连接",
+        "description": "从另一台电脑登录；核对指纹后再操作"
+      }
+    ]
+  },
+  {
+    "file": "backup-321.svg",
+    "title": "3-2-1 备份",
+    "chapter": "docs/05-raspberry-pi/05-家庭服务器实战.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 三份数据",
+        "description": "至少三份数据；同卡同目录不算副本"
+      },
+      {
+        "title": "02 两种介质",
+        "description": "介质不同，故障才独立；同一张卡的两个目录会一起坏"
+      },
+      {
+        "title": "03 一份离线",
+        "description": "平时可摘除或异地；断电、误删都兜底"
+      },
+      {
+        "title": "04 验证恢复",
+        "description": "备份不能读等于没有；恢复演练是最低保障"
+      }
+    ]
+  },
+  {
+    "file": "edge-vs-cloud.svg",
+    "title": "云端推理 vs 边缘推理的选择",
+    "chapter": "docs/05-raspberry-pi/06-树莓派与边缘AI.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 云端路线",
+        "description": "数百毫秒延迟；断网即停摆"
+      },
+      {
+        "title": "02 边缘路线",
+        "description": "毫秒级完成；数据不出设备"
+      },
+      {
+        "title": "03 算力对比",
+        "description": "边缘受板卡限制；本地适合轻量任务"
+      },
+      {
+        "title": "04 怎么选",
+        "description": "先测本地耗时再决定；二选一不唯一，可混合"
+      }
+    ]
   }
 ]

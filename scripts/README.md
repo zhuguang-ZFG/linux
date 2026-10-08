@@ -55,7 +55,7 @@ bash scripts/check-docker.sh
 
 ## 素材维护
 
-- `python3 -B scripts/build-animations.py` 重新生成 76 个 SVG；另有 6 个原始动画。[动画目录](../assets/animations/catalog.json) 记录全部 82 个动画与对应章节、时长和步骤。新场景的卡片文本建议本地最宽右界 ≤ 卡片限额的 93%，因为 CI 的 DejaVu/Liberation 字体比雅黑宽约 2-10%，余量不足会在溢出检查误报。
+- `python3 -B scripts/build-animations.py` 重新生成 81 个 SVG；另有 6 个原始动画。[动画目录](../assets/animations/catalog.json) 记录全部 87 个动画与对应章节、时长和步骤。新场景的卡片文本建议本地最宽右界 ≤ 卡片限额的 93%，因为 CI 的 DejaVu/Liberation 字体比雅黑宽约 2-10%，余量不足会在溢出检查误报。
 - `scripts/fetch-course-photos.py` 是照片的来源记录与增量下载脚本，额外需要 Pillow。它跳过已存在文件、合并 SOURCES 清单，日常检查和 CI 不运行下载、不需要联网或 Pillow。
 - `node scripts/audit-media.mjs [--json 报告路径] [--strict] [--timeout 毫秒]` 只读核查 [videos.json](../resources/videos.json) 里每条记录的供应商元数据端点：B 站走公开 view API（按 bvid），YouTube 走官方 oEmbed（按 watch 地址）。脚本不下载、不内嵌任何媒体，`reachable` 仅表示元数据接口可用，**不代表视频可播放**。默认始终退出 0，适合手动维护；`--strict` 在有记录不可达时退出 1。回归测试：`node --test scripts/audit-media.test.mjs`（纯函数，不联网）。CI 中 `.github/workflows/media-audit.yml` 每周（及手动触发）运行一次，上传 JSON 报告工件；审计步骤 `continue-on-error`，不阻塞内容检查、站点构建或 Pages 部署，其证据不构成播放保证。
 - `pnpm run check:overflow`（`node scripts/check-overflow.mjs`）遍历 [动画目录](../assets/animations/catalog.json) 中全部带播放元数据的动画，在 `_site` 副本上断言播放器就绪、步骤卡片数量、时间推进与输出帧可见，并测量 SVG 文本右边界不越过卡片/面板/整幅限额。需要先 `pnpm run build`，由 CI 在站点测试后自动执行；原始 6 个手写动画无 steps/duration 元数据，不参与播放器契约，跳过。
