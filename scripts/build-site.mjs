@@ -27,7 +27,8 @@ function walk(folder) {
   });
 }
 const sources = [...new Set(['README.md', 'LEARNING_PATHS.md', 'ROADMAP.md', 'CONTRIBUTING.md',
-  ...['docs', 'resources', 'exercises', 'cheatsheets', 'scripts', 'assets/images'].flatMap(walk)])];
+  ...['docs', 'resources', 'exercises', 'cheatsheets', 'scripts', 'assets/images'].flatMap(walk)])
+].filter(source => source !== 'docs/TEMPLATE.md');
 const sourceSet = new Set(sources);
 
 function routeLink(href, source) {
