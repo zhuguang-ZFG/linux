@@ -94,6 +94,11 @@ NVIDIA 显卡用户只需在第 1) 条命令中追加一行 `--gpus=all`（前�
 ```bash
 docker exec -it ollama ollama pull qwen2.5:7b
 docker exec -it ollama ollama run qwen2.5:7b
+```
+
+进入对话后直接输入问题即可，`>>>` 是 Ollama 的对话提示符（不是 Shell 命令）：
+
+```text
 >>> 用一句话解释什么是 inode
 ```
 

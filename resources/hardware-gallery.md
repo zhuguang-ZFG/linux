@@ -86,6 +86,46 @@ NAS 把多块硬盘放进专用设备并联网共享，是独立存储的一种�
 
 中塔/全塔机箱容纳主板、电源、硬盘与扩展卡，尺寸决定可装部件数量。台式机、迷你主机与服务器的区别常在形态与扩展性。
 
+## 🍓 树莓派支线实物
+
+树莓派实验照片服务于 [树莓派支线](../LEARNING_PATHS.md)；照片用于识别硬件形态，具体型号、供电与引脚以官方文档为准。
+
+### 树莓派 4B 正面
+
+![树莓派 4B 正面](../assets/images/raspberry-pi-4-top.jpg)
+
+观察 CPU 上的金属屏蔽罩、内存颗粒、两个 micro-HDMI 口与 USB-C 供电口。4B 的性能上限由散热与供电决定，先看电源再看系统负载。对应 [选购章节](../docs/05-raspberry-pi/01-树莓派是什么与选购.md)。
+
+### 树莓派 4B 侧面
+
+![树莓派 4B 侧面](../assets/images/raspberry-pi-4-side.jpg)
+
+侧面可以看到以太网口、USB 口与 40 针 GPIO 排针。GPIO 的电压逻辑是 3.3V，接线前务必对照引脚定义，不能凭照片猜针脚。对应 [远程连接章节](../docs/05-raspberry-pi/03-远程连接与基础配置.md)。
+
+### 树莓派 5（带主动散热器）
+
+![树莓派 5（带主动散热器）](../assets/images/raspberry-pi-5-cooler.jpg)
+
+Pi 5 比 4B 更快，但满载发热更高，官方散热器带风扇。散热器与风扇需要正确供电接线，否则表现为降频而非报错。对应 [选购章节](../docs/05-raspberry-pi/01-树莓派是什么与选购.md)。
+
+### 树莓派 5 实机
+
+![树莓派 5 实机](../assets/images/raspberry-pi-5.jpg)
+
+对比 4B 的接口布局：Pi 5 的双 micro-HDMI 支持双显，USB 供电要求更高。装系统前先确认所需电源规格，避免「起得来但一满载就重启」。对应 [烧录章节](../docs/05-raspberry-pi/02-烧录系统与首次启动.md)。
+
+### 面包板 LED 电路实物
+
+![面包板 LED 电路实物](../assets/images/pi-led-breadboard.jpg)
+
+LED 限流电阻的阻值以万用表或色环为准，不能只凭外观判断。接线顺序：断电 → 接 GPIO → 接电阻 → 再接地。对应 [GPIO 章节](../docs/05-raspberry-pi/04-GPIO硬件编程.md)。
+
+### GPIO 引脚定义图
+
+![树莓派 GPIO 引脚定义图](../assets/images/raspberry-pi-gpio.png)
+
+这是 40 针引脚功能示意图（图中标注为 Pi 2 Model B，物理排针布局与后续 40 针型号一致），不是实物照片：物理排针本身不标功能，程序里配置的 BCM 编号与物理位置是两个体系。写代码前先对照此图确认针脚，再通电验证。对应 [GPIO 章节](../docs/05-raspberry-pi/04-GPIO硬件编程.md)。
+
 ## 延伸观察
 
 已有的 [树莓派全家福](../assets/images/raspberry-pi-family.jpg)、[GPIO 排针](../assets/images/raspberry-pi-gpio-header.jpg)、[microSD](../assets/images/microsd-card.jpg) 和 [服务器机架](../assets/images/datacenter-racks.jpg) 可以继续对照设备与系统视图。每看一张图，写下“它负责什么、Linux 用什么接口观察它、还不能从图中判断什么”。

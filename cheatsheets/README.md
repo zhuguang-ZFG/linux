@@ -12,6 +12,8 @@
 | [三剑客](三剑客速查.md) | grep、sed、awk 和管道 |
 | [systemd](systemd速查.md) | 服务、启动、日志、timer |
 | [网络](网络速查.md) | 地址、路由、DNS、SSH、传输 |
+| [Git](Git速查.md) | 三区、提交、撤销、分支、远程 |
+| [容器](容器速查.md) | 镜像、运行、日志、卷、Compose |
 | [树莓派](树莓派速查.md) | 设备、配置、GPIO、存储 |
 
 返回 [学习地图](../README.md) 或 [练习册](../exercises/README.md)。

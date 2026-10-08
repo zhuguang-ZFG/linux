@@ -2,6 +2,12 @@
 
 感谢愿意让「通往 Linux 之路」变得更好！
 
+## 报告问题
+
+- 🐛 发现错误或异常：使用 [Bug 模板](.github/ISSUE_TEMPLATE/bug_report.md) 提交 issue，写清期望 vs 实际、复现步骤与环境。
+- ✨ 建议新章节/动画/功能：使用 [功能建议模板](.github/ISSUE_TEMPLATE/feature_request.md)，附可验证的验收标准。
+- 🔒 安全漏洞：**不要**发公开 issue，请走 [SECURITY.md](SECURITY.md) 的私有报告渠道。
+
 ## 可以做什么
 
 - 🐛 修正命令错误、过期参数、错别字

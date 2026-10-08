@@ -41,6 +41,8 @@ const videoRoute = id => `#video=${encodeURIComponent(id)}`;
 const animationRoute = file => `#animation=${encodeURIComponent(file)}`;
 const minutes = value => value ? (value >= 3600 ? `${Math.floor(value / 3600)}:${String(Math.floor(value % 3600 / 60)).padStart(2, '0')}:${String(value % 60).padStart(2, '0')}` : `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`) : '原站时长';
 let data, docs, videoMap, animationMap, completed = new Set(), routeVersion = 0, cleanup = () => {};
+let lastRead = '';
+try { lastRead = localStorage.getItem('linux-course-last-read-v1') || ''; } catch { /* storage blocked */ }
 const bodyCache = new Map();
 let searchIndex = null, searchIndexPromise = null, searchVersion = 0;
 let toastTimer;
@@ -72,11 +74,13 @@ function saveProgress() {
 function renderSidebar() {
   const params = new URLSearchParams(location.hash.slice(1));
   const current = params.get('read');
+  const lastReadDoc = lastRead && lastRead !== current ? docs.get(lastRead) : null;
+  const resumeLink = lastReadDoc ? `<a class="nav-link resume-link" href="${readRoute(lastReadDoc.id)}"><span class="nav-icon" aria-hidden="true">▶</span>继续上次阅读：<span class="resume-title">${escape(lastReadDoc.title.replace(/^(第\s*\d+\s*章|项目\s*\d+)\s*[·：:]?\s*/, ''))}</span></a>` : '';
   const nav = (hash, icon, title, count) => `<a class="nav-link ${location.hash === hash || location.hash.startsWith(`${hash}&`) || (!location.hash && hash === '#home') || (hash === '#videos' && params.has('video')) || (hash === '#animations' && params.has('animation')) ? 'active' : ''}" href="${hash}"><span class="nav-icon" aria-hidden="true">${icon}</span>${title}${count ? `<span class="nav-count">${count}</span>` : ''}</a>`;
   sidebar.innerHTML = `<nav aria-label="主要导航">
     ${nav('#home', '⌂', '学习首页')}${nav(readRoute('LEARNING_PATHS.md'), '↗', '选择学习路线')}${nav(readRoute('resources/knowledge-map.md'), '🕸', '知识地图')}
     ${nav('#videos', '▷', '视频课堂', data.videos.length)}${nav('#animations', '◇', '动画实验室', data.animations.length)}
-    ${nav(readRoute('resources/hardware-gallery.md'), '▦', '实物图鉴')}
+    ${nav(readRoute('resources/hardware-gallery.md'), '▦', '实物图鉴')}${resumeLink}
     <div class="nav-group-label">LEARNING MAP · 学习地图</div>
     ${data.stageNames.map((name, stage) => {
       const chapters = data.chapterOrder.map(id => docs.get(id)).filter(doc => doc.stage === stage);
@@ -210,6 +214,16 @@ async function readDocument(id, section, version) {
     code.parentElement.append(button);
   }
   main.querySelectorAll('img').forEach(img => img.addEventListener('error', () => { img.hidden = true; }));
+  if (doc.index >= 0) {
+    lastRead = doc.id;
+    try { localStorage.setItem('linux-course-last-read-v1', lastRead); } catch { /* storage blocked */ }
+    if (!section) {
+      try {
+        const saved = sessionStorage.getItem(`linux-course-scroll-${doc.id}`);
+        if (saved !== null) requestAnimationFrame(() => window.scrollTo(0, Number(saved)));
+      } catch { /* storage blocked */ }
+    }
+  }
   renderDiagrams(routeVersion);
   if (section) requestAnimationFrame(() => main.querySelector(`#${CSS.escape(section)}`)?.scrollIntoView());
   const onReadKey = event => {
@@ -239,7 +253,11 @@ async function readDocument(id, section, version) {
     window.addEventListener('scroll', onTocScroll, { passive: true });
     onTocScroll();
   }
-  cleanup = () => { document.removeEventListener('keydown', onReadKey); if (tocEntries.length) window.removeEventListener('scroll', onTocScroll); };
+  cleanup = () => {
+    document.removeEventListener('keydown', onReadKey);
+    if (tocEntries.length) window.removeEventListener('scroll', onTocScroll);
+    if (doc.index >= 0) { try { sessionStorage.setItem(`linux-course-scroll-${doc.id}`, String(window.scrollY)); } catch { /* storage blocked */ } }
+  };
 }
 
 function videoPage(id) {

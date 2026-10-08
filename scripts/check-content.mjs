@@ -86,7 +86,7 @@ for (const file of files.filter(file => file.endsWith('.sh'))) {
 }
 for (const file of markdown) {
   const body = readFileSync(file, 'utf8');
-  for (const match of body.matchAll(/^```bash\r?\n(#![^\n]*\n[\s\S]*?)^```/gm)) {
+  for (const match of body.matchAll(/^```bash\r?\n([\s\S]*?)^```/gm)) {
     syntaxCheck(path.relative(root, file), match[1].replaceAll('\r\n', '\n'));
   }
 }

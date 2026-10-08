@@ -363,3 +363,30 @@ test('invalid routes and search markup are shown safely', async ({ page }) => {
   await expect(page.locator('.search-empty')).toBeVisible();
   await expect(page.locator('#search-results img')).toHaveCount(0);
 });
+
+test('continue-reading link appears after opening a chapter and resumes it', async ({ page }) => {
+  await page.goto('');
+  await expect(page.locator('.resume-link')).toHaveCount(0);
+  const second = 'docs/01-basics/02-查看与编辑文件-Vim.md';
+  await page.goto(`#read=${encodeURIComponent(second)}`);
+  await expect(page.locator('.article h1')).toContainText('Vim');
+  await page.goto('#home');
+  const resume = page.locator('.resume-link');
+  await expect(resume).toHaveCount(1);
+  expect(decodeURIComponent(await resume.getAttribute('href'))).toContain(second);
+  await resume.click();
+  await expect(page.locator('.article h1')).toContainText('Vim');
+  await expect(page.locator('.resume-link')).toHaveCount(0);
+});
+
+test('reading position is remembered when returning to a chapter', async ({ page }) => {
+  const doc = 'docs/01-basics/01-文件与目录操作.md';
+  await page.goto(`#read=${encodeURIComponent(doc)}`);
+  await expect(page.locator('.article h1')).toContainText('文件与目录');
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect.poll(() => page.evaluate(() => Math.round(window.scrollY))).toBeGreaterThan(500);
+  await page.goto('#home');
+  await page.goto(`#read=${encodeURIComponent(doc)}`);
+  await expect(page.locator('.article h1')).toContainText('文件与目录');
+  await expect.poll(() => page.evaluate(() => Math.round(window.scrollY))).toBeGreaterThan(500);
+});
