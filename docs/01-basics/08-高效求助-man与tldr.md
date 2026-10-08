@@ -243,6 +243,7 @@ man du                    # 精读：-h 是 human-readable，-c 是总计
 ## 📺 推荐视频
 
 - [B站 · 帮助指令与手册](https://www.bilibili.com/video/BV1Sv411r7vd/?p=27) — 韩顺平，P27，8分46秒。观看对应主题后，回到本章用实际输入和输出验证。
+- [B站 · 帮助指令与手册查找](https://www.bilibili.com/video/BV1At41137xm/?p=23) — Java基基，P23，10分21秒。观看对应主题后，回到本章用实际输入和输出验证。
 
 [![帮助指令与手册 视频封面](https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd/?p=27)
 

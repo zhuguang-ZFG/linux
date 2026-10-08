@@ -237,7 +237,7 @@ Oct  6 09:02:01 srv sshd[805]: Failed password for root from 203.0.113.7 port 55
 <summary>💡 参考解法（先自己试！）</summary>
 
 ```bash
-grep "Failed password for" fake.log | awk '{print $8}' | sort | uniq -c | sort -nr
+grep "Failed password for" fake.log | awk '{print $9}' | sort | uniq -c | sort -nr
 ```
 
 ```text

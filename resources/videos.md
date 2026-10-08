@@ -1,6 +1,6 @@
 # 视频课堂与核验记录
 
-共 **67 条视频或课程选段**，B站分P分别计为选段，不把同一套课程包装成多套课程。核验日期：2026-10-07。
+共 **76 条视频或课程选段**，B站分P分别计为选段，不把同一套课程包装成多套课程。核验日期：2026-10-08。
 
 [打开可嵌入播放的学习站](https://zhuguang-zfg.github.io/linux/#videos) · [按章节查看配套关系](chapter-media.json)
 
@@ -61,6 +61,15 @@
 | NPS 内网穿透工具 | 大橘炸了 | P1 | 32:11 | [观看](https://www.bilibili.com/video/BV1Ed4y1f7jZ/?p=1) |
 | 树莓派 5 部署大模型（Ollama 与交互界面） | 创乐博智能科技 | P2 | 15:24 | [观看](https://www.bilibili.com/video/BV14EP7ebE92/?p=2) |
 | LLaVA 多模态模型 | 创乐博智能科技 | P11 | 6:56 | [观看](https://www.bilibili.com/video/BV14EP7ebE92/?p=11) |
+| Vim 保姆级入门 | 技术蛋老师 | P1 | 14:06 | [观看](https://www.bilibili.com/video/BV13t4y1t7Wg/?p=1) |
+| 权限管理细读 | Java基基 | P37 | 23:24 | [观看](https://www.bilibili.com/video/BV1At41137xm/?p=37) |
+| 压缩与解压实战 | Java基基 | P34 | 22:10 | [观看](https://www.bilibili.com/video/BV1At41137xm/?p=34) |
+| 进程介绍与查询 | Java基基 | P48 | 21:47 | [观看](https://www.bilibili.com/video/BV1At41137xm/?p=48) |
+| 磁盘分区实战 | 老男孩IT | P25 | 15:16 | [观看](https://www.bilibili.com/video/BV1vf421B7Rz/?p=25) |
+| SSH 远程连接实操 | 热爱IT行业 | P1 | 11:05 | [观看](https://www.bilibili.com/video/BV1dd1yYGEfg/?p=1) |
+| 帮助指令与手册查找 | Java基基 | P23 | 10:21 | [观看](https://www.bilibili.com/video/BV1At41137xm/?p=23) |
+| apt 软件包管理实操 | Java基基 | P76 | 35:01 | [观看](https://www.bilibili.com/video/BV1At41137xm/?p=76) |
+| Shell 变量详解 | Java基基 | P59 | 19:57 | [观看](https://www.bilibili.com/video/BV1At41137xm/?p=59) |
 
 ## YouTube · 专题与概览
 

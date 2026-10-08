@@ -388,6 +388,7 @@ shellcheck host-alive.sh     # 无输出即通过
 - [B站 · Shell 编程入门](https://www.bilibili.com/video/BV1Sv411r7vd/?p=91) — 韩顺平，P91，11分41秒。Shell 基础、函数与实战补充；并发、trap 和失败处理仍需按本章验证。
 - [B站 · Shell 自定义函数](https://www.bilibili.com/video/BV1Sv411r7vd/?p=104) — 韩顺平，P104，5分21秒。Shell 基础、函数与实战补充；并发、trap 和失败处理仍需按本章验证。
 - [B站 · 定时备份数据库（实战）](https://www.bilibili.com/video/BV1Sv411r7vd/?p=106) — 韩顺平，P106，25分27秒。Shell 基础、函数与实战补充；并发、trap 和失败处理仍需按本章验证。
+- [B站 · Shell 变量详解](https://www.bilibili.com/video/BV1At41137xm/?p=59) — Java基基，P59，19分57秒。Shell 基础、函数与实战补充；并发、trap 和失败处理仍需按本章验证。
 
 [![Shell 编程入门 视频封面](https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg)](https://www.bilibili.com/video/BV1Sv411r7vd/?p=91)
 

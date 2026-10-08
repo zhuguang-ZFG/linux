@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-07T11:32:38+00:00",
+  "checkedAt": "2026-10-08T14:05:35+00:00",
   "notice": "核验标题、作者、分P和可获取的时长。页面/接口可读取不等于已完整播放；不下载或搬运视频。",
   "videos": [
     {
@@ -24,7 +24,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -51,7 +51,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -78,7 +78,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -105,7 +105,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -132,7 +132,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -159,7 +159,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -186,7 +186,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -213,7 +213,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -240,7 +240,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -267,7 +267,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -294,7 +294,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -321,7 +321,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -348,7 +348,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -375,7 +375,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
@@ -402,7 +402,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1w4411B7a4",
         "playback": "not_tested"
@@ -429,7 +429,7 @@
       "kind": "课程选段",
       "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -454,7 +454,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DrrB13utjYV4&format=json",
         "watchPageStatus": "OK",
@@ -480,7 +480,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DLKCVKw9CzFo&format=json",
         "watchPageStatus": "OK",
@@ -506,7 +506,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DROjZy1WbCIA&format=json",
         "watchPageStatus": "OK",
@@ -532,7 +532,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZtqBQ68cfJc&format=json",
         "watchPageStatus": "OK",
@@ -558,7 +558,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dv392lEyM29A&format=json",
         "watchPageStatus": "OK",
@@ -584,7 +584,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfCPM5072YPA&format=json",
         "watchPageStatus": "OK",
@@ -610,7 +610,7 @@
       "start": 0,
       "note": "概览视频不等于完整实操课。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DxiR14tSfc-U&format=json",
         "watchPageStatus": "OK",
@@ -636,7 +636,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRGOj5yH7evk&format=json",
         "watchPageStatus": "OK",
@@ -662,7 +662,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DfqMOX6JJhGo&format=json",
         "watchPageStatus": "OK",
@@ -688,7 +688,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKzpm-rGAXos&format=json",
         "watchPageStatus": "OK",
@@ -714,7 +714,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dgoclfp6a2IQ&format=json",
         "watchPageStatus": "OK",
@@ -740,7 +740,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DiL_oZGHLHvU&format=json",
         "watchPageStatus": "OK",
@@ -766,7 +766,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRQFfK7xIL28&format=json",
         "watchPageStatus": "OK",
@@ -792,7 +792,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoPEnvuj9QrI&format=json",
         "watchPageStatus": "OK",
@@ -818,7 +818,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnXLnx8ncZyE&format=json",
         "watchPageStatus": "OK",
@@ -844,7 +844,7 @@
       "start": 0,
       "note": "字幕、界面和软件版本以原站为准；先理解概念，再在本教程环境验证。",
       "verification": {
-        "checkedAt": "2026-10-07T03:39:55+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZdVpKx6Wmc8&format=json",
         "watchPageStatus": "OK",
@@ -870,9 +870,9 @@
         "目录"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -897,9 +897,9 @@
         "权限"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -924,9 +924,9 @@
         "信号"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -951,9 +951,9 @@
         "函数"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -978,9 +978,9 @@
         "systemd"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:21:26+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
@@ -999,18 +999,18 @@
       "duration": 305,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=2",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "概述"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-unix",
@@ -1025,18 +1025,18 @@
       "duration": 1089,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=4",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "历史"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-install-ubuntu",
@@ -1051,18 +1051,18 @@
       "duration": 572,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=108",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "安装"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-shell-basics",
@@ -1077,19 +1077,19 @@
       "duration": 814,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=13",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg",
       "tags": [
         "Shell",
         "终端"
       ],
       "kind": "课程选段",
-      "note": "课程讲解偏长，按需定位主题；命令以本教程当前环境为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg"
+      }
     },
     {
       "id": "b-dir-structure",
@@ -1104,19 +1104,19 @@
       "duration": 470,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=12",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "文件",
         "目录"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-vim-keys",
@@ -1131,19 +1131,19 @@
       "duration": 1149,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=17",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "Vim",
         "编辑"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-chmod",
@@ -1158,18 +1158,18 @@
       "duration": 572,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=46",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "权限"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-archive2",
@@ -1184,19 +1184,19 @@
       "duration": 599,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=38",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "归档",
         "压缩"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-apt-src",
@@ -1211,19 +1211,19 @@
       "duration": 748,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=113",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "软件包",
         "APT"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-process-tree",
@@ -1238,18 +1238,18 @@
       "duration": 501,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=70",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "进程"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-set-env",
@@ -1264,18 +1264,18 @@
       "duration": 581,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=93",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "环境变量"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-find",
@@ -1290,19 +1290,19 @@
       "duration": 813,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=35",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "搜索",
         "find"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-shell-loop",
@@ -1317,19 +1317,19 @@
       "duration": 732,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=100",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "Shell",
         "循环"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-logs-service",
@@ -1344,19 +1344,19 @@
       "duration": 270,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=118",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "日志",
         "systemd"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-disk-add",
@@ -1371,19 +1371,19 @@
       "duration": 1382,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=59",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "磁盘",
         "挂载"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-scp",
@@ -1398,19 +1398,19 @@
       "duration": 838,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=15",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "网络",
         "传输"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-nat",
@@ -1425,19 +1425,19 @@
       "duration": 822,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=63",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "网络",
         "NAT"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-io-monitor",
@@ -1452,19 +1452,19 @@
       "duration": 655,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=149",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "性能",
         "IO"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-kernel-read",
@@ -1479,19 +1479,19 @@
       "duration": 799,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=131",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "内核",
         "源码"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-hidden-perm",
@@ -1506,19 +1506,19 @@
       "duration": 579,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=49",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg",
       "tags": [
         "权限",
         "加固"
       ],
       "kind": "课程选段",
-      "note": "课程讲解偏长，按需定位主题；命令以本教程当前环境为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ZZ37zdEp2",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg"
+      }
     },
     {
       "id": "b-cron-apply",
@@ -1533,19 +1533,19 @@
       "duration": 895,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=54",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "定时",
         "自动化"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-shell-practice",
@@ -1560,19 +1560,19 @@
       "duration": 1527,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=106",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "Shell",
         "备份"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-mysql",
@@ -1587,19 +1587,19 @@
       "duration": 914,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=89",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "数据库",
         "LNMP"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-count-stats",
@@ -1614,19 +1614,19 @@
       "duration": 841,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=142",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "巡检",
         "统计"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-cron-backup",
@@ -1641,19 +1641,19 @@
       "duration": 444,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=105",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "定时",
         "备份"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-boot-flow",
@@ -1668,19 +1668,19 @@
       "duration": 721,
       "language": "中文",
       "url": "https://www.bilibili.com/video/BV1Sv411r7vd/?p=148",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg",
       "tags": [
         "启动",
         "排障"
       ],
       "kind": "课程选段",
-      "note": "课程使用 CentOS 讲解；命令参数以本教程当前环境说明为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Sv411r7vd",
         "playback": "not_tested"
-      },
-      "thumbnail": "https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg"
+      }
     },
     {
       "id": "b-tunnel-basics",
@@ -1701,9 +1701,9 @@
         "原理"
       ],
       "kind": "课程选段",
-      "note": "第三方工具教程，方案选择与暴露面控制以本章正文为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1ShqBYdEDC",
         "playback": "not_tested"
@@ -1728,9 +1728,9 @@
         "工具"
       ],
       "kind": "课程选段",
-      "note": "第三方工具教程，方案选择与暴露面控制以本章正文为准。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1Ed4y1f7jZ",
         "playback": "not_tested"
@@ -1755,9 +1755,9 @@
         "Ollama"
       ],
       "kind": "课程选段",
-      "note": "第三方硬件厂商教程，演示 Pi 5 环境；模型选择与内存占用请按本章实验记录。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV14EP7ebE92",
         "playback": "not_tested"
@@ -1782,11 +1782,254 @@
         "多模态"
       ],
       "kind": "课程选段",
-      "note": "第三方硬件厂商教程，演示 Pi 5 环境；模型选择与内存占用请按本章实验记录。",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
       "verification": {
-        "checkedAt": "2026-10-07T11:32:38+00:00",
+        "checkedAt": "2026-10-08T14:05:35+00:00",
         "metadata": "verified",
         "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV14EP7ebE92",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-vim-baomu",
+      "platform": "bilibili",
+      "providerId": "BV13t4y1t7Wg",
+      "page": 1,
+      "cid": 775999565,
+      "title": "Vim 保姆级入门",
+      "providerTitle": "【保姆级入门】Vim编辑器",
+      "courseTitle": "【保姆级入门】Vim编辑器",
+      "author": "技术蛋老师",
+      "duration": 846,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV13t4y1t7Wg/?p=1",
+      "thumbnail": "https://i2.hdslb.com/bfs/archive/d0dd5e46865597caaf95ad2edbcf3d2489f91930.jpg",
+      "tags": [
+        "Vim",
+        "编辑"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV13t4y1t7Wg",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-perm-78",
+      "platform": "bilibili",
+      "providerId": "BV1At41137xm",
+      "page": 37,
+      "cid": 103897389,
+      "title": "权限管理细读",
+      "providerTitle": "037_Linux实操篇_权限管理",
+      "courseTitle": "操作系统 Linux 视频教程全集（78P）| 21 小时从入门到精通",
+      "author": "Java基基",
+      "duration": 1404,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1At41137xm/?p=37",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/19730fd87f003dc6685d7acc09dd078493786ffe.jpg",
+      "tags": [
+        "权限",
+        "chmod"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1At41137xm",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-archive-78",
+      "platform": "bilibili",
+      "providerId": "BV1At41137xm",
+      "page": 34,
+      "cid": 103897374,
+      "title": "压缩与解压实战",
+      "providerTitle": "034_Linux实操篇_实用指令 压缩和解压类指令",
+      "courseTitle": "操作系统 Linux 视频教程全集（78P）| 21 小时从入门到精通",
+      "author": "Java基基",
+      "duration": 1330,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1At41137xm/?p=34",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/19730fd87f003dc6685d7acc09dd078493786ffe.jpg",
+      "tags": [
+        "压缩",
+        "tar"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1At41137xm",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-proc-78",
+      "platform": "bilibili",
+      "providerId": "BV1At41137xm",
+      "page": 48,
+      "cid": 103897427,
+      "title": "进程介绍与查询",
+      "providerTitle": "048_Linux实操篇_进程管理 进程介绍和查询",
+      "courseTitle": "操作系统 Linux 视频教程全集（78P）| 21 小时从入门到精通",
+      "author": "Java基基",
+      "duration": 1307,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1At41137xm/?p=48",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/19730fd87f003dc6685d7acc09dd078493786ffe.jpg",
+      "tags": [
+        "进程",
+        "ps"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1At41137xm",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-disk-lb",
+      "platform": "bilibili",
+      "providerId": "BV1vf421B7Rz",
+      "page": 25,
+      "cid": 1596770395,
+      "title": "磁盘分区实战",
+      "providerTitle": "07-磁盘分区实战",
+      "courseTitle": "B站最全Linux磁盘管理，内含所有核心知识点，Linux全套课程",
+      "author": "老男孩IT",
+      "duration": 916,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1vf421B7Rz/?p=25",
+      "thumbnail": "https://i0.hdslb.com/bfs/archive/67678e92643a6c22e9575ecfe4939246ea69442f.png",
+      "tags": [
+        "磁盘",
+        "分区"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1vf421B7Rz",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-ssh-2024",
+      "platform": "bilibili",
+      "providerId": "BV1dd1yYGEfg",
+      "page": 1,
+      "cid": 26182485664,
+      "title": "SSH 远程连接实操",
+      "providerTitle": "如何远程连接Linux服务器",
+      "courseTitle": "如何远程连接Linux服务器",
+      "author": "热爱IT行业",
+      "duration": 665,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1dd1yYGEfg/?p=1",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/fb4a659dbf7e9e41bba8855588ad9fba5b351f92.jpg",
+      "tags": [
+        "网络",
+        "SSH"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1dd1yYGEfg",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-man-78",
+      "platform": "bilibili",
+      "providerId": "BV1At41137xm",
+      "page": 23,
+      "cid": 103897344,
+      "title": "帮助指令与手册查找",
+      "providerTitle": "023_Linux实操篇_实用指令 帮助指令",
+      "courseTitle": "操作系统 Linux 视频教程全集（78P）| 21 小时从入门到精通",
+      "author": "Java基基",
+      "duration": 621,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1At41137xm/?p=23",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/19730fd87f003dc6685d7acc09dd078493786ffe.jpg",
+      "tags": [
+        "man",
+        "求助"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1At41137xm",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-apt-78",
+      "platform": "bilibili",
+      "providerId": "BV1At41137xm",
+      "page": 76,
+      "cid": 103897520,
+      "title": "apt 软件包管理实操",
+      "providerTitle": "076_Python定制篇_apt软件包管理",
+      "courseTitle": "操作系统 Linux 视频教程全集（78P）| 21 小时从入门到精通",
+      "author": "Java基基",
+      "duration": 2101,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1At41137xm/?p=76",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/19730fd87f003dc6685d7acc09dd078493786ffe.jpg",
+      "tags": [
+        "apt",
+        "包管理"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1At41137xm",
+        "playback": "not_tested"
+      }
+    },
+    {
+      "id": "b-shell-78",
+      "platform": "bilibili",
+      "providerId": "BV1At41137xm",
+      "page": 59,
+      "cid": 103897476,
+      "title": "Shell 变量详解",
+      "providerTitle": "059_大数据定制篇_Shell变量",
+      "courseTitle": "操作系统 Linux 视频教程全集（78P）| 21 小时从入门到精通",
+      "author": "Java基基",
+      "duration": 1197,
+      "language": "中文",
+      "url": "https://www.bilibili.com/video/BV1At41137xm/?p=59",
+      "thumbnail": "https://i1.hdslb.com/bfs/archive/19730fd87f003dc6685d7acc09dd078493786ffe.jpg",
+      "tags": [
+        "Bash",
+        "变量"
+      ],
+      "kind": "课程选段",
+      "note": "课程可能使用 CentOS 或其他版本；命令参数以本教程当前环境说明为准。",
+      "verification": {
+        "checkedAt": "2026-10-08T14:05:35+00:00",
+        "metadata": "verified",
+        "source": "https://api.bilibili.com/x/web-interface/view?bvid=BV1At41137xm",
         "playback": "not_tested"
       }
     }
