@@ -279,7 +279,7 @@ window.cover=function(badge){
   document.querySelector('.cv-cmd').textContent=(CV.command||(hook&&hook.command)||'');
   q.innerHTML=rich((CV.question||(hook&&hook.headline)||'').replace(/[「」]/g,''));
   a.innerHTML=rich(CV.answer||'');
-  document.querySelector('.cv-badge').textContent=badge||'42 章 · 87 部原理动画';
+  document.querySelector('.cv-badge').textContent=badge||'43 章 · 89 部原理动画';
   document.querySelector('.cv-url').textContent=(T.scenes.find((s)=>s.kind==='cta')||{}).url||CV.stage||'';
   const host=document.querySelector('.cv-hero'); host.innerHTML='';
   const hero=document.getElementById('sc'+CV.heroIdx);
@@ -555,7 +555,7 @@ async function makeCovers() {
       window.setFormat(f); window.measure();
       if (safe) document.documentElement.classList.add('cvsafe');
       window.cover(badge);
-    }, [cover.fmt, spec.coverBadge ?? '42 章 · 87 部原理动画', cover.name === '9x16']);
+    }, [cover.fmt, spec.coverBadge ?? '43 章 · 89 部原理动画', cover.name === '9x16']);
     const base = path.join(OUT, `${episodeId}-cover-${cover.name}`);
     await page.screenshot({ path: `${base}.png` });
     await page.screenshot({ path: `${base}.jpg`, type: 'jpeg', quality: 92 });

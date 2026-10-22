@@ -4,7 +4,7 @@
 
 **The Road to Linux Mastery —— 一套人人可学、边看边练的中文 Linux 系统教学工程**
 
-[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-42个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-87部-9cf)](resources/visual-lab.md) [![视频](https://img.shields.io/badge/视频选段-76条-red)](resources/videos.md) [![CI](https://github.com/zhuguang-ZFG/linux/actions/workflows/check.yml/badge.svg)](https://github.com/zhuguang-ZFG/linux/actions/workflows/check.yml) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
+[![阶段](https://img.shields.io/badge/学习阶段-6-blue)](#-学习地图) [![章节](https://img.shields.io/badge/教学章节-43个-success)](#-目录导航) [![动画](https://img.shields.io/badge/精美动画-89部-9cf)](resources/visual-lab.md) [![视频](https://img.shields.io/badge/视频选段-76条-red)](resources/videos.md) [![CI](https://github.com/zhuguang-ZFG/linux/actions/workflows/check.yml/badge.svg)](https://github.com/zhuguang-ZFG/linux/actions/workflows/check.yml) [![License](https://img.shields.io/badge/License-Apache_2.0-green)](LICENSE)
 
 **[进入在线学习站 →](https://zhuguang-zfg.github.io/linux/)** · [站内视频课堂](https://zhuguang-zfg.github.io/linux/#videos) · [可控制的动画演示](https://zhuguang-zfg.github.io/linux/#animations)
 
@@ -25,11 +25,11 @@
 
 这是一套**完整的 Linux 中文教学工程**，遵循「通往 AGI 之路」的知识地图式编排：
 
-- 🗺️ **路线图驱动**：6 个阶段 42 个章节，从「什么是 Linux」到「树莓派边缘 AI」，增加硬件识别、Git 协作、AI 辅助运维与按钮数据记录
-- 🎬 **原理动画**：87 部原创 SVG 动画，新增 管道缓冲、umask 位运算、页缓存、OOM 选择、journald 日志流、cgroup 限额、TCP 握手、Git 变基、SSH 隧道、归档管道、awk 三段、sed 地址、硬件总线、发行版包管理、开机四棒、DHCP/mDNS、Git 分支、重定向、sed/awk、服务重启、信号、内存缓存、inode、DNS、LNMP、消抖、批量改名、Pi 与 Pico、无头安装、3-2-1 备份、云端 vs 边缘、PATH/grep、归档、Vim 模式、安装选型、边缘 OCR、本地模型、apt 依赖、文件操作、内网穿透、排障四段式、烧录启动、内核与发行版、发行版家族、man 手册、硬件识别、选购要点、远程配置、家庭服务器、系统调用切换、防火墙规则链、容器隔离、负载判读、sudo 借权、Git 提交三区、环境变量继承、apt 全流程、Ansible 批量、Vim 整行操作、模型选型、退出码协议、journalctl 检索、按钮数据记录、trap 善终、命令旅程、每日巡检、路径解析、grep 选项、按钮输入、许可证对照、求助四件套与结构化提问；学习站支持暂停、单步、拖动和重播
+- 🗺️ **路线图驱动**：6 个阶段 43 个章节，从「什么是 Linux」到「树莓派边缘 AI」，增加硬件识别、Git 协作、AI 辅助运维、AI 结对排障与按钮数据记录
+- 🎬 **原理动画**：89 部原创 SVG 动画，新增 AI 代理权限阶梯、结对排障记录、管道缓冲、umask 位运算、页缓存、OOM 选择、journald 日志流、cgroup 限额、TCP 握手、Git 变基、SSH 隧道、归档管道、awk 三段、sed 地址、硬件总线、发行版包管理、开机四棒、DHCP/mDNS、Git 分支、重定向、sed/awk、服务重启、信号、内存缓存、inode、DNS、LNMP、消抖、批量改名、Pi 与 Pico、无头安装、3-2-1 备份、云端 vs 边缘、PATH/grep、归档、Vim 模式、安装选型、边缘 OCR、本地模型、apt 依赖、文件操作、内网穿透、排障四段式、烧录启动、内核与发行版、发行版家族、man 手册、硬件识别、选购要点、远程配置、家庭服务器、系统调用切换、防火墙规则链、容器隔离、负载判读、sudo 借权、Git 提交三区、环境变量继承、apt 全流程、Ansible 批量、Vim 整行操作、模型选型、退出码协议、journalctl 检索、按钮数据记录、trap 善终、命令旅程、每日巡检、路径解析、grep 选项、按钮输入、许可证对照、求助四件套与结构化提问；学习站支持暂停、单步、拖动和重播
 - 📷 **实物图鉴**：26 张 Wikimedia Commons 图片，新增内存、SSD、网线、交换机、摄像头、电阻、显卡、NAS、主板、键盘、路由器、鼠标、显示器与机箱实拍，附完整[署名清单](assets/images/CREDITS.md)
 - 📺 **视频课堂**：76 条视频选段（60 条 B站分P + 16 条 YouTube），记录作者、时长和核验状态，学习站使用官方播放器并保留原站入口
-- 🎬 **机制精讲**：5 部 6–8 分钟章节正片，把 60 秒短片的钩子展开成「现象 → 机制 → 命令验证 → 坑 → 自测」完整链路，配逐字口播稿与逐相位放大的动画
+- 🎬 **机制精讲**：6 部 6–8 分钟章节正片，把 60 秒短片的钩子展开成「现象 → 机制 → 命令验证 → 坑 → 自测」完整链路，配逐字口播稿与逐相位放大的动画
 - 🧪 **边学边练**：每章自带「动手实验 + 自测清单」，配套 6 套练习题与答案、11 张速查表
 
 ## 🧭 先选入口，再开始学习
@@ -39,7 +39,7 @@
 | 入口 | 适合什么时候打开 |
 |---|---|
 | 🗺️ [选择学习路线](LEARNING_PATHS.md) | 零基础、服务器、本地 AI、树莓派，各自从哪里开始 |
-| 🕸️ [知识地图](resources/knowledge-map.md) | 42 章的前置、产出与后续：知识在哪用、卡住去哪查 |
+| 🕸️ [知识地图](resources/knowledge-map.md) | 43 章的前置、产出与后续：知识在哪用、卡住去哪查 |
 | 🧪 [确认实验环境](resources/environment-matrix.md) | 判断当前环境能做哪些实验，避免照搬不同系统的命令 |
 | 🖼️ [实物图鉴](resources/hardware-gallery.md) | 先认识硬件，再读系统命令 |
 | 🎬 [动画实验室](resources/visual-lab.md) | 先预测数据流，再逐步验证 |
@@ -60,7 +60,7 @@ flowchart LR
     A["🐧 阶段 0 · 启蒙认知<br/>为什么学 & 装系统"] --> B["📁 阶段 1 · 基础篇<br/>每天都要用的命令"]
     B --> C["⚙️ 阶段 2 · 进阶篇<br/>三剑客 & 脚本 & 服务"]
     C --> D["🔥 阶段 3 · 高级篇<br/>性能 · 内核 · 安全 · 容器"]
-    D --> E["🚀 阶段 4 · 实战篇<br/>5 个真实项目"]
+    D --> E["🚀 阶段 4 · 实战篇<br/>6 个真实项目"]
     B --> P["🍓 树莓派支线<br/>随时可插入"]
     C --> P
     P --> E
@@ -130,6 +130,7 @@ flowchart LR
 | 3 | [个人云盘与内网穿透](docs/04-projects/项目3-个人云盘与内网穿透.md) | Nextcloud + Tailscale 私有网盘 |
 | 4 | [用 Linux 跑本地 AI](docs/04-projects/项目4-Linux跑本地AI.md) | Docker 部署 Ollama + Open WebUI，本地大模型 |
 | 5 | [故障排查 20 例](docs/04-projects/项目5-故障排查20例.md) | 面试与生产环境高频故障复盘 |
+| 6 | [AI 结对排障](docs/04-projects/项目6-AI结对排障.md) | 让模型动手、让闸门留人的完整排障档案 |
 
 ### 🍓 树莓派支线 —— 把 Linux 握在手心（可随时插入）
 
@@ -153,8 +154,8 @@ flowchart LR
 | 📚 [书单与网站](resources/books-and-sites.md) | 5 本书与 10+ 学习网站，包含 TLDP、ArchWiki、explainshell |
 | 📝 [练习题与答案](exercises/) | 六个阶段各一套，选择+实操，答案可折叠 |
 | ⚡ [速查表](cheatsheets/) | 常用命令 / 权限与用户 / 磁盘与存储 / 性能观测 / Vim / 三剑客 / systemd / 网络 / Git / 容器 / 树莓派 |
-| 🎬 [原创动画](resources/visual-lab.md) | 87 部 SVG 动画，学习站提供播放控制、文字步骤和实操入口 |
-| 🎬 [机制精讲文字稿](resources/lectures/README.md) | 5 部章节正片的时间轴与逐字稿；成片本地渲染，发布包含 SRT、章节与封面 |
+| 🎬 [原创动画](resources/visual-lab.md) | 89 部 SVG 动画，学习站提供播放控制、文字步骤和实操入口 |
+| 🎬 [机制精讲文字稿](resources/lectures/README.md) | 6 部章节正片的时间轴与逐字稿；成片本地渲染，发布包含 SRT、章节与封面 |
 | 🖼️ [实物图片](resources/hardware-gallery.md) | 26 张图片 + [授权署名](assets/images/CREDITS.md)，照片与示意分开标注 |
 | 🛠️ [配套源码与检查](scripts/README.md) | 备份、巡检、Docker、GPIO 与内容质量检查 |
 

@@ -637,6 +637,26 @@
       "boot-sequence.svg"
     ]
   },
+  "docs/04-projects/项目6-AI结对排障.md": {
+    "videos": [
+      {
+        "id": "y-local-ai",
+        "note": "AI 工具、日志勘察与脚本实战的背景演示；结对排障流程、安全闸门与 CASE.md 验收以正文为准。"
+      },
+      {
+        "id": "b-logs-service",
+        "note": "AI 工具、日志勘察与脚本实战的背景演示；结对排障流程、安全闸门与 CASE.md 验收以正文为准。"
+      },
+      {
+        "id": "b-shell-practice",
+        "note": "AI 工具、日志勘察与脚本实战的背景演示；结对排障流程、安全闸门与 CASE.md 验收以正文为准。"
+      }
+    ],
+    "animations": [
+      "ai-agent-ladder.svg",
+      "ai-pair-debug.svg"
+    ]
+  },
   "docs/05-raspberry-pi/01-树莓派是什么与选购.md": {
     "videos": [
       {

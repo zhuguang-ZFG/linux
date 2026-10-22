@@ -8,10 +8,10 @@ test.beforeEach(async ({ page }) => {
 test('home shows the actual catalog and accessible route entries', async ({ page }) => {
   await page.goto('');
   await expect(page.locator('.hero h1')).toContainText('能动手的本领');
-  await expect(page.locator('.stat-strip')).toContainText('42');
+  await expect(page.locator('.stat-strip')).toContainText('43');
   await expect(page.locator('.stat-strip')).toContainText('76');
-  await expect(page.locator('.stat-strip')).toContainText('87');
-  await expect(page.locator('.chapter-link')).toHaveCount(42);
+  await expect(page.locator('.stat-strip')).toContainText('89');
+  await expect(page.locator('.chapter-link')).toHaveCount(43);
   await page.getByRole('link', { name: '开始第一课' }).click();
   await expect(page.locator('.article h1')).toContainText('为什么人人');
 });
@@ -20,7 +20,7 @@ test('home loads no chapter body until a chapter is opened', async ({ page }) =>
   const bodies = [];
   page.on('response', response => { if (response.url().includes('/data/docs/')) bodies.push(response.url()); });
   await page.goto('');
-  await expect(page.locator('.stat-strip')).toContainText('42');
+  await expect(page.locator('.stat-strip')).toContainText('43');
   expect(bodies).toEqual([]);
   await page.getByRole('link', { name: '开始第一课' }).click();
   await expect(page.locator('.article h1')).toContainText('为什么人人');
@@ -98,7 +98,7 @@ test('chapter renders Mermaid, supports safe copying and retains completion afte
   await page.locator('[data-complete]').click();
   await page.reload();
   await expect(page.locator('[data-complete]')).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.locator('.sidebar-progress')).toContainText('1 / 42');
+  await expect(page.locator('.sidebar-progress')).toContainText('1 / 43');
 });
 
 test('animation defaults to pause and supports steps, play/pause and reset', async ({ page }) => {
@@ -273,14 +273,14 @@ test('progress import merges exported JSON and ignores invalid entries', async (
   await page.locator('[data-complete]').click();
   const exported = JSON.stringify({ exportedAt: new Date().toISOString(), completed: ['docs/01-basics/01-文件与目录操作.md', 'docs/01-basics/02-查看与编辑文件-Vim.md', 'not-a-real-chapter'] });
   await page.locator('[data-action="clear-progress"]').click();
-  await expect(page.locator('.sidebar-progress')).toContainText('0 / 42');
+  await expect(page.locator('.sidebar-progress')).toContainText('0 / 43');
   await page.locator('[data-action="import-progress"]').click();
   await page.locator('#import-input').fill(exported);
   await page.locator('#import-confirm').click();
-  await expect(page.locator('.sidebar-progress')).toContainText('2 / 42');
+  await expect(page.locator('.sidebar-progress')).toContainText('2 / 43');
   await expect(page.locator('#toast')).toContainText('忽略 1 条无效');
   await page.reload();
-  await expect(page.locator('.sidebar-progress')).toContainText('2 / 42');
+  await expect(page.locator('.sidebar-progress')).toContainText('2 / 43');
 });
 
 test('reading progress bar fills as the page scrolls', async ({ page }) => {

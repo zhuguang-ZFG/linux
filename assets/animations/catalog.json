@@ -2134,5 +2134,57 @@
         "description": "先测本地耗时再决定；二选一不唯一，可混合"
       }
     ]
+  },
+  {
+    "file": "ai-agent-ladder.svg",
+    "title": "AI 代理",
+    "chapter": "docs/04-projects/项目6-AI结对排障.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 只读勘察",
+        "description": "只看不动，结论附证据；原始命令留档"
+      },
+      {
+        "title": "02 沙箱试写",
+        "description": "副本里跑，不碰真机；失败即丢弃"
+      },
+      {
+        "title": "03 人工审阅",
+        "description": "人批准后才应用；影响面写清楚"
+      },
+      {
+        "title": "04 受控执行",
+        "description": "留好回滚点；验收不过就 revert"
+      }
+    ]
+  },
+  {
+    "file": "ai-pair-debug.svg",
+    "title": "结对排障",
+    "chapter": "docs/04-projects/项目6-AI结对排障.md",
+    "duration": 12,
+    "width": 1080,
+    "height": 640,
+    "steps": [
+      {
+        "title": "01 记录现场",
+        "description": "不剪辑、不转述；贴证据前先脱敏"
+      },
+      {
+        "title": "02 模型假设",
+        "description": "区分事实与推测；每个假设给验证命令"
+      },
+      {
+        "title": "03 最小验证",
+        "description": "先预测再执行；结果写回 CASE.md"
+      },
+      {
+        "title": "04 修复复盘",
+        "description": "结论对齐最初现象；失败带新证据再来"
+      }
+    ]
   }
 ]
