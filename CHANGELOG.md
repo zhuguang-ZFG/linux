@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+- 内容：新增 [项目 6 · AI 结对排障](docs/04-projects/项目6-AI结对排障.md)，ROADMAP「AI + Linux 开发」支线落地为正式章节（实战篇 6 个项目）：只读白名单、沙箱目录、diff 审阅与 CASE.md 五段交付物；新增 2 个原创动画（AI 代理权限阶梯、结对排障记录），动画 87→89、章节 42→43；README/知识地图/学习路线/练习/ROADMAP/测试计数全部同步。
+- 视频：机制精讲新增第 6 部 [M14 · ssh 回车之后，到提示符出现之前](resources/lectures/ssh.md)（进阶篇 · 网络基础与远程连接），三次握手、主机密钥、会话密钥、公钥认证、服务端开关、ssh-agent、-vvv 取证、端口转发、脚本化三参数与五种死法，15 段；配套动画 TCP 握手/SSH 隧道相位放大，章节正文新增「🎬 本章精讲」入口。
+
 - 视频：机制精讲新增第 5 部 [M13 · free 还有内存，进程为什么还是被杀了](resources/lectures/oom.md)（高级篇 · 性能观测与调优），页缓存、OOM killer badness 打分、cgroup 限额与安全触发实验，13 段 6–8 分钟；配套动画 内存缓存/页缓存/OOM/cgroup 按相位放大，章节正文新增「🎬 本章精讲」入口。
 
 - 视频：新增「机制精讲」长视频线（`scripts/video/produce-lecture.mjs`），4 部 6–8 分钟 1080p 章节正片（权限 / PATH / 磁盘 / 管道），逐句 TTS、逐字字幕、相位放大动画、SRT、分段章节、四比例封面与发布信息；文字稿由 `lecture-notes.mjs` 生成到 `resources/lectures/`，与成片配音逐字一致。

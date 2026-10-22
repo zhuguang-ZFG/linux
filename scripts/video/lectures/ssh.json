@@ -1,0 +1,291 @@
+{
+  "id": "ssh",
+  "series": "通往 Linux 之路 · 机制精讲",
+  "chapter": "阶段 2 · 进阶篇 · 第 8 章",
+  "doc": "docs/02-advanced/08-网络基础与远程连接.md",
+  "title": "ssh 回车之后，到提示符出现之前",
+  "subtitle": "三次握手之后，SSH 还要做的四件事",
+  "number": "M14",
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "-2%",
+  "fps": 15,
+  "outFps": 30,
+  "leadPad": 0.35,
+  "tailPad": 0.5,
+  "cover": {
+    "question": "ssh 回车之后，\n到提示符出现之前发生了什么",
+    "answer": "一秒五步走，卡住有迹可循",
+    "hero": "assets/animations/ssh-tunnel.svg",
+    "accent": "#79c0ff",
+    "stage": "机制精讲 · 网络与远程连接"
+  },
+  "beats": [
+    {
+      "kind": "title",
+      "kicker": "开场 · 一秒背后的十秒",
+      "head": "ssh 回车之后，到提示符出现之前",
+      "lines": [
+        "回车只要一秒",
+        "幕后至少有五步",
+        "任何一步卡住，都有迹可循"
+      ],
+      "say": "在终端里敲 ssh，回车，提示符出现，好像只是一瞬间。其实幕后至少发生了五件事：连上端口，认出对方，约好比密码，验明正身，最后才递给你 shell。哪一步卡住，报错都不一样。把这一秒拆开，以后 SSH 出问题你就不用再猜。"
+    },
+    {
+      "kind": "concept",
+      "kicker": "第一步",
+      "head": "三次握手，接通 22 号端口",
+      "lines": [
+        "SYN 去，SYN+ACK 回，ACK 再走",
+        "双方都确认对方能收能发",
+        "防火墙挡住时，卡在这一步"
+      ],
+      "say": "第一步是三次握手。你的机器发一个 SYN 到对方二十二端口，对方回 SYN 加 ACK，你再回一个 ACK。三次来回，双方都确认：你找我，我在听，你能收到我。如果防火墙挡着，请求根本到不了，现象通常是卡住不动，直到超时。",
+      "svg": "assets/animations/tcp-handshake.svg",
+      "cycle": 12,
+      "minDur": 14
+    },
+    {
+      "kind": "concept",
+      "kicker": "第二步",
+      "head": "认出对方：主机密钥与 known_hosts",
+      "lines": [
+        "服务器出示主机公钥指纹",
+        "第一次连接会问 yes 或 no",
+        "指纹写进 known_hosts",
+        "下次变了会红字告警"
+      ],
+      "say": "接通后，服务器出示自己的主机公钥。第一次连接，你会看到一行 fingerprint 和 yes 或 no 的提问。那是在防中间人：你确认指纹对得上，它才被写进 known_hosts。下次再连，如果指纹变了，SSH 会红字告警拒绝连接。那一问不是麻烦，是防线。",
+      "minDur": 14
+    },
+    {
+      "kind": "concept",
+      "kicker": "第三步",
+      "head": "约在公开信道里的会话密钥",
+      "lines": [
+        "用非对称算法公开交换素材",
+        "双方各自算出同一把对称密钥",
+        "之后的流量全靠它加密",
+        "偷看交换过程也算不出"
+      ],
+      "say": "第三步约密钥。双方用非对称算法公开交换一些素材，各自独立算出同一把对称密钥。之后所有流量都用这把对称密钥加解密，快；而交换过程全被看到也没用，素材凑不出钥匙。这一步你毫无感觉，但它决定了整条连接的安全上限。"
+    },
+    {
+      "kind": "concept",
+      "kicker": "第四步",
+      "head": "验明正身：公钥逐行匹配",
+      "lines": [
+        "客户端用私钥签一段数据",
+        "服务器查 authorized_keys",
+        "文件权限不对直接拒绝",
+        "权限课的知识在这时回来找你"
+      ],
+      "say": "第四步验明你是谁。你用私钥签一段数据，服务器拿你的公钥验签。公钥在哪？在服务器用户家目录的 authorized_keys 里，一行一把。这个文件权限不对，SSH 直接拒绝。还记得权限那一课吗？家目录的每一位权限，都会在这时回来找你。"
+    },
+    {
+      "kind": "concept",
+      "kicker": "服务端开关",
+      "head": "服务器端：两把开关决定谁能进",
+      "lines": [
+        "PasswordAuthentication 管密码",
+        "PermitRootLogin 管 root 直连",
+        "改完要 reload sshd",
+        "先开新窗口验证，再退出旧连接"
+      ],
+      "say": "认证方式其实由服务器端两把开关决定：PasswordAuthentication 管允不允许密码，PermitRootLogin 管 root 能不能直接登录。改完记得 reload sshd。千万别急着断开当前连接，先开一个新窗口验证能进，再退出旧的。多少人改完配置顺手关了终端，从此被自己的服务器拒之门外。"
+    },
+    {
+      "kind": "concept",
+      "kicker": "保险柜",
+      "head": "ssh-agent：私钥的随身保险柜",
+      "lines": [
+        "解锁后的私钥放内存",
+        "一次解锁，多次使用",
+        "别图省事乱加 -A",
+        "转发到不可信机器等于交出钥匙"
+      ],
+      "say": "每次都输私钥密码很烦，ssh-agent 是解：私钥解锁后放在内存里，一次解锁，后续登录直接用。但有个雷：减 A 会把 agent 转发到远端机器，那台机器上的特权用户就能借用你的私钥，继续登录别处。便利和失守之间，只隔这一个参数。"
+    },
+    {
+      "kind": "code",
+      "kicker": "调试",
+      "head": "ssh -vvv：把每一步摊开在眼前",
+      "code": "ssh -vvv user@host 2> ssh.log\n\ngrep -n -E 'host key|Authentications|succeeded' ssh.log\n# 协商 → 认证方式 → 哪一步成功，全在日志里",
+      "lines": [
+        "减 vvv 输出全部协商细节",
+        "重定向到文件再过滤",
+        "五步里卡在哪一步，一目了然"
+      ],
+      "say": "出问题了别猜。ssh 减 vvv 会把每一步的协商细节全部打出来：主机密钥怎么验的、服务器接受哪种认证、最后哪一步成功。重定向到一个文件，再按关键词过滤。五步里卡在哪一步，一目了然，这是排障的第一手证据。",
+      "minDur": 14
+    },
+    {
+      "kind": "code",
+      "kicker": "自动化",
+      "head": "脚本里的 SSH：三个必加参数",
+      "code": "ssh -o BatchMode=yes -o ConnectTimeout=5 \\\n    -o StrictHostKeyChecking=accept-new user@host 'hostname'\n# BatchMode      关掉交互，失败就失败\n# ConnectTimeout 握手限时，网络不通快报错\n# accept-new     新指纹自动收下（生产先分发 known_hosts）",
+      "lines": [
+        "BatchMode 关掉一切提问",
+        "ConnectTimeout 限制握手时间",
+        "自动化最怕的不是失败，是挂住"
+      ],
+      "say": "把 SSH 写进脚本，有三个参数必加：BatchMode 等于 yes，关掉一切交互提问，连不上就直接失败，绝不挂住；ConnectTimeout 限制握手时间，网络不通快速报错；新机器可以 accept-new 自动收下指纹，但生产环境更该提前把指纹分发到 known_hosts。自动化最怕的不是失败，是挂住。",
+      "minDur": 14
+    },
+    {
+      "kind": "concept",
+      "kicker": "带货",
+      "head": "端口转发：把远端服务拉到眼前",
+      "lines": [
+        "ssh -L 本地端口:目标:目标端口",
+        "流量走 SSH 加密通道",
+        "数据库、内网管理页都能这么看",
+        "连接一断，隧道随之消失"
+      ],
+      "say": "连接建好之后还能带货。ssh 减 L 把本地一个端口映射到远端任意地址和端口，流量全走这条加密隧道。想连内网数据库、看只有服务器能访问的管理页，一条命令搞定，不用把服务暴露到公网。连接一断，隧道也随之消失，干干净净。",
+      "svg": "assets/animations/ssh-tunnel.svg",
+      "cycle": 12,
+      "minDur": 14
+    },
+    {
+      "kind": "table",
+      "kicker": "排查",
+      "head": "四种最常见的死法",
+      "cols": [
+        "现象",
+        "真正原因",
+        "验证方法"
+      ],
+      "rows": [
+        [
+          "密码对却 denied",
+          "服务器禁了密码登录",
+          "看 PasswordAuthentication"
+        ],
+        [
+          "公钥在却提示输密码",
+          "authorized_keys 权限或属主错",
+          "sshd 日志加 ls -l"
+        ],
+        [
+          "connection refused",
+          "端口错或服务没起",
+          "ss -tlnp 看 22"
+        ],
+        [
+          "卡住直到超时",
+          "防火墙或网络不通",
+          "nc -zv 测端口"
+        ]
+      ],
+      "say": "四种最常见的死法。密码对却被拒，多半是服务器禁了密码登录。公钥明明在还要密码，九成是 authorized_keys 的权限或属主不对，去查 sshd 的日志。connection refused 是端口问题；卡住超时是网络被挡。先分类，再动手，别上来就重装。"
+    },
+    {
+      "kind": "pitfall",
+      "kicker": "避坑",
+      "head": "五个 SSH 的坑",
+      "cols": [
+        "现象",
+        "真正的原因",
+        "正确做法"
+      ],
+      "rows": [
+        [
+          "第一次连接没看就按 yes",
+          "失去防中间人的机会",
+          "核对指纹再确认"
+        ],
+        [
+          "私钥权限设成 777",
+          "ssh 认为私钥已泄露，拒绝使用",
+          "chmod 600 收紧权限"
+        ],
+        [
+          "图省事乱用 ssh -A",
+          "私钥可被远端机器借用",
+          "用 -J 或 ProxyJump 配跳板"
+        ],
+        [
+          "known_hosts 告警随手就删",
+          "可能正被中间人攻击",
+          "先弄清是谁改了密钥"
+        ],
+        [
+          "会话放着放着就断",
+          "NAT 超时丢弃空闲连接",
+          "配 ServerAliveInterval 60"
+        ]
+      ],
+      "say": "五个高频坑。第一次连接不看指纹就按 yes，防线形同虚设。私钥权限太松，SSH 宁可不用。图省事加 -A，私钥可能被远端借用，正确做法是用 ProxyJump 配跳板。known_hosts 告警先弄清是谁变了，别随手就删。常断的会话加个保活参数。",
+      "minDur": 16
+    },
+    {
+      "kind": "code",
+      "kicker": "实验",
+      "head": "十分钟实验：本机完整走一遍",
+      "code": "sudo /usr/sbin/sshd -p 2222          # 本机再起一个 sshd\nssh -p 2222 -vvv $USER@127.0.0.1 2> demo.log\n\ngrep -E 'host key|Authentications|succeeded' demo.log",
+      "lines": [
+        "第二端口登录本机，日志落盘",
+        "过滤出密钥、认证、成功三行",
+        "改 known_hosts 指纹再看告警"
+      ],
+      "say": "做个本机实验：再起一个 sshd 监听两千二百二十二端口，用减 vvv 连本机，把日志落盘。过滤三行：主机密钥怎么确认的、服务器接受哪种认证、最后哪一步成功。再改一改 known_hosts 里的指纹，看看告警长什么样。这一遍走完，SSH 就没什么神秘的了。",
+      "minDur": 15
+    },
+    {
+      "kind": "quote",
+      "kicker": "记住这一句",
+      "head": "口诀",
+      "lines": [
+        "一秒五步走，卡住有迹可循",
+        "指纹要核对，私钥别乱借"
+      ],
+      "say": "两句话：一秒五步走，卡住有迹可循；指纹要核对，私钥别乱借。记住这两句，SSH 的幕后你就看穿了。"
+    },
+    {
+      "kind": "recap",
+      "kicker": "自测",
+      "head": "合上书，三问",
+      "lines": [
+        "三次握手之后，SSH 还要做哪三件事？",
+        "第一次连接那个 yes 是在防什么？",
+        "为什么 authorized_keys 权限不对会被拒绝？"
+      ],
+      "say": "合上书，三问。三次握手之后，SSH 还要做哪三件事？第一次连接那个 yes 是在防什么？为什么 authorized_keys 权限不对会被拒绝？答得出来，远程连接这一章，你就真正拿下了。"
+    }
+  ],
+  "publish": {
+    "bilibili": {
+      "title": "【Linux机制精讲14】ssh 回车之后到提示符出现之前发生了什么？握手、主机密钥、会话密钥与公钥认证讲透",
+      "partition": "知识 → 计算机技术",
+      "tags": [
+        "Linux",
+        "SSH",
+        "网络安全",
+        "运维",
+        "免密登录",
+        "端口转发",
+        "命令行",
+        "服务器",
+        "计算机基础",
+        "教程"
+      ]
+    },
+    "xiaohongshu": {
+      "title": "ssh 回车之后，到提示符出现之前发生了什么",
+      "body": "一秒背后至少五件事，卡住任何一步，报错都不一样：\n\n① 三次握手接通 22 端口——卡住超时是网络/防火墙\n② 主机密钥 + known_hosts——第一次的 yes 是防中间人\n③ 公开交换素材，各自算出同一把会话密钥\n④ 私钥签名，服务器查 authorized_keys——权限不对直接拒绝\n⑤ 递给 shell；之后还能 -L 带货（端口转发）\n\n排障口诀：ssh -vvv 全摊开在眼前。\n指纹要核对，私钥别乱借。",
+      "topics": [
+        "#Linux",
+        "#运维",
+        "#程序员",
+        "#SSH",
+        "#网络安全",
+        "#服务器"
+      ]
+    },
+    "douyin": {
+      "title": "ssh 登录一秒背后的五件事 #Linux #运维 #程序员",
+      "collection": "通往Linux之路·机制精讲"
+    }
+  }
+}
