@@ -10,7 +10,9 @@
 
 ![终端打字动画](assets/animations/terminal-typing.svg)
 
-![学习站首页实拍：左侧学习地图，右侧目标导向入口](assets/screenshot-home.png)
+![学习站首页实拍（浅色）：左侧学习地图，右侧目标导向入口](assets/screenshot-home.png)
+
+![学习站首页实拍（深色模式）](assets/screenshot-home-dark.png)
 
 > 灵感源自「通往 AGI 之路」：**用清晰的路线图，把一件复杂的事拆成每天都能走的一小步。**
 > AI 时代，许多模型服务、容器和云服务器以 Linux 为基础 —— 从命令行到本地 AI，沿着这条路一步步动手。
