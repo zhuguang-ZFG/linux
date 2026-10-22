@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+- 视频：机制精讲新增第 5 部 [M13 · free 还有内存，进程为什么还是被杀了](resources/lectures/oom.md)（高级篇 · 性能观测与调优），页缓存、OOM killer badness 打分、cgroup 限额与安全触发实验，13 段 6–8 分钟；配套动画 内存缓存/页缓存/OOM/cgroup 按相位放大，章节正文新增「🎬 本章精讲」入口。
+
 - 视频：新增「机制精讲」长视频线（`scripts/video/produce-lecture.mjs`），4 部 6–8 分钟 1080p 章节正片（权限 / PATH / 磁盘 / 管道），逐句 TTS、逐字字幕、相位放大动画、SRT、分段章节、四比例封面与发布信息；文字稿由 `lecture-notes.mjs` 生成到 `resources/lectures/`，与成片配音逐字一致。
 - 内容：权限章补 ACL（`getfacl`/`setfacl`/mask）与 `chattr +i`；PATH 章补 hash 缓存与 `type -a`/`command -v` 排查；四章新增「🎬 本章精讲」入口。README/scripts 说明与 CHANGELOG 同步。
 - 媒体：新增 5 个原创 SVG 动画（批量改名、Pi 与 Pico、无头安装、3-2-1 备份、云端 vs 边缘），动画 82→87；单动画章节清零，42 章全部至少 2 个动画；visual-lab 与 README 计数同步。
