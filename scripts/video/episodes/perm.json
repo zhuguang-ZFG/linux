@@ -1,0 +1,114 @@
+{
+  "id": "perm",
+  "title": "chmod 644 之后，为什么连 cd 都进不去了",
+  "fps": 30,
+  "cycle": 12,
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "-2%",
+  "leadPad": 0.3,
+  "tailPad": 0.45,
+  "lineGap": 0.16,
+  "brand": {
+    "eyebrow": "阶段 1 · 基础篇 · 第 3 章",
+    "watermark": "通往 Linux 之路"
+  },
+  "scenes": [
+    {
+      "kind": "hook",
+      "tag": "权限一改，门就锁上了",
+      "command": "chmod 644 scripts",
+      "headline": "为什么连「cd」都进不去了",
+      "sub": "文件的 x 和目录的 x，不是一回事",
+      "lines": [
+        "chmod 六四四。",
+        "权限收得干干净净。",
+        "可连 cd 都进不去。",
+        "问题出在那个 x。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/permission-bits.svg",
+      "cycle": 8,
+      "zoom": [
+        [
+          163,
+          183,
+          140,
+          100
+        ],
+        [
+          313,
+          183,
+          140,
+          100
+        ],
+        [
+          463,
+          183,
+          140,
+          100
+        ]
+      ],
+      "kicker": "九个位，三组人",
+      "alias": {
+        "plain": "三组人",
+        "term": "属主 / 属组 / 其他人"
+      },
+      "lines": [
+        "九个位，三组人。",
+        "四二一，加起来。",
+        "六四四，这么来。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/umask-bits.svg",
+      "kicker": "新建文件，先划掉几笔",
+      "alias": {
+        "plain": "划掉几笔",
+        "term": "umask"
+      },
+      "lines": [
+        "新文件有默认值。",
+        "先给满，再划几笔。",
+        "划掉几笔，就是 umask。",
+        "文件六四四，目录七五五。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/sudo-elevation.svg",
+      "kicker": "su 换人，sudo 借一手",
+      "alias": {
+        "plain": "借钥匙",
+        "term": "su / sudo"
+      },
+      "lines": [
+        "要改系统，得先借权。",
+        "su 换个人，输对方密码。",
+        "sudo 只借这一条。",
+        "名单写在 sudoers。"
+      ]
+    },
+    {
+      "kind": "cta",
+      "headline": "42 章 · 87 部原理动画",
+      "bullets": [
+        "每章都有动手实验和自测",
+        "最小授权：能读就别给写"
+      ],
+      "url": "",
+      "lines": [
+        "记住：文件的 x 能跑，目录的 x 能进。"
+      ]
+    }
+  ],
+  "cover": {
+    "number": "02",
+    "hero": "assets/animations/permission-bits.svg",
+    "answer": "文件的 x 能跑，目录的 x 能进",
+    "accent": "#ffd76b",
+    "stage": "阶段 1 · 基础篇"
+  }
+}

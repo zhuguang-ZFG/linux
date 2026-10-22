@@ -1,0 +1,94 @@
+{
+  "id": "disk",
+  "title": "删了文件，磁盘空间为什么没回来",
+  "fps": 30,
+  "cycle": 12,
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "-2%",
+  "leadPad": 0.3,
+  "tailPad": 0.45,
+  "lineGap": 0.16,
+  "brand": {
+    "eyebrow": "阶段 2 · 进阶篇 · 第 7 章",
+    "watermark": "通往 Linux 之路"
+  },
+  "scenes": [
+    {
+      "kind": "hook",
+      "tag": "删了，空间却没还",
+      "command": "rm big.log",
+      "headline": "空间为什么「没回来」",
+      "sub": "df 的数字一动不动",
+      "lines": [
+        "几百兆的日志，删了。",
+        "df 一看，一动不动。",
+        "不是没删掉。",
+        "是删除，比你想得晚。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/inode-links.svg",
+      "kicker": "文件名只是个门牌",
+      "alias": {
+        "plain": "门牌",
+        "term": "inode / 硬链接"
+      },
+      "lines": [
+        "内容住在 inode 里。",
+        "文件名只是块门牌。",
+        "硬链接，就是多挂一块。",
+        "门牌拆光，才腾地方。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/page-cache.svg",
+      "kicker": "先收货，后入库",
+      "alias": {
+        "plain": "小仓库",
+        "term": "页缓存"
+      },
+      "lines": [
+        "写文件，立刻返回。",
+        "数据先进了仓库。",
+        "内核慢慢再入库。",
+        "拔盘之前，先 sync。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/filesystem-mount.svg",
+      "kicker": "挂载会盖住原目录",
+      "alias": {
+        "plain": "盖一块布",
+        "term": "mount 挂载"
+      },
+      "lines": [
+        "挂载像盖上一块布。",
+        "原来的东西没删。",
+        "只是被布盖住了。",
+        "掀开布，就又看见。"
+      ]
+    },
+    {
+      "kind": "cta",
+      "headline": "42 章 · 87 部原理动画",
+      "bullets": [
+        "每章都有动手实验和自测",
+        "rm 后不降，用 lsof 找凶手"
+      ],
+      "url": "",
+      "lines": [
+        "记住：名字删了，不等于空间还了。"
+      ]
+    }
+  ],
+  "cover": {
+    "number": "04",
+    "hero": "assets/animations/inode-links.svg",
+    "answer": "名字删了，不等于空间还了",
+    "accent": "#f778ba",
+    "stage": "阶段 2 · 进阶篇"
+  }
+}

@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+- 视频：新增「机制精讲」长视频线（`scripts/video/produce-lecture.mjs`），4 部 6–8 分钟 1080p 章节正片（权限 / PATH / 磁盘 / 管道），逐句 TTS、逐字字幕、相位放大动画、SRT、分段章节、四比例封面与发布信息；文字稿由 `lecture-notes.mjs` 生成到 `resources/lectures/`，与成片配音逐字一致。
+- 内容：权限章补 ACL（`getfacl`/`setfacl`/mask）与 `chattr +i`；PATH 章补 hash 缓存与 `type -a`/`command -v` 排查；四章新增「🎬 本章精讲」入口。README/scripts 说明与 CHANGELOG 同步。
 - 媒体：新增 5 个原创 SVG 动画（批量改名、Pi 与 Pico、无头安装、3-2-1 备份、云端 vs 边缘），动画 82→87；单动画章节清零，42 章全部至少 2 个动画；visual-lab 与 README 计数同步。
 - 仓库规范：CI 状态徽章、站点预览截图、issue/PR 模板、SECURITY 与行为准则、CHANGELOG。
 - 站点体验：侧边栏「继续上次阅读」入口；回到同一章节时恢复上次滚动位置；Playwright 31→33。

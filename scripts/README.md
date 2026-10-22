@@ -53,6 +53,25 @@ bash scripts/check-docker.sh
 
 `health-report.sh` 退出码为 0（磁盘未达阈值）、1（磁盘告警）、2（参数/依赖/采集错误）；缺少可选的 free/ss 会在报告中标注，已安装工具执行失败则不返回健康结果。检查不声称验证了每个外部网站或每条需要系统权限的教学命令。运行实验前可查 [环境对照表](../resources/environment-matrix.md)。
 
+## 章节正片（长视频）
+
+短片讲钩子，正片讲链路。每个讲稿是一份 JSON 分镜（`scripts/video/lectures/<id>.json`），
+字段与短片不同：`beats[]` 里每段有 `kind`（title/concept/code/table/pitfall/quote/recap）、
+`head`、`lines`、`say`（唯一配音稿）与可选 `svg`。渲染器按旁白实测时长排时间轴，不手写秒数。
+
+```bash
+node scripts/video/produce-lecture.mjs perm          # 1080p 成片 + SRT + chapters + publish.json
+node scripts/video/produce-lecture.mjs perm --stills # 逐段静帧（排版自检，不联网）
+node scripts/video/produce-lecture.mjs perm --covers # 16:9 / 4:3 / 9:16 封面
+node scripts/video/lecture-notes.mjs                 # 由讲稿 + 成片时间轴生成文字稿
+node scripts/video/check-lectures.mjs                # 自检：讲稿、时长、字幕/分段数量、封面、文字稿
+```
+
+- 成片输出到 `video-out/lectures/<id>/`（`.gitignore` 已忽略）；字幕、分段、封面与发布信息同目录。
+- 16:9 1080p，15fps 采样后由 ffmpeg 补到 30fps；配音走 edge-tts（联网），响度归一到 ≈ -16 LUFS。
+- 动画按 `focus/output` 相位自动放大；没有相位标记的 SVG 保持全图，不猜测裁剪。
+- 文字稿 `resources/lectures/*.md` 入库，保证不依赖本机成片也能校对、检索和建站。
+
 ## 素材维护
 
 - `python3 -B scripts/build-animations.py` 重新生成 81 个 SVG；另有 6 个原始动画。[动画目录](../assets/animations/catalog.json) 记录全部 87 个动画与对应章节、时长和步骤。新场景的卡片文本建议本地最宽右界 ≤ 卡片限额的 93%，因为 CI 的 DejaVu/Liberation 字体比雅黑宽约 2-10%，余量不足会在溢出检查误报。

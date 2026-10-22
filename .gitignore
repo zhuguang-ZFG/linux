@@ -25,3 +25,6 @@ playwright-report/
 
 # 实验产物（学习者本地生成，不入库）
 labs/workdir/
+
+# 视频产物（本地渲染生成，不入库）
+video-out/

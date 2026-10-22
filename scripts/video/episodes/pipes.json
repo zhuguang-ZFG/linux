@@ -1,0 +1,94 @@
+{
+  "id": "pipes",
+  "title": "yes | head 之后，退出码为什么是 141",
+  "fps": 30,
+  "cycle": 12,
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "-2%",
+  "leadPad": 0.3,
+  "tailPad": 0.45,
+  "lineGap": 0.16,
+  "brand": {
+    "eyebrow": "阶段 2 · 进阶篇 · 第 1 章",
+    "watermark": "通往 Linux 之路"
+  },
+  "scenes": [
+    {
+      "kind": "hook",
+      "tag": "人人都踩过的坑",
+      "command": "yes | head -n 3",
+      "headline": "退出码为什么是「141」",
+      "sub": "不是报错：是下游先走了",
+      "lines": [
+        "yes 是个复读机。",
+        "head 只要前三行。",
+        "三行到手，它先走了。",
+        "可退出码，不是零。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/shell-pipeline.svg",
+      "kicker": "管道＝一条传送带",
+      "alias": {
+        "plain": "传送带",
+        "term": "管道 pipe"
+      },
+      "lines": [
+        "管道就是传送带。",
+        "上一步的输出，喂给下一步。",
+        "四个工具接力往下走。",
+        "每一步都少一点。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/process-signals.svg",
+      "kicker": "信号＝内核递来的纸条",
+      "alias": {
+        "plain": "纸条",
+        "term": "信号 signal"
+      },
+      "lines": [
+        "程序正埋头干活。",
+        "内核递来一张纸条。",
+        "有的先收尾，再走。",
+        "有的必须马上停。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/pipe-buffer.svg",
+      "kicker": "中间有个小仓库",
+      "alias": {
+        "plain": "小仓库",
+        "term": "64KB 缓冲区"
+      },
+      "lines": [
+        "管道中间有个小仓库。",
+        "仓库满了，上游就得等。",
+        "head 走了，没人取货。",
+        "一二八加十三，就是一四一。"
+      ]
+    },
+    {
+      "kind": "cta",
+      "headline": "42 章 · 87 部原理动画",
+      "bullets": [
+        "每章都有动手实验和自测",
+        "脚本里加 set -o pipefail"
+      ],
+      "url": "",
+      "lines": [
+        "记住：一四一，就是下游先走了。"
+      ]
+    }
+  ],
+  "cover": {
+    "number": "01",
+    "hero": "assets/animations/shell-pipeline.svg",
+    "answer": "141，就是下游先走了",
+    "accent": "#7ee787",
+    "stage": "阶段 2 · 进阶篇"
+  }
+}

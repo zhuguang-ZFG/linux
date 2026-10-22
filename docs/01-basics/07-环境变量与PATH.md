@@ -89,6 +89,25 @@ $ which ls
 
 这解释了三件事：敲 `ls` 不用写全路径；同名命令"谁在前面谁赢"；当前目录 `.` 默认不在 `PATH` 里——这是**安全设计**，所以自己的脚本要写 `./script.sh`。
 
+### hash：Shell 记住的路
+
+Shell 命中过一条命令后，会把它的完整路径记进 **hash 缓存**，下次直接复用，省去重新遍历 PATH。平时是加速，排查时却是陷阱：装了新版本、删了旧目录，Shell 可能还拿着旧地址。
+
+```bash
+hash            # 看当前记住了哪些命令
+hash -r         # 清空缓存，让 Shell 重新找
+```
+
+排查「命令到底是谁」时，别只看 `which`，这三条更可靠：
+
+| 命令 | 回答什么 | 适合场景 |
+|---|---|---|
+| `type -a ls` | 所有同名候选（别名、函数、外部程序） | 不知道最终执行了谁 |
+| `command -v ls` | 按 POSIX 规则返回可执行路径 | 脚本里判断命令是否存在 |
+| `hash -r` | 清掉记住的旧路径 | 刚换版本、刚挪目录 |
+
+`which` 在部分系统里是外部程序，不同发行版行为不完全一致；脚本里判断「有没有这个命令」，用 `command -v` 更稳。
+
 ### command not found 三步排查法
 
 1. **拼错了吗？**：用 Tab 补全，别手打；
@@ -258,6 +277,14 @@ source ~/.bashrc                         # 永久生效
 [![Shell 环境变量 视频封面](https://i0.hdslb.com/bfs/archive/ebd7355af99f58dd8062634f2121ef8e7e432cdc.jpg)](https://www.bilibili.com/video/BV1ZZ37zdEp2/?p=15)
 
 [在学习站查看配套媒体](https://zhuguang-zfg.github.io/linux/#read=docs%2F01-basics%2F07-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E4%B8%8EPATH.md) · [视频资料与核验说明](../../resources/videos.md)。标题、作者和分P已核对，未逐条完成实播，播放限制以原站为准。
+
+## 🎬 本章精讲
+
+长视频把本章拆成「现象 → 机制 → 命令验证 → 坑 → 自测」，动画按相位放大，配逐字口播稿：
+
+- [M07 · 明明装好了，为什么还说 command not found](../../resources/lectures/path.md) — 时间轴、口播稿与自测
+
+成片在 `video-out/lectures/path/path-wide.mp4`（本地渲染，不入库），字幕 `path.srt`。
 
 ## ✅ 自测清单
 

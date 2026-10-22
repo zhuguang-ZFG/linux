@@ -1,0 +1,79 @@
+{
+  "id": "path",
+  "title": "明明装好了，为什么还说 command not found",
+  "fps": 30,
+  "cycle": 12,
+  "voice": "zh-CN-YunxiNeural",
+  "rate": "-2%",
+  "leadPad": 0.3,
+  "tailPad": 0.45,
+  "lineGap": 0.16,
+  "brand": {
+    "eyebrow": "阶段 1 · 基础篇 · 第 7 章",
+    "watermark": "通往 Linux 之路"
+  },
+  "scenes": [
+    {
+      "kind": "hook",
+      "tag": "装好了，却敲不出来",
+      "command": "mytool",
+      "headline": "为什么「command not found」",
+      "sub": "不是没装，是 Shell 没找到",
+      "lines": [
+        "程序明明装好了。",
+        "敲下去却说找不到。",
+        "不是没装，是没找着。",
+        "它在照清单找人。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/path-lookup.svg",
+      "kicker": "它只按一张清单找",
+      "alias": {
+        "plain": "一张清单",
+        "term": "PATH"
+      },
+      "lines": [
+        "Shell 不搜全盘。",
+        "它照清单，挨个找。",
+        "从左到右，先中的赢。",
+        "带斜杠才按路径走。"
+      ]
+    },
+    {
+      "kind": "anim",
+      "svg": "assets/animations/env-scope.svg",
+      "kicker": "export 决定给不给",
+      "alias": {
+        "plain": "传话筒",
+        "term": "export 环境变量"
+      },
+      "lines": [
+        "变量想传给子进程。",
+        "得先 export 才行。",
+        "子进程改了，不回头。",
+        "想常驻，就写 bashrc。"
+      ]
+    },
+    {
+      "kind": "cta",
+      "headline": "42 章 · 87 部原理动画",
+      "bullets": [
+        "每章都有动手实验和自测",
+        "找不到命令，先 which"
+      ],
+      "url": "",
+      "lines": [
+        "记住：找不到命令，先问它在哪找。"
+      ]
+    }
+  ],
+  "cover": {
+    "number": "03",
+    "hero": "assets/animations/path-lookup.svg",
+    "answer": "找不到命令，先问它在哪找",
+    "accent": "#79c0ff",
+    "stage": "阶段 1 · 基础篇"
+  }
+}
