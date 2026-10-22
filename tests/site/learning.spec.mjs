@@ -333,6 +333,23 @@ test('dark mode remaps theme variables and keeps reading surface readable', asyn
   expect(codeBg).toBe('rgb(27, 40, 54)');
 });
 
+test('light mode keeps chrome surfaces light and text readable', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('');
+  const bodyBg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  expect(bodyBg).toBe('rgb(244, 247, 250)');
+  const sidebarBg = await page.locator('.sidebar').evaluate(el => getComputedStyle(el).backgroundColor);
+  expect(sidebarBg).toBe('rgb(255, 255, 255)');
+  const navColor = await page.locator('.nav-link').nth(1).evaluate(el => getComputedStyle(el).color);
+  expect(navColor).toBe('rgb(82, 100, 119)');
+  const statBg = await page.locator('.stat-strip').evaluate(el => getComputedStyle(el).backgroundColor);
+  expect(statBg).toBe('rgb(255, 255, 255)');
+  const routeBg = await page.locator('.route-card').first().evaluate(el => getComputedStyle(el).backgroundColor);
+  expect(routeBg).toBe('rgb(255, 255, 255)');
+  const buttonColor = await page.getByRole('link', { name: '找到适合我的路线' }).evaluate(el => getComputedStyle(el).color);
+  expect(buttonColor).toBe('rgb(23, 44, 64)');
+});
+
 test('reduced-motion preference still provides paused controls and readable steps', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('#animation=git-branches.svg');
