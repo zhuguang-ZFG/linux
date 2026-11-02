@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.5.0",
-  "engines": {"node": ">=22.12.0"},
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "build": "node scripts/build-site.mjs",
     "preview": "node scripts/serve-site.mjs",
@@ -20,6 +22,8 @@
     "github-slugger": "2.0.0",
     "marked": "18.1.0",
     "mermaid": "12.1.0",
+    "playwright": "1.63.0",
+    "puppeteer-core": "^25.16.0",
     "sanitize-html": "2.18.0"
   }
 }

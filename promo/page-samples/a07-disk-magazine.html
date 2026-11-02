@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-hf-style="magazine" data-family="magazine" data-medium="page" data-theme="ink-classic" data-scheme="light" style="color-scheme:light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 7 章 · 磁盘与文件系统</title>
+<style>/* GZ:TOKENS:START · guizang-design v0.1.0 生成，不要手改；改设计请改 guizang-design 后运行 scripts/sync-skill.mjs */
+:root{
+  --font-display:'Playfair Display','Noto Serif SC','Source Han Serif SC','Songti SC',serif;
+  --font-serif:'Source Serif 4','Noto Serif SC','Source Han Serif SC','Songti SC','STSong',Georgia,serif;
+  --font-serif-zh:'Noto Serif SC','Source Han Serif SC','Songti SC','STSong',serif;
+  --font-sans:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono','Noto Sans SC',ui-monospace,'SF Mono',Menlo,monospace;
+  --sp-1:2px;
+  --sp-2:4px;
+  --sp-3:8px;
+  --sp-4:12px;
+  --sp-5:16px;
+  --sp-6:24px;
+  --sp-7:32px;
+  --sp-8:40px;
+  --sp-9:48px;
+  --sp-10:64px;
+  --sp-11:80px;
+  --sp-12:96px;
+  --sp-13:160px;
+  --radius-none:0px;
+  --radius-xs:3px;
+  --radius-sm:6px;
+  --radius-md:14px;
+  --radius-pill:999px;
+  --ease-standard:cubic-bezier(.2,0,.38,.9);
+  --ease-expressive:cubic-bezier(.4,.14,.3,1);
+  --ease-entrance:cubic-bezier(0,0,.3,1);
+  --ease-entrance-standard:cubic-bezier(0,0,.38,.9);
+  --ease-editorial:cubic-bezier(.22,1,.36,1);
+  --ease-page:cubic-bezier(.77,0,.175,1);
+  --dur-fast-1:70ms;
+  --dur-fast-2:110ms;
+  --dur-moderate-1:150ms;
+  --dur-moderate-2:240ms;
+  --dur-slow-1:400ms;
+  --dur-slow-2:700ms;
+  --dur-page:900ms;
+  --stagger-tight:70ms;
+  --stagger-base:100ms;
+  --stagger-loose:160ms;
+  --move-sm:8px;
+  --move-md:16px;
+  --move-lg:24px;
+  --paper:#f1efea;
+  --paper-2:#e8e5de;
+  --ink:#0a0a0b;
+  --muted:#68625a;
+  --accent:#111111;
+  --accent-soft:#d8d2c6;
+  --accent-on:#f1efea;
+  --accent-ink:#111111;
+  --accent-display:#111111;
+  --accent-ink-inverse:#b2b2b2;
+  --text-primary:#0a0a0b;
+  --text-body:#2c2b2c;
+  --text-secondary:#404040;
+  --text-helper:#68625a;
+  --line-strong:#7e7d7b;
+  --line:#b7b5b2;
+  --line-subtle:#d1cfcb;
+  --ink-rgb:10,10,11;
+  --paper-rgb:241,239,234;
+  --accent-rgb:17,17,17;
+  --accent-on-rgb:241,239,234;
+  --accent-on-text:#f1efea;
+  --accent-on-text-rgb:241,239,234;
+  color-scheme:light;
+}
+[data-theme="ink-classic"]{
+  --paper:#f1efea;
+  --paper-2:#e8e5de;
+  --ink:#0a0a0b;
+  --muted:#68625a;
+  --accent:#111111;
+  --accent-soft:#d8d2c6;
+  --accent-on:#f1efea;
+  --accent-ink:#111111;
+  --accent-display:#111111;
+  --accent-ink-inverse:#b2b2b2;
+  --text-primary:#0a0a0b;
+  --text-body:#2c2b2c;
+  --text-secondary:#404040;
+  --text-helper:#68625a;
+  --line-strong:#7e7d7b;
+  --line:#b7b5b2;
+  --line-subtle:#d1cfcb;
+  --ink-rgb:10,10,11;
+  --paper-rgb:241,239,234;
+  --accent-rgb:17,17,17;
+  --accent-on-rgb:241,239,234;
+  --accent-on-text:#f1efea;
+  --accent-on-text-rgb:241,239,234;
+  color-scheme:light;
+}
+[data-theme="indigo-porcelain"]{
+  --paper:#f1f3f5;
+  --paper-2:#e4e8ec;
+  --ink:#0a1f3d;
+  --muted:#5f6d78;
+  --accent:#315d93;
+  --accent-soft:#d7e1ec;
+  --accent-on:#f1f3f5;
+  --accent-ink:#315d93;
+  --accent-display:#315d93;
+  --accent-ink-inverse:#89b9f5;
+  --text-primary:#0a1f3d;
+  --text-body:#2e415c;
+  --text-secondary:#43546d;
+  --text-helper:#5f6d78;
+  --line-strong:#808d9e;
+  --line:#b8c0ca;
+  --line-subtle:#d2d7dd;
+  --ink-rgb:10,31,61;
+  --paper-rgb:241,243,245;
+  --accent-rgb:49,93,147;
+  --accent-on-rgb:241,243,245;
+  --accent-on-text:#f1f3f5;
+  --accent-on-text-rgb:241,243,245;
+  color-scheme:light;
+}
+[data-theme="forest-ink"]{
+  --paper:#f5f1e8;
+  --paper-2:#ece7da;
+  --ink:#1a2e1f;
+  --muted:#5d665d;
+  --accent:#2e6b4f;
+  --accent-soft:#d4dfd2;
+  --accent-on:#f5f1e8;
+  --accent-ink:#2e6b4f;
+  --accent-display:#2e6b4f;
+  --accent-ink-inverse:#88c6a6;
+  --text-primary:#1a2e1f;
+  --text-body:#3d4d3e;
+  --text-secondary:#515f51;
+  --text-helper:#5d665d;
+  --line-strong:#8b9386;
+  --line:#c0c2b7;
+  --line-subtle:#d8d7cd;
+  --ink-rgb:26,46,31;
+  --paper-rgb:245,241,232;
+  --accent-rgb:46,107,79;
+  --accent-on-rgb:245,241,232;
+  --accent-on-text:#f5f1e8;
+  --accent-on-text-rgb:245,241,232;
+  color-scheme:light;
+}
+[data-theme="kraft-paper"]{
+  --paper:#eedfc7;
+  --paper-2:#e0d0b6;
+  --ink:#2a1e13;
+  --muted:#755f49;
+  --accent:#9b5a2e;
+  --accent-soft:#d5b58f;
+  --accent-on:#eedfc7;
+  --accent-ink:#804212;
+  --accent-display:#9b5a2e;
+  --accent-ink-inverse:#eda679;
+  --text-primary:#2a1e13;
+  --text-body:#493c2f;
+  --text-secondary:#5b4e3f;
+  --text-helper:#755f49;
+  --line-strong:#8f816f;
+  --line:#bfb09b;
+  --line-subtle:#d4c5af;
+  --ink-rgb:42,30,19;
+  --paper-rgb:238,223,199;
+  --accent-rgb:155,90,46;
+  --accent-on-rgb:238,223,199;
+  --accent-on-text:#ffffff;
+  --accent-on-text-rgb:255,255,255;
+  color-scheme:light;
+}
+[data-theme="dune"]{
+  --paper:#f0e6d2;
+  --paper-2:#e3d7bf;
+  --ink:#1f1a14;
+  --muted:#6f6557;
+  --accent:#8f7650;
+  --accent-soft:#d4c2a4;
+  --accent-on:#f0e6d2;
+  --accent-ink:#705833;
+  --accent-display:#8f7650;
+  --accent-ink-inverse:#cbb088;
+  --text-primary:#1f1a14;
+  --text-body:#3f3931;
+  --text-secondary:#524c42;
+  --text-helper:#6f6557;
+  --line-strong:#8a8275;
+  --line:#bdb4a3;
+  --line-subtle:#d4cab8;
+  --ink-rgb:31,26,20;
+  --paper-rgb:240,230,210;
+  --accent-rgb:143,118,80;
+  --accent-on-rgb:240,230,210;
+  --accent-on-text:#ffffff;
+  --accent-on-text-rgb:255,255,255;
+  color-scheme:light;
+}
+[data-theme="midnight-ink"]{
+  --paper:#0e0d0c;
+  --paper-2:#1a1714;
+  --ink:#ece2cf;
+  --muted:#9a8c75;
+  --accent:#d4a04a;
+  --accent-soft:#3a2a14;
+  --accent-on:#0e0d0c;
+  --accent-ink:#e0ab56;
+  --accent-display:#d4a04a;
+  --accent-ink-inverse:#875c00;
+  --text-primary:#ece2cf;
+  --text-body:#d5ccbb;
+  --text-secondary:#b9b2a3;
+  --text-helper:#b9b2a3;
+  --line-strong:#67635b;
+  --line:#373430;
+  --line-subtle:#23211f;
+  --ink-rgb:236,226,207;
+  --paper-rgb:14,13,12;
+  --accent-rgb:212,160,74;
+  --accent-on-rgb:14,13,12;
+  --accent-on-text:#0e0d0c;
+  --accent-on-text-rgb:14,13,12;
+  color-scheme:dark;
+}
+
+:root{
+  --fs-display:2.7rem;
+  --fw-display:500;
+  --lh-display:1.3;
+  --ls-display:.03em;
+  --ff-display:var(--font-serif);
+  --fst-display:normal;
+  --tt-display:none;
+  --fs-heading:1.85rem;
+  --fw-heading:500;
+  --lh-heading:1.4;
+  --ls-heading:.03em;
+  --ff-heading:var(--font-serif);
+  --fst-heading:normal;
+  --tt-heading:none;
+  --fs-subhead:1rem;
+  --fw-subhead:500;
+  --lh-subhead:1.4;
+  --ls-subhead:.02em;
+  --ff-subhead:var(--font-serif);
+  --fst-subhead:normal;
+  --tt-subhead:none;
+  --fs-lead:1.05rem;
+  --fw-lead:400;
+  --lh-lead:1.7;
+  --ls-lead:0;
+  --ff-lead:var(--font-sans);
+  --fst-lead:normal;
+  --tt-lead:none;
+  --fs-body:1.0625rem;
+  --fw-body:400;
+  --lh-body:1.85;
+  --ls-body:0;
+  --ff-body:var(--font-serif);
+  --fst-body:normal;
+  --tt-body:none;
+  --fs-small:0.9rem;
+  --fw-small:400;
+  --lh-small:1.6;
+  --ls-small:0;
+  --ff-small:var(--font-serif);
+  --fst-small:normal;
+  --tt-small:none;
+  --fs-caption:0.8125rem;
+  --fw-caption:400;
+  --lh-caption:1.6;
+  --ls-caption:0;
+  --ff-caption:var(--font-serif);
+  --fst-caption:normal;
+  --tt-caption:none;
+  --fs-label:0.8125rem;
+  --fw-label:500;
+  --lh-label:1.3;
+  --ls-label:.14em;
+  --ff-label:var(--font-mono);
+  --fst-label:normal;
+  --tt-label:uppercase;
+  --fs-meta:0.75rem;
+  --fw-meta:400;
+  --lh-meta:1.3;
+  --ls-meta:.06em;
+  --ff-meta:var(--font-mono);
+  --fst-meta:normal;
+  --tt-meta:uppercase;
+  --fs-quote:1.6rem;
+  --fw-quote:400;
+  --lh-quote:1.6;
+  --ls-quote:-.01em;
+  --ff-quote:var(--font-serif);
+  --fst-quote:normal;
+  --tt-quote:none;
+  --fs-num-xl:3rem;
+  --fw-num-xl:500;
+  --lh-num-xl:1;
+  --ls-num-xl:0;
+  --ff-num-xl:var(--font-display);
+  --fst-num-xl:normal;
+  --tt-num-xl:none;
+  --fs-display-zh:2.7rem;
+  --fw-display-zh:500;
+  --lh-display-zh:1.3;
+  --ls-display-zh:.03em;
+  --ff-display-zh:var(--font-serif);
+  --fst-display-zh:normal;
+  --tt-display-zh:none;
+  --fs-title:2.7rem;
+  --fw-title:500;
+  --lh-title:1.3;
+  --ls-title:.03em;
+  --ff-title:var(--font-serif);
+  --fst-title:normal;
+  --tt-title:none;
+  --fs-title-zh:2.7rem;
+  --fw-title-zh:500;
+  --lh-title-zh:1.3;
+  --ls-title-zh:.03em;
+  --ff-title-zh:var(--font-serif);
+  --fst-title-zh:normal;
+  --tt-title-zh:none;
+  --fs-num-l:3rem;
+  --fw-num-l:500;
+  --lh-num-l:1;
+  --ls-num-l:0;
+  --ff-num-l:var(--font-display);
+  --fst-num-l:normal;
+  --tt-num-l:none;
+  --fs-num-m:3rem;
+  --fw-num-m:500;
+  --lh-num-m:1;
+  --ls-num-m:0;
+  --ff-num-m:var(--font-display);
+  --fst-num-m:normal;
+  --tt-num-m:none;
+  --canvas-container:1200px;
+  --canvas-margin:80px;
+  --canvas-gutter:20px;
+  --canvas-measure:calc(30 * 1.0625rem);
+  --canvas-wide:920px;
+}
+.gz-t-display{font-family:var(--ff-display);font-size:var(--fs-display);font-weight:var(--fw-display);line-height:var(--lh-display);letter-spacing:var(--ls-display);font-style:var(--fst-display);text-transform:var(--tt-display)}
+.gz-t-heading{font-family:var(--ff-heading);font-size:var(--fs-heading);font-weight:var(--fw-heading);line-height:var(--lh-heading);letter-spacing:var(--ls-heading);font-style:var(--fst-heading);text-transform:var(--tt-heading)}
+.gz-t-subhead{font-family:var(--ff-subhead);font-size:var(--fs-subhead);font-weight:var(--fw-subhead);line-height:var(--lh-subhead);letter-spacing:var(--ls-subhead);font-style:var(--fst-subhead);text-transform:var(--tt-subhead)}
+.gz-t-lead{font-family:var(--ff-lead);font-size:var(--fs-lead);font-weight:var(--fw-lead);line-height:var(--lh-lead);letter-spacing:var(--ls-lead);font-style:var(--fst-lead);text-transform:var(--tt-lead)}
+.gz-t-body{font-family:var(--ff-body);font-size:var(--fs-body);font-weight:var(--fw-body);line-height:var(--lh-body);letter-spacing:var(--ls-body);font-style:var(--fst-body);text-transform:var(--tt-body)}
+.gz-t-small{font-family:var(--ff-small);font-size:var(--fs-small);font-weight:var(--fw-small);line-height:var(--lh-small);letter-spacing:var(--ls-small);font-style:var(--fst-small);text-transform:var(--tt-small)}
+.gz-t-caption{font-family:var(--ff-caption);font-size:var(--fs-caption);font-weight:var(--fw-caption);line-height:var(--lh-caption);letter-spacing:var(--ls-caption);font-style:var(--fst-caption);text-transform:var(--tt-caption)}
+.gz-t-label{font-family:var(--ff-label);font-size:var(--fs-label);font-weight:var(--fw-label);line-height:var(--lh-label);letter-spacing:var(--ls-label);font-style:var(--fst-label);text-transform:var(--tt-label)}
+.gz-t-meta{font-family:var(--ff-meta);font-size:var(--fs-meta);font-weight:var(--fw-meta);line-height:var(--lh-meta);letter-spacing:var(--ls-meta);font-style:var(--fst-meta);text-transform:var(--tt-meta)}
+.gz-t-quote{font-family:var(--ff-quote);font-size:var(--fs-quote);font-weight:var(--fw-quote);line-height:var(--lh-quote);letter-spacing:var(--ls-quote);font-style:var(--fst-quote);text-transform:var(--tt-quote)}
+.gz-t-num-xl{font-family:var(--ff-num-xl);font-size:var(--fs-num-xl);font-weight:var(--fw-num-xl);line-height:var(--lh-num-xl);letter-spacing:var(--ls-num-xl);font-style:var(--fst-num-xl);text-transform:var(--tt-num-xl)}
+.gz-t-display-zh{font-family:var(--ff-display-zh);font-size:var(--fs-display-zh);font-weight:var(--fw-display-zh);line-height:var(--lh-display-zh);letter-spacing:var(--ls-display-zh);font-style:var(--fst-display-zh);text-transform:var(--tt-display-zh)}
+.gz-t-title{font-family:var(--ff-title);font-size:var(--fs-title);font-weight:var(--fw-title);line-height:var(--lh-title);letter-spacing:var(--ls-title);font-style:var(--fst-title);text-transform:var(--tt-title)}
+.gz-t-title-zh{font-family:var(--ff-title-zh);font-size:var(--fs-title-zh);font-weight:var(--fw-title-zh);line-height:var(--lh-title-zh);letter-spacing:var(--ls-title-zh);font-style:var(--fst-title-zh);text-transform:var(--tt-title-zh)}
+.gz-t-num-l{font-family:var(--ff-num-l);font-size:var(--fs-num-l);font-weight:var(--fw-num-l);line-height:var(--lh-num-l);letter-spacing:var(--ls-num-l);font-style:var(--fst-num-l);text-transform:var(--tt-num-l)}
+.gz-t-num-m{font-family:var(--ff-num-m);font-size:var(--fs-num-m);font-weight:var(--fw-num-m);line-height:var(--lh-num-m);letter-spacing:var(--ls-num-m);font-style:var(--fst-num-m);text-transform:var(--tt-num-m)}
+
+:lang(zh){line-break:strict;text-spacing-trim:normal;text-autospace:normal;overflow-wrap:break-word}
+:lang(zh) .gz-prose em:not(:lang(en)){font-style:normal;text-emphasis:filled dot;text-emphasis-position:under right}
+.gz-tnum{font-variant-numeric:tabular-nums}
+
+/* 歸藏设计系统 · 共享组件
+ *
+ * 一份结构，三种介质：根节点 <html data-family="magazine|swiss" data-medium="slide|card|page">。
+ * 这里只管布局、颜色和间距；字号、字重、行高一律由 gz-t-<角色> 类提供，
+ * 所以同一个组件放进 PPT、卡片、网页会自动换成各自的字号。
+ * 颜色只用语义 token（--text-* / --line-* / --accent*），换主题不需要改组件。
+ */
+
+/* ---------- 家族差异 ---------- */
+/* 单张卡片 / 单页换主题（[data-theme]）或反色（[data-surface]）时，线条变量要在那一层重新计算，否则沿用根节点的颜色 */
+[data-family="magazine"], [data-family="magazine"] [data-theme], [data-family="magazine"] [data-surface] { --img-pos: center top; --rule: 1px solid var(--line-strong); --rule-strong: 1px solid var(--line-strong) }
+[data-family="swiss"], [data-family="swiss"] [data-theme], [data-family="swiss"] [data-surface] { --img-pos: center center; --rule: 1px solid var(--line); --rule-strong: 2px solid var(--ink) }
+
+/* ---------- 表面：反色块里文字角色跟着换 ---------- */
+[data-surface="ink"] {
+  background: var(--ink); color: var(--paper);
+  --text-primary: var(--paper); --text-body: rgba(var(--paper-rgb), .86); --text-secondary: rgba(var(--paper-rgb), .72);
+  --text-helper: rgba(var(--paper-rgb), .62); --line: rgba(var(--paper-rgb), .22); --line-strong: rgba(var(--paper-rgb), .45);
+  --accent-ink: var(--accent-ink-inverse); --accent-display: var(--accent-ink-inverse); --rule-strong: 2px solid var(--paper);
+}
+[data-family="magazine"] [data-surface="ink"], [data-family="magazine"][data-surface="ink"] { --rule-strong: 1px solid rgba(var(--paper-rgb), .45) }
+[data-surface="accent"] {
+  background: var(--accent); color: var(--accent-on);
+  --text-primary: var(--accent-on); --text-body: rgba(var(--accent-on-rgb), .88); --text-secondary: rgba(var(--accent-on-rgb), .78);
+  --text-helper: rgba(var(--accent-on-rgb), .7); --line: rgba(var(--accent-on-rgb), .3); --line-strong: rgba(var(--accent-on-rgb), .55);
+  --accent-ink: var(--accent-on); --accent-display: var(--accent-on); --rule-strong: 2px solid var(--accent-on);
+}
+[data-surface="paper-2"] { background: var(--paper-2) }
+
+/* 强调色文字：小字用 accent-ink，大字 / 大数字用 accent-display（浅色强调色在纸上会自动加深；反色块里自动切换） */
+.gz-c-accent { color: var(--accent-ink) }
+.gz-c-accent-display { color: var(--accent-display) }
+
+/* ---------- 页眉页脚 chrome ---------- */
+.gz-chrome { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-6); color: var(--text-helper); border-top: var(--rule); padding-top: var(--sp-4) }
+.gz-chrome[data-pos="top"] { border-top: 0; border-bottom: var(--rule); padding: 0 0 var(--sp-4) }
+.gz-chrome__group { display: flex; gap: var(--sp-5); min-width: 0 }
+.gz-chrome__accent { color: var(--accent-ink) }
+
+/* ---------- 封面 cover ---------- */
+.gz-cover { display: flex; flex-direction: column; gap: var(--sp-6); color: var(--text-primary) }
+.gz-cover__kicker { color: var(--text-helper) }
+[data-family="swiss"] .gz-cover__kicker { color: var(--accent-ink) }
+.gz-cover__body { width: 100%; container-type: inline-size }
+/* 标题按最长一行的字数自动收字号：--chars 由 components/render.mjs 算好写进 style；手写时填最长一行的字数（中文 1、西文约 0.56）。上限仍是 token 定的展示字号 */
+.gz-cover__title { margin: 0; font-size: min(var(--fs-display-zh), calc(100cqi / var(--chars, 1) * .94)) }
+.gz-cover__rule { width: 96px; height: 0; border-top: 2px solid var(--accent) }
+[data-family="swiss"] .gz-cover__rule { border-top-width: 3px }
+.gz-cover__sub { margin: 0; color: var(--text-body); max-width: 32em }
+.gz-cover__meta { margin-top: auto }
+/* 幻灯片、卡片：封面撑满画布，标题压在下半部 */
+[data-medium="slide"] .gz-cover, [data-medium="card"] .gz-cover { height: 100% }
+[data-medium="slide"] .gz-cover__body, [data-medium="card"] .gz-cover__body { margin-top: auto; display: flex; flex-direction: column; gap: var(--sp-7) }
+[data-medium="slide"] .gz-cover__meta, [data-medium="card"] .gz-cover__meta { margin-top: var(--sp-10) }
+/* 网页：杂志风居中，瑞士风左对齐 */
+[data-medium="page"] .gz-cover { padding: var(--sp-11) 0 var(--sp-9); border-bottom: var(--rule) }
+[data-medium="page"] .gz-cover__body { display: flex; flex-direction: column; gap: var(--sp-6) }
+[data-medium="page"][data-family="magazine"] .gz-cover { align-items: center; text-align: center }
+[data-medium="page"][data-family="magazine"] .gz-cover__body { align-items: center }
+[data-medium="page"] .gz-cover__meta { margin-top: var(--sp-6); border-top: 0; padding-top: 0; justify-content: center }
+[data-medium="page"][data-family="swiss"] .gz-cover__meta { justify-content: flex-start }
+
+/* ---------- 大数字 stat ---------- */
+.gz-stats { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: var(--sp-9) var(--sp-7) }
+.gz-stats[data-count="1"] { --cols: 1 } .gz-stats[data-count="2"] { --cols: 2 } .gz-stats[data-count="4"] { --cols: 4 }
+[data-medium="card"] .gz-stats { --cols: 2 }
+[data-medium="card"] .gz-stats[data-count="1"], [data-medium="card"] .gz-stats[data-count="3"] { --cols: 1 }
+.gz-stat { display: flex; flex-direction: column; gap: var(--sp-4); border-top: var(--rule-strong); padding-top: var(--sp-5); min-width: 0 }
+.gz-stat__label { color: var(--text-helper) }
+.gz-stat__value { display: flex; align-items: baseline; gap: .06em; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap }
+.gz-stat__unit { font-size: .4em; font-weight: 500; letter-spacing: 0; color: var(--text-secondary) }
+.gz-stat.is-accent .gz-stat__num { color: var(--accent-ink) }
+.gz-stat__note { margin: 0; color: var(--text-secondary); max-width: 24em }
+[data-medium="card"] .gz-stats[data-count="3"] .gz-stat { display: grid; grid-template-columns: auto 1fr; align-items: end; column-gap: var(--sp-7) }
+[data-medium="card"] .gz-stats[data-count="3"] .gz-stat__label { grid-column: 1 / -1 }
+[data-medium="card"] .gz-stats[data-count="3"] .gz-stat__note { padding-bottom: .6em }
+
+/* ---------- 引言 quote ---------- */
+.gz-quote { margin: 0; display: flex; flex-direction: column; gap: var(--sp-7) }
+.gz-quote__text { margin: 0; color: var(--text-primary); text-wrap: balance }
+.gz-quote__text p { margin: 0; text-wrap: balance }
+[data-family="magazine"] .gz-quote__text::before { content: "\201C"; display: block; font-family: var(--font-display); font-style: normal; color: var(--accent); font-size: 1.8em; line-height: 1; height: .55em }
+[data-family="swiss"] .gz-quote { border-top: var(--rule-strong); padding-top: var(--sp-7) }
+.gz-quote__source { color: var(--text-helper) }
+[data-medium="page"][data-family="magazine"] .gz-quote { align-items: center; text-align: center; padding: var(--sp-9) 0 }
+
+/* ---------- 流程 process：幻灯片 / 网页横排，卡片竖排 ---------- */
+.gz-process { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: var(--sp-7) }
+.gz-process__step { display: flex; flex-direction: column; gap: var(--sp-4); border-top: var(--rule-strong); padding-top: var(--sp-5); min-width: 0 }
+.gz-process__nb { color: var(--accent-ink) }
+.gz-process__title { margin: 0 }
+.gz-process__desc { margin: 0; color: var(--text-secondary) }
+[data-medium="card"] .gz-process { grid-template-columns: 1fr; gap: 0; border-bottom: var(--rule) }
+[data-medium="card"] .gz-process__step { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: var(--sp-6); row-gap: var(--sp-3); padding: var(--sp-7) 0 }
+[data-medium="card"] .gz-process__step + .gz-process__step { border-top: var(--rule) }
+[data-medium="card"] .gz-process__nb { grid-row: span 2 }
+[data-medium="page"] .gz-process { --n: 2; row-gap: var(--sp-8) }
+
+/* ---------- 对比 compare：左右分栏，卡片上下叠 ---------- */
+.gz-compare { display: grid; grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr); gap: 0 var(--sp-9) }
+.gz-compare__rule { background: var(--line-strong) }
+.gz-compare__side { display: flex; flex-direction: column; gap: var(--sp-5); min-width: 0 }
+.gz-compare__tag { color: var(--text-helper) }
+.gz-compare__side[data-side="after"] .gz-compare__tag { color: var(--accent-ink) }
+.gz-compare__title { margin: 0 }
+.gz-compare__side[data-side="before"] .gz-compare__title { color: var(--text-secondary) }
+.gz-compare__desc { margin: 0; color: var(--text-secondary) }
+.gz-compare__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--sp-3); color: var(--text-body) }
+.gz-compare__list li { padding-left: 1.2em; position: relative }
+.gz-compare__list li::before { content: ""; position: absolute; left: 0; top: .72em; width: .5em; border-top: 1px solid currentColor }
+[data-family="swiss"] .gz-compare__side[data-side="after"][data-surface] { padding: var(--sp-8) }
+[data-medium="card"] .gz-compare { grid-template-columns: 1fr; gap: var(--sp-8) 0 }
+[data-medium="card"] .gz-compare__rule { height: 1px }
+
+/* ---------- 图框 figure：照片 cover 裁切，截图 contain 放在底台上 ---------- */
+.gz-figure { margin: 0; display: flex; flex-direction: column; gap: var(--sp-4); min-width: 0 }
+.gz-figure__well { position: relative; aspect-ratio: var(--ratio, 16 / 10); overflow: hidden; background: var(--paper-2) }
+.gz-figure__well > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--img-pos) }
+.gz-figure[data-ratio="16x9"] { --ratio: 16 / 9 } .gz-figure[data-ratio="16x10"] { --ratio: 16 / 10 } .gz-figure[data-ratio="4x3"] { --ratio: 4 / 3 }
+.gz-figure[data-ratio="3x2"] { --ratio: 3 / 2 } .gz-figure[data-ratio="1x1"] { --ratio: 1 } .gz-figure[data-ratio="3x4"] { --ratio: 3 / 4 } .gz-figure[data-ratio="21x9"] { --ratio: 21 / 9 }
+.gz-figure[data-kind="screenshot"] .gz-figure__well { display: flex; align-items: center; justify-content: center; padding: var(--inset, var(--sp-8)) }
+.gz-figure[data-kind="screenshot"] .gz-figure__well > img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: var(--radius-sm); box-shadow: 0 0 0 1px var(--line) }
+[data-family="magazine"] .gz-figure[data-kind="screenshot"] .gz-figure__well > img { box-shadow: 0 0 0 1px var(--line), 0 18px 40px -24px rgba(var(--ink-rgb), .45) }
+[data-family="swiss"] .gz-figure[data-kind="screenshot"] .gz-figure__well { background: var(--grey-1); border-top: 3px solid var(--accent) }
+[data-family="swiss"] .gz-figure[data-kind="screenshot"] .gz-figure__well > img { border-radius: 0 }
+.gz-figure__cap { color: var(--text-helper); display: flex; gap: var(--sp-4) }
+.gz-figure__idx { color: var(--accent-ink); flex: none }
+
+/* ---------- 图片网格 gallery ---------- */
+.gz-gallery { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: var(--sp-7) var(--sp-6) }
+[data-medium="card"] .gz-gallery { --cols: 2 }
+[data-medium="card"] .gz-gallery[data-count="3"] > :first-child { grid-column: 1 / -1; --ratio: 16 / 9 }
+
+/* ---------- 条目清单 ledger ---------- */
+.gz-ledger { list-style: none; margin: 0; padding: 0; border-top: var(--rule-strong) }
+.gz-ledger__row { display: grid; grid-template-columns: var(--nb-w, 3.2em) minmax(0, 1fr) auto; column-gap: var(--sp-6); align-items: baseline; padding: var(--sp-6) 0; border-bottom: var(--rule) }
+.gz-ledger__nb { color: var(--accent-ink) }
+.gz-ledger__title { margin: 0 }
+.gz-ledger__note { margin: var(--sp-2) 0 0; color: var(--text-secondary) }
+.gz-ledger__value { color: var(--text-helper); text-align: right; white-space: nowrap }
+[data-medium="card"] .gz-ledger__row { --nb-w: 72px; padding: var(--sp-7) 0 }
+
+/* 歸藏设计系统 · 纹理与特效图层（纯 CSS，颜色全部来自 token）
+ * 来源：PPT 瑞士风 .dots / .dot-mat / .ring-mat / .cross-mat / .hatch，卡片杂志风 .grain / .paper-wash。
+ */
+
+/* 特效画布：铺满父容器、在内容下面、不挡点击。父容器需要 position: relative */
+.gz-effect { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 0 }
+.gz-layer-content { position: relative; z-index: 1 }
+
+/* 点阵：前景色画点，跟随所在表面的文字色 */
+.gz-dots      { background-image: radial-gradient(currentColor 1px, transparent 1.2px); background-size: 12px 12px; opacity: .18 }
+.gz-dots-fine { background-image: radial-gradient(currentColor .8px, transparent 1px); background-size: 8px 8px; opacity: .14 }
+.gz-dots-bold { background-image: radial-gradient(currentColor 1.4px, transparent 1.6px); background-size: 18px 18px; opacity: .22 }
+
+.gz-dot-mat         { --mat: 14px; background-image: radial-gradient(currentColor 1.4px, transparent 1.6px); background-size: var(--mat) var(--mat); opacity: .5 }
+.gz-dot-mat.is-lg   { --mat: 22px } .gz-dot-mat.is-xl { --mat: 34px }
+.gz-dot-mat.is-dense{ --mat: 9px; opacity: .62 }
+.gz-ring-mat        { --mat: 18px; background-image: radial-gradient(circle, transparent 2px, currentColor 2px, currentColor 2.7px, transparent 2.9px); background-size: var(--mat) var(--mat); opacity: .55 }
+.gz-ring-mat.is-lg  { --mat: 28px }
+.gz-cross-mat       { --mat: 22px; background: currentColor; opacity: .42;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M8 8l6 6M14 8l-6 6' stroke='%23000' stroke-width='1.4'/%3E%3C/svg%3E") 0 0 / var(--mat) var(--mat);
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cpath d='M8 8l6 6M14 8l-6 6' stroke='%23000' stroke-width='1.4'/%3E%3C/svg%3E") 0 0 / var(--mat) var(--mat) }
+.gz-cross-mat.is-lg { --mat: 32px }
+.gz-hatch           { background-image: repeating-linear-gradient(135deg, currentColor 0 1px, transparent 1px 8px); opacity: .55 }
+
+/* 纸张颗粒与墨色晕染：杂志风卡片的「氛围层」，叠在特效画布上、内容下 */
+.gz-grain      { position: absolute; inset: 0; pointer-events: none; z-index: 0; mix-blend-mode: multiply; opacity: .35;
+                 background-image: radial-gradient(rgba(0,0,0,.045) 1px, transparent 1px); background-size: 3px 3px }
+[data-scheme="dark"] .gz-grain, .gz-grain.is-dark { mix-blend-mode: screen; opacity: .26; background-image: radial-gradient(rgba(255,244,214,.10) 1px, transparent 1px) }
+.gz-paper-wash { position: absolute; inset: 0; pointer-events: none; z-index: 0;
+                 background: linear-gradient(180deg, rgba(var(--ink-rgb), .02), rgba(var(--ink-rgb), .05) 60%, rgba(var(--ink-rgb), .08)) }
+.gz-ink-vignette { position: absolute; inset: 0; pointer-events: none; z-index: 0;
+                 background: radial-gradient(circle at 18% 12%, rgba(var(--ink-rgb), .10), transparent 34%), radial-gradient(circle at 82% 80%, rgba(var(--accent-rgb), .10), transparent 38%) }
+
+/* PPT 杂志风：WebGL 背景上的纸 / 墨蒙版，保证文字可读（原 .slide.light/.dark::before） */
+.gz-veil       { position: absolute; inset: 0; pointer-events: none; z-index: 0; backdrop-filter: blur(3px); background: rgba(var(--paper-rgb), .78) }
+.gz-veil.is-ink{ background: rgba(var(--ink-rgb), .78) }
+.gz-veil.is-hero { backdrop-filter: none; background: rgba(var(--paper-rgb), .16) }
+.gz-veil.is-hero.is-ink { background: rgba(var(--ink-rgb), .12) }
+
+@media (prefers-reduced-motion: reduce) { .gz-effect { animation: none } }
+
+/* GZ:TOKENS:END */
+</style>
+<style>  /* ========================================
+     MAGAZINE — literary / editorial layout
+     One centred reading axis, serif body, ornament section numbers,
+     centred pull quotes, book-style three-line tables.
+     ui.css is inlined after this file.
+     ======================================== */
+
+  /* ========================================
+     TOKENS
+     ======================================== */
+  /* Colours, fonts, type roles and spacing come from the design system
+     (assets/gz-magazine.css, inlined before this file; theme = <html data-theme>).
+     The names below are this stylesheet's own vocabulary, mapped onto its roles. */
+  :root {
+    --fg: var(--text-primary);
+    --fg-secondary: var(--text-secondary);
+    --fg-tertiary: var(--text-helper);
+    --bg: var(--paper);
+    --bg-card: var(--paper-2);
+    --bg-quote: var(--paper-2);
+    --bg-highlight: var(--ink);
+    --fg-highlight: var(--paper);
+    --border: var(--line-subtle);
+    --border-light: rgba(var(--ink-rgb), .08);
+    --tbl-line: rgba(var(--ink-rgb), .09);
+    --quote-tint: rgba(var(--ink-rgb), .03);
+    --hc-mute: rgba(var(--ink-rgb), .25);
+    /* UI and table text: Latin sans first (Inter), then the CJK sans */
+    --font-sans: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+    --font-kai: "LXGW WenKai", "Kaiti SC", "STKaiti", "KaiTi", "BiauKai", "FangSong", "STFangsong", var(--font-serif, serif);
+    --measure: 1200px;
+    --gutter: 20px;
+    --columns: 12;
+    --margin: 80px;
+    --col: calc(30 * 1.0625rem);   /* reading column: 30 CJK characters at 17px */
+    --wide: 920px;                 /* breakout width for media and emphasis blocks */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 72px;
+    --space-3xl: 96px;
+    /* CJK body text — see references/design-rules.md §中文排版 */
+    --text-size: var(--fs-body);
+    --text-leading: var(--lh-body);
+    --text-measure: 36em;
+    --para-gap: 1em;
+  }
+
+  /* zh documents: the CJK face comes first, so digits and Latin inside Chinese text use its own
+     glyphs and sit on the same baseline (Source Serif 4 / Inter digits look sunk next to Noto CJK).
+     English documents keep the Latin-first stacks. The font picker overrides --font-serif inline. */
+  :root:lang(zh) {
+    --font-serif: 'Noto Serif SC', 'Source Serif 4', 'Source Han Serif SC', 'Songti SC', 'STSong', Georgia, serif;
+    --font-sans: 'Noto Sans SC', 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+  }
+
+  /* Dark theme (midnight-ink): every colour above already follows the theme */
+  :root[data-scheme="dark"] img { opacity: 0.94; }
+
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.8;
+    letter-spacing: 0.01em; /* Latin only; :lang(zh) resets to 0 */
+  }
+
+  :lang(zh) body {
+    letter-spacing: 0;              /* 汉字默认密排，不额外加字距 */
+    line-break: strict;             /* 避头尾：句读、闭括号等不出现在行首 */
+    word-break: normal;
+    overflow-wrap: break-word;      /* 长 URL / 长英文词允许断开，避免撑破版心 */
+    text-spacing-trim: normal;      /* 相邻标点挤压（Chrome 123+，需字体带 chws/halt） */
+    hanging-punctuation: allow-end; /* 行尾点号悬挂（目前仅 Safari） */
+    font-kerning: normal;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-on-text);
+  }
+
+  /* ========================================
+     LAYOUT — one centred column
+     Every block in .section / .hero spans the full 12-col grid and is
+     centred at --col; media and emphasis blocks break out to --wide.
+     ======================================== */
+  .container {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 var(--margin);
+  }
+
+  .section,
+  .hero,
+  .container > footer,
+  .divider-dot {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--gutter);
+  }
+
+  .section > *,
+  .hero > * {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: var(--col);
+  }
+
+  .section > .figure-card,
+  .section > .img-row,
+  .section > .img-strip-wrap,
+  .section > .gallery,
+  .section > .gallery-hint,
+  .section > .pullquote,
+  .section > .highlight-card,
+  .section > .table-wrap,
+  .section > .embed-card,
+  .section > .hchart {
+    max-width: var(--wide);
+  }
+
+  /* ========================================
+     MASTHEAD — one line: tags · author · date · reading time
+     ======================================== */
+  .doc-chrome.doc-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0;
+    max-width: min(var(--wide, 920px), 100%);
+    margin: 0 auto;
+    padding: 28px 0 12px !important; /* beats ui.css print `.doc-chrome` padding */
+    border-bottom: 1px solid rgba(var(--ink-rgb), .16);
+    font-family: var(--font-serif);
+    font-size: var(--fs-label);
+    letter-spacing: .04em;
+    color: var(--fg-secondary, var(--fg));
+    text-align: center;
+    white-space: normal;
+  }
+  .doc-line > span { white-space: nowrap; }
+  .doc-line .dl-sep { margin: 0 .7em; opacity: .5; }
+  .doc-line .dl-tag { color: var(--accent-ink, var(--accent)); }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    padding: 72px 0 24px;           /* the ornament closes the hero; no second rule */
+    text-align: center;
+  }
+
+  /* Ornament under the title: Lucide "sparkle" (ISC licence), thin stroke, accent colour */
+  .hero::after {
+    content: "";
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 18px;
+    height: 18px;
+    margin-top: 36px;
+    background: var(--accent-ink, var(--accent));
+    -webkit-mask: var(--orn-sparkle) center / contain no-repeat;
+    mask: var(--orn-sparkle) center / contain no-repeat;
+  }
+  :root {
+    --orn-sparkle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.1' stroke-linejoin='round'%3E%3Cpath d='M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z'/%3E%3C/svg%3E");
+  }
+
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-display);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.03em; /* zh too: headings are deliberately tracked out */
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-subtitle {
+    font-size: var(--fs-lead);
+    color: var(--fg-secondary);
+    line-height: 1.7;
+    margin: 18px auto 0;
+  }
+
+  /* ========================================
+     SECTION + SECTION HEADER
+     Header = centred "✦✦✦ 04 ✦✦✦" ornament number + title.
+     ======================================== */
+  .section {
+    padding: 72px 0 var(--space-lg);
+  }
+
+  .section-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    padding-top: 6px;
+    margin-bottom: 18px;
+    font-family: var(--font-serif);
+    font-size: .9rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-ink, var(--accent));
+  }
+  .sn-sym .sn-side { flex: 1 1 0; display: inline-flex; align-items: center; gap: 6px; }
+  .sn-sym .sn-l { justify-content: flex-end; }
+  .sn-sym .sn-r { justify-content: flex-start; }
+  .sn-sym .sn-num {
+    flex: none;
+    margin: 0 14px;
+    padding-left: .12em; /* cancels the trailing letter-spacing: optical centring */
+    font-size: 1.05rem;
+    letter-spacing: .12em;
+    line-height: 1;
+  }
+  .sn-sym .sn-star { display: inline-block; line-height: 1; }
+  .sn-star.s1 { font-size: 0.95rem; opacity: 0.9; }
+  .sn-star.s2 { font-size: 0.72rem; opacity: 0.65; }
+  .sn-star.s3 { font-size: 0.52rem; opacity: 0.42; }
+
+  .section > h2 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-heading);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
+  .section > h3 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ui.js makes headings contenteditable, whose UA style resets line-break; restore 避头尾 */
+  :lang(zh) h1, :lang(zh) h2, :lang(zh) h3 { line-break: strict; }
+
+  /* Thematic breaks (---) are never drawn: the section rhythm already separates */
+  .divider { display: none; }
+
+  /* ========================================
+     PROSE
+     ======================================== */
+  p {
+    margin-bottom: var(--space-md);
+    font-size: 0.95rem;
+    line-height: 1.85;
+  }
+
+  .section p,
+  .section li {
+    font-family: var(--font-serif);
+    overflow-wrap: break-word;
+  }
+
+  .section > p,
+  .section li {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    text-align: justify;
+  }
+
+  :lang(zh) .section > p,
+  :lang(zh) .section li {
+    font-size: var(--text-size);
+    line-height: var(--text-leading);
+    font-weight: 400;
+  }
+  :lang(zh) .section > p {
+    margin-bottom: var(--para-gap);
+    text-align: justify;            /* clreq §6.2：中文正文原则上两端对齐 */
+    text-justify: inter-character;
+  }
+  :lang(zh) .section li {
+    margin-bottom: 0.35em;
+    text-align: start;
+  }
+
+  /* Links / URLs / code / reference lists: start-aligned, so justify doesn't stretch the line */
+  .section > p:has(a.url, a[href^="http"], code),
+  .section.refs p,
+  .section.refs li {
+    text-align: start;
+    text-justify: auto;
+  }
+  /* English paragraphs stay justified but hyphenate to avoid rivers */
+  .section > p:lang(en) { hyphens: auto; -webkit-hyphens: auto; }
+
+  strong {
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+  }
+  .section a.url { overflow-wrap: anywhere; word-break: break-word; }
+
+  /* 汉字没有真正的斜体：*强调* 用着重号（clreq §5.3.1：横排置于字下）；斜体只给拉丁文 */
+  :lang(zh) em {
+    font-style: normal;
+    -webkit-text-emphasis: filled dot; text-emphasis: filled dot;
+    -webkit-text-emphasis-position: under right; text-emphasis-position: under right;
+  }
+  :lang(zh) em:lang(en), :lang(zh) code em { text-emphasis: none; -webkit-text-emphasis: none; }
+  blockquote *, .pullquote * { font-style: normal; }
+  :lang(en) em, em:lang(en), i:lang(en) { font-style: italic; }
+
+  /* 破折号：两字线不断开；——插入语—— 轻度强调 */
+  .dash { white-space: nowrap; letter-spacing: 0; }
+  .dash-em { color: var(--fg); font-weight: 600; }
+
+  /* 中西文间距：render.mjs 插入 .hf-sp；支持 text-autospace 的浏览器用原生间距 */
+  .hf-sp { white-space: normal; }
+  @supports (text-autospace: normal) {
+    :lang(zh) body { text-autospace: normal; }
+    .hf-sp { display: none; }
+  }
+
+  /* ========================================
+     LISTS
+     ======================================== */
+  ul, ol {
+    margin: var(--space-md) 0 var(--space-lg);
+    padding-left: var(--space-lg);
+  }
+
+  li { margin-bottom: var(--space-sm); }
+
+  li::marker { color: var(--accent-ink, var(--accent)); }
+
+  /* Footnote section: smaller, secondary colour. .section.section-footnote matches the
+     specificity of :lang(zh) .section li and comes later, so it also applies to zh docs */
+  .section.section-footnote li {
+    font-size: var(--fs-caption);
+    line-height: 1.7;
+    margin-bottom: var(--space-sm);
+    color: var(--fg-secondary);
+  }
+  .section.section-footnote > h2 { font-size: var(--fs-subhead); }
+
+  .checklist {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .checklist li {
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 0;
+  }
+
+  /* ========================================
+     BLOCKQUOTE — hairlines above and below, kai body, no fill
+     ======================================== */
+  blockquote {
+    margin: var(--space-lg) 0;
+    padding: 4px 0 4px 24px;
+    border-left: 1px solid var(--accent);
+    border-radius: 0;
+  }
+
+  .section > blockquote {
+    margin: 32px auto;
+    padding: 18px 0.25em;
+    border-left: 0;
+    border-top: 1px solid rgba(var(--ink-rgb), .18);
+    border-bottom: 1px solid rgba(var(--ink-rgb), .18);
+    font-family: var(--font-kai);
+    font-size: var(--fs-body);
+    line-height: 1.9;
+    color: var(--fg);
+  }
+
+  /* Quote text is kai (LXGW WenKai / system kai, serif fallback) at body size */
+  blockquote p {
+    font-family: var(--font-kai);
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--fg);
+    margin-bottom: 0;
+  }
+  blockquote > p + p { margin-top: 0.6em; }
+
+  blockquote .bq-nested {
+    margin: 10px 0;
+    padding: 2px 0 2px 1em;
+    border-left: 1px solid rgba(var(--ink-rgb), .2);
+    background: var(--quote-tint);
+  }
+
+  .bq-cite {
+    margin-top: 0.7em;
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+    color: var(--fg-secondary, var(--fg));
+    text-align: right;
+  }
+
+  /* ========================================
+     PULL QUOTE — centred, big opening mark, hairlines
+     ======================================== */
+  .pullquote {
+    position: relative;
+    margin: var(--space-lg) 0;
+    padding: 44px 48px 36px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .section > .pullquote:last-child { margin-bottom: 0; }
+  .pullquote + .pullquote { margin-top: calc(-1 * var(--space-lg)); }
+
+  .pullquote::before {
+    content: "“";
+    display: block;
+    font-family: Georgia, var(--font-serif);
+    font-size: 5rem;
+    line-height: 0.6;
+    color: var(--accent-ink, var(--accent));
+    margin-bottom: 8px;
+  }
+
+  .pullquote p {
+    font-family: var(--font-serif);
+    font-size: var(--fs-quote);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    color: var(--fg);
+    margin-bottom: 0;
+  }
+
+  .pullquote .accent-mark,
+  .pullquote strong { color: var(--accent-ink, var(--accent)); }
+
+  .pq-cite {
+    margin-top: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--fg-tertiary);
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+  .pq-cite::before { content: "—— "; }
+
+  /* ========================================
+     HIGHLIGHT CARD — key insight
+     ======================================== */
+  .highlight-card {
+    margin: var(--space-md) 0;
+    padding: var(--space-lg);
+    background: var(--bg-highlight);
+    color: var(--fg-highlight);
+    border-radius: 0;
+    box-shadow: inset 4px 0 0 var(--accent-ink-inverse);
+    position: relative;
+  }
+
+  .highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    opacity: 0.04;
+    pointer-events: none;
+    /* crosshatch texture via SVG */
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8L8 0M-1 1L1 -1M7 9L9 7' stroke='%23fff' stroke-width='.5'/%3E%3C/svg%3E");
+  }
+
+  .highlight-card p {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--fg-highlight);
+    margin-bottom: 0;
+  }
+  .highlight-card strong,
+  .highlight-card b,
+  .highlight-card a {
+    color: var(--fg-highlight);
+  }
+
+  .highlight-card .attr {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.06em;
+    color: var(--fg-highlight); opacity: 0.55;
+    margin-top: var(--space-md);
+    text-transform: uppercase;
+  }
+
+  /* ========================================
+     DEFINITION CARD — glossary style
+     ======================================== */
+  /* Glossary entries read as one set: hairline between entries, a firmer rule above and below the run */
+  .def-card {
+    margin: 0;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--border);
+  }
+  .def-card:not(.def-card + .def-card) { margin-top: var(--space-lg); border-top: 1px solid var(--fg); }
+  .def-card:not(:has(+ .def-card)) { margin-bottom: var(--space-lg); border-bottom: 1px solid var(--fg); }
+
+  .def-card-label {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-tertiary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .def-card-term {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+
+  .def-card-body {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--fg-secondary);
+  }
+
+  /* ========================================
+     ASIDE CARD — contextual note
+     ======================================== */
+  .aside-card {
+    margin: var(--space-lg) 0;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--fg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .aside-icon {
+    flex-shrink: 0;
+    color: var(--accent-ink, var(--accent));
+    padding-top: 2px;
+  }
+  .aside-icon svg { display: block; }
+
+  .aside-title {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink, var(--accent));
+    margin-bottom: var(--space-xs);
+  }
+
+  .aside-content p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--fg-secondary);
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     SUMMARY CARD — key takeaway grid
+     ======================================== */
+  .summary-card {
+    margin: var(--space-xl) 0;
+  }
+
+  .summary-label {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-ink, var(--accent));
+    display: inline-block;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: var(--space-md);
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .summary-item {
+    border-top: 1px solid var(--fg);
+    padding: var(--space-md) 0 var(--space-sm);
+  }
+
+  .summary-item-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .summary-item-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--fg-secondary);
+  }
+
+  /* ========================================
+     PROCESS — numbered steps
+     ======================================== */
+  .process {
+    margin: var(--space-xl) 0;
+  }
+
+  .process-step {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .process-step:last-child {
+    border-bottom: none;
+  }
+
+  .process-num {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    color: var(--accent-ink, var(--accent));
+    flex: 0 0 32px;
+    padding-top: 2px;
+  }
+
+  .process-content {
+    flex: 1;
+  }
+
+  .process-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .process-desc {
+    font-size: 0.88rem;
+    color: var(--fg-secondary);
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     EMBED CARD — inline SVG / UI preview
+     ======================================== */
+  .embed-card {
+    margin: var(--space-xl) 0;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--fg);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .embed-label {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-ink, var(--accent));
+    padding: 0;
+    display: inline-block;
+  }
+
+  .embed-body {
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+  }
+
+  .embed-body svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .embed-caption {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.04em;
+    color: var(--fg-tertiary);
+    padding: 0 var(--space-md) var(--space-md);
+  }
+
+  /* ========================================
+     GALLERY — horizontal scroll of placeholders
+     ======================================== */
+  .gallery {
+    margin: var(--space-xl) 0;
+    padding: 0;
+    display: flex;
+    gap: var(--space-md);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .gallery::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .gallery::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .gallery::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 0;
+  }
+
+  .gallery-item {
+    flex: 0 0 auto;
+    width: 280px;
+    scroll-snap-align: start;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    border: 1px solid var(--border-light);
+  }
+
+  .gallery-cap {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.04em;
+    color: var(--fg-tertiary);
+    margin-top: var(--space-sm);
+    line-height: 1.5;
+  }
+
+  .gallery-hint {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    color: var(--fg-tertiary);
+    letter-spacing: 0.04em;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    text-align: right;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8L8 0M-1 1L1 -1M7 9L9 7' stroke='%23d4d0c8' stroke-width='.5'/%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  .img-placeholder span {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.06em;
+    color: var(--fg-tertiary);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    background: var(--bg-card);
+    padding: 2px 8px;
+  }
+
+  .gallery-item .img-placeholder {
+    aspect-ratio: 3/2;
+    height: 180px;
+  }
+
+  /* ========================================
+     FIGURES — single image, 2–3 image row, 4+ image strip, video/iframe
+     (markdown images carry an inline border-radius from render.mjs)
+     ======================================== */
+  .figure-card {
+    margin: var(--space-xl) 0;
+  }
+
+  .figure-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    border: 1px solid var(--border-light);
+    object-fit: cover;
+  }
+
+  .figure-card figcaption {
+    margin-top: 12px;
+    font-family: var(--font-serif);
+    font-size: var(--fs-caption);
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: var(--fg-secondary, var(--fg));
+    text-align: left;
+  }
+  /* 图注首句加粗当标题 */
+  figcaption .cap-lead { font-weight: 600; font-style: normal; color: var(--fg); margin-right: .35em; }
+
+  .img-row { display: grid; gap: 12px; margin-top: 2.2em; margin-bottom: 2.2em; }
+  .img-row-2 { grid-template-columns: 1fr 1fr; }
+  .img-row-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .img-row .figure-card { margin: 0; min-width: 0; }
+  .img-row .figure-card img { aspect-ratio: 4 / 3; object-fit: cover; }
+
+  .img-strip-wrap { margin-top: 2.2em; margin-bottom: 2.2em; }
+  .img-strip { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .img-strip .figure-card { flex: 0 0 62%; margin: 0; scroll-snap-align: start; }
+  .img-strip-hint { font-family: var(--font-mono); font-size: var(--fs-meta); color: var(--fg-tertiary); text-align: right; margin-top: 6px; }
+
+  .media-embed video, .media-embed iframe { width: 100%; aspect-ratio: 16 / 9; height: auto; display: block; border: 0; background: #000; }
+
+  /* ========================================
+     TABLE — book-style three-line table
+     ======================================== */
+  .table-wrap {
+    margin: 2em 0;
+    overflow-x: auto;
+  }
+
+  .table-wrap table {
+    width: 100%;
+    min-width: 0;
+    border-collapse: collapse;
+    font-size: var(--fs-small);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .table-wrap th {
+    padding: 10px 12px;
+    border-top: 1.5px solid var(--fg);
+    border-bottom: 1.5px solid var(--fg);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0;
+    color: var(--fg);
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  .table-wrap td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--tbl-line);
+    font-family: var(--font-serif);
+    line-height: 1.45;
+    color: var(--fg);
+    vertical-align: top;
+  }
+  .table-wrap td:first-child { white-space: nowrap; }
+  .table-wrap tbody tr:last-child td { border-bottom: 1.5px solid var(--fg); }
+  /* Leftover zebra reset. Its !important also beats ui.css's [contenteditable]
+     hover/focus tint, so even rows never tint; kept for parity. */
+  .table-wrap tbody tr:nth-child(even) td { background: none !important; }
+
+  .table-wrap .al-num, .table-wrap .al-right { text-align: right; }
+  .table-wrap td.al-num, .table-wrap td.al-right { white-space: nowrap; }
+  .table-wrap .al-center { text-align: center; }
+  .table-wrap td strong { color: var(--accent-ink, var(--accent)); font-weight: 700; }
+  .table-wrap td small, .table-wrap td .sub { color: var(--fg-tertiary); font-size: 0.78em; }
+
+  .table-caption {
+    caption-side: top;
+    margin-top: var(--space-sm);
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: var(--fg-secondary);
+    text-align: center;
+  }
+
+  /* ========================================
+     BAR CHART (```chart) — pure HTML/CSS, follows the palette
+     ======================================== */
+  .hchart {
+    margin: 2.2em 0;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .hc-title { margin-bottom: 22px; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--fg); text-align: center; }
+  .hc-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin-bottom: 22px; font-size: 0.78rem; color: var(--fg-secondary); }
+  .hc-key i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; background: var(--hc-mute); }
+  .hc-row { display: grid; grid-template-columns: minmax(120px, 30%) 1fr; gap: 18px; align-items: center; padding: 7px 0; }
+  .hc-group { padding: 16px 0; border-top: 1px solid var(--tbl-line); }
+  .hc-label { font-size: 0.82rem; color: var(--fg); line-height: 1.35; }
+  .hc-bars { display: grid; gap: 6px; }
+  .hc-bar { position: relative; display: flex; align-items: center; gap: 8px; height: 20px; padding-right: 5em; }  /* room for the value after a 100% bar */
+  .hc-group .hc-bar { height: 14px; }
+  .hc-fill { display: block; height: 100%; background: var(--hc-mute); flex: none; }
+  .hc-val { font-size: var(--fs-meta); font-variant-numeric: tabular-nums; color: var(--fg-secondary); white-space: nowrap; }
+  .hc-group .hc-val { font-size: var(--fs-meta); }
+  .hc-hi .hc-fill, .hc-key.hc-hi i { background: var(--accent); }
+  .hc-hi .hc-val, .hc-row.hc-hi .hc-label { color: var(--fg); font-weight: 600; }
+  /* both series highlighted: the second one is lighter so the pair stays distinguishable */
+  .hc-s0.hc-hi ~ .hc-s1.hc-hi .hc-fill, .hc-key.hc-s0.hc-hi ~ .hc-key.hc-s1.hc-hi i { opacity: 0.6; }
+  .hc-na .hc-val { color: var(--fg-tertiary); font-style: italic; }
+  .hc-cap {
+    margin-top: 20px;
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: var(--fg-secondary);
+    text-align: center;
+  }
+
+  /* ========================================
+     CODE
+     ======================================== */
+  pre {
+    margin: var(--space-lg) 0;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--fg);
+    color: var(--bg);
+    border-radius: 0;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: var(--border-light);
+    padding: 2px 5px;
+    border-radius: 0;
+  }
+  .section code { overflow-wrap: anywhere; word-break: break-all; }
+
+  /* ========================================
+     TOC SIDEBAR (open/push behaviour lives in ui.css)
+     ======================================== */
+  .toc {
+    position: fixed;
+    left: 0; top: 0;
+    width: 0; height: 0;
+    overflow: visible;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  .toc-toggle {
+    position: fixed;
+    left: var(--space-lg); top: var(--space-lg);
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 0;
+    cursor: pointer;
+    color: var(--fg-tertiary);
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    z-index: 102;
+    pointer-events: auto;
+  }
+
+  .toc-toggle:hover,
+  .toc-open .toc-toggle {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+
+  .toc-panel {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 320px !important; /* beats ui.css drawer width min(300px, 86vw) */
+    background: var(--bg-card);
+    border-right: 1px solid var(--border-light);
+    padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    z-index: 101;
+    pointer-events: auto;
+  }
+
+  .toc-open .toc-panel {
+    transform: translateX(0);
+  }
+
+  .toc-header {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-tertiary);
+    margin-bottom: 18px;
+  }
+
+  /* Narrow tabular number column; groups by whitespace, no rules */
+  .toc-item {
+    display: grid;
+    grid-template-columns: 2.4em 1fr;
+    gap: 0 10px;
+    align-items: baseline;
+    padding: 9px 0;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--fg-secondary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .toc-item:hover {
+    color: var(--accent-ink, var(--accent));
+  }
+
+  .toc-item.toc-active {
+    color: var(--accent-ink, var(--accent));
+    font-weight: 600;
+  }
+
+  .toc-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--fg-tertiary);
+    flex-shrink: 0;
+    width: 22px;
+    text-align: right;
+    opacity: .7;
+  }
+
+  .toc-active .toc-num {
+    color: var(--accent-ink, var(--accent));
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .divider-dot {
+    display: block;                 /* not a grid: the dots are one centred line */
+    margin: var(--space-2xl) auto;
+    width: 100%;
+    text-align: center;
+    color: var(--border);
+    font-size: 14px;
+    letter-spacing: 8px;
+  }
+
+  .container > footer {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+    text-align: center;
+  }
+
+  .container > footer > * {
+    grid-column: 1 / -1;
+  }
+
+  .container > footer p {
+    font-family: var(--font-mono);
+    font-size: var(--fs-meta);
+    letter-spacing: 0.06em;
+    color: var(--fg-tertiary);
+    text-transform: uppercase;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 1024px) {
+    .container { padding: 0 var(--space-xl); }
+    .section-number { padding-top: 0; }
+  }
+
+  @media (max-width: 760px) {
+    .img-row-3 { grid-template-columns: 1fr 1fr; }
+    .img-strip .figure-card { flex-basis: 85%; }
+  }
+
+  @media (max-width: 640px) {
+    html, body { overflow-x: hidden; }
+    .container { padding: 0 var(--space-lg); }
+    /* masthead clears the TOC button and wraps cleanly */
+    .doc-chrome.doc-line { padding: 68px 4px 12px !important; font-size: 12px; line-height: 1.9; } /* !important: see desktop rule */
+    .doc-line .dl-sep { margin: 0 .5em; }
+    .hero h1 { font-size: 1.8rem; overflow-wrap: anywhere; }
+    .pullquote p { font-size: 1.15rem; }
+    .section > * { min-width: 0; }
+    .gallery-item { width: 220px; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .hc-row { grid-template-columns: 1fr; }
+  }
+
+  /* ========================================
+     PRINT / PDF
+     Break rules live in ui.css (shared). Never put break-inside:avoid on
+     .section/.hero: a whole chapter that doesn't fit gets pushed to the
+     next page and leaves a half-empty page behind.
+     ======================================== */
+  @media print {
+    .gallery { flex-wrap: wrap; overflow: visible; }
+    .gallery-item { width: 45%; }
+    .img-strip { flex-wrap: wrap; overflow: visible; }
+    .img-strip-hint { display: none; }
+  }
+
+  /* ========================================
+     FOOTNOTES — [^n] references and the list at the end
+     ======================================== */
+  sup.fn-ref { font-size: .72em; line-height: 0; margin-left: 1px; }
+  sup.fn-ref a, .fn-back { color: var(--accent-ink); text-decoration: none; }
+  .footnotes li { scroll-margin-top: 80px; }
+
+  /* Phones: diagrams keep a readable size and scroll sideways; table headers don't break inside a word */
+  .table-wrap th { word-break: keep-all; }
+  @media (max-width: 640px) {
+    .embed-body { overflow-x: auto; }
+    .embed-body > svg { min-width: 520px; }
+  }
+</style>
+<style>  /* ══════════════════════════════════════
+     UI OVERLAY — Settings, Share, Edit
+     Shared across all themes
+     ══════════════════════════════════════ */
+
+  /* ── Editable text ── */
+  [contenteditable] {
+    outline: none;
+    cursor: text;
+    transition: background 0.15s;
+    border-radius: 2px;
+  }
+  [contenteditable]:hover {
+    background: rgba(0,0,0,0.03);
+  }
+  [contenteditable]:focus {
+    background: rgba(0,0,0,0.05);
+    box-shadow: 0 0 0 2px var(--accent, #002FA7);
+  }
+
+  /* ── FAB container (bottom-right) ── */
+  .hf-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+
+  .hf-fab-btn {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--fg, #0a0a0a);
+    color: var(--bg, #fafaf8);
+    border: none; border-radius: 0; cursor: pointer;
+    transition: opacity 0.15s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .hf-fab-btn:hover { opacity: 0.85; }
+  .hf-fab-btn svg { width: 20px; height: 20px; }
+
+  /* ── Dropdown menu (share + settings) ── */
+  .hf-dropdown {
+    position: absolute;
+    background: var(--fg, #0a0a0a);
+    color: var(--bg, #fafaf8);
+    min-width: 220px;
+    padding: 8px 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(4px);
+    transition: opacity 0.15s, transform 0.15s;
+    z-index: 210;
+  }
+  .hf-dropdown.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .hf-fab .hf-dropdown { right: 0; bottom: calc(100% + 6px); }
+
+  .hf-dropdown-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 16px;
+    font-family: var(--font-sans, sans-serif);
+    font-size: 13px; font-weight: 400;
+    cursor: pointer;
+    transition: background 0.1s;
+    border: none; background: none; color: inherit;
+    width: 100%; text-align: left;
+  }
+  .hf-dropdown-item:hover { background: rgba(255,255,255,0.08); }
+  .hf-dropdown-item svg { width: 16px; height: 16px; opacity: 0.5; }
+
+  .hf-dropdown-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 6px 0;
+  }
+
+  .hf-dropdown-label {
+    padding: 8px 16px 4px;
+    font-family: var(--font-mono, monospace);
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0.35;
+  }
+
+  /* ── Color swatches ── */
+  .hf-swatches {
+    display: flex; gap: 6px;
+    padding: 6px 16px 10px;
+  }
+  .hf-swatch {
+    -webkit-appearance: none; appearance: none; padding: 0;
+    width: 28px; height: 28px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    position: relative;
+  }
+  .hf-swatch:hover { border-color: rgba(255,255,255,0.3); }
+  .hf-swatch.active { border-color: var(--bg, #fff); }
+  .hf-swatch.active::after {
+    content: '✓';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+
+  /* ── Font options ── */
+  .hf-font-options {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: 4px 16px 8px;
+  }
+  .hf-font-option {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 8px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none; background: none; color: inherit;
+    width: 100%; text-align: left;
+    transition: background 0.1s;
+  }
+  .hf-font-option:hover { background: rgba(255,255,255,0.08); }
+  .hf-font-option.active { background: rgba(255,255,255,0.12); }
+  .hf-font-option .font-preview {
+    font-size: 15px; font-weight: 300;
+    opacity: 0.7;
+  }
+  .hf-font-option .font-name {
+    font-family: var(--font-mono, monospace);
+    font-size: 10px; letter-spacing: 0.08em;
+    text-transform: uppercase; opacity: 0.4;
+  }
+
+  /* ── Print hide UI ── */
+  @media print {
+    .hf-fab,.toc,.toc-scrim { display: none !important; }
+    [contenteditable] { box-shadow: none !important; background: none !important; }
+  }
+
+  /* ── TOC layout behaviour (shared) ──
+     Root cause of the old "TOC covers half the article" bug: the panel is a
+     280px fixed overlay, while the article container starts ~120px from the
+     left edge on a 1440px screen, so opening it always covered the text.
+     Fix: on wide screens opening the TOC pushes the page (body padding-left),
+     so nothing is covered; on narrow screens it is a drawer with a scrim and
+     closes on outside click / Esc. */
+  .toc { width: 0; height: 0; overflow: visible; pointer-events: none; }
+  .toc-toggle, .toc-panel { pointer-events: auto; }
+  .toc-panel { visibility: hidden; transition: transform 0.25s cubic-bezier(.2,0,.38,.9), visibility 0s linear 0.25s; }
+  .toc-open .toc-panel { visibility: visible; transition: transform 0.25s cubic-bezier(.2,0,.38,.9); }
+  body { transition: padding-left 0.25s cubic-bezier(.2,0,.38,.9); }
+  .toc-scrim { display: none; }
+  @media (min-width: 1025px) {
+    html.toc-is-open body { padding-left: 300px; }
+  }
+  @media (max-width: 1024px) {
+    .toc-scrim {
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(0,0,0,0.28);
+    }
+    html.toc-is-open .toc-scrim { display: block; }
+    .toc-panel { width: min(300px, 86vw); }
+  }
+
+  /* ══════════════════════════════════════
+     PRINT / PDF — pagination (shared by both styles)
+     Root cause of the "half-empty page" bug: style-magazine.css had
+     `.hero, .section { break-inside: avoid }`, and both themes lay sections
+     out as CSS grids; any chapter taller than the remaining space jumped to
+     the next page whole. Rules now: only small atomic blocks avoid breaking,
+     long containers flow across pages, headings stick to what follows.
+     ══════════════════════════════════════ */
+  /* Page margins live inside the page (container padding repeated on every page via
+     box-decoration-break), so the theme's paper colour fills the whole sheet — Chrome
+     doesn't paint @page margins, which left a white frame around dark themes. */
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body, body * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html { background: var(--bg); }
+    html.toc-is-open body, body { padding-left: 0 !important; }
+    .container { max-width: none !important; padding: 14mm 12mm 16mm !important; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .embed-label, .summary-label, .aside-title { break-after: avoid; }
+    /* grid fragmentation is fragile — flow sections as blocks on paper */
+    .section, .hero, footer, .container > .pullquote { display: block !important; }
+    .section-header { display: block !important; }
+    .section, .hero, .process, .gallery, .gallery-grid, .summary-card,
+    .summary-grid, .table-wrap, table, ul, ol, pre, .chart-row,
+    .embed-card, .data-figure { break-inside: auto !important; }
+
+    /* headings never end a page */
+    h1, h2, h3, h4, h5, .section-number, .section-header, .hero-kicker,
+    .def-card-label, .hl-label, .toc-header { break-after: avoid; break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+
+    /* small atomic blocks: keep whole */
+    blockquote, .def-card, .def-card-swiss, .highlight-card, .highlight-swiss,
+    .pullquote, .pullquote-swiss, .aside-card, .process-step, .big-number,
+    .summary-item, .gallery-item, li, tr, .callout { break-inside: avoid; }
+
+    /* image + caption travel together; cap height (120mm ≈ 45% of an A4 text area). Residual gap: a heading kept with a big figure can still leave up to ~half a page — intended (no orphan heading). so a figure never strands more than ~half a page */
+    figure, .figure-card { break-inside: avoid; }
+    figure img, .figure-card img, img { max-height: 120mm; width: auto; max-width: 100%; object-fit: contain; }
+    figcaption, .figure-caption, .caption { break-before: avoid; }
+    pre { white-space: pre-wrap; word-break: break-all; }
+    .section { padding-top: 12mm !important; padding-bottom: 4mm !important; }
+    a { text-decoration: none; }
+  }
+
+  /* ══════════════════════════════════════
+     PRINT v0.14 — blank-space budget (≤25% per page)
+     A block that can't split leaves at most its own height as a gap, so every
+     unsplittable block is capped well under a quarter page; everything tall
+     (tables, charts, quotes) is allowed to split. Screen layout untouched.
+     ══════════════════════════════════════ */
+  @media print {
+    .section { padding-top: 5mm !important; padding-bottom: 2mm !important; margin-top: 0 !important; border: 0 !important; }
+    .section::before { content: none !important; }
+    .section > .section-number { margin-bottom: 2mm !important; }
+    .section h2, .section-header { margin-bottom: 4mm !important; }
+    .hero { padding-top: 0 !important; padding-bottom: 4mm !important; }
+    .hero::after { margin-top: 3mm !important; }
+    .doc-chrome { padding-top: 0 !important; padding-bottom: 4mm !important; }
+    .hero-cover, .hero-cover .hero-bg { min-height: 0 !important; height: 60mm !important; }
+
+    /* media: shrink to fit instead of jumping */
+    figure img, .figure-card img, .img-row img, .img-strip img, img { max-height: 58mm !important; width: auto !important; max-width: 100% !important; object-fit: contain !important; margin-left: auto; margin-right: auto; }
+    .img-row img { max-height: 42mm !important; }
+    .media-embed video, .media-embed iframe { max-height: 58mm !important; }
+    figure, .figure-card { margin-top: 3mm !important; margin-bottom: 3mm !important; }
+    .figure-card > figcaption { margin-top: 1.5mm !important; text-align: center; }  /* images shrink and centre on paper */
+
+    /* headings stay with the next *line*, not with a whole big block */
+    h2, h3, .section-header, .section-number { break-after: avoid; }
+    .section-header + .figure-card, h2 + .figure-card, .section-number + h2 + .figure-card,
+    h2 + .table-wrap, h2 + .hchart, .section-header + .hchart, .section-header + .table-wrap { break-before: auto !important; }
+
+    /* tables: split across pages, header row repeats */
+    .table-wrap, .table-wrap table { break-inside: auto !important; overflow: visible !important; }
+    .table-wrap thead { display: table-header-group; }
+    .table-wrap tr { break-inside: avoid; }
+    .table-caption { break-after: avoid; }
+
+    /* charts: allowed to split between rows/groups */
+    .hchart { break-inside: auto !important; padding-top: 4mm !important; padding-bottom: 4mm !important; margin-top: 4mm !important; margin-bottom: 4mm !important; }
+    .hc-row, .hc-group, .hc-legend { break-inside: avoid; }
+    .hc-title, .hc-legend { break-after: avoid; }
+
+    /* quotes / cards may split when long; small ones still stay whole via orphans/widows */
+    blockquote, .pullquote, .pullquote-swiss, .highlight-card, .highlight-swiss { break-inside: auto !important; }
+    .pullquote, .pullquote-swiss { padding-top: 5mm !important; padding-bottom: 5mm !important; margin-top: 4mm !important; margin-bottom: 4mm !important; }
+    .img-row, .img-strip-wrap { margin-top: 3mm !important; margin-bottom: 3mm !important; }
+    p { orphans: 2; widows: 2; }
+  }
+  @media print {
+    figure img, .figure-card img, img { max-height: 54mm !important; }
+    .img-strip { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+    .img-strip .figure-card { flex: none !important; }
+    .img-strip img, .img-row img { max-height: 34mm !important; }
+  }
+  @media print {
+    /* heading followed directly by an unsplittable media block: don't drag the heading along */
+    .section-header:has(+ .figure-card), .section-header:has(+ .img-row), .section-header:has(+ .media-embed),
+    h2:has(+ .figure-card), h2:has(+ .img-row), h2:has(+ .media-embed),
+    .section-number:has(+ h2 + .figure-card) { break-after: auto !important; }
+  }
+  @media print { figure img, .figure-card img, img { max-height: 50mm !important; } .section-header .section-number { font-size: 20px !important; } }
+  @media print { .section-header + .figure-card img, h2 + .figure-card img { max-height: 38mm !important; } }
+  @media print { .section-header .section-number { display: inline-block !important; margin: 0 4mm 0 0 !important; } .section-header h2 { display: inline !important; } .section-header { margin-bottom: 3mm !important; } .figure-card { margin-top: 2mm !important; } }
+  @media print { h3 + .figure-card img { max-height: 38mm !important; } .hc-group { padding: 2mm 0 !important; } .hc-group .hc-bar { height: 10px !important; } .hc-bars { gap: 3px !important; } .hc-legend { margin-bottom: 3mm !important; } .hc-title { margin-bottom: 3mm !important; } .hc-row { padding: 1mm 0 !important; } .hc-bar { height: 13px !important; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" data-gz-fonts="playfair-display noto-serif-sc source-serif-4 noto-sans-sc ibm-plex-mono inter" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Serif+SC:wght@200..900&family=Source+Serif+4:ital,wght@0,200..900;1,200..900&family=Noto+Sans+SC:wght@100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@100..900&display=swap">
+</head>
+<body>
+
+<div class="toc-scrim" id="toc-scrim"></div>
+<nav class="toc" id="toc">
+  <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4h14M2 9h10M2 14h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+  <div class="toc-panel" id="toc-panel">
+    <div class="toc-header">目录</div>
+    <a class="toc-item" href="#s-01"><span class="toc-num">01</span>🎯 学习目标</a>
+<a class="toc-item" href="#s-02"><span class="toc-num">02</span>🧠 核心概念</a>
+<a class="toc-item" href="#s-03"><span class="toc-num">03</span>🛠 命令实操</a>
+<a class="toc-item" href="#s-04"><span class="toc-num">04</span>💡 避坑指南</a>
+<a class="toc-item" href="#s-05"><span class="toc-num">05</span>✍️ 动手实验</a>
+<a class="toc-item" href="#s-06"><span class="toc-num">06</span>📺 推荐视频</a>
+<a class="toc-item" href="#s-07"><span class="toc-num">07</span>🎬 本章精讲</a>
+<a class="toc-item" href="#s-08"><span class="toc-num">08</span>✅ 自测清单</a>
+<a class="toc-item" href="#s-09"><span class="toc-num">09</span>🔗 延伸阅读</a>
+  </div>
+</nav>
+<div class="container">
+
+<div class="doc-chrome doc-line"><span class="dl-tag">磁盘</span><span class="dl-sep">·</span><span class="dl-tag">inode</span><span class="dl-sep">·</span><span class="dl-tag">LVM</span><span class="dl-sep">·</span><span class="dl-tag">fstab</span><span class="dl-sep">·</span><span class="dl-tag">挂载</span><span class="dl-sep">·</span><span>通往 Linux 之路</span><span class="dl-sep">·</span><span>2026.11.03</span><span class="dl-sep">·</span><span>约 45 分钟</span></div>
+
+<header class="hero">
+  <h1>第 7 章 · 磁盘与文件系统</h1>
+  <p class="hero-subtitle">打开目录树背后的磁盘黑盒</p>
+</header>
+<section class="section" id="s-0"><p>你在阶段 1 就会 <code>mkdir</code> 和 <code>cd</code> 了，但"文件到底存在哪""目录树背后的磁盘长什么样"还是黑盒。本章打开这个黑盒：看盘、分区、格式化、挂载、排查空间，并搞懂让"链接""恢复删除"等现象说得通的 <strong>inode</strong>。</p></section><section class="section" id="s-01"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">01</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>🎯 学习目标</h2><p>学完本章，你将能够：</p>
+<ul><li>用 <code>lsblk</code> 和 <code>fdisk -l</code> 看清系统里的磁盘与分区结构；</li><li>描述 fdisk 交互式分区的完整步骤，并知道 <code>partprobe</code> 的作用；</li><li>说出 ext4 与 xfs 两代文件系统的取舍；</li><li>用 <code>mkfs</code> 格式化、<code>mount</code> 挂载，并用 UUID 方式写入 <code>/etc/fstab</code> 实现开机自动挂载；</li><li>用 <code>df -h</code> 与 <code>du -sh</code> 组合排查"空间去哪了"；</li><li>说出软链接与硬链接的区别，并用 inode 解释一切；</li><li>讲清 LVM 的 PV / VG / LV 三层结构解决什么问题。</li></ul></section><section class="section" id="s-02"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">02</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>🧠 核心概念</h2><figure class="figure-card"><img src="../../assets/animations/page-cache.svg" alt="页缓存原理动画" loading="lazy" style="border-radius:0" /><figcaption>页缓存原理动画</figcaption></figure>
+<p><a href="https://zhuguang-zfg.github.io/linux/#animation=page-cache.svg">在学习站暂停、单步或重播</a>。动画中的输入输出为教学示意，需用本章实验验证。</p>
+<figure class="figure-card"><img src="../../assets/animations/inode-links.svg" alt="硬链接原理动画" loading="lazy" style="border-radius:0" /><figcaption>硬链接原理动画</figcaption></figure>
+<p><a href="https://zhuguang-zfg.github.io/linux/#animation=inode-links.svg">在学习站暂停、单步或重播</a>。动画中的输入输出为教学示意，需用本章实验验证。</p>
+<figure class="figure-card"><img src="../../assets/animations/filesystem-mount.svg" alt="文件系统挂载示意" loading="lazy" style="border-radius:0" /><figcaption>文件系统挂载示意</figcaption></figure>
+<figure class="figure-card"><img src="../../assets/images/nvme-ssd.jpg" alt="NVMe SSD 实物" loading="lazy" style="border-radius:0" /><figcaption>NVMe SSD 实物</figcaption></figure>
+<p>实物照片展示持久存储器件，动画展示它如何接入目录树，两者不是同一层。照片：D-Kuru，CC BY-SA 4.0，见 <a href="../../assets/images/CREDITS.md">署名</a>。</p>
+<h3>7.1 三层结构：磁盘 → 分区 → 文件系统</h3>
+<p>一块物理磁盘可以先切成<strong>分区（partition）</strong>，每个分区上建一个<strong>文件系统（filesystem）</strong>，文件系统再<strong>挂载（mount）</strong>到目录树的某个目录上。你在 <code>/home/zhugu</code> 里读写文件时，内核根据挂载表把操作翻译成对某块盘某个分区的读写<span class="dash">——</span>路径与物理位置就这样对上了。</p>
+<pre><code class="language-bash">lsblk</code></pre>
+<p>预期输出：</p>
+<pre><code class="language-text">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0   40G  0 disk
+├─sda1   8:1    0    1M  0 part
+├─sda2   8:2    0  513M  0 part /boot/efi
+└─sda3   8:3    0 39.5G  0 part /
+sdb      8:16   0   20G  0 disk</code></pre>
+<p><code>sda</code> 是第一块盘，<code>sda3</code> 是它的第三个分区，挂载在根目录；<code>sdb</code> 是一块还没分区的空盘<span class="dash">——</span>本章的"练习素材"。</p>
+<h3>7.2 文件系统：ext4 与 xfs</h3>
+<p>文件系统决定"文件和目录如何组织在磁盘上"。两者都是日志式文件系统（journaling，先记账再动笔，断电可恢复）：</p>
+<figure class="table-wrap"><table><thead><tr><th>对比项</th><th>ext4</th><th>xfs</th></tr></thead><tbody><tr><td>常见于</td><td>Ubuntu / Debian 默认</td><td>RHEL / CentOS 默认</td></tr><tr><td>单文件上限</td><td>16 TiB</td><td>8 EiB</td></tr><tr><td>缩容</td><td>支持（需卸载后进行）</td><td><strong>不支持</strong></td></tr><tr><td>在线扩容</td><td>支持</td><td>支持</td></tr><tr><td>修复工具</td><td>fsck.ext4</td><td>xfs_repair</td></tr><tr><td>擅长场景</td><td>通用、小文件居多</td><td>大文件、高并发读写</td></tr></tbody></table></figure>
+<h3>7.3 inode：文件的本质</h3>
+<p><strong>inode</strong>（index node，索引节点）是文件系统的"户口本"：权限、大小、时间戳、数据块位置都记在 inode 里，而<strong>文件名只是目录里的一条映射</strong>（"文件名 → inode 号"）。一个 inode 可以有多个名字<span class="dash">——</span>这就是硬链接的原理。</p>
+<pre class="mermaid">flowchart LR
+    H1[&quot;目录项 data.txt&quot;] --&gt; I[&quot;inode 394217&lt;br/&gt;权限 644 · 大小 · 时间 · 链接数 2&quot;]
+    H2[&quot;目录项 data-hard.txt&quot;] --&gt; I
+    I --&gt; B[&quot;数据块&lt;br/&gt;文件的真实内容&quot;]
+    S[&quot;目录项 data-soft.txt&lt;br/&gt;（符号链接，自有 inode）&quot;] -. &quot;只存路径字符串&quot; .-&gt; H1</pre>
+<h3>7.4 LVM：把多块盘拼成一个池子</h3>
+<p><strong>LVM</strong>（Logical Volume Manager，逻辑卷管理）在磁盘与文件系统之间加了一层抽象：把分区或整盘初始化成 <strong>PV</strong>（Physical Volume，物理卷），PV 汇入 <strong>VG</strong>（Volume Group，卷组）这个"存储池"，再从池子里划出 <strong>LV</strong>（Logical Volume，逻辑卷）供格式化挂载。好处是空间调度自由：池子里加块盘，任何一个 LV 都能在线扩容，还能做快照备份。</p>
+<pre class="mermaid">flowchart BT
+    PV1[&quot;PV 物理卷&lt;br/&gt;/dev/sdb1&quot;] --&gt; VG[&quot;VG 卷组 vg0&lt;br/&gt;可动态扩容的存储池&quot;]
+    PV2[&quot;PV 物理卷&lt;br/&gt;/dev/sdc1&quot;] --&gt; VG
+    VG --&gt; LV1[&quot;LV 逻辑卷 /dev/vg0/data&quot;]
+    VG --&gt; LV2[&quot;LV 逻辑卷 /dev/vg0/backup&quot;]
+    LV1 --&gt; FS[&quot;mkfs 后挂载使用&quot;]</pre>
+<h3>7.5 机制深挖：页缓存、TRIM 与「df / du 之谜」</h3>
+<p><strong>（1）页缓存：写入先到内存，不一定马上落盘</strong></p>
+<p>Linux 把空闲内存用来缓存磁盘数据（读缓存 + 写缓冲）。所以你 <code>cp</code> 完一个大文件，数据可能还在内存里排队<span class="dash">——</span><strong>这不是错误，是设计</strong>。</p>
+<pre><code class="language-bash">free -h                     # buff/cache 就是这部分
+cp big.iso /mnt/usb/        # 命令秒回 ≠ 已经写进 U 盘
+sync                        # 手动要求把缓冲刷到磁盘（拔盘前执行）</code></pre>
+<p>推论：<code>dd</code>/<code>cp</code> 的「瞬时速度」是内存速度，不代表真实磁盘速度；拔 U 盘前 <code>sync</code> 或 <code>umount</code> 是对文件系统的尊重。</p>
+<p><strong>（2）TRIM：告诉 SSD「这块不用了」</strong></p>
+<p>传统磁盘上，删除文件只是标记；SSD 上还需要内核发 <strong>TRIM</strong> 指令，让主控知道哪些块可以回收<span class="dash">——</span>不发 TRIM，长期使用后写入性能会下降。</p>
+<pre><code class="language-bash">sudo fstrim -v /                          # 手动执行一次，看到回收量
+systemctl status fstrim.timer             # 确认定期任务已启用</code></pre>
+<p><strong>（3）df 与 du 之谜：三个经典不一致</strong></p>
+<figure class="table-wrap"><table><thead><tr><th>现象</th><th>原因</th><th>验证</th></tr></thead><tbody><tr><td><code>du</code> 统计小于 <code>df</code></td><td>有<strong>已删除但被进程占用</strong>的文件</td><td><code>lsof +L1</code> 找到，重启进程即释放</td></tr><tr><td><code>df</code> 显示满但 <code>du</code> 找不出大目录</td><td><strong>inode 用尽</strong>（海量小文件）</td><td><code>df -i /</code></td></tr><tr><td><code>du</code> 显示很大但 <code>df</code> 没变化</td><td><strong>稀疏文件</strong>：逻辑大小 ≠ 实际占用</td><td><code>ls -ls</code> 看第一列实占块数</td></tr><tr><td>两者都小，<code>df</code> 仍高</td><td>文件系统<strong>保留块</strong>（ext4 默认留 5%）</td><td><code>tune2fs -l /dev/sdX | grep -i reserved</code></td></tr></tbody></table></figure>
+<pre><code class="language-bash"># 演示稀疏文件：逻辑 1GB，实际几乎不占空间
+truncate -s 1G sparse.bin
+ls -l sparse.bin      # 显示 1073741824（逻辑大小）
+ls -ls sparse.bin     # 第一列是实际占用的块数（很少）
+du -h sparse.bin      # 实际占用</code></pre>
+<blockquote><p>🧭 一句话总结：<strong><code>df</code> 看「文件系统分配」，<code>du</code> 看「目录内容占用」，两者天然可以不一致</strong><span class="dash">——</span>遇到分歧，按上表逐条排除，而不是怀疑工具坏了。</p></blockquote></section><section class="section" id="s-03"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">03</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>🛠 命令实操</h2><blockquote><p>分区与格式化是<strong>毁灭性操作</strong>：目标写错，数据全无。以下实操在虚拟机的空盘 <code>/dev/sdb</code>（对应 7.1 的 lsblk 输出）上进行，<strong>动手前先 <code>lsblk</code> 确认设备名，别把系统盘搭进去</strong>。</p></blockquote>
+<h3>看盘：lsblk 与 fdisk -l</h3>
+<pre><code class="language-bash">lsblk -f                 # 连文件系统类型、UUID 一起看
+sudo fdisk -l /dev/sdb   # 看这块盘的分区表详情</code></pre>
+<p><code>fdisk -l</code> 预期输出（空盘只有头两行）：</p>
+<pre><code class="language-text">Disk /dev/sdb: 20 GiB, 21474836480 bytes, 41943040 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes</code></pre>
+<h3>分区：fdisk 交互五步</h3>
+<pre><code class="language-bash">sudo fdisk /dev/sdb</code></pre>
+<p>进入交互界面后依次输入（<code>#</code> 后是注释）：</p>
+<pre><code class="language-text">命令(输入 m 获取帮助)：n        # new，新建分区
+分区类型：p                     # primary，主分区
+分区号：回车                    # 默认 1
+第一个扇区：回车                # 默认从盘头开始
+最后一个扇区：回车              # 默认用满整盘
+命令(输入 m 获取帮助)：w        # write，写入分区表并退出</code></pre>
+<p>让内核重新读取分区表（不重启就生效），然后确认：</p>
+<pre><code class="language-bash">sudo partprobe /dev/sdb
+lsblk /dev/sdb</code></pre>
+<p>预期输出：</p>
+<pre><code class="language-text">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sdb      8:16   0   20G  0 disk
+└─sdb1   8:17   0   20G  0 part</code></pre>
+<h3>格式化与挂载</h3>
+<p>给分区建文件系统（格式化），再挂到目录树上：</p>
+<pre><code class="language-bash">sudo mkfs.ext4 /dev/sdb1        # 也可 sudo mkfs.xfs /dev/sdb1
+sudo mkdir -p /mnt/data
+sudo mount /dev/sdb1 /mnt/data
+df -h /mnt/data</code></pre>
+<p><code>df -h</code> 预期输出（Filesystem 一行能看到新分区）：</p>
+<pre><code class="language-text">Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdb1        20G   24K   19G   1% /mnt/data</code></pre>
+<h3>fstab：开机自动挂载（UUID 方式）</h3>
+<p>用设备名（<code>/dev/sdb1</code>）写配置有个隐患：插拔磁盘后字母可能变。<strong>UUID</strong>（Universally Unique Identifier，设备出厂格式化时就确定的唯一编号）才是稳妥方案。先查编号：</p>
+<pre><code class="language-bash">sudo blkid /dev/sdb1</code></pre>
+<p>预期输出：</p>
+<pre><code class="language-text">/dev/sdb1: UUID=&quot;5f2e9c4a-8b3d-4e21-9f7a-1c2d3e4f5a6b&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;a1b2c3d4-01&quot;</code></pre>
+<p>往 <code>/etc/fstab</code> 末尾追加一行（六个字段：设备 UUID、挂载点、文件系统、选项、dump 备份位、fsck 检查顺序）：</p>
+<pre><code class="language-text">UUID=5f2e9c4a-8b3d-4e21-9f7a-1c2d3e4f5a6b  /mnt/data  ext4  defaults  0  2</code></pre>
+<p><strong>写完 fstab 千万别直接重启验证</strong>，先用这两条命令确认无误（外接盘可加 <code>nofail</code> 选项，盘不在也照常开机）：</p>
+<pre><code class="language-bash">sudo findmnt --verify           # 语法与逻辑校验
+sudo mount -a                   # 按 fstab 挂载所有未挂载项，报错当场暴露</code></pre>
+<h3>排查空间：df 与 du 双剑合璧</h3>
+<p><code>df</code>（disk free）看<strong>文件系统</strong>整体水位，<code>du</code>（disk usage）看<strong>目录</strong>各自占了多少：</p>
+<pre><code class="language-bash">df -h                           # 全局水位，盯 Use% 超 80% 的行
+du -sh /var/log                 # 单个目录总量（-s 汇总，-h 人类可读）
+du -sh /var/* 2&gt;/dev/null | sort -rh | head -5    # 找出 /var 下最大的 5 个目录</code></pre>
+<p><code>df -h</code> 预期输出：</p>
+<pre><code class="language-text">Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.9G  1.1M  1.9G   1% /run
+/dev/sda3        39G   12G   25G  32% /
+tmpfs           9.4G     0  9.4G   0% /dev/shm</code></pre>
+<h3>软链接 vs 硬链接</h3>
+<pre><code class="language-bash">mkdir -p ~/disk-lab &amp;&amp; cd ~/disk-lab
+echo &quot;重要数据&quot; &gt; data.txt
+ln data.txt data-hard.txt        # 硬链接
+ln -s data.txt data-soft.txt     # 软链接（符号链接）
+ls -li</code></pre>
+<p>预期输出：</p>
+<pre><code class="language-text">394217 -rw-r--r-- 2 zhugu zhugu 13 Oct  6 10:00 data-hard.txt
+394218 lrwxrwxrwx 1 zhugu zhugu  8 Oct  6 10:00 data-soft.txt -&gt; data.txt
+394217 -rw-r--r-- 2 zhugu zhugu 13 Oct  6 10:00 data.txt</code></pre>
+<p>两个"真身"共享 inode <strong>394217</strong>、链接数为 2；软链接有自己的 inode（394218），里面只存了路径字符串。删除原文件再验证：</p>
+<pre><code class="language-bash">rm data.txt
+cat data-hard.txt                # 正常输出&quot;重要数据&quot;：inode 还在
+cat data-soft.txt                # 报错：No such file or directory（悬空链接）</code></pre>
+<figure class="table-wrap"><table><thead><tr><th>对比项</th><th>硬链接</th><th>软链接（符号链接）</th></tr></thead><tbody><tr><td>本质</td><td>同一 inode 的另一个名字</td><td>存放目标路径的独立文件</td></tr><tr><td>inode 号</td><td>与原文件相同</td><td>自己的 inode</td></tr><tr><td>跨文件系统</td><td>不可以</td><td>可以</td></tr><tr><td>链接目录</td><td>不可以</td><td>可以</td></tr><tr><td>原文件删除后</td><td>数据仍可访问</td><td>失效（悬空链接）</td></tr><tr><td>创建命令</td><td><code>ln 源 目标</code></td><td><code>ln -s 源 目标</code></td></tr></tbody></table></figure></section><section class="section" id="s-04"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">04</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>💡 避坑指南</h2><ol><li><strong><code>mkfs</code>、<code>fdisk</code> 认设备不认人</strong>：把 <code>/dev/sdb1</code> 手滑写成 <code>/dev/sda1</code>，系统盘当场报废。动手前 <code>lsblk</code> 双确认，虚拟机快照是好习惯。</li><li><strong>fstab 写错 = 开不了机</strong>：改完必须 <code>findmnt --verify</code> + <code>mount -a</code> 验证；保险起见保留一个已打开的 root 终端，出事可回改。不确定的设备行加 <code>nofail,x-systemd.device-timeout=5s</code>。</li><li><strong><code>df</code> 与 <code>du</code> 结果对不上</strong>：常见原因是"文件已删除但仍被进程打开"（空间没释放），用 <code>sudo lsof +L1</code> 找出它们，重启或重启对应进程即可回收。</li><li><strong>硬链接的两个"不可以"</strong>：不能跨文件系统（inode 号只在单个文件系统内唯一）、不能对目录（会形成环）。需要跨盘、链目录时，用软链接。</li><li><strong>xfs 不能缩容</strong>：想给 xfs 分区"瘦身"只有一个办法<span class="dash">——</span>备份、重建、还原。规划时宁可先小后大（扩容易，缩容难）。</li><li><strong>挂载会"遮住"原目录内容</strong>：挂载点目录里原有的文件在挂载期间不可见，卸载后回归，不是被删了。</li></ol></section><section class="section" id="s-05"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">05</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>✍️ 动手实验</h2><h3>实验 1：用 inode 破案</h3>
+<p>在 <code>~/disk-lab</code> 中重建 <code>data.txt</code> 与它的软、硬链接，然后依次回答：① 用 <code>ls -li</code> 找出与 <code>data.txt</code> 同 inode 的文件；② 给 <code>data.txt</code> 追加一行内容，两个链接读到的内容变了吗？为什么？③ 删除软链接、再删除硬链接，最后一次 <code>rm data.txt</code> 之后数据还找得回来吗？</p>
+<details>
+<summary>💡 参考解法（先自己试！）</summary>
+<pre><code class="language-bash">cd ~/disk-lab
+echo &quot;重要数据&quot; &gt; data.txt
+ln data.txt data-hard.txt &amp;&amp; ln -s data.txt data-soft.txt
+ls -li                                   # ① data.txt 与 data-hard.txt 同 inode
+echo &quot;第二行&quot; &gt;&gt; data.txt
+cat data-hard.txt                        # ② 变了：三个名字指向同一份数据
+rm data-soft.txt data-hard.txt data.txt
+# ③ 找不回：链接数归 0 后，文件系统回收了 inode 与数据块</code></pre>
+<p>②里追加内容改的是<strong>同一个 inode 指向的数据块</strong>，所以所有名字同时"看到"。③说明：删除文件只是删名字，<strong>最后一个名字消失</strong>时数据才真正释放<span class="dash">——</span>这也是"恢复删除文件"如此困难的根本原因。</p>
+</details>
+<h3>实验 2：在镜像文件里走完"格式化 → 挂载 → 卸载"全流程</h3>
+<p>没有空盘也能练：用一个 64 MiB 的普通文件冒充分区（loop 设备），安全完成 mkfs、mount、写入、卸载、重挂验证持久化。*<em>全程不要碰任何 <code>/dev/sd</em></code> 设备。**</p>
+<details>
+<summary>💡 参考解法（先自己试！）</summary>
+<pre><code class="language-bash">lab=$(mktemp -d ~/disk-lab-img.XXXX)
+truncate -s 64M &quot;$lab/disk.img&quot;            # 造一个 64MiB 的&quot;空盘&quot;
+mkfs.ext4 -F &quot;$lab/disk.img&quot;               # 在镜像里建 ext4（-F 跳过确认）
+mkdir -p &quot;$lab/mnt&quot;
+sudo mount -o loop &quot;$lab/disk.img&quot; &quot;$lab/mnt&quot;
+printf 'persistent data\n' | sudo tee &quot;$lab/mnt/hello.txt&quot;
+sudo umount &quot;$lab/mnt&quot;
+ls -A &quot;$lab/mnt&quot;                           # 卸载后目录是空的
+sudo mount -o loop &quot;$lab/disk.img&quot; &quot;$lab/mnt&quot;
+cat &quot;$lab/mnt/hello.txt&quot;                   # persistent data —— 数据在镜像里
+sudo umount &quot;$lab/mnt&quot; &amp;&amp; rm -rf &quot;$lab&quot;</code></pre>
+<p><code>-o loop</code> 让内核把这个文件"看作"块设备。卸载后挂载点空空如也，重新挂载数据又回来了<span class="dash">——</span>直观证明<strong>数据跟着文件系统走，不跟着挂载点走</strong>。WSL 或受限容器若不支持 loop 挂载，请在虚拟机中完成。</p>
+</details></section><section class="section" id="s-06"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">06</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>📺 推荐视频</h2><ul><li><a href="https://www.bilibili.com/video/BV1Sv411r7vd/?p=60">B<span class="hf-sp"> </span>站 · 磁盘使用情况查询</a> — 韩顺平，P60，7<span class="hf-sp"> </span>分<span class="hf-sp"> </span>57<span class="hf-sp"> </span>秒。磁盘扩容实例；操作前确认设备名并完成备份。</li><li><a href="https://www.bilibili.com/video/BV1Sv411r7vd/?p=58">B<span class="hf-sp"> </span>站 · 磁盘分区机制</a> — 韩顺平，P58，16<span class="hf-sp"> </span>分<span class="hf-sp"> </span>4<span class="hf-sp"> </span>秒。磁盘扩容实例；操作前确认设备名并完成备份。</li><li><a href="https://www.bilibili.com/video/BV1Sv411r7vd/?p=59">B<span class="hf-sp"> </span>站 · 增加磁盘应用实例</a> — 韩顺平，P59，23<span class="hf-sp"> </span>分<span class="hf-sp"> </span>2<span class="hf-sp"> </span>秒。磁盘扩容实例；操作前确认设备名并完成备份。</li><li><a href="https://www.bilibili.com/video/BV1vf421B7Rz/?p=25">B<span class="hf-sp"> </span>站 · 磁盘分区实战</a> — 老男孩<span class="hf-sp"> </span>IT，P25，15<span class="hf-sp"> </span>分<span class="hf-sp"> </span>16<span class="hf-sp"> </span>秒。磁盘扩容实例；操作前确认设备名并完成备份。</li></ul>
+<figure class="figure-card"><a href="https://www.bilibili.com/video/BV1Sv411r7vd/?p=60"><img src="https://i0.hdslb.com/bfs/archive/0647f0151e2550455c3d3e0d8d38f5a4c641bf78.jpg" alt="磁盘使用情况查询 视频封面" loading="lazy" /></a><figcaption>磁盘使用情况查询 视频封面</figcaption></figure>
+<p><a href="https://zhuguang-zfg.github.io/linux/#read=docs%2F02-advanced%2F07-%E7%A3%81%E7%9B%98%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.md">在学习站查看配套媒体</a> · <a href="../../resources/videos.md">视频资料与核验说明</a>。标题、作者和分<span class="hf-sp"> </span>P<span class="hf-sp"> </span>已核对，未逐条完成实播，播放限制以原站为准。</p></section><section class="section" id="s-07"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">07</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>🎬 本章精讲</h2><p>长视频把本章拆成「现象 → 机制 → 命令验证 → 坑 → 自测」，动画按相位放大，配逐字口播稿：</p>
+<ul><li><a href="../../resources/lectures/disk.md">M12 · 删了文件，磁盘空间为什么没回来</a> — 时间轴、口播稿与自测</li></ul>
+<p>成片在 <code>video-out/lectures/disk/disk-wide.mp4</code>（本地渲染，不入库），字幕 <code>disk.srt</code>。</p></section><section class="section" id="s-08"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">08</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>✅ 自测清单</h2><ul class="checklist"><li>能用 <code>lsblk</code> 说出系统里有几块盘、每块盘有几个分区、各挂载在哪</li><li>能按顺序说出 fdisk 交互分区五步，并知道 <code>partprobe</code> 用来做什么</li><li>能说出 ext4 与 xfs 在缩容支持和适用场景上的差异</li><li>会用 UUID 方式写 fstab 挂载行，并知道六个字段的含义</li><li>知道改完 fstab 必须用 <code>findmnt --verify</code> 和 <code>mount -a</code> 验证</li><li>会用 <code>df -h</code> 与 <code>du -sh</code> 配合定位空间占用大户</li><li>能用 inode 解释硬链接与软链接的四个区别</li><li>能画出 PV → VG → LV 的层次并说出 LVM 的核心好处</li></ul></section><section class="section refs" id="s-09"><div class="section-number sn-sym"><span class="sn-side sn-l"><span class="sn-star s3">✦</span><span class="sn-star s2">✦</span><span class="sn-star s1">✦</span></span><span class="sn-num">09</span><span class="sn-side sn-r"><span class="sn-star s1">✦</span><span class="sn-star s2">✦</span><span class="sn-star s3">✦</span></span></div><h2>🔗 延伸阅读</h2><ul><li>hier(7)：Linux 文件系统层次标准：<<a class="url" href="https://www.man7.org/linux/man-pages/man7/hier.7.html" title="https://www.man7.org/linux/man-pages/man7/hier.7.html" target="_blank" rel="noopener">man7.org/linux/man-pages/man7/hier.7.html</a>></li><li>inode(7)：inode 的官方定义：<<a class="url" href="https://www.man7.org/linux/man-pages/man7/inode.7.html" title="https://www.man7.org/linux/man-pages/man7/inode.7.html" target="_blank" rel="noopener">man7.org/linux/man-pages/man7/inode.7.html</a>></li><li>fstab(5)：六个字段的权威解释：<<a class="url" href="https://www.man7.org/linux/man-pages/man5/fstab.5.html" title="https://www.man7.org/linux/man-pages/man5/fstab.5.html" target="_blank" rel="noopener">man7.org/linux/man-pages/man5/fstab.5.html</a>></li><li>Arch Wiki 的 LVM 页：<<a class="url" href="https://wiki.archlinux.org/title/LVM" title="https://wiki.archlinux.org/title/LVM" target="_blank" rel="noopener">wiki.archlinux.org/title/LVM</a>></li><li>📝 章节练习：<a href="../../exercises/02-进阶篇练习.md">02-进阶篇练习</a></li><li>⏭ 网络基础与远程连接，让 Linux 与世界对话：<a href="08-网络基础与远程连接.md">08-网络基础与远程连接</a></li></ul></section>
+<div class="divider-dot">· · ·</div>
+<footer><p>归藏 Page · Built with constrained HTML</p></footer>
+
+</div>
+
+<script>
+(function(){
+  const toggle = document.getElementById('toc-toggle');
+  const panel = document.getElementById('toc-panel');
+  const toc = document.getElementById('toc');
+  const scrim = document.getElementById('toc-scrim');
+  const narrow = window.matchMedia('(max-width: 1024px)');
+  let open = false;
+  function setOpen(v) {
+    open = v;
+    toc.classList.toggle('toc-open', v);
+    document.documentElement.classList.toggle('toc-is-open', v);
+    toggle.setAttribute('aria-expanded', String(v));
+  }
+  toggle.addEventListener('click', (e) => { e.stopPropagation(); setOpen(!open); });
+  if (scrim) scrim.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && open) setOpen(false); });
+  panel.addEventListener('click', (e) => {
+    // On narrow screens the drawer covers the text, so close it after jumping;
+    // on wide screens it sits beside the text and can stay open.
+    if (e.target.closest('.toc-item') && narrow.matches) setOpen(false);
+  });
+  // Scroll spy
+  const sections = document.querySelectorAll('.section[id]');
+  const links = document.querySelectorAll('.toc-item');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('toc-active'));
+        const active = panel.querySelector('a[href="#'+entry.target.id+'"]');
+        if (active) active.classList.add('toc-active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+})();
+</script>
+
+<div class="hf-fab">
+  <button class="hf-fab-btn" id="hf-settings-toggle" type="button" title="设置" aria-haspopup="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></button>
+  <div class="hf-dropdown" id="hf-settings-dropdown">
+    <div class="hf-dropdown-label">配色</div>
+    <div class="hf-swatches"><button type="button" class="hf-swatch active" data-theme-id="ink-classic" data-scheme="light" style="background:linear-gradient(135deg,#f1efea 0 50%,#111111 50% 100%)" title="墨水经典 Ink Classic" aria-label="墨水经典"></button><button type="button" class="hf-swatch" data-theme-id="indigo-porcelain" data-scheme="light" style="background:linear-gradient(135deg,#f1f3f5 0 50%,#315d93 50% 100%)" title="靛蓝瓷 Indigo Porcelain" aria-label="靛蓝瓷"></button><button type="button" class="hf-swatch" data-theme-id="forest-ink" data-scheme="light" style="background:linear-gradient(135deg,#f5f1e8 0 50%,#2e6b4f 50% 100%)" title="森林墨 Forest Ink" aria-label="森林墨"></button><button type="button" class="hf-swatch" data-theme-id="kraft-paper" data-scheme="light" style="background:linear-gradient(135deg,#eedfc7 0 50%,#9b5a2e 50% 100%)" title="牛皮纸 Kraft Paper" aria-label="牛皮纸"></button><button type="button" class="hf-swatch" data-theme-id="dune" data-scheme="light" style="background:linear-gradient(135deg,#f0e6d2 0 50%,#8f7650 50% 100%)" title="沙丘 Dune" aria-label="沙丘"></button><button type="button" class="hf-swatch" data-theme-id="midnight-ink" data-scheme="dark" style="background:linear-gradient(135deg,#0e0d0c 0 50%,#d4a04a 50% 100%)" title="午夜墨 Midnight Ink" aria-label="午夜墨"></button></div>
+    <div class="hf-dropdown-divider"></div>
+    <div class="hf-dropdown-label">字体</div>
+    <div class="hf-font-options"><button type="button" class="hf-font-option active" data-vars="--font-serif" data-family="'Source Serif 4','Noto Serif SC','Source Han Serif SC','Songti SC','STSong',Georgia,serif" data-href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,200..900;1,200..900&amp;display=swap"><span class="font-preview" style="font-family:'Source Serif 4','Noto Serif SC','Source Han Serif SC','Songti SC','STSong',Georgia,serif">衬线 Aa</span><span class="font-name">Source Serif 4</span></button><button type="button" class="hf-font-option" data-vars="--font-serif" data-family="'Noto Serif SC','Source Han Serif SC','Songti SC','STSong',Georgia,serif" data-href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&amp;display=swap"><span class="font-preview" style="font-family:'Noto Serif SC','Source Han Serif SC','Songti SC','STSong',Georgia,serif">衬线 Aa</span><span class="font-name">Noto Serif SC</span></button><button type="button" class="hf-font-option" data-vars="--font-serif" data-family="'Playfair Display','Noto Serif SC','Source Han Serif SC','Songti SC','STSong',Georgia,serif" data-href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"><span class="font-preview" style="font-family:'Playfair Display','Noto Serif SC','Source Han Serif SC','Songti SC','STSong',Georgia,serif">衬线 Aa</span><span class="font-name">Playfair Display</span></button></div>
+  </div>
+</div>
+<script>(function () {
+  'use strict';
+
+  // Theme options live in assets/themes.json; render.mjs writes the controls
+  // into the HTML statically, so this file only wires up behaviour.
+  const style = document.documentElement.dataset.hfStyle || 'swiss';
+  const $ = (id) => document.getElementById(id);
+  // Per page: a reader's choice on one page (or a brand page's palette) doesn't leak into other pages
+  const STORE = 'hf-page-prefs:' + style + ':' + location.pathname;
+
+  // ── Helpers ──
+  function closeAllDropdowns() {
+    document.querySelectorAll('.hf-dropdown.open').forEach(d => d.classList.remove('open'));
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.hf-dropdown') && !e.target.closest('.hf-fab-btn')) {
+      closeAllDropdowns();
+    }
+  });
+
+  // PDF / long-image export is no longer in the page: the model runs scripts/export.mjs.
+
+  document.getElementById('hf-settings-toggle').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const dd = document.getElementById('hf-settings-dropdown');
+    const wasOpen = dd.classList.contains('open');
+    closeAllDropdowns();
+    if (!wasOpen) dd.classList.add('open');
+  });
+
+  // ── Theme switching ──
+  // Every palette is a [data-theme] block in the inlined design-system CSS; a swatch only
+  // switches <html data-theme>. Text, rule and accent-text colours come with the theme,
+  // contrast-checked, so nothing is set inline.
+  function applyTheme(sw) {
+    document.querySelectorAll('.hf-swatch').forEach(s => s.classList.toggle('active', s === sw));
+    const root = document.documentElement;
+    root.dataset.theme = sw.dataset.themeId;
+    root.dataset.scheme = sw.dataset.scheme || 'light';
+    root.style.colorScheme = root.dataset.scheme;
+  }
+  // ── Font switching ──
+  // An option swaps the Latin face of the body stack (the CJK face stays); its stylesheet
+  // is loaded on first use.
+  function applyFont(opt) {
+    document.querySelectorAll('.hf-font-option').forEach(o => o.classList.toggle('active', o === opt));
+    (opt.dataset.vars || '--font-sans').split(' ').forEach(v => document.documentElement.style.setProperty(v, opt.dataset.family));
+    const href = opt.dataset.href;
+    if (href && !document.querySelector(`link[data-hf-font="${href}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.dataset.hfFont = href;
+      link.href = href;
+      document.head.appendChild(link);
+    }
+  }
+  function save() {
+    try {
+      const sw = document.querySelector('.hf-swatch.active');
+      const fo = document.querySelector('.hf-font-option.active');
+      localStorage.setItem(STORE, JSON.stringify({ theme: sw && sw.dataset.themeId, font: fo && fo.dataset.family }));
+    } catch (e) {}
+  }
+  document.querySelectorAll('.hf-swatch').forEach(sw => sw.addEventListener('click', (e) => { e.stopPropagation(); applyTheme(sw); save(); }));
+  document.querySelectorAll('.hf-font-option').forEach(opt => opt.addEventListener('click', (e) => { e.stopPropagation(); applyFont(opt); save(); }));
+  try {
+    const prefs = JSON.parse(localStorage.getItem(STORE) || 'null');
+    if (prefs) {
+      const sw = [...document.querySelectorAll('.hf-swatch')].find(s => s.dataset.themeId === prefs.theme);
+      if (sw && !sw.classList.contains('active')) applyTheme(sw);
+      const fo = [...document.querySelectorAll('.hf-font-option')].find(o => o.dataset.family === prefs.font);
+      if (fo && !fo.classList.contains('active')) applyFont(fo);
+    }
+  } catch (e) {}
+
+  // ── Make lazy images print/export-safe ──
+  // loading="lazy" images below the fold are blank in PDF/long-image exports.
+  function eagerImages() { document.querySelectorAll('img[loading="lazy"]').forEach(i => { i.loading = 'eager'; }); }
+  window.addEventListener('beforeprint', eagerImages);
+  if (document.readyState === 'complete') setTimeout(eagerImages, 800);
+  else window.addEventListener('load', () => setTimeout(eagerImages, 800));
+
+  // ── Editable text ──
+  const editableSelectors = [
+    '.hero h1',
+    '.hero-subtitle',
+    '.hero-cover h1',
+    '.hero-cover .hero-subtitle',
+    '.section h2',
+    '.section h3',
+    '.section p',
+    '.section li',
+    '.pullquote p',
+    '.pullquote-swiss .pq-content p',
+    '.highlight-card p',
+    '.highlight-swiss .hl-body p',
+    '.def-card-body',
+    '.def-card-swiss .dc-body',
+    '.process-title',
+    '.process-desc',
+    '.aside-content p',
+    '.summary-item-title',
+    '.summary-item-desc',
+    'blockquote p',
+    'td',
+  ];
+  editableSelectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      el.setAttribute('contenteditable', 'true');
+      el.setAttribute('spellcheck', 'false');
+    });
+  });
+})();
+</script>
+<style>pre.mermaid{background:none;border:none;padding:0;margin:0;text-align:center;font:inherit;overflow:visible}pre.mermaid svg{max-width:100%;height:auto}</style>
+<script src="../../node_modules/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:false,theme:'neutral'});mermaid.run({querySelector:'pre.mermaid'});</script>
+</body>
+</html>
